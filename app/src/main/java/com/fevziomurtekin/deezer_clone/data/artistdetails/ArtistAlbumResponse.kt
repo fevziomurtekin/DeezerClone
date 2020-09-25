@@ -1,6 +1,5 @@
 package com.fevziomurtekin.deezer_clone.data.artistdetails
 
-import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import kotlinx.serialization.SerialName
 
 

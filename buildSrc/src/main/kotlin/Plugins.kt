@@ -13,7 +13,7 @@ object Plugins{
     val hiltExtensions              = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
     val hiltPlugin                  = "dagger.hilt.android.plugin"
 
-    val applicationId               = "com.fevziomurtekin.deezer_clone"
+    val applicationId               = "com.fevziomurtekin.deezer"
     val min                         = 19
     val compile                     = 30
     val versionCode                 = 1

@@ -4,7 +4,6 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.fevziomurtekin.deezer_clone.core.Env
-import com.fevziomurtekin.deezer_clone.domain.local.DeezerDao
 import com.fevziomurtekin.deezer_clone.core.RoomConverter
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 

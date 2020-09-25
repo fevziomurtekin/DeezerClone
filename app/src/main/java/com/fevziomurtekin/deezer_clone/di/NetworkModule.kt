@@ -1,6 +1,5 @@
 package com.fevziomurtekin.deezer_clone.di
 
-import androidx.room.Insert
 import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.core.HttpRequestInterceptor
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerClient
@@ -16,8 +15,6 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module

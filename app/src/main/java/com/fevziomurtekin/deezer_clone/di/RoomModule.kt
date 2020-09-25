@@ -2,7 +2,6 @@ package com.fevziomurtekin.deezer_clone.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.domain.local.DeezerDatabase
 import dagger.Module
