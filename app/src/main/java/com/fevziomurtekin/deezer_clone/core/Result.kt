@@ -1,0 +1,8 @@
+package com.fevziomurtekin.deezer_clone.core
+
+
+sealed class Result<out R>{
+    data class Succes<out T>(val data:T) : Result<T>()
+    object Loading : Result<Nothing>()
+    object Error : Result<Nothing>()
+}
