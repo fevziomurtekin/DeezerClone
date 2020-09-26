@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemMusic"
+        android:enabled="true"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_music"
+        android:title="@string/music"
+        />
+    <item
+        android:id="@+id/itemSearch"
+        android:enabled="true"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        />
+
+    <item
+        android:id="@+id/itemFavorites"
+        android:enabled="true"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/favorites"
+        />
+</menu>

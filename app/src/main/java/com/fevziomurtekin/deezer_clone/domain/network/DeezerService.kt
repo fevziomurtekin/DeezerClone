@@ -9,6 +9,7 @@ import com.fevziomurtekin.deezer_clone.data.genre.GenreResponse
 import com.fevziomurtekin.deezer_clone.data.search.SearchResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 

@@ -1,3 +1,9 @@
 <resources>
+    <!--App Name -->
     <string name="app_name">Deezer Clone</string>
+
+    <!-- Bottom Navigation items -->
+    <string name="music">Music</string>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
 </resources>

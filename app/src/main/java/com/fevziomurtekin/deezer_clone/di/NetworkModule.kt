@@ -12,6 +12,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonBuilder
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -34,7 +35,10 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(Env.BASE_URL)
-            .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
+            .addConverterFactory(Json{
+                isLenient = true
+                ignoreUnknownKeys = true
+            }.asConverterFactory(MediaType.get("application/json")))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
 
