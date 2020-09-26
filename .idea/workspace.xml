@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="234f581a-1b9d-415e-ad7a-003f8b83593c" name="Default Changelist" comment="created domain classes(dao/retrofit classes).">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/genre/GenreAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/genre/GenreAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/home/fevziomurtekin/.android/avd/Pixel_4a_API_24.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DeezerClone" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DeezerClone" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DeezerClone" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DeezerClone" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DeezerClone" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="navigationResourceFile" />
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i0SVw3lMlwGas2yLn1VGvuTUEx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-view/home/fevziomurtekin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0-beta01/d898001f8cf8d02ebbdf7d5f48a787deefae2be3/recyclerview-1.1.0-beta01-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="Variables" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/repository" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/domain/network" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/domain/local" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="DeezerClone.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.fevziomurtekin.deezer_clone.ui.main.MainActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="true" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeezerClone:app [build]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeezerClone:app [lintFix]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="lintFix" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeezerClone:app [uninstallDebugAndroidTest]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="uninstallDebugAndroidTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeezerClone:app [uninstallDebug]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="uninstallDebug" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeezerClone:app [uninstallRelease]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="uninstallRelease" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Gradle.DeezerClone:app [build]" />
+      <item itemvalue="Gradle.DeezerClone:app [lintFix]" />
+      <item itemvalue="Gradle.DeezerClone:app [uninstallDebug]" />
+      <item itemvalue="Gradle.DeezerClone:app [uninstallDebugAndroidTest]" />
+      <item itemvalue="Gradle.DeezerClone:app [uninstallRelease]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DeezerClone:app [lintFix]" />
+        <item itemvalue="Gradle.DeezerClone:app [uninstallRelease]" />
+        <item itemvalue="Gradle.DeezerClone:app [uninstallDebugAndroidTest]" />
+        <item itemvalue="Gradle.DeezerClone:app [uninstallDebug]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="234f581a-1b9d-415e-ad7a-003f8b83593c" name="Default Changelist" comment="" />
+      <created>1601043043572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601043043572</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init project">
+      <created>1601044559197</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601044559197</updated>
+    </task>
+    <task id="LOCAL-00002" summary="include kotlin-dsl.">
+      <created>1601044824921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601044824921</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init project.">
+      <created>1601044855063</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601044855063</updated>
+    </task>
+    <task id="LOCAL-00004" summary="created to data classes.">
+      <created>1601057333308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601057333308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="created domain classes(dao/retrofit classes).">
+      <created>1601058222398</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601058222398</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fetching genre list.">
+      <created>1601068540891</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601068540891</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created navigation graph, base layout xml, fragment class.">
+      <created>1601106847280</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601106847280</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Splash screen with data binding. Bug fixed of Navigations">
+      <created>1601118462922</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601118462922</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created Binding classes, Genre fragment/viewmodel/adapter classes and layout files. close #2, close #3. Starting issue #1">
+      <created>1601149309002</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601149309002</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project" />
+    <MESSAGE value="include kotlin-dsl." />
+    <MESSAGE value="init project." />
+    <MESSAGE value="created to data classes." />
+    <MESSAGE value="created domain classes(dao/retrofit classes)." />
+    <MESSAGE value="Fetching genre list." />
+    <MESSAGE value="Created navigation graph, base layout xml, fragment class." />
+    <MESSAGE value="Splash screen with data binding. Bug fixed of Navigations" />
+    <MESSAGE value="Created Binding classes, Genre fragment/viewmodel/adapter classes and layout files." />
+    <MESSAGE value="Created Binding classes, Genre fragment/viewmodel/adapter classes and layout files. close #2, close #3. Starting issue #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Binding classes, Genre fragment/viewmodel/adapter classes and layout files. close #2, close #3. Starting issue #1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="408" y="29" width="539" height="739" key="#Auto_Import" timestamp="1601105757557">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="408" y="29" width="539" height="739" key="#Auto_Import/0.29.1366.739@0.29.1366.739" timestamp="1601105757557" />
+    <state x="384" y="223" width="588" height="357" key="#Notifications" timestamp="1601147263363">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="384" y="223" width="588" height="357" key="#Notifications/0.29.1366.739@0.29.1366.739" timestamp="1601147263363" />
+    <state x="203" y="133" width="950" height="537" key="#PSD" timestamp="1601065986123">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="203" y="133" width="950" height="537" key="#PSD/0.29.1366.739@0.29.1366.739" timestamp="1601065986123" />
+    <state x="141" y="56" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601066827413">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="141" y="56" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.29.1366.739@0.29.1366.739" timestamp="1601066827413" />
+    <state x="261" y="200" width="833" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601064757212">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="261" y="200" width="833" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.29.1366.739@0.29.1366.739" timestamp="1601064757212" />
+    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1601123369486">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser/0.29.1366.739@0.29.1366.739" timestamp="1601123369486" />
+    <state x="415" y="202" width="525" height="423" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601066332752">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="415" y="202" width="525" height="423" key="#com.intellij.ide.util.TreeClassChooserDialog/0.29.1366.739@0.29.1366.739" timestamp="1601066332752" />
+    <state x="374" y="41" width="598" height="727" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601057852328">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="374" y="41" width="598" height="727" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.29.1366.739@0.29.1366.739" timestamp="1601057852328" />
+    <state x="416" y="147" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601056879705">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="416" y="147" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.29.1366.739@0.29.1366.739" timestamp="1601056879705" />
+    <state x="100" y="129" width="1166" height="539" key="AVDManager" timestamp="1601150248593">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="100" y="129" width="1166" height="539" key="AVDManager/0.29.1366.739@0.29.1366.739" timestamp="1601150248593" />
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceDirectoryDialog" timestamp="1601106175472">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceDirectoryDialog/0.29.1366.739@0.29.1366.739" timestamp="1601106175472" />
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1601106097681">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog/0.29.1366.739@0.29.1366.739" timestamp="1601106097681" />
+    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog" timestamp="1601112210795">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog/0.29.1366.739@0.29.1366.739" timestamp="1601112210795" />
+    <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601136610922">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1601136610922" />
+    <state width="1320" height="168" key="GridCell.Tab.0.bottom" timestamp="1601146705225">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state width="1320" height="168" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601146705225" />
+    <state width="1320" height="168" key="GridCell.Tab.0.center" timestamp="1601146705223">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state width="1320" height="168" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601146705223" />
+    <state width="1320" height="168" key="GridCell.Tab.0.left" timestamp="1601146705223">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state width="1320" height="168" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601146705223" />
+    <state width="1320" height="168" key="GridCell.Tab.0.right" timestamp="1601146705225">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state width="1320" height="168" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601146705225" />
+    <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601065952871">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.29.1366.739@0.29.1366.739" timestamp="1601065952871" />
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601149322121">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2/0.29.1366.739@0.29.1366.739" timestamp="1601149322121" />
+    <state x="293" y="29" width="770" height="739" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601128713916">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="293" y="29" width="770" height="739" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.29.1366.739@0.29.1366.739" timestamp="1601128713916" />
+    <state x="51" y="146" width="1126" height="594" key="find.popup" timestamp="1601128805159">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="51" y="146" width="1126" height="594" key="find.popup/0.29.1366.739@0.29.1366.739" timestamp="1601128805159" />
+    <state x="515" y="171" width="325" height="462" key="refactoring.ChangeSignatureDialog" timestamp="1601141224145">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="515" y="171" width="325" height="462" key="refactoring.ChangeSignatureDialog/0.29.1366.739@0.29.1366.739" timestamp="1601141224145" />
+    <state x="347" y="174" key="run.anything.popup" timestamp="1601105018895">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="347" y="174" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1601105018895" />
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601147658788">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601147658788" />
+  </component>
+</project>
