@@ -19,7 +19,7 @@ object Versions {
     val constraint_layout_version="1.1.3"
     val material_version="1.1.0-alpha09"
     val vector_drawable_version="1.0.1"
-    val navigation_version="2.0.0"
+    val navigation_version="2.3.0"
     val pagging_version="1.0.0"
     //Recyclerview
     val recyclerview_version="1.0.0"

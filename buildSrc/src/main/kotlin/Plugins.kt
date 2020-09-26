@@ -28,6 +28,7 @@ object Plugins{
     val proguardTxt                 = "proguard-android.txt"
     val proguardPro                 = "proguard-rules.pro"
     val androidlibrary              = "com.android.library"
+    val navSafePlugins              = "androidx.navigation.safeargs.kotlin"
     /** PACKAGING OPTIONS */
     val metaLicense                 = "META-INF/LICENSE"
     val metaDependecies             = "META-INF/DEPENDENCIES"

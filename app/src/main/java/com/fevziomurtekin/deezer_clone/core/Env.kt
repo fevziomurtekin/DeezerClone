@@ -4,7 +4,7 @@ object Env {
 
     /* database*/
     const val DATABASE_NAME     = "deezerdatabase.db"
-    const val DATABASE_VERSION  = 2
+    const val DATABASE_VERSION  = 3
 
     /* API ENV */
     const val BASE_URL          = "https://api.deezer.com/"

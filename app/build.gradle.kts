@@ -19,6 +19,7 @@ android{
         versionName = Plugins.versionName
         multiDexEnabled = true
         testInstrumentationRunner = Plugins.testInstrumentationRunner
+        vectorDrawables.useSupportLibrary = true
     }
     /* signingConfigs {
          getByName(Plugins.debug) {

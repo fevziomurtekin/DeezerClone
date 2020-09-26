@@ -14,9 +14,11 @@ class MainViewModel @ViewModelInject constructor(
 ): ViewModel(){
 
     var genreListLiveData: LiveData<Result<Any>> = MutableLiveData()
+    var isSplash:MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         Timber.d("init mainViewModel")
+        isSplash.value = true
     }
 
     fun fetchGenreList(){

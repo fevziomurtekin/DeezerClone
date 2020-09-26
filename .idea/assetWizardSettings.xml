@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -28,7 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_favorite" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_logo" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/app/src/main/res/drawable/logo.svg" />
                           </map>
                         </option>
                       </PersistentState>
