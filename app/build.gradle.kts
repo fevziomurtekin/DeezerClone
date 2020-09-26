@@ -127,4 +127,6 @@ dependencies{
     /** kotlin serialization **/
     implementation(Dependencies.kotlin_serialization_converter)
     implementation(Dependencies.kotlin_serialization)
+    /** coil **/
+    implementation(Dependencies.coilLib)
 }

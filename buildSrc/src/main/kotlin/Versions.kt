@@ -55,5 +55,8 @@ object Versions {
     val coroutines_adapter_version="0.9.2"
     val coroutines_android_version="1.1.1"
 
+    /* coil version */
+    val coil_version = "1.0.0-rc3"
+
 
 }

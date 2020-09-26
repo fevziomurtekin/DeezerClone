@@ -67,6 +67,9 @@ object Dependencies {
     /* Other libs */
     val circularImageLib    = "de.hdodenhof:circleimageview:${Versions.circular_imageview_version}"
 
+    /*Ktor*/
+    val coilLib             = "io.coil-kt:coil:${Versions.coil_version}"
+
     /* Coroutines */
     val coroutines_android  = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android_version}"
     val coroutines_core_lib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_android_version}"

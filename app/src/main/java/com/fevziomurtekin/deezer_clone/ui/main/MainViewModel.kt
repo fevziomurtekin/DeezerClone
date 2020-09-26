@@ -5,6 +5,8 @@ import androidx.lifecycle.*
 import com.fevziomurtekin.deezer_clone.core.Result
 import com.fevziomurtekin.deezer_clone.repository.MainRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -25,6 +27,7 @@ class MainViewModel @ViewModelInject constructor(
         viewModelScope.launch {
             genreListLiveData = mainRepository.fetchGenreList()
                 .asLiveData(viewModelScope.coroutineContext+Dispatchers.Default)
+
         }
     }
 

@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import com.fevziomurtekin.deezer_clone.core.Result
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerClient
+import kotlinx.coroutines.delay
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -26,7 +27,15 @@ class MainRepository @Inject constructor(
                 genres = response.data
                 deezerDao.insertGenreList(genres)
                 emit(Result.Succes(genres))
-            }else{ emit(Result.Error) }
-        }else{ emit(Result.Succes(genres)) }
+            }else{
+                /* fake call */
+                delay(1500)
+                emit(Result.Error)
+            }
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Succes(genres))
+        }
     }.flowOn(Dispatchers.IO)
 }

@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name="adapter"
+            type="com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter" />
+        
+        <variable
+            name="vm"
+            type="com.fevziomurtekin.deezer_clone.ui.genre.GenreViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:fadeScrollbars="false"
+            android:padding="6dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            app:adapter="@{adapter}"
+            app:adapterGenreList="@{vm.result}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="2"
+            tools:listitem="@layout/item_genre" />
+    </LinearLayout>
+
+</layout>
