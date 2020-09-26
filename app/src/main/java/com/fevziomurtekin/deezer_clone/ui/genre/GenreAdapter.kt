@@ -2,6 +2,7 @@ package com.fevziomurtekin.deezer_clone.ui.genre
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
@@ -25,7 +26,10 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
                 val position = adapterPosition.takeIf { p-> p != NO_POSITION }
                     ?: return@setOnClickListener
 
-                it.findNavController().navigate(R.id.action_genre_list)
+                it.findNavController().navigate(
+                        R.id.action_genre_list,
+                        bundleOf("id" to items[position].id,"name" to items[position].name
+                        ))
             }
         }
     }

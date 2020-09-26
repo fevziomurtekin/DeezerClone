@@ -60,8 +60,14 @@ class MainActivity : DataBindingActivity() {
 
         /* Navigation destination listener. */
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-                    when(destination.id){
+            var name = getString(R.string.app_name)
+            arguments?.let {
+                name = it["name"].toString()
+            }
+
+            when(destination.id){
                         R.id.genre->{ materialToolbar.title = getString(R.string.app_name) }
+                        R.id.genre_list->{ materialToolbar.title = name }
                         R.id.search->{ materialToolbar.title = getString(R.string.search) }
                         R.id.favorites->{ materialToolbar.title = getString(R.string.favorites) }
 
