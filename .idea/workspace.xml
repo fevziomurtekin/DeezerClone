@@ -490,7 +490,8 @@
     <MESSAGE value="created Artist Fragment/ViewModel/Adapter. Fetc data." />
     <MESSAGE value="created Artist ArtistDetailsFragment" />
     <MESSAGE value="created ArtistDetail/ArtistAlbum/ArtistRelated pages. Fixed some bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="created ArtistDetail/ArtistAlbum/ArtistRelated pages. Fixed some bugs." />
+    <MESSAGE value="created Albumdetails page." />
+    <option name="LAST_COMMIT_MESSAGE" value="created Albumdetails page." />
   </component>
   <component name="WindowStateProjectService">
     <state x="408" y="29" width="539" height="739" key="#Auto_Import" timestamp="1601105757557">
@@ -553,22 +554,22 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1601211941574" />
-    <state width="1320" height="193" key="GridCell.Tab.0.bottom" timestamp="1601213337765">
+    <state width="1320" height="193" key="GridCell.Tab.0.bottom" timestamp="1601214392684">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601213337765" />
-    <state width="1320" height="193" key="GridCell.Tab.0.center" timestamp="1601213337764">
+    <state width="1320" height="193" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601214392684" />
+    <state width="1320" height="193" key="GridCell.Tab.0.center" timestamp="1601214392680">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601213337764" />
-    <state width="1320" height="193" key="GridCell.Tab.0.left" timestamp="1601213337763">
+    <state width="1320" height="193" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601214392680" />
+    <state width="1320" height="193" key="GridCell.Tab.0.left" timestamp="1601214392680">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601213337763" />
-    <state width="1320" height="193" key="GridCell.Tab.0.right" timestamp="1601213337764">
+    <state width="1320" height="193" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601214392680" />
+    <state width="1320" height="193" key="GridCell.Tab.0.right" timestamp="1601214392683">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601213337764" />
+    <state width="1320" height="193" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601214392683" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601065952871">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
