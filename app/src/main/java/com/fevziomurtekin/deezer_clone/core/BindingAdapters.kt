@@ -7,8 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
+import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistAlbumData
+import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistRelatedData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
+import com.fevziomurtekin.deezer_clone.ui.artistdetails.albums.ArtistAlbumAdapter
+import com.fevziomurtekin.deezer_clone.ui.artistdetails.related.ArtistRelatedAdapter
 import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
@@ -59,4 +63,26 @@ fun bindingViewPagerAdapter(view:ViewPager,adapter:FragmentPagerAdapter){
 }
 
 
+@BindingAdapter("adapterAAlbumsList")
+fun bindingAAlbumsList(view:RecyclerView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
+        is Result.Succes -> {
+            Timber.d("result : succes isSplash : false")
+            (view.adapter as ArtistAlbumAdapter).addAlbumList(((results.value) as Result.Succes<List<ArtistAlbumData>>).data)
+        }
+    }
+}
 
+@BindingAdapter("adapterARelatedList")
+fun bindingARelatedList(view:RecyclerView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
+        is Result.Succes -> {
+            Timber.d("result : succes isSplash : false")
+            (view.adapter as ArtistRelatedAdapter).addRelatedList(((results.value) as Result.Succes<List<ArtistRelatedData>>).data)
+        }
+    }
+}

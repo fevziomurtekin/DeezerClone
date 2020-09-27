@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ArtistRelatedResponse(
     @SerialName("data")
-    val `data`: List<ArtistRelatedData>,
+    val data: List<ArtistRelatedData>,
     val total: Int
 )

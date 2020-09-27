@@ -137,7 +137,7 @@
 
     <fragment
         android:id="@+id/artist_details"
-        android:name="com.fevziomurtekin.deezer_clone.ui.artistdetails.ArtistDetailsFragment"
+        android:name="com.fevziomurtekin.deezer_clone.ui.artistdetails.detail.ArtistDetailsFragment"
         tools:layout="@layout/fragment_artist_details">
 
         <action

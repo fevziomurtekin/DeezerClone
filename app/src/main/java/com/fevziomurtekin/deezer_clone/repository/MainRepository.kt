@@ -82,4 +82,49 @@ class MainRepository @Inject constructor(
         }
     }.flowOn(Dispatchers.IO)
 
+    /**
+     * give to id return fetching artist albums.
+     * @param id, artistId
+     * @return Result.Error or Result.Succes(List<ArtistAlbumData>)
+     * */
+
+    fun fetchArtistAlbums( artistId:String
+    ) = flow {
+        emit( Result.Loading )
+        val response = try{deezerClient.fetchArtistAlbums(artistId).await()}catch (e:Exception){ null }
+
+        try{deezerClient.fetchArtistAlbums(artistId).await()}catch (e:Exception){ Timber.d("eror : ${e.message}") }
+
+        Timber.d("response : $response")
+        if(response!=null){
+            emit(Result.Succes(response.data))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }.flowOn(Dispatchers.IO)
+
+    /**
+     * give to id return fetching artist related.
+     * @param id, artistId
+     * @return Result.Error or Result.Succes(List<ArtistRelatedData>)
+     * */
+
+    fun fetchArtistRelated( artistId:String
+    ) = flow {
+        emit( Result.Loading )
+        val response = deezerClient.fetchArtistRelated(artistId).await()
+        Timber.d("response : $response")
+        if(response!=null){
+            emit(Result.Succes(response.data))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }.flowOn(Dispatchers.IO)
+
+
+
 }
