@@ -4,7 +4,9 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
+import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
+import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -20,14 +22,28 @@ fun bindAdapter(view:RecyclerView, adapter:RecyclerView.Adapter<*>){
 }
 
 @BindingAdapter("adapterGenreList")
-fun bindingGenreList(view:RecyclerView, results:LiveData<Result<Any>>){
-    when(results.value){
-        Result.Loading,Result.Error->{/* Nothing */ }
+fun bindingGenreList(view:RecyclerView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
         is Result.Succes -> {
             Timber.d("result : succes isSplash : false")
-            (view.adapter as GenreAdapter).addGenreList(((results.value) as Result.Succes<List<Data>>).data as List<Data>)
+            (view.adapter as GenreAdapter).addGenreList(((results.value) as Result.Succes<List<Data>>).data)
         }
     }
-
 }
+
+@BindingAdapter("adapterArtistList")
+fun bindingArtistList(view:RecyclerView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
+        is Result.Succes -> {
+            Timber.d("result : succes isSplash : false")
+            (view.adapter as ArtistAdapter).addArtistList(((results.value) as Result.Succes<List<ArtistData>>).data)
+        }
+    }
+}
+
+
 

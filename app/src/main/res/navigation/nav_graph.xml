@@ -48,8 +48,8 @@
 
     <fragment
         android:id="@+id/genre_list"
-        android:name="com.fevziomurtekin.deezer_clone.ui.genre.GenreListFragment"
-        tools:layout="@layout/fragment_genre_list">
+        android:name="com.fevziomurtekin.deezer_clone.ui.artist.ArtistsFragment"
+        tools:layout="@layout/fragment_artists">
 
         <action
             android:id="@+id/action_artist_details"
@@ -137,7 +137,7 @@
 
     <fragment
         android:id="@+id/artist_details"
-        android:name="com.fevziomurtekin.deezer_clone.ui.artist.ArtistDetailsFragment"
+        android:name="com.fevziomurtekin.deezer_clone.ui.artistdetails.ArtistDetailsFragment"
         tools:layout="@layout/fragment_artist_details">
 
         <action

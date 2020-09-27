@@ -11,7 +11,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_margin="5dp"
         android:background="@color/colorWhiteCard"
         android:foreground="?attr/selectableItemBackground"
@@ -32,9 +32,6 @@
                 android:scaleType="center"
                 app:bindImageUrl="@{genre.picture_medium}"
                 />
-            <!--            app:paletteCard="@{cardView}"
-            app:paletteImage="@{genre.picture_big}"-->
-
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_genre_name"
@@ -46,7 +43,7 @@
                 android:padding="12dp"
                 android:text="@{genre.name}"
                 android:textColor="@color/colorWhiteCard"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
                 android:textAllCaps="true"

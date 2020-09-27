@@ -15,6 +15,10 @@ class MainRepository @Inject constructor(
     private val deezerDao: DeezerDao
 ) {
 
+    /**
+     * fetching genres list.
+     *  @return Result.Error or Result.Succes(Data)
+     */
     fun fetchGenreList(
     ) = flow {
         emit( Result.Loading )
@@ -38,4 +42,24 @@ class MainRepository @Inject constructor(
             emit(Result.Succes(genres))
         }
     }.flowOn(Dispatchers.IO)
+
+    /**
+     * give to id return fetching artist list.
+     * @param id, genreId
+     * @return Result.Error or Result.Succes(List<ArtistData>)
+     * */
+    fun fetchArtistList( genreId:String
+    ) = flow {
+        emit( Result.Loading )
+        val response = deezerClient.fetchArtistList(genreId).await()
+        Timber.d("response : $response")
+        if(!response.artistData.isNullOrEmpty()){
+            emit(Result.Succes(response.artistData))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }.flowOn(Dispatchers.IO)
+
 }

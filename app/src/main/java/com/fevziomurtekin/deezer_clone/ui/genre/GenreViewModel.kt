@@ -15,7 +15,6 @@ class GenreViewModel @ViewModelInject constructor(
 ):ViewModel() {
 
     var result: LiveData<Result<Any>> = MutableLiveData()
-    var genreListLiveData:MutableLiveData<List<Data>> = MutableLiveData()
 
     init {
         Timber.d("view model init.")

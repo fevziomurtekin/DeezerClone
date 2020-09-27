@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="adapter"
+            type="com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter" />
+
+        <variable
+            name="vm"
+            type="com.fevziomurtekin.deezer_clone.ui.artist.ArtistViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_main"
+        android:background="@color/colorPrimary">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:fadeScrollbars="false"
+            android:padding="6dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            app:adapter="@{adapter}"
+            app:adapterArtistList="@{vm.result}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="2"
+            tools:listitem="@layout/item_artist" />
+    </LinearLayout>
+
+</layout>

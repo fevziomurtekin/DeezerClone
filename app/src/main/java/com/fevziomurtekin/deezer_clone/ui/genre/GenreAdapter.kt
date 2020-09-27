@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
+import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.databinding.ItemGenreBinding
 import timber.log.Timber
@@ -28,7 +29,8 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
 
                 it.findNavController().navigate(
                         R.id.action_genre_list,
-                        bundleOf("id" to items[position].id,"name" to items[position].name
+                        bundleOf(Env.BUND_ID to items[position].id
+                            ,Env.BUND_NAME to items[position].name
                         ))
             }
         }
