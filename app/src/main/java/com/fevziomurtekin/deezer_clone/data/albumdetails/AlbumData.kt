@@ -21,7 +21,8 @@ data class AlbumData(
     val title_short: String,
     val title_version: String,
     val track_position: Int,
-    val type: String
+    val type: String,
+    val def_img:String="https://www.ssbwiki.com/images/2/29/Music.svg"
 ){
     fun durationToTime(){
         val minute = (duration.toInt()) / 60

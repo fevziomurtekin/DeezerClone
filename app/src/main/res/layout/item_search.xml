@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="search"
+            type="com.fevziomurtekin.deezer_clone.data.search.SearchQuery" />
+    </data>
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@{search.q}"
+        android:textColor="@color/colorPrimary"
+        tools:text="selam"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:drawableRight="@android:drawable/ic_menu_revert"
+        />
+</layout>

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/page_under_constructor"
+            android:gravity="center"
+            android:textSize="25sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

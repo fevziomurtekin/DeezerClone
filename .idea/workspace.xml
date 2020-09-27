@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="eror" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -33,11 +32,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234f581a-1b9d-415e-ad7a-003f8b83593c" name="Default Changelist" comment="created domain classes(dao/retrofit classes).">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/album/AlbumDetailsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/album/AlbumDetailsViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_album.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/favorites/FavoritesViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/RecentSearchAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchAlbumAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edt_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_search_album.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" afterDir="false" />
@@ -49,23 +50,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingAdapters.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumDetailsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumDetailsResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/Artist.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/Artist.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/ArtistX.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/Contributor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/DataX.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/Genres.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/Tracks.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/domain/network/DeezerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/domain/network/DeezerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/Env.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/Env.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/UIExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/UIExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/repository/MainRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/repository/MainRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/album/AlbumDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/album/AlbumDetailsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/main/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/favorites/FavoritesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/favorites/FavoritesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_album.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_album.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +125,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="navigationResourceFile" />
-        <option value="resourceFile" />
         <option value="valueResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
       </list>
     </option>
@@ -149,6 +148,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/home/fevziomurtekin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0-beta01/d898001f8cf8d02ebbdf7d5f48a787deefae2be3/recyclerview-1.1.0-beta01-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-view/home/fevziomurtekin/Development/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="project.structure.last.edited" value="Variables" />
     <property name="project.structure.proportion" value="0.17" />
@@ -460,7 +460,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601206936234</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="created Albumdetails page.">
+      <created>1601214465994</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601214465994</updated>
+    </task>
+    <task id="LOCAL-00016" summary="created Albumdetails page.">
+      <created>1601214475495</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601214475495</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -514,10 +528,10 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="261" y="200" width="833" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.29.1366.739@0.29.1366.739" timestamp="1601064757212" />
-    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1601123369486">
+    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1601237038633">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser/0.29.1366.739@0.29.1366.739" timestamp="1601123369486" />
+    <state x="457" y="117" width="442" height="569" key="#com.intellij.ide.util.MemberChooser/0.29.1366.739@0.29.1366.739" timestamp="1601237038633" />
     <state x="415" y="202" width="525" height="423" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601066332752">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -534,58 +548,58 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="395" y="161" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.29.1366.739@0.29.1366.739" timestamp="1601196965167" />
-    <state x="100" y="129" width="762" height="539" key="AVDManager" timestamp="1601209478945">
+    <state x="100" y="129" width="762" height="539" key="AVDManager" timestamp="1601243517106">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="100" y="129" width="762" height="539" key="AVDManager/0.29.1366.739@0.29.1366.739" timestamp="1601209478945" />
+    <state x="100" y="129" width="762" height="539" key="AVDManager/0.29.1366.739@0.29.1366.739" timestamp="1601243517106" />
     <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceDirectoryDialog" timestamp="1601106175472">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceDirectoryDialog/0.29.1366.739@0.29.1366.739" timestamp="1601106175472" />
-    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1601211270033">
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1601236576386">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog/0.29.1366.739@0.29.1366.739" timestamp="1601211270033" />
-    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog" timestamp="1601192068175">
+    <state x="266" y="156" width="824" height="491" key="AndroidCreateResourceFileDialog/0.29.1366.739@0.29.1366.739" timestamp="1601236576386" />
+    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog" timestamp="1601244606773">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog/0.29.1366.739@0.29.1366.739" timestamp="1601192068175" />
+    <state x="500" y="208" width="357" height="388" key="AndroidCreateXmlResourceDialog/0.29.1366.739@0.29.1366.739" timestamp="1601244606773" />
     <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601211941574">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1601211941574" />
-    <state width="1320" height="193" key="GridCell.Tab.0.bottom" timestamp="1601214392684">
+    <state width="1320" height="102" key="GridCell.Tab.0.bottom" timestamp="1601249089460">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601214392684" />
-    <state width="1320" height="193" key="GridCell.Tab.0.center" timestamp="1601214392680">
+    <state width="1320" height="102" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601249089460" />
+    <state width="1320" height="102" key="GridCell.Tab.0.center" timestamp="1601249089458">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601214392680" />
-    <state width="1320" height="193" key="GridCell.Tab.0.left" timestamp="1601214392680">
+    <state width="1320" height="102" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601249089458" />
+    <state width="1320" height="102" key="GridCell.Tab.0.left" timestamp="1601249089456">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601214392680" />
-    <state width="1320" height="193" key="GridCell.Tab.0.right" timestamp="1601214392683">
+    <state width="1320" height="102" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601249089456" />
+    <state width="1320" height="102" key="GridCell.Tab.0.right" timestamp="1601249089459">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="193" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601214392683" />
+    <state width="1320" height="102" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601249089459" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601065952871">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.29.1366.739@0.29.1366.739" timestamp="1601065952871" />
-    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601206940933">
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601214479987">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2/0.29.1366.739@0.29.1366.739" timestamp="1601206940933" />
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2/0.29.1366.739@0.29.1366.739" timestamp="1601214479987" />
     <state x="293" y="29" width="770" height="739" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601128713916">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="293" y="29" width="770" height="739" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.29.1366.739@0.29.1366.739" timestamp="1601128713916" />
-    <state x="51" y="146" width="1126" height="594" key="find.popup" timestamp="1601205030750">
+    <state x="51" y="146" width="1126" height="594" key="find.popup" timestamp="1601237948500">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="51" y="146" width="1126" height="594" key="find.popup/0.29.1366.739@0.29.1366.739" timestamp="1601205030750" />
+    <state x="51" y="146" width="1126" height="594" key="find.popup/0.29.1366.739@0.29.1366.739" timestamp="1601237948500" />
     <state x="515" y="171" width="325" height="462" key="refactoring.ChangeSignatureDialog" timestamp="1601141224145">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -594,9 +608,9 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="347" y="174" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1601194014395" />
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601214055787">
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601243673801">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601214055787" />
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601243673801" />
   </component>
 </project>

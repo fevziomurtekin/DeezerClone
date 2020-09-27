@@ -13,4 +13,7 @@ object Env {
     const val BUND_NAME         = "name"
     const val BUND_ID           = "id"
 
+    /* Default value */
+    const val DEFAULT_IMG       = "https://www.ssbwiki.com/images/2/29/Music.svg"
+
 }

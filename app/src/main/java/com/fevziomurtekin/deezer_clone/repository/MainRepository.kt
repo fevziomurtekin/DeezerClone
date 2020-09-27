@@ -5,6 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import com.fevziomurtekin.deezer_clone.core.Result
+import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerClient
 import kotlinx.coroutines.delay
 import timber.log.Timber
@@ -143,7 +144,43 @@ class MainRepository @Inject constructor(
             /* fake call */
             delay(1500)
             emit(Result.Error)
-        }
+        }   
     }.flowOn(Dispatchers.IO)
+
+    /**
+     * @return List<SearchQuery>?
+     * */
+    fun fetchRecentSearch()= flow {
+        val response = deezerDao.getQueryList()
+        Timber.d("response : $response")
+        if(!response.isNullOrEmpty()){ emit(response) }
+    }.flowOn(Dispatchers.IO)
+
+
+    /**
+     * @param query,
+     * insert the query.
+     * */
+    suspend fun insertSearch(query: SearchQuery)= deezerDao.insertQuery(query)
+
+    /**
+     * @param query, String
+     * @return Result.Error or Result.Succes(List<SearchData>)
+     * */
+    fun fetchSearch(query:String) = flow{
+        Timber.d("fetchSearch : $query")
+        emit(Result.Loading)
+        insertSearch(SearchQuery(q=query))
+        val response = deezerClient.fetchSearchAlbum(query).await()
+        Timber.d("response : $response")
+        if(response!=null){
+            emit(Result.Succes(response.data))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }
+
 
 }

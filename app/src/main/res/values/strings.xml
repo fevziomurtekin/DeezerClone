@@ -6,7 +6,13 @@
     <string name="music">Music</string>
     <string name="search">Search</string>
     <string name="favorites">Favorites</string>
+
+    <!-- Error / Message string. -->
     <string name="unexpected_error">An unexpected error was encountered.</string>
     <string name="retry">Retry</string>
     <string name="ok">OK</string>
+    <string name="page_under_constructor">Page under construction…</string>
+    <string name="searching">Search Keyword</string>
+    <string name="recent_search">Recent Search</string>
+
 </resources>

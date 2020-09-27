@@ -1,11 +1,16 @@
 package com.fevziomurtekin.deezer_clone.core
 
+import android.app.Activity
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isGone
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import coil.Coil
 import coil.load
 import coil.size.Scale
@@ -19,6 +24,7 @@ import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.activity_main.view.*
 import timber.log.Timber
 import com.fevziomurtekin.deezer_clone.core.Result
+import com.fevziomurtekin.deezer_clone.ui.search.SearchViewModel
 
 /**
  * Help in the development of this class, the application named 'Pokedex' @Skydoves user has helped.
@@ -59,4 +65,47 @@ fun bindLoadImageArtistDetails(view: ImageView, results:LiveData<Result<Any>>) {
 @BindingAdapter("isGone")
 fun bindGone(view:View, isGone:Boolean){
     view.isGone = isGone
+}
+
+/* search layout */
+@BindingAdapter("isGoneLayout")
+fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
+    Timber.d("bindingIsGoneLayout result : ${results.value}")
+    if(results.value != null) {
+        when (results.value) {
+            Result.Loading, Result.Error -> {
+                when(view.id){
+                    R.id.lv_search_album->view.isGone = true
+                    else-> view.isGone = false
+                }
+                view.isGone = false
+            }
+            is Result.Succes -> {
+                when(view.id){
+                    R.id.lv_recent_search-> view.isGone = true
+                    else-> view.isGone = false
+                }
+            }
+        }
+    }else {
+        Timber.d("bindingIsGoneLayout false ")
+        view.isGone = false
+    }
+}
+
+@BindingAdapter("actionSearch")
+fun actionSearch(view: View,viewModel:ViewModel){
+    val searchViewModel = viewModel as SearchViewModel
+    (view as AppCompatEditText).setOnEditorActionListener { v, actionId, event ->
+        return@setOnEditorActionListener when (actionId) {
+            EditorInfo.IME_ACTION_SEARCH -> {
+                //UIExtensions.hideKeyboard((view.rootView!!).context as Activity)
+                searchViewModel.fetchSearch(v.text.toString())
+                true
+            }
+            else -> false
+        }
+
+    }
+
 }

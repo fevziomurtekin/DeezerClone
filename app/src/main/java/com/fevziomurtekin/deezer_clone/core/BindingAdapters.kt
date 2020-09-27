@@ -11,11 +11,15 @@ import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistAlbumData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistRelatedData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
+import com.fevziomurtekin.deezer_clone.data.search.SearchData
+import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import com.fevziomurtekin.deezer_clone.ui.album.AlbumDetailsAdapter
 import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import com.fevziomurtekin.deezer_clone.ui.artistdetails.albums.ArtistAlbumAdapter
 import com.fevziomurtekin.deezer_clone.ui.artistdetails.related.ArtistRelatedAdapter
 import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
+import com.fevziomurtekin.deezer_clone.ui.search.RecentSearchAdapter
+import com.fevziomurtekin.deezer_clone.ui.search.SearchAlbumAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -97,6 +101,27 @@ fun bindingAlbumTracksList(view:RecyclerView, results:LiveData<Result<Any>>) {
         is Result.Succes -> {
             Timber.d("result : succes isSplash : false")
             (view.adapter as AlbumDetailsAdapter).addAlbumTracks(((results.value) as Result.Succes<List<AlbumData>>).data)
+        }
+    }
+}
+
+@BindingAdapter("adapterRecentSearch")
+fun bindingRecentSeach(view:RecyclerView, results:LiveData<List<SearchQuery>>) {
+    Timber.d("binding recentData : ${results.value}")
+    if(!results.value.isNullOrEmpty()) {
+        Timber.d(" if içi binding recentData : ${results.value}")
+        (view.adapter as RecentSearchAdapter).addRecentSearch(((results.value) as List<SearchQuery>))
+    }
+}
+
+@BindingAdapter("adapterSearchAlbum")
+fun bindingSearchAlbum(view:RecyclerView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
+        is Result.Succes -> {
+            Timber.d("result : succes isSplash : false")
+            (view.adapter as SearchAlbumAdapter).addAlbumSearch(((results.value) as Result.Succes<List<SearchData>>).data)
         }
     }
 }

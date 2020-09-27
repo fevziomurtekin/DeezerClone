@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="search"
+            type="com.fevziomurtekin.deezer_clone.data.search.SearchData" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="7.5dp"
+        android:layout_marginRight="7.5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhiteCard"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorWhiteCard"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_artist_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:gravity="left"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:text="@{search.artist.name}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bulbasaur" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_album_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:gravity="left"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:text="@{search.title}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bulbasaur" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

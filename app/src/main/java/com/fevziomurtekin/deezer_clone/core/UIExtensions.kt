@@ -1,10 +1,15 @@
 package com.fevziomurtekin.deezer_clone.core
 
 import android.app.Activity
+import android.content.Context
 import android.provider.Settings.Global.getString
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import com.fevziomurtekin.deezer_clone.R
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 
 
 /** Show dialogs & snackbar & Toast  **/
@@ -23,4 +28,18 @@ object UIExtensions {
 
 
 
+    /**
+     * @param context, Activity type.
+     * hiding keyboard.
+     * */
+    fun hideKeyboard(context: Activity) {
+        try {
+            GlobalScope.async {
+                delay(1000)
+                val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(context.currentFocus!!.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+            }
+        } catch (e: Exception) {
+        }
+    }
 }
