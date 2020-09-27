@@ -35,7 +35,7 @@ interface DeezerService{
     fun fetchArtistRelated(@Path("artistId") artistID: String)
             :Deferred<ArtistRelatedResponse>
 
-    @GET("album/{albumId}")
+    @GET("album/{albumId}/tracks")
     fun fetchAlbumDetails(@Path("albumId") albumId:String)
             :Deferred<AlbumDetailsResponse>
 

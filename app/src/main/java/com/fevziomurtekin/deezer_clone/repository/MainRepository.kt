@@ -125,6 +125,25 @@ class MainRepository @Inject constructor(
         }
     }.flowOn(Dispatchers.IO)
 
+    /**
+     * give to id return fetching album tracks.
+     * @param id, albumID
+     * @return Result.Error or Result.Succes(List<AlbumData>)
+     * */
 
+    fun fetchAlbumTracks(albumID:String
+    ) = flow {
+        emit( Result.Loading )
+        val response = deezerClient.fetchAlbumDetails(albumID).await()
+        Timber.d("response : $response")
+        if(response!=null){
+            response.data.forEach { it.durationToTime() }
+            emit(Result.Succes(response.data))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }.flowOn(Dispatchers.IO)
 
 }

@@ -68,11 +68,11 @@ class MainActivity : DataBindingActivity() {
 
             when(destination.id){
                         R.id.genre->{ materialToolbar.title = getString(R.string.app_name) }
-                        R.id.genre_list->{ materialToolbar.title = name }
-                        R.id.action_artist_details->{ materialToolbar.title = name }
                         R.id.search->{ materialToolbar.title = getString(R.string.search) }
                         R.id.favorites->{ materialToolbar.title = getString(R.string.favorites) }
-
+                        R.id.genre_list->{ materialToolbar.title = name }
+                        R.id.action_artist_details->{ materialToolbar.title = name }
+                        R.id.action_album_details->{ materialToolbar.title = name }
                     }
                 }
 
