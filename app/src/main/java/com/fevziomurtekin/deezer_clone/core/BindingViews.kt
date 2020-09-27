@@ -5,14 +5,20 @@ import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isGone
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.LiveData
 import coil.Coil
 import coil.load
+import coil.size.Scale
 import coil.transform.BlurTransformation
 import coil.transform.CircleCropTransformation
 import com.fevziomurtekin.deezer_clone.R
+import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
+import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistDetailResponse
+import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.activity_main.view.*
 import timber.log.Timber
+import com.fevziomurtekin.deezer_clone.core.Result
 
 /**
  * Help in the development of this class, the application named 'Pokedex' @Skydoves user has helped.
@@ -20,7 +26,9 @@ import timber.log.Timber
  * */
 
 
-/* Load to Image with url inside to layout files */
+/* Load to Image with url inside to layout files
+* Recyclerview item. Bluring imageview.
+* */
 @BindingAdapter("bindImageUrl")
 fun bindLoadImageUrl(view: ImageView, url: String) {
     Timber.d("Binding url : $url ")
@@ -28,6 +36,23 @@ fun bindLoadImageUrl(view: ImageView, url: String) {
         crossfade(true)
         placeholder(R.color.colorPrimary)
         transformations(BlurTransformation(view.context,6f,0.3f))
+    }
+}
+
+@BindingAdapter("bindImageArtist")
+fun bindLoadImageArtistDetails(view: ImageView, results:LiveData<Result<Any>>) {
+    when (results.value) {
+        Result.Loading, Result.Error -> {/* Nothing */
+        }
+        is Result.Succes -> {
+            val imgUrl = ((results.value as Result.Succes<ArtistDetailResponse>).data.picture_big)
+            Timber.d("Binding url : $imgUrl ")
+            view.load(imgUrl){
+                crossfade(true)
+                placeholder(R.color.colorPrimary)
+                transformations(BlurTransformation(view.context,1f,0.9f))
+            }
+        }
     }
 }
 

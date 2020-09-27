@@ -1,13 +1,16 @@
 package com.fevziomurtekin.deezer_clone.core
 
 import androidx.databinding.BindingAdapter
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
@@ -43,6 +46,16 @@ fun bindingArtistList(view:RecyclerView, results:LiveData<Result<Any>>) {
             (view.adapter as ArtistAdapter).addArtistList(((results.value) as Result.Succes<List<ArtistData>>).data)
         }
     }
+}
+
+@BindingAdapter("adapterTablayout")
+fun bindingTabLayoutAdapter(view:TabLayout,viewPager: ViewPager){
+    view.setupWithViewPager(viewPager)
+}
+
+@BindingAdapter("adapterViewPager")
+fun bindingViewPagerAdapter(view:ViewPager,adapter:FragmentPagerAdapter){
+    view.adapter = adapter
 }
 
 

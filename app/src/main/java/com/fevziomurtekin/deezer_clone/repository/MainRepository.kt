@@ -62,4 +62,24 @@ class MainRepository @Inject constructor(
         }
     }.flowOn(Dispatchers.IO)
 
+    /**
+     * give to id return fetching artist details.
+     * @param id, artistId
+     * @return Result.Error or Result.Succes(List<ArtistData>)
+     * */
+
+    fun fetchArtistDetails( artistId:String
+    ) = flow {
+        emit( Result.Loading )
+        val response = deezerClient.fetchArtistDetails(artistId).await()
+        Timber.d("response : $response")
+        if(response!=null){
+            emit(Result.Succes(response))
+        }else{
+            /* fake call */
+            delay(1500)
+            emit(Result.Error)
+        }
+    }.flowOn(Dispatchers.IO)
+
 }

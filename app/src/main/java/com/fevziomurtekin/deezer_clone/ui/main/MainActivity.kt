@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.core.DataBindingActivity
+import com.fevziomurtekin.deezer_clone.core.Env
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -62,12 +63,13 @@ class MainActivity : DataBindingActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             var name = getString(R.string.app_name)
             arguments?.let {
-                name = it["name"].toString()
+                name = it[Env.BUND_NAME].toString()
             }
 
             when(destination.id){
                         R.id.genre->{ materialToolbar.title = getString(R.string.app_name) }
                         R.id.genre_list->{ materialToolbar.title = name }
+                        R.id.action_artist_details->{ materialToolbar.title = name }
                         R.id.search->{ materialToolbar.title = getString(R.string.search) }
                         R.id.favorites->{ materialToolbar.title = getString(R.string.favorites) }
 

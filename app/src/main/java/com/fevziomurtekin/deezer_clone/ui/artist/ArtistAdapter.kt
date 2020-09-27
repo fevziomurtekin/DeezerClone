@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
@@ -30,10 +31,10 @@ class ArtistAdapter: RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>(){
                     ?: return@setOnClickListener
 
                 it.findNavController().navigate(
-                    R.id.action_genre_list,
+                    R.id.action_artist_details,
                     bundleOf(
-                        Env.BUND_ID to items[position].id
-                        , Env.BUND_NAME to items[position].name
+                        Env.BUND_ID to items[position].id,
+                        Env.BUND_NAME to items[position].name
                     )
                 )
             }
