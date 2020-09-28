@@ -10,19 +10,19 @@ data class AlbumData(
     val explicit_content_cover: Int,
     val explicit_content_lyrics: Int,
     val explicit_lyrics: Boolean,
-    val id: String,
-    val isrc: String,
-    val link: String,
-    val md5_image: String,
-    val preview: String,
-    val rank: String,
+    val id: String?="",
+    val isrc: String?="",
+    val link: String?="",
+    val md5_image: String?="",
+    val preview: String?="",
+    val rank: String?="",
     val readable: Boolean,
-    val title: String,
-    val title_short: String,
-    val title_version: String,
+    val title: String?="",
+    val title_short: String?="",
+    val title_version: String?="",
     val track_position: Int,
     val type: String,
-    val def_img:String="https://www.ssbwiki.com/images/2/29/Music.svg"
+    val def_img:String="https://www.iconfinder.com/data/icons/social-media-circle-flat-1/1024/itunes-01-01-64.png"
 ){
     fun durationToTime(){
         val minute = (duration.toInt()) / 60

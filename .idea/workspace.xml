@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="bindin" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -32,8 +33,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234f581a-1b9d-415e-ad7a-003f8b83593c" name="Default Changelist" comment="search fragment added.">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/artistdetails/detail/ArtistDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/artistdetails/detail/ArtistDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/data/albumdetails/AlbumData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -450,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601249157107</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary=" fix #5 bug">
+      <created>1601282843116</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1601282843116</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,7 +502,8 @@
     <MESSAGE value="created ArtistDetail/ArtistAlbum/ArtistRelated pages. Fixed some bugs." />
     <MESSAGE value="created Albumdetails page." />
     <MESSAGE value="search fragment added." />
-    <option name="LAST_COMMIT_MESSAGE" value="search fragment added." />
+    <MESSAGE value=" fix #5 bug" />
+    <option name="LAST_COMMIT_MESSAGE" value=" fix #5 bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="408" y="29" width="539" height="739" key="#Auto_Import" timestamp="1601105757557">
@@ -545,22 +566,22 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1601211941574" />
-    <state width="1320" height="102" key="GridCell.Tab.0.bottom" timestamp="1601282774249">
+    <state width="1320" height="102" key="GridCell.Tab.0.bottom" timestamp="1601283787051">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="102" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601282774249" />
-    <state width="1320" height="102" key="GridCell.Tab.0.center" timestamp="1601282774248">
+    <state width="1320" height="102" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601283787051" />
+    <state width="1320" height="102" key="GridCell.Tab.0.center" timestamp="1601283787050">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="102" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601282774248" />
-    <state width="1320" height="102" key="GridCell.Tab.0.left" timestamp="1601282774247">
+    <state width="1320" height="102" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601283787050" />
+    <state width="1320" height="102" key="GridCell.Tab.0.left" timestamp="1601283787050">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="102" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601282774247" />
-    <state width="1320" height="102" key="GridCell.Tab.0.right" timestamp="1601282774248">
+    <state width="1320" height="102" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601283787050" />
+    <state width="1320" height="102" key="GridCell.Tab.0.right" timestamp="1601283787051">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="102" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601282774248" />
+    <state width="1320" height="102" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601283787051" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601065952871">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -581,13 +602,13 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="515" y="171" width="325" height="462" key="refactoring.ChangeSignatureDialog/0.29.1366.739@0.29.1366.739" timestamp="1601141224145" />
-    <state x="347" y="174" key="run.anything.popup" timestamp="1601194014395">
+    <state x="347" y="174" key="run.anything.popup" timestamp="1601283527865">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="347" y="174" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1601194014395" />
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601282457564">
+    <state x="347" y="174" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1601283527865" />
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601282876333">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601282457564" />
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601282876333" />
   </component>
 </project>

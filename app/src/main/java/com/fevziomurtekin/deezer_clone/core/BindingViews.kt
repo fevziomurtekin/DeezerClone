@@ -40,6 +40,7 @@ fun bindLoadImageUrl(view: ImageView, url: String) {
     Timber.d("Binding url : $url ")
     view.load(url){
         crossfade(true)
+        scale(Scale.FIT)
         placeholder(R.color.colorPrimary)
         transformations(BlurTransformation(view.context,6f,0.3f))
     }
