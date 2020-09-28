@@ -74,7 +74,7 @@ class ArtistDetailsFragment : DataBindingFragment() {
 
 class ADCategories(fragmentManager: FragmentManager,
     val items:MutableList<String>,val id:String
-):FragmentPagerAdapter(fragmentManager){
+):FragmentPagerAdapter(fragmentManager,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 
     override fun getItem(position: Int): Fragment = when(position){
         0-> ArtistAlbumsFragment(id)
@@ -84,6 +84,8 @@ class ADCategories(fragmentManager: FragmentManager,
     override fun getCount(): Int = items.size
 
     override fun getPageTitle(position: Int): CharSequence? = items[position]
+
+    override fun getItemId(position: Int): Long =  View.generateViewId().toLong()
 
 
 }
