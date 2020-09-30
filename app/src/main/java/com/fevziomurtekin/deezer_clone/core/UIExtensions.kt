@@ -2,14 +2,13 @@ package com.fevziomurtekin.deezer_clone.core
 
 import android.app.Activity
 import android.content.Context
-import android.provider.Settings.Global.getString
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.fevziomurtekin.deezer_clone.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 /** Show dialogs & snackbar & Toast  **/
@@ -22,7 +21,7 @@ object UIExtensions {
     the snackbar, such as a button that was clicked, or a card that was swiped.
      * @param message, error message.
      * */
-    fun showSnackBar(view:View,message:String) =
+    fun showSnackBar(view: View, message: String) =
             Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
                     .show()
 
@@ -32,14 +31,13 @@ object UIExtensions {
      * @param context, Activity type.
      * hiding keyboard.
      * */
-    fun hideKeyboard(context: Activity) {
+    fun hideKeyboard(view:View,activity: Activity) {
         try {
-            GlobalScope.async {
-                delay(1000)
-                val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(context.currentFocus!!.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-            }
+            view.clearFocus()
+            val im = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            im.hideSoftInputFromWindow(view.windowToken,0)
         } catch (e: Exception) {
+            Timber.d("hideKeyboard : ${e.message}")
         }
     }
 }

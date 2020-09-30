@@ -1,5 +1,7 @@
 package com.fevziomurtekin.deezer_clone.core
 
+import android.widget.EditText
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.LiveData
@@ -109,7 +111,6 @@ fun bindingAlbumTracksList(view:RecyclerView, results:LiveData<Result<Any>>) {
 fun bindingRecentSeach(view:RecyclerView, results:LiveData<List<SearchQuery>>) {
     Timber.d("binding recentData : ${results.value}")
     if(!results.value.isNullOrEmpty()) {
-        Timber.d(" if içi binding recentData : ${results.value}")
         (view.adapter as RecentSearchAdapter).addRecentSearch(((results.value) as List<SearchQuery>))
     }
 }
@@ -120,8 +121,13 @@ fun bindingSearchAlbum(view:RecyclerView, results:LiveData<Result<Any>>) {
         Result.Loading, Result.Error -> {/* Nothing */
         }
         is Result.Succes -> {
-            Timber.d("result : succes isSplash : false")
+            Timber.d("adapterSearchAlbum")
             (view.adapter as SearchAlbumAdapter).addAlbumSearch(((results.value) as Result.Succes<List<SearchData>>).data)
         }
     }
+}
+
+@BindingAdapter("onEditorActionListener")
+fun bindOnEditorActionListener(editText: EditText, editorActionListener: TextView.OnEditorActionListener) {
+    editText.setOnEditorActionListener(editorActionListener)
 }

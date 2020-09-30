@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="@{search.q}"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         tools:text="selam"
         android:textSize="14sp"
         android:padding="10dp"

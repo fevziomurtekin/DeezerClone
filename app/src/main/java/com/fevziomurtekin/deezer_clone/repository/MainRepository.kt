@@ -151,6 +151,7 @@ class MainRepository @Inject constructor(
      * @return List<SearchQuery>?
      * */
     fun fetchRecentSearch()= flow {
+        Timber.d(" --------- fetchRecentSearch ---------")
         val response = deezerDao.getQueryList()
         Timber.d("response : $response")
         if(!response.isNullOrEmpty()){ emit(response) }
@@ -168,7 +169,7 @@ class MainRepository @Inject constructor(
      * @return Result.Error or Result.Succes(List<SearchData>)
      * */
     fun fetchSearch(query:String) = flow{
-        Timber.d("fetchSearch : $query")
+        Timber.d(" --------- fetchSearch ---------")
         emit(Result.Loading)
         insertSearch(SearchQuery(q=query))
         val response = deezerClient.fetchSearchAlbum(query).await()
@@ -180,7 +181,7 @@ class MainRepository @Inject constructor(
             delay(1500)
             emit(Result.Error)
         }
-    }
+    }.flowOn(Dispatchers.IO)
 
 
 }

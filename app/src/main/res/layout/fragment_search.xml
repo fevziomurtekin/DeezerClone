@@ -5,10 +5,6 @@
     <data>
 
         <variable
-            name="query"
-            type="java.lang.String" />
-
-        <variable
             name="vm"
             type="com.fevziomurtekin.deezer_clone.ui.search.SearchViewModel" />
 
@@ -35,13 +31,15 @@
             app:layout_constraintRight_toRightOf="parent"
             android:imeOptions="actionSearch"
             android:inputType="text"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             app:layout_constraintWidth_percent="0.9"
             android:lines="1"
             android:hint="@string/searching"
             android:background="@drawable/edt_bg"
-            app:actionSearch="@{vm}"
             android:elevation="5dp"
             android:padding="15dp"
+            app:onEditorActionListener="@{vm.editorActionListener}"
             android:layout_marginTop="10dp"
             />
 
@@ -61,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:fontFamily="sans-serif-medium"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
                 android:text="@string/recent_search"
                 android:layout_margin="10dp"
                 />

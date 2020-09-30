@@ -95,7 +95,7 @@ fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
     }
 }
 
-@BindingAdapter("actionSearch")
+/*@BindingAdapter("actionSearch")
 fun actionSearch(view: View,viewModel:ViewModel){
     val searchViewModel = viewModel as SearchViewModel
     (view as AppCompatEditText).setOnEditorActionListener { v, actionId, event ->
@@ -110,4 +110,4 @@ fun actionSearch(view: View,viewModel:ViewModel){
 
     }
 
-}
+}*/

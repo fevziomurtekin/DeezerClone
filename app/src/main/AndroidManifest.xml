@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.deezer_clone">
-        <activity android:name="com.fevziomurtekin.deezer_clone.ui.main.MainActivity">
+        <activity android:name="com.fevziomurtekin.deezer_clone.ui.main.MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

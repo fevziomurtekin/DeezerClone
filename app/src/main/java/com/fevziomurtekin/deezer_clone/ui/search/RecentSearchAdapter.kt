@@ -11,7 +11,12 @@ import com.fevziomurtekin.deezer_clone.databinding.ItemSearchBinding
 import timber.log.Timber
 
 
-class RecentSearchAdapter: RecyclerView.Adapter<RecentSearchAdapter.RecentSearchViewHolder>() {
+class RecentSearchAdapter(var listener:RecentSearchListener):
+    RecyclerView.Adapter<RecentSearchAdapter.RecentSearchViewHolder>(){
+
+    interface RecentSearchListener{
+        fun recentSearchListener(query: String)
+    }
 
     private val items: MutableList<SearchQuery> = mutableListOf()
 
@@ -21,12 +26,12 @@ class RecentSearchAdapter: RecyclerView.Adapter<RecentSearchAdapter.RecentSearch
                 .inflate<ItemSearchBinding>(inflater, R.layout.item_search, parent, false)
 
         return RecentSearchViewHolder(binding).apply {
-            val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }.let {
-                it?:0
-            }
-
             binding.root.setOnClickListener {
-                Toast.makeText(binding.root.context,"Searching ${items[position].q}", Toast.LENGTH_LONG).show()}
+                val position = adapterPosition
+                Timber.d("position : $position")
+                listener.recentSearchListener(items[position].q.toString())
+                Toast.makeText(binding.root.context,"Searching ${items[position].q}", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

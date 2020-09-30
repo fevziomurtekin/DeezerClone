@@ -60,6 +60,7 @@
                 app:menu="@menu/bottom_navigation_menu"
                 app:labelVisibilityMode="unlabeled"
                 app:itemIconTint="@android:color/white"
+                app:itemIconSize="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
 
