@@ -45,7 +45,7 @@ object Versions {
 
     //Test
     val junit_version = "4.12"
-    val mockito_version = "2.8.47"
+    val mockito_version = "2.2.0"
     val mockK_version = "1.9.3"
     val truth_version = "1.3.0-alpha01"
     val core_testing_version = "1.3.0-alpha01"

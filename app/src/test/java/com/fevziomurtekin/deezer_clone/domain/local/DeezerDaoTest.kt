@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer_clone.domain.local
 
+import com.fevziomurtekin.deezer_clone.core.MockUtil
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import kotlinx.coroutines.runBlocking
@@ -24,7 +25,7 @@ class DeezerDaoTest:LocalDatabase(){
 
     @Test
     fun insertAndLoadGenreList() = runBlocking {
-        val mockDataList  = genres
+        val mockDataList  = MockUtil.genres
         deezerDao.insertGenreList(mockDataList)
 
         // checking insert procces
@@ -32,16 +33,16 @@ class DeezerDaoTest:LocalDatabase(){
         assertThat(loadFromDB.toString(),`is`(mockDataList.toString()))
 
         // checking first data.
-        val mockData = data
+        val mockData = MockUtil.data
         assertThat(loadFromDB[0].toString(),`is`(mockData.toString()))
     }
 
     @Test
     fun insertAndLoadSearchQuery() = runBlocking{
-        val mockSearchData = searchData
+        val mockSearchData = MockUtil.searchData
         deezerDao.insertQuery(mockSearchData)
 
-        val mockSearchList = searchList
+        val mockSearchList = MockUtil.searchList
 
         // checking insert procces
         val loadFromDB = deezerDao.getQueryList()
@@ -52,22 +53,6 @@ class DeezerDaoTest:LocalDatabase(){
     }
 
 
-    companion object{
-        val data = Data("0",
-            "All",
-            "https://api.deezer.com/genre/0/image",
-            "https://cdns-images.dzcdn.net/images/misc//500x500-000000-80-0-0.jpg",
-            "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
-            "https://cdns-images.dzcdn.net/images/misc//56x56-000000-80-0-0.jpg",
-            "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
-            "genre"
-        )
 
-        val genres = listOf(data)
-
-        val searchData = SearchQuery("1","ezhel",12345.toLong())
-
-        val searchList = listOf(searchData)
-    }
 
 }

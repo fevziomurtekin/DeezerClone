@@ -139,4 +139,5 @@ dependencies{
     testImplementation(Dependencies.mockServer)
     testImplementation(Dependencies.coroutines_test)
     testImplementation(Dependencies.robolectric)
+    testImplementation(Dependencies.mockitoKotlin)
 }

@@ -1,14 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a1338d83a6f626d461cd7134ff151b08/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f6d4bb5f30e7cf26109ba45edabf45f2/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b6836c3b77515857f0cdac5f118f9ab0/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfa9c79ec0e6e89164d287d8218022d1/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/27d348ffc1cd47e3046b6dfcec9731f8/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff8997665f81e495cb35c77d210939d6/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff8997665f81e495cb35c77d210939d6/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff8997665f81e495cb35c77d210939d6/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb97df6e2fd9166e71adf4660c7d1aef/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb97df6e2fd9166e71adf4660c7d1aef/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb97df6e2fd9166e71adf4660c7d1aef/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
