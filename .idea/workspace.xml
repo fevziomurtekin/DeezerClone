@@ -43,23 +43,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6-rc-6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingAdapters.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/BindingViews.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/UIExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/core/UIExtensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/repository/MainRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/repository/MainRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/RecentSearchAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/RecentSearchAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/edt_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edt_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchAlbumAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer_clone/ui/search/SearchAlbumAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/6.6-rc-6/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -505,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601463298425</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Search Page Completed.">
+      <created>1601483439819</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1601483439819</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -540,7 +535,8 @@
     <MESSAGE value=" fix #5 bug" />
     <MESSAGE value="ShimmerLayout was included in the project." />
     <MESSAGE value="~" />
-    <option name="LAST_COMMIT_MESSAGE" value="~" />
+    <MESSAGE value="Search Page Completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Search Page Completed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="408" y="29" width="539" height="739" key="#Auto_Import" timestamp="1601105757557">
@@ -603,22 +599,22 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="466" y="156" width="424" height="491" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1601410257951" />
-    <state width="1320" height="121" key="GridCell.Tab.0.bottom" timestamp="1601483199099">
+    <state width="1320" height="121" key="GridCell.Tab.0.bottom" timestamp="1601483855414">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="121" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601483199099" />
-    <state width="1320" height="121" key="GridCell.Tab.0.center" timestamp="1601483199098">
+    <state width="1320" height="121" key="GridCell.Tab.0.bottom/0.29.1366.739@0.29.1366.739" timestamp="1601483855414" />
+    <state width="1320" height="121" key="GridCell.Tab.0.center" timestamp="1601483855413">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="121" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601483199098" />
-    <state width="1320" height="121" key="GridCell.Tab.0.left" timestamp="1601483199098">
+    <state width="1320" height="121" key="GridCell.Tab.0.center/0.29.1366.739@0.29.1366.739" timestamp="1601483855413" />
+    <state width="1320" height="121" key="GridCell.Tab.0.left" timestamp="1601483855413">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="121" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601483199098" />
-    <state width="1320" height="121" key="GridCell.Tab.0.right" timestamp="1601483199099">
+    <state width="1320" height="121" key="GridCell.Tab.0.left/0.29.1366.739@0.29.1366.739" timestamp="1601483855413" />
+    <state width="1320" height="121" key="GridCell.Tab.0.right" timestamp="1601483855413">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state width="1320" height="121" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601483199099" />
+    <state width="1320" height="121" key="GridCell.Tab.0.right/0.29.1366.739@0.29.1366.739" timestamp="1601483855413" />
     <state width="1320" height="172" key="GridCell.Tab.1.bottom" timestamp="1601472834712">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -639,10 +635,10 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.29.1366.739@0.29.1366.739" timestamp="1601065952871" />
-    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601249161611">
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601483455167">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2/0.29.1366.739@0.29.1366.739" timestamp="1601249161611" />
+    <state x="278" y="134" width="800" height="535" key="Vcs.Push.Dialog.v2/0.29.1366.739@0.29.1366.739" timestamp="1601483455167" />
     <state x="293" y="29" width="770" height="739" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601128713916">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -659,9 +655,9 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="347" y="174" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1601457037315" />
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601481588028">
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup" timestamp="1601483805259">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601481588028" />
+    <state x="347" y="41" width="672" height="676" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1601483805259" />
   </component>
 </project>

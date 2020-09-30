@@ -3,9 +3,12 @@ package com.fevziomurtekin.deezer_clone.ui.search
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
+import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.data.search.SearchData
 import com.fevziomurtekin.deezer_clone.databinding.ItemSearchAlbumBinding
 import timber.log.Timber
@@ -21,12 +24,17 @@ class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumVie
                 .inflate<ItemSearchAlbumBinding>(inflater, R.layout.item_search_album, parent, false)
 
         return SearchAlbumViewHolder(binding).apply {
-            val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }.let {
-                it?:0
-            }
 
-           /* binding.root.setOnClickListener {
-                Toast.makeText(binding.root.context,"Searching ${items[position].q}", Toast.LENGTH_LONG).show()}*/
+            binding.root.setOnClickListener {it->
+                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION } ?: 0
+
+                it.findNavController().navigate(
+                        R.id.action_album_details,
+                        bundleOf(
+                                Env.BUND_ID to items[position].id,
+                                Env.BUND_NAME to items[position].title
+                        ))
+            }
         }
     }
 

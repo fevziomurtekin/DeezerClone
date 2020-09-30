@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="unexpected_error">An unexpected error was encountered.</string>
-    <string name="retry">Retry</string>
-</resources>
