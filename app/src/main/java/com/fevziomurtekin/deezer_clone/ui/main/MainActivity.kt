@@ -66,13 +66,15 @@ class MainActivity : DataBindingActivity() {
                 name = it[Env.BUND_NAME].toString()
             }
 
+            Timber.d("name : $name")
+
             when(destination.id){
                         R.id.genre->{ materialToolbar.title = getString(R.string.app_name) }
                         R.id.search->{ materialToolbar.title = getString(R.string.search) }
                         R.id.favorites->{ materialToolbar.title = getString(R.string.favorites) }
-                        R.id.genre_list->{ materialToolbar.title = name }
-                        R.id.action_artist_details->{ materialToolbar.title = name }
-                        R.id.action_album_details->{ materialToolbar.title = name }
+                        R.id.genre_list,
+                        R.id.artist_details,
+                        R.id.album_details,->{ materialToolbar.title = name }
                     }
                 }
 
