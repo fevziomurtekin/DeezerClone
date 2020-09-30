@@ -1,14 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.dagger:hilt-android:2.28.3-alpha@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7df67fb9885106346d400804445b8e29/jetified-hilt-android-2.28.3-alpha/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96ea440e78bf0bee95ae029a869d4f3c/jetified-hilt-android-2.28.3-alpha/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1b5f66394562a17b844ba60fc1dcac05/jetified-hilt-android-2.28.3-alpha/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e98a2150b76441253ce686b8bdcaefd/jetified-hilt-android-2.28.3-alpha/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3e28aba9a5bb5515cba313c9ea78eb18/jetified-hilt-android-2.28.3-alpha/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2828218a281c89422359e6b41c380532/jetified-hilt-android-2.28.3-alpha/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2828218a281c89422359e6b41c380532/jetified-hilt-android-2.28.3-alpha/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2828218a281c89422359e6b41c380532/jetified-hilt-android-2.28.3-alpha/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96fbbf7e2fd4216213e7be1c6affd419/jetified-hilt-android-2.28.3-alpha/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96fbbf7e2fd4216213e7be1c6affd419/jetified-hilt-android-2.28.3-alpha/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96fbbf7e2fd4216213e7be1c6affd419/jetified-hilt-android-2.28.3-alpha/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android/2.28.3-alpha/abd30c79a1dd69ef0768d1cd7e5b4ee9bddc4d0/hilt-android-2.28.3-alpha-javadoc.jar!/" />
