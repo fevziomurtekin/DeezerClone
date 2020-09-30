@@ -102,9 +102,6 @@ dependencies{
     testImplementation(Dependencies.room_testing)
     /** timber **/
     implementation(Dependencies.timber)
-    /** rx **/
-    implementation(Dependencies.rxjava)
-    implementation(Dependencies.rxandroid)
     /** hilt **/
     implementation(Dependencies.hilt)
     implementation(Dependencies.hilt_androidx)
@@ -131,4 +128,14 @@ dependencies{
     implementation(Dependencies.coilLib)
     /** Shimmer layout */
     implementation(Dependencies.shimmerLib)
+
+    /* android test library  */
+    androidTestImplementation(Dependencies.test_runner)
+    androidTestImplementation(Dependencies.espresso)
+    testImplementation(Dependencies.testTruth)
+    testImplementation(Dependencies.mockK)
+    testImplementation(Dependencies.coreTesting)
+    testImplementation(Dependencies.jUnit)
+    testImplementation(Dependencies.mockServer)
+    testImplementation(Dependencies.coroutines_test)
 }

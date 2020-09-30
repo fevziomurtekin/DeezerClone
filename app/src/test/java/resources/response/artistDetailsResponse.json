@@ -1,0 +1,16 @@
+{
+  "id": "8354140",
+  "name": "Ezhel",
+  "link": "https://www.deezer.com/artist/8354140",
+  "share": "https://www.deezer.com/artist/8354140?utm_source=deezer&utm_content=artist-8354140&utm_term=0_1601497036&utm_medium=web",
+  "picture": "https://api.deezer.com/artist/8354140/image",
+  "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/56x56-000000-80-0-0.jpg",
+  "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/250x250-000000-80-0-0.jpg",
+  "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/500x500-000000-80-0-0.jpg",
+  "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/1000x1000-000000-80-0-0.jpg",
+  "nb_album": 20,
+  "nb_fan": 565750,
+  "radio": true,
+  "tracklist": "https://api.deezer.com/artist/8354140/top?limit=50",
+  "type": "artist"
+}

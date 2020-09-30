@@ -31,7 +31,7 @@
                 android:id="@+id/iv_album"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:scaleType="center"
+                android:scaleType="centerInside"
                 android:padding="5dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -39,11 +39,43 @@
                 app:layout_constraintWidth_percent="0.3"
                 app:bindImageUrl="@{album.def_img}"
                 />
+
+            <LinearLayout
+                android:id="@+id/lv_icons"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.15"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_favorite_border"
+                    android:background="@color/colorWhite"
+                    android:id="@+id/ibn_fav"
+                    android:layout_marginBottom="2.5dp"
+                    android:padding="5dp"
+                    />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_share"
+                    android:background="@color/colorWhite"
+                    android:id="@+id/ibn_share"
+                    android:layout_marginTop="2.5dp"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintLeft_toRightOf="@id/iv_album"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/lv_icons"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -89,35 +121,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintWidth_percent="0.15"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="10dp">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_favorite_border"
-                    android:background="@color/colorWhite"
-                    android:id="@+id/ibn_fav"
-                    android:layout_marginBottom="2.5dp"
-                    android:padding="5dp"
-                    />
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_share"
-                    android:background="@color/colorWhite"
-                    android:id="@+id/ibn_share"
-                    android:layout_marginTop="2.5dp"
-                    android:padding="5dp"
-                    />
-
-            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

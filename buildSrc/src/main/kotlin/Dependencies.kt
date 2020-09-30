@@ -41,10 +41,6 @@ object Dependencies {
     /* Timber */
     val timber              = "com.jakewharton.timber:timber:${Versions.timber_version}"
 
-    /*Rx*/
-    val rxjava              = "io.reactivex.rxjava2:rxjava:${Versions.rxjava_version}"
-    val rxandroid           = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid_version}"
-
     /*Android Hilt && Dagger */
     val hilt                = "com.google.dagger:hilt-android:${Versions.hilt_version}"
     val hilt_kapt           = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
@@ -54,8 +50,14 @@ object Dependencies {
     val hilt_test           = "com.google.dagger:hilt-android-testing:${Versions.hilt_version}"
 
     /* Android Test */
+    val test_runner         = "androidx.test:runner:${Versions.test_runner_version}"
+    val espresso            = "androidx.test.espresso:espresso-core:${Versions.espresso_version}"
+    val testTruth           = "androidx.test.ext:truth:${Versions.truth_version}"
+    val mockK               = "io.mockk:mockk:${Versions.mockK_version}"
+    val coreTesting         = "androidx.arch.core:core-testing:${Versions.core_testing_version}"
     val jUnit               = "junit:junit:${Versions.junit_version}"
     val mockito             = "org.mockito:mockito-core:${Versions.mockito_version}"
+    val mockServer          = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp3_version}"
 
     /* Navigation */
     val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
@@ -71,6 +73,7 @@ object Dependencies {
     val coilLib             = "io.coil-kt:coil:${Versions.coil_version}"
 
     /* Coroutines */
+    val coroutines_test     = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines_android_version}"
     val coroutines_android  = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android_version}"
     val coroutines_core_lib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_android_version}"
     val coroutines_adapter  = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutines_adapter_version}"
