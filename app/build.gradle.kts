@@ -129,4 +129,6 @@ dependencies{
     implementation(Dependencies.kotlin_serialization)
     /** coil **/
     implementation(Dependencies.coilLib)
+    /** Shimmer layout */
+    implementation(Dependencies.shimmerLib)
 }

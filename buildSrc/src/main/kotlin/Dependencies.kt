@@ -67,7 +67,7 @@ object Dependencies {
     /* Other libs */
     val circularImageLib    = "de.hdodenhof:circleimageview:${Versions.circular_imageview_version}"
 
-    /*Ktor*/
+    /* Coil */
     val coilLib             = "io.coil-kt:coil:${Versions.coil_version}"
 
     /* Coroutines */
@@ -76,5 +76,8 @@ object Dependencies {
     val coroutines_adapter  = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutines_adapter_version}"
 
     val multidex_lib        = "com.android.support:multidex:${Versions.multidexVersion}"
+
+    /* Shimmer Layout */
+    val shimmerLib          = "com.facebook.shimmer:shimmer:${Versions.shimmer_version}"
 
 }

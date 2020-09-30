@@ -58,5 +58,7 @@ object Versions {
     /* coil version */
     val coil_version = "1.0.0-rc3"
 
+    val shimmer_version = "0.5.0"
+
 
 }

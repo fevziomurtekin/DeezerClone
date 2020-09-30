@@ -14,11 +14,22 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_main"
-        android:background="@color/colorPrimary">
+        android:id="@+id/lv_main">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_auto_start="true"
+            app:isGoneLayout="@{vm.result}"
+            app:shimmer_highlight_color="@color/colorWhiteCard"
+            android:orientation="vertical">
+            <include layout="@layout/shimmer_grid_layout"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
@@ -28,6 +39,7 @@
             android:padding="6dp"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
+            app:isGoneLayout="@{vm.result}"
             app:adapter="@{adapter}"
             app:adapterArtistList="@{vm.result}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -35,6 +47,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:spanCount="2"
             tools:listitem="@layout/item_artist" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -15,22 +15,34 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/lv_album_details"
-        android:background="@color/colorPrimary">
+        android:id="@+id/lv_album_details">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/shimmerLayout"
+            app:shimmer_highlight_color="@color/colorWhiteCard"
+            app:isGoneLayout="@{vm.result}"
+            android:padding="6dp">
+            <include layout="@layout/shimmer_linear_layout"/>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
             android:padding="6dp"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
+            app:isGoneLayout="@{vm.result}"
             app:adapter="@{adapter}"
             app:adapterAlbumTracksList="@{vm.result}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -39,5 +51,5 @@
             android:orientation="vertical"
             tools:listitem="@layout/item_genre" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

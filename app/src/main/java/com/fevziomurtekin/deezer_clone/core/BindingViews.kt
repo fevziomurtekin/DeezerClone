@@ -71,18 +71,19 @@ fun bindGone(view:View, isGone:Boolean){
 /* search layout */
 @BindingAdapter("isGoneLayout")
 fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
-    Timber.d("bindingIsGoneLayout result : ${results.value}")
+    Timber.d("bindingIsGoneLayout ${view.id == R.id.recyclerView}  result : ${results.value}")
     if(results.value != null) {
         when (results.value) {
             Result.Loading, Result.Error -> {
                 when(view.id){
-                    R.id.lv_search_album->view.isGone = true
-                    else-> view.isGone = false
+                    R.id.shimmerLayout,
+                    R.id.lv_search_album->view.isGone = false
+                    else-> view.isGone = true
                 }
-                view.isGone = false
             }
             is Result.Succes -> {
                 when(view.id){
+                    R.id.shimmerLayout,
                     R.id.lv_recent_search-> view.isGone = true
                     else-> view.isGone = false
                 }
