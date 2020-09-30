@@ -56,7 +56,7 @@ object Dependencies {
     val mockK               = "io.mockk:mockk:${Versions.mockK_version}"
     val coreTesting         = "androidx.arch.core:core-testing:${Versions.core_testing_version}"
     val jUnit               = "junit:junit:${Versions.junit_version}"
-    val mockito             = "org.mockito:mockito-core:${Versions.mockito_version}"
+    val robolectric         = "org.robolectric:robolectric:${Versions.robolectric_version}"
     val mockServer          = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp3_version}"
 
     /* Navigation */

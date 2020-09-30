@@ -13,8 +13,6 @@ import org.junit.Test
 import java.io.IOException
 import org.hamcrest.MatcherAssert.assertThat
 
-/*
-fun fetchSearchAlbum(@Query("q") q:String)*/
 
 @ExperimentalCoroutinesApi
 class DeezerServiceTest : ApiAbstract<DeezerService>() {

@@ -10,7 +10,7 @@ import kotlin.random.Random
 @Serializable
 data  class SearchQuery (
     @PrimaryKey
-    val id:String= java.util.UUID.randomUUID().toString(),
+    var id:String= java.util.UUID.randomUUID().toString(),
     var q:String?="",
     var time:Long=System.currentTimeMillis()
 )

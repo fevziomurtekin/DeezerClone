@@ -7,12 +7,12 @@ import kotlinx.serialization.Serializable
 @Entity
 @Serializable
 data class Data(
-    @PrimaryKey val id: String,
-    val name: String?,
-    val picture: String?,
-    val picture_big: String?,
-    val picture_medium: String?,
-    val picture_small: String?,
-    val picture_xl: String?,
-    val type: String?
+    @PrimaryKey var id: String,
+    var name: String?,
+    var picture: String?,
+    var picture_big: String?,
+    var picture_medium: String?,
+    var picture_small: String?,
+    var picture_xl: String?,
+    var type: String?
 )

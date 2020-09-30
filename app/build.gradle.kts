@@ -138,4 +138,5 @@ dependencies{
     testImplementation(Dependencies.jUnit)
     testImplementation(Dependencies.mockServer)
     testImplementation(Dependencies.coroutines_test)
+    testImplementation(Dependencies.robolectric)
 }
