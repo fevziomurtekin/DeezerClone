@@ -20,7 +20,7 @@ interface DeezerService{
             :Deferred<GenreResponse>
 
     @GET("genre/{genreId}/artists")
-    fun fetchArtistList(@Path("genreId") genreId:String)
+    suspend fun fetchArtistList(@Path("genreId") genreId:String)
             :Deferred<ArtistsResponse>
 
     @GET("artist/{artistId}")

@@ -39,7 +39,7 @@ class DeezerDaoTest:LocalDatabase(){
 
     @Test
     fun insertAndLoadSearchQuery() = runBlocking{
-        val mockSearchData = MockUtil.searchData
+        val mockSearchData = MockUtil.recentData
         deezerDao.insertQuery(mockSearchData)
 
         val mockSearchList = MockUtil.searchList

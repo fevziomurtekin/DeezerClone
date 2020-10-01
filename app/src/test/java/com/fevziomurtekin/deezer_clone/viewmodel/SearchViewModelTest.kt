@@ -51,8 +51,8 @@ class SearchViewModelTest {
 
     @Test
     fun fetchSearchTest() = runBlocking {
-        val mockData = MockUtil.searchData
-        val mockList = listOf(MockUtil.recentData)
+        val mockData = MockUtil.recentData
+        val mockList = listOf(MockUtil.searchData)
         whenever(deezerDao.getQueryList()).thenReturn(listOf(mockData))
 
         val observer : Observer<Result<List<SearchData>>> = mock()

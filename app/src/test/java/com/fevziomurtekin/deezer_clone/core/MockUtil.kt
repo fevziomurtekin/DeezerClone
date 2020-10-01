@@ -23,9 +23,9 @@ object MockUtil {
 
     val genres = listOf(data)
 
-    val searchData = SearchQuery("1","ezhel",12345.toLong())
+    val recentData = SearchQuery("1","ezhel",12345.toLong())
 
-    val searchList = listOf(searchData)
+    val searchList = listOf(recentData)
 
     val album = AlbumData(
         id="3135553",readable = true,title = "One More Time",title_short = "One More Time",title_version = "",
@@ -75,7 +75,7 @@ object MockUtil {
         nb_album = 20,nb_fan =565833
     )
 
-    val recentData = SearchData(
+    val searchData = SearchData(
         id = "51174732",title = "Müptezhel" ,link = "https://www.deezer.com/album/51174732",
         cover = "https://api.deezer.com/album/51174732/image",
         cover_small = "https://e-cdns-images.dzcdn.net/images/cover/35d715873d3e8ae76a998f6bf38e1fa8/56x56-000000-80-0-0.jpg",
@@ -92,4 +92,9 @@ object MockUtil {
             tracklist = "https://api.deezer.com/artist/8354140/top?limit=50",type = "artist",link ="https://www.deezer.com/artist/8354140",
         ), tracklist = "https://api.deezer.com/album/51174732/tracks", explicit_lyrics = true, type = "album"
     )
+
+    val genreID = "116"
+    val artistID = "8354140"
+    val albumID = "51174732"
+    val query = "Ezhel"
 }
