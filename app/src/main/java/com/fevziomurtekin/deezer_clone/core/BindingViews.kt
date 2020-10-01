@@ -95,19 +95,3 @@ fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
     }
 }
 
-/*@BindingAdapter("actionSearch")
-fun actionSearch(view: View,viewModel:ViewModel){
-    val searchViewModel = viewModel as SearchViewModel
-    (view as AppCompatEditText).setOnEditorActionListener { v, actionId, event ->
-        return@setOnEditorActionListener when (actionId) {
-            EditorInfo.IME_ACTION_SEARCH -> {
-                //UIExtensions.hideKeyboard((view.rootView!!).context as Activity)
-                searchViewModel.fetchSearch(v.text.toString())
-                true
-            }
-            else -> false
-        }
-
-    }
-
-}*/

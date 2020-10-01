@@ -21,7 +21,7 @@ class MainRepository @Inject constructor(
      * fetching genres list.
      *  @return Result.Error or Result.Succes(Data)
      */
-    fun fetchGenreList(
+    suspend fun fetchGenreList(
     ) = flow {
         emit( Result.Loading )
         var genres = deezerDao.getGenreList()
@@ -47,7 +47,7 @@ class MainRepository @Inject constructor(
 
     /**
      * give to id return fetching artist list.
-     * @param id, genreId
+     * @param genreId, String
      * @return Result.Error or Result.Succes(List<ArtistData>)
      * */
     fun fetchArtistList( genreId:String
@@ -66,7 +66,7 @@ class MainRepository @Inject constructor(
 
     /**
      * give to id return fetching artist details.
-     * @param id, artistId
+     * @param artistId, String
      * @return Result.Error or Result.Succes(List<ArtistData>)
      * */
 
@@ -109,7 +109,7 @@ class MainRepository @Inject constructor(
 
     /**
      * give to id return fetching artist related.
-     * @param id, artistId
+     * @param artistId, String
      * @return Result.Error or Result.Succes(List<ArtistRelatedData>)
      * */
 
@@ -129,7 +129,7 @@ class MainRepository @Inject constructor(
 
     /**
      * give to id return fetching album tracks.
-     * @param id, albumID
+     * @param albumID, String
      * @return Result.Error or Result.Succes(List<AlbumData>)
      * */
 

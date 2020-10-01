@@ -140,4 +140,5 @@ dependencies{
     testImplementation(Dependencies.coroutines_test)
     testImplementation(Dependencies.robolectric)
     testImplementation(Dependencies.mockitoKotlin)
+    testImplementation(Dependencies.turbine)
 }
