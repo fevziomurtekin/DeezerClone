@@ -1,7 +1,6 @@
 package com.fevziomurtekin.deezer_clone.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.asLiveData
 import app.cash.turbine.test
 import com.fevziomurtekin.deezer_clone.core.MockUtil
 import com.fevziomurtekin.deezer_clone.core.Result
@@ -13,7 +12,6 @@ import com.fevziomurtekin.deezer_clone.data.artistdetails.*
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.data.genre.GenreResponse
 import com.fevziomurtekin.deezer_clone.data.search.SearchData
-import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import com.fevziomurtekin.deezer_clone.data.search.SearchResponse
 import com.fevziomurtekin.deezer_clone.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer_clone.domain.local.DeezerDao

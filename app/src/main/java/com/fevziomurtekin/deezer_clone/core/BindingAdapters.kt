@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistAlbumData
@@ -23,7 +22,6 @@ import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
 import com.fevziomurtekin.deezer_clone.ui.search.RecentSearchAdapter
 import com.fevziomurtekin.deezer_clone.ui.search.SearchAlbumAdapter
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 /**

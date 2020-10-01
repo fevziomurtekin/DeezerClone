@@ -1,30 +1,16 @@
 package com.fevziomurtekin.deezer_clone.core
 
-import android.app.Activity
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import android.widget.ImageView
-import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isGone
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import coil.Coil
 import coil.load
 import coil.size.Scale
 import coil.transform.BlurTransformation
-import coil.transform.CircleCropTransformation
 import com.fevziomurtekin.deezer_clone.R
-import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistDetailResponse
-import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
-import com.google.android.material.card.MaterialCardView
-import kotlinx.android.synthetic.main.activity_main.view.*
 import timber.log.Timber
-import com.fevziomurtekin.deezer_clone.core.Result
-import com.fevziomurtekin.deezer_clone.ui.search.SearchViewModel
 
 /**
  * Help in the development of this class, the application named 'Pokedex' @Skydoves user has helped.

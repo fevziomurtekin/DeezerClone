@@ -9,7 +9,7 @@ class DeezerClient @Inject constructor(
     fun fetchGenreList()
             = deezerService.fetchGenreList()
 
-    suspend fun fetchArtistList(genreId:String)
+    fun fetchArtistList(genreId:String)
             = deezerService.fetchArtistList(genreId)
 
     fun fetchArtistDetails(artistID: String)

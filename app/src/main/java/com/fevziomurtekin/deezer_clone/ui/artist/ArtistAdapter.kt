@@ -4,15 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
-import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.databinding.ItemArtistBinding
-import com.fevziomurtekin.deezer_clone.databinding.ItemGenreBinding
 import timber.log.Timber
 
 

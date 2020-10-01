@@ -8,11 +8,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.core.Env
-import com.fevziomurtekin.deezer_clone.data.artist.ArtistData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistRelatedData
-import com.fevziomurtekin.deezer_clone.databinding.ItemArtistBinding
 import com.fevziomurtekin.deezer_clone.databinding.ItemArtistRelatedBinding
-import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import timber.log.Timber
 
 
