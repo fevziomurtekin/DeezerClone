@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer_clone.repository
 
+import androidx.annotation.WorkerThread
 import com.fevziomurtekin.deezer_clone.domain.local.DeezerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow

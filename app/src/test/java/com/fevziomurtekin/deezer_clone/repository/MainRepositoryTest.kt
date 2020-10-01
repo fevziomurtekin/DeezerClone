@@ -1,17 +1,24 @@
 package com.fevziomurtekin.deezer_clone.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.asLiveData
+import com.fevziomurtekin.deezer_clone.core.MockUtil
+import com.fevziomurtekin.deezer_clone.core.Result
+import com.fevziomurtekin.deezer_clone.data.genre.Data
+import com.fevziomurtekin.deezer_clone.data.genre.GenreResponse
 import com.fevziomurtekin.deezer_clone.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer_clone.domain.local.DeezerDao
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerClient
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerService
 import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mockito.mock
 
 @ExperimentalCoroutinesApi
 class DetailRepositoryTest {
@@ -37,22 +44,32 @@ class DetailRepositoryTest {
 
     @Test
     fun fetchGenreListFromNetworkTest() = runBlocking {
+        val mockData = GenreResponse(MockUtil.genres)
+        val deferredData = CompletableDeferred(mockData)
+        whenever(deezerDao.getQueryList()).thenReturn(emptyList())
+        whenever(service.fetchGenreList()).thenReturn(deferredData)
 
+        /** core testing */
+       /* val result = repository.fetchGenreList().asLiveData().value
+        Assert.assertEquals(result, Result.Succes(MockUtil.genres))*/
 
-       /* val mockData = mockPokemonInfo()
-        whenever(pokemonInfoDao.getPokemonInfo(name_ = "bulbasaur")).thenReturn(null)
-        whenever(service.fetchPokemonInfo(name = "bulbasaur")).thenReturn(ApiResponse.of { Response.success(mockData) })
+        /** add to turbine library.*/
 
-        repository.fetchPokemonInfo(name = "bulbasaur", onSuccess = {}, onError = {}).test {
-            assertEquals(expectItem()?.id, mockData.id)
-            assertEquals(expectItem()?.name, mockData.name)
-            assertEquals(expectItem(), mockData)
-            expectComplete()
+       /*
+        repository.fetchPokemonList(
+        page = 0,
+        onSuccess = {},
+        onError = {}
+        ).test {
+        assertEquals(expectItem()[0].page, 0)
+        assertEquals(expectItem()[0].name, "bulbasaur")
+        assertEquals(expectItem(), mockPokemonList())
+        expectComplete()
         }
 
-        verify(pokemonInfoDao, atLeastOnce()).getPokemonInfo(name_ = "bulbasaur")
-        verify(service, atLeastOnce()).fetchPokemonInfo(name = "bulbasaur")
-        verify(pokemonInfoDao, atLeastOnce()).insertPokemonInfo(mockData)*/
+        verify(pokemonDao, atLeastOnce()).getPokemonList(page_ = 0)
+        verify(service, atLeastOnce()).fetchPokemonList()
+        verify(pokemonDao, atLeastOnce()).insertPokemonList(mockData.results)*/
     }
 
 

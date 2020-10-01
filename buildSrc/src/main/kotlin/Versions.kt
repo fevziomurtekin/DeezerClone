@@ -52,6 +52,7 @@ object Versions {
     val espresso_version = "3.3.0-alpha01"
     val test_runner_version = "1.3.0-alpha01"
     val robolectric_version = "4.4"
+    val turbine_version = "0.2.1"
 
     //other lib
     val circular_imageview_version = "3.0.0"

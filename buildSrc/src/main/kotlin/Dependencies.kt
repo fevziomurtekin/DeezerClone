@@ -59,6 +59,7 @@ object Dependencies {
     val robolectric         = "org.robolectric:robolectric:${Versions.robolectric_version}"
     val mockServer          = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp3_version}"
     val mockitoKotlin       = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockito_version}"
+    val turbine             = "app.cash.turbine:turbine:${Versions.turbine_version}"
 
     /* Navigation */
     val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
