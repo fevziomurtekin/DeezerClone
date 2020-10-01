@@ -56,7 +56,7 @@ class SearchViewModelTest {
         whenever(deezerDao.getQueryList()).thenReturn(listOf(mockData))
 
         val observer : Observer<Result<List<SearchData>>> = mock()
-        val fetchedData : LiveData<Result<List<SearchData>>> = mainRepository.fetchSearch("ezhel").asLiveData()
+        val fetchedData : LiveData<Result<List<SearchData>>> = mainRepository.fetchSearch(MockUtil.query).asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchingRecentSearch()

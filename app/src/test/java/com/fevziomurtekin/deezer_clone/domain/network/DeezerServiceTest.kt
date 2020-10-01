@@ -1,6 +1,7 @@
 package com.fevziomurtekin.deezer_clone.domain.network
 
 import com.fevziomurtekin.deezer_clone.core.ApiAbstract
+import com.fevziomurtekin.deezer_clone.core.MockUtil
 import com.fevziomurtekin.deezer_clone.di.MainCoroutinesRule
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -48,10 +49,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchArtistList() = runBlocking {
         enqueueResponse("/artistsResponse.json")
         // give to default genreID
-        val responseBody = service.fetchArtistList("0").await()
+        val responseBody = service.fetchArtistList(MockUtil.genreID).await()
         mockWebServer.takeRequest()
 
-        client.fetchArtistList("0").getCompleted()
+        client.fetchArtistList(MockUtil.genreID).getCompleted()
         assertThat(responseBody.artistData[0].id, `is`("8354140"))
         assertThat(responseBody.artistData[0].type, `is`("artist"))
         assertThat(responseBody.artistData[0].name, `is`("ezhel"))
@@ -63,10 +64,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchArtistDetails() = runBlocking {
         enqueueResponse("/artistDetailsResponse.json")
         // give to default genreID
-        val responseBody = service.fetchArtistDetails("8354140").await()
+        val responseBody = service.fetchArtistDetails(MockUtil.artistID).await()
         mockWebServer.takeRequest()
 
-        client.fetchArtistList("0").getCompleted()
+        client.fetchArtistDetails(MockUtil.artistID).getCompleted()
         assertThat(responseBody.id, `is`("8354140"))
         assertThat(responseBody.type, `is`("artist"))
         assertThat(responseBody.name, `is`("ezhel"))
@@ -79,10 +80,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchArtistAlbums() = runBlocking {
         enqueueResponse("/artistAlbumsResponse.json")
         // give to default genreID
-        val responseBody = service.fetchArtistAlbums("8354140").await()
+        val responseBody = service.fetchArtistAlbums(MockUtil.artistID).await()
         mockWebServer.takeRequest()
 
-        client.fetchArtistList("8354140").getCompleted()
+        client.fetchArtistList(MockUtil.artistID).getCompleted()
         assertThat(responseBody.total, `is`(20))
         assertThat(responseBody.data[0].title, `is`("Müptezhel"))
         assertThat(responseBody.data[0].id,`is`("51174732"))
@@ -94,10 +95,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchArtistRelated() = runBlocking {
         enqueueResponse("/artistRelatedResponse.json")
         // give to default genreID
-        val responseBody = service.fetchArtistRelated("8354140").await()
+        val responseBody = service.fetchArtistRelated(MockUtil.artistID).await()
         mockWebServer.takeRequest()
 
-        client.fetchArtistList("8354140").getCompleted()
+        client.fetchArtistList(MockUtil.albumID).getCompleted()
         assertThat(responseBody.data[0].id, `is`("389038"))
         assertThat(responseBody.data[0].type, `is`("artist"))
         assertThat(responseBody.data[0].name, `is`("Murda"))
@@ -109,10 +110,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchAlbumDetails() = runBlocking {
         enqueueResponse("/albumDetailsResponse.json")
         // give to default genreID
-        val responseBody = service.fetchAlbumDetails("302127").await()
+        val responseBody = service.fetchAlbumDetails(MockUtil.albumID).await()
         mockWebServer.takeRequest()
 
-        client.fetchArtistList("302127").getCompleted()
+        client.fetchArtistList(MockUtil.albumID).getCompleted()
         assertThat(responseBody.data[0].id, `is`("3135553"))
         assertThat(responseBody.data[0].type, `is`("track"))
         assertThat(responseBody.data[0].title, `is`( "One More Time"))
@@ -124,10 +125,10 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     fun fetchSearchAlbum() = runBlocking {
         enqueueResponse("/searchAlbumResponse.json")
         // give to default genreID
-        val responseBody = service.fetchSearchAlbum("ezhel").await()
+        val responseBody = service.fetchSearchAlbum(MockUtil.query).await()
         mockWebServer.takeRequest()
 
-        client.fetchSearchAlbum("ezhel").getCompleted()
+        client.fetchSearchAlbum(MockUtil.query).getCompleted()
         assertThat(responseBody.data[0].artist.name, `is`("ezhel"))
         assertThat(responseBody.data[0].title, `is`("felaket"))
 

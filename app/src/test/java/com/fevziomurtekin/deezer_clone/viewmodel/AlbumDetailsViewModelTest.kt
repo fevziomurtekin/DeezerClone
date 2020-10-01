@@ -57,7 +57,7 @@ class AlbumDetailsViewModelTest {
         val fetchedData : LiveData<Result<List<AlbumData>>> = mainRepository.fetchAlbumTracks("302127").asLiveData()
         fetchedData.observeForever(observer)
 
-        viewModel.fetchingAlbumDatas("302127")
+        viewModel.fetchingAlbumDatas(MockUtil.albumID)
         delay(500L)
 
         verify(observer).onChanged(Result.Succes(mockList))

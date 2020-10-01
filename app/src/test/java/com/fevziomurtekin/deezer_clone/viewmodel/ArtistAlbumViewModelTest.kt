@@ -56,10 +56,10 @@ class ArtistAlbumViewModelTest {
         val mockList = listOf(MockUtil.artistAlbum)
 
         val observer : Observer<Result<List<ArtistAlbumData>>> = mock()
-        val fetchedData : LiveData<Result<List<ArtistAlbumData>>> = mainRepository.fetchArtistAlbums("8354140").asLiveData()
+        val fetchedData : LiveData<Result<List<ArtistAlbumData>>> = mainRepository.fetchArtistAlbums(MockUtil.artistID).asLiveData()
         fetchedData.observeForever(observer)
 
-        viewModel.fetchArtistAlbum("8354140")
+        viewModel.fetchArtistAlbum(MockUtil.artistID)
         delay(500L)
 
         verify(observer).onChanged(Result.Succes(mockList))
