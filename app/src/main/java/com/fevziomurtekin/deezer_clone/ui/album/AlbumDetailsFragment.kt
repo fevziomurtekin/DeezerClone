@@ -60,8 +60,10 @@ class AlbumDetailsFragment: DataBindingFragment() {
                         }
                         R.id.cardView -> {
                             val map = data as MutableMap<Int,List<AlbumData>>
-                            ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.albumData.value = map
-                            ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.isGoneMediaPlayer.set(true)
+                            ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.apply {
+                                albumData.value = map
+                                isGoneMediaPlayer.set(true)
+                            }
 
                         }
                     }

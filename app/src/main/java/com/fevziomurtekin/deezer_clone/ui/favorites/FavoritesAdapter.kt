@@ -3,20 +3,18 @@ package com.fevziomurtekin.deezer_clone.ui.favorites
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.databinding.ItemFavoritesBinding
-import kotlinx.android.synthetic.main.item_album.view.*
 import timber.log.Timber
 
 
 class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>() {
 
     interface OnClick{
-        fun onItemClickListener(v: View, item: AlbumData)
+        fun onItemClickListener(v: View, item: MutableMap<Int,List<AlbumData>>)
     }
 
     private val items: MutableList<AlbumData> = mutableListOf()
@@ -29,10 +27,8 @@ class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdap
         return FavoritesViewHolder(binding).apply {
 
             binding.cardView.setOnClickListener {
-                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
-                val item = items[position!!]
-                Toast.makeText(binding.root.context, "listening ... ", Toast.LENGTH_LONG).show()
-
+                val position = adapterPosition
+                listener.onItemClickListener(it, mutableMapOf(position to items))
             }
 
 
