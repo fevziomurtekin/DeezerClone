@@ -1,16 +1,22 @@
 package com.fevziomurtekin.deezer_clone.data.albumdetails
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import kotlinx.android.parcel.RawValue
 import kotlinx.serialization.Serializable
+import java.util.*
 
+@Entity
 @Serializable
 data class AlbumData(
-    val artist: Artist,
+    //val artist: Artist,
     val disk_number: Int,
     var duration: String,
     val explicit_content_cover: Int,
     val explicit_content_lyrics: Int,
     val explicit_lyrics: Boolean,
-    val id: String?="",
+    @PrimaryKey
+    var id: String=UUID.randomUUID().toString(),
     val isrc: String?="",
     val link: String?="",
     val md5_image: String?="",
@@ -22,6 +28,7 @@ data class AlbumData(
     val title_version: String?="",
     val track_position: Int,
     val type: String,
+    var fav_time:Long=System.currentTimeMillis(),
     val def_img:String="https://www.iconfinder.com/data/icons/social-media-circle-flat-1/1024/itunes-01-01-64.png"
 ){
     fun durationToTime(){

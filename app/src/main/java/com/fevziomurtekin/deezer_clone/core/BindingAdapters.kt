@@ -18,6 +18,7 @@ import com.fevziomurtekin.deezer_clone.ui.album.AlbumDetailsAdapter
 import com.fevziomurtekin.deezer_clone.ui.artist.ArtistAdapter
 import com.fevziomurtekin.deezer_clone.ui.artistdetails.albums.ArtistAlbumAdapter
 import com.fevziomurtekin.deezer_clone.ui.artistdetails.related.ArtistRelatedAdapter
+import com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesAdapter
 import com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter
 import com.fevziomurtekin.deezer_clone.ui.search.RecentSearchAdapter
 import com.fevziomurtekin.deezer_clone.ui.search.SearchAlbumAdapter
@@ -128,4 +129,12 @@ fun bindingSearchAlbum(view:RecyclerView, results:LiveData<Result<Any>>) {
 @BindingAdapter("onEditorActionListener")
 fun bindOnEditorActionListener(editText: EditText, editorActionListener: TextView.OnEditorActionListener) {
     editText.setOnEditorActionListener(editorActionListener)
+}
+
+@BindingAdapter("adapterFavoritesList")
+fun bindingFavoritesList(view:RecyclerView, results:LiveData<List<AlbumData>>) {
+    if (!results.value.isNullOrEmpty()) {
+        Timber.d("Favorites result :${results.value} ")
+        (view.adapter as FavoritesAdapter).addFavoritesList(results.value!!)
+    }
 }

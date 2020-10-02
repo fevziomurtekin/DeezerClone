@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 
@@ -23,5 +24,14 @@ interface DeezerDao {
     /* recent search */
     @Query("SELECT * FROM SearchQuery ORDER BY time")
     suspend fun getQueryList():List<SearchQuery>
+
+    /* insert to track */
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertTrack(albumData: AlbumData)
+
+    /* recent favorites */
+    @Query("SELECT * FROM AlbumData ORDER BY fav_time")
+    suspend fun getFavorites():List<AlbumData>
+
 
 }

@@ -2,9 +2,11 @@ package com.fevziomurtekin.deezer_clone.core
 
 object Env {
 
+    const val APP_NAME          = "Deezer Clone"
+
     /* database*/
     const val DATABASE_NAME     = "deezerdatabase.db"
-    const val DATABASE_VERSION  = 3
+    const val DATABASE_VERSION  = 4
 
     /* API ENV */
     const val BASE_URL          = "https://api.deezer.com/"

@@ -1,6 +1,7 @@
 package com.fevziomurtekin.deezer_clone.ui.album
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
@@ -17,7 +18,11 @@ import kotlinx.android.synthetic.main.item_album.view.*
 import timber.log.Timber
 
 
-class AlbumDetailsAdapter: RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetailsViewHolder>() {
+class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetailsViewHolder>() {
+
+    interface OnClick{
+        fun onItemClickListener(v:View,item:AlbumData)
+    }
 
     private val items: MutableList<AlbumData> = mutableListOf()
 
@@ -27,17 +32,22 @@ class AlbumDetailsAdapter: RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetails
             .inflate<ItemAlbumBinding>(inflater, R.layout.item_album, parent, false)
 
         return AlbumDetailsViewHolder(binding).apply {
-            val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
             binding.root.ibn_fav.setOnClickListener {
+                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
+                val item = items[position!!]
+                listener.onItemClickListener(it,item)
                 Toast.makeText(binding.root.context,"Add to Favorites!", Toast.LENGTH_LONG).show()}
             binding.root.ibn_share.setOnClickListener {
+                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
+                val item = items[position!!]
+                listener.onItemClickListener(it,item)
                 Toast.makeText(binding.root.context,"Sharing Tracks... Waiting.", Toast.LENGTH_LONG).show()}
         }
     }
 
-    fun addAlbumTracks(artistList: List<AlbumData>) {
+    fun addAlbumTracks(albums: List<AlbumData>) {
         val previousSize = items.size
-        items.addAll(artistList)
+        items.addAll(albums)
         // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }

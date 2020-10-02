@@ -14,5 +14,6 @@
     <string name="page_under_constructor">Page under construction…</string>
     <string name="searching">Search Keyword</string>
     <string name="recent_search">Recent Search</string>
+    <string name="not_found_favorite">You haven\'t added any favorite songs before.</string>
 
 </resources>

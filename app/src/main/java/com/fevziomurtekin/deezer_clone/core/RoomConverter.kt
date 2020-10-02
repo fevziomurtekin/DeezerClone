@@ -1,6 +1,7 @@
 package com.fevziomurtekin.deezer_clone.core
 
 import androidx.room.TypeConverter
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.genre.Data
 import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import kotlinx.serialization.decodeFromString
@@ -22,6 +23,11 @@ object RoomConverter {
     fun fromStringToSearchQueryResponse(value:String):SearchQuery
             = Json.decodeFromString<SearchQuery>(value)
 
+    @JvmStatic
+    @TypeConverter
+    fun fromStringToFavoriteResponse(value:String):AlbumData
+            = Json.decodeFromString(value)
+
 
 
     /* --------------------------------  Encode String ----------------------------------*/
@@ -34,6 +40,11 @@ object RoomConverter {
     @JvmStatic
     @TypeConverter
     fun fromSearchQueryResponseToString(value:SearchQuery):String
+            = Json.encodeToString(value)
+
+    @JvmStatic
+    @TypeConverter
+    fun fromFavoritesResponseToString(value:AlbumData):String
             = Json.encodeToString(value)
 
 }

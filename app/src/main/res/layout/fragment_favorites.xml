@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="vm"
             type="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/tv_favorites"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/page_under_constructor"
+            android:text="@string/not_found_favorite"
             android:gravity="center"
-            android:textSize="25sp"
+            app:isGoneFavoriteLayout="@{vm.favorites}"
+            android:textSize="20sp"
             />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"
+            android:clipToPadding="false"
+            android:fadeScrollbars="false"
+            android:padding="6dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            app:isGoneFavoriteLayout="@{vm.favorites}"
+            app:adapter="@{adapter}"
+            app:adapterFavoritesList="@{vm.favorites}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_genre" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

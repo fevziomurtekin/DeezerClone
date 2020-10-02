@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import com.fevziomurtekin.deezer_clone.core.Result
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.search.SearchQuery
 import com.fevziomurtekin.deezer_clone.domain.network.DeezerClient
 import kotlinx.coroutines.delay
@@ -184,5 +185,22 @@ class MainRepository @Inject constructor(
         }
     }.flowOn(Dispatchers.IO)
 
+
+    /**
+     * @param track, AlbumData
+     * insert the track on local data.
+     * */
+
+    suspend fun insertFavoritesData(track:AlbumData) = deezerDao.insertTrack(track)
+
+    /**
+     * @return List<Favorites>?
+     * */
+    fun fetchFavorites()= flow {
+        Timber.d(" --------- fetchFavorites ---------")
+        val response = deezerDao.getFavorites()
+        Timber.d("response : $response")
+        if(!response.isNullOrEmpty()){ emit(response) }
+    }.flowOn(Dispatchers.IO)
 
 }

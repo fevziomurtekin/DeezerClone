@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.core.DataBindingFragment
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,8 +31,14 @@ class FavoritesFragment:DataBindingFragment() {
         binding.apply {
             lifecycleOwner = this@FavoritesFragment
             vm = viewModel
+            adapter = FavoritesAdapter(object : FavoritesAdapter.OnClick{
+                override fun onItemClickListener(v: View, item: AlbumData) {
+
+                }
+            })
         }
 
+        viewModel.fetchFavorites()
 
     }
 }

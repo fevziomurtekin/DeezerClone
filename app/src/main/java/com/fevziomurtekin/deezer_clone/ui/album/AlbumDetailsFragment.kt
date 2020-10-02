@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer_clone.ui.album
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +13,14 @@ import com.fevziomurtekin.deezer_clone.core.DataBindingFragment
 import com.fevziomurtekin.deezer_clone.core.Env
 import com.fevziomurtekin.deezer_clone.core.Result
 import com.fevziomurtekin.deezer_clone.core.UIExtensions
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.databinding.FragmentAlbumDetailsBinding
+import com.fevziomurtekin.deezer_clone.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_album_details.*
 import kotlinx.android.synthetic.main.fragment_artist_related.*
 import kotlinx.android.synthetic.main.fragment_artist_related.lv_artist_related
+import kotlinx.android.synthetic.main.item_album.view.*
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -38,7 +42,24 @@ class AlbumDetailsFragment: DataBindingFragment() {
         Timber.d("id : $id")
         binding.apply {
             lifecycleOwner = this@AlbumDetailsFragment
-            adapter = AlbumDetailsAdapter()
+            adapter = AlbumDetailsAdapter(object : AlbumDetailsAdapter.OnClick {
+                override fun onItemClickListener(v: View, item: AlbumData) {
+                    when (v.id) {
+                        R.id.ibn_fav -> {
+                            viewModel.favoritedToTrack(item)
+                        }
+                        R.id.ibn_share -> {
+                            (this@AlbumDetailsFragment.requireActivity() as MainActivity).apply {
+                                val sharingIntent = Intent(Intent.ACTION_SEND)
+                                    .putExtra(Intent.EXTRA_SUBJECT,Env.APP_NAME)
+                                    .putExtra(Intent.EXTRA_TEXT,item.link)
+                                startActivity(Intent.createChooser(sharingIntent,"Share via"))
+                            }
+
+                        }
+                    }
+                }
+            })
             vm = viewModel
         }
 

@@ -9,6 +9,7 @@ import coil.load
 import coil.size.Scale
 import coil.transform.BlurTransformation
 import com.fevziomurtekin.deezer_clone.R
+import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistDetailResponse
 import timber.log.Timber
 
@@ -81,3 +82,15 @@ fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
     }
 }
 
+@BindingAdapter("isGoneFavoriteLayout")
+fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<List<AlbumData>>){
+    Timber.d("bindingIsGoneFavoriteLayout : ${results.value}")
+    when(view.id){
+        R.id.recyclerView->{
+            view.isGone = results.value.isNullOrEmpty()
+        }
+        else->{
+            view.isGone = !results.value.isNullOrEmpty()
+        }
+    }
+}
