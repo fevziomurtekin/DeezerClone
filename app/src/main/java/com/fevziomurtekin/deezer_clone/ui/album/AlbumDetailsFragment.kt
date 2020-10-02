@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer_clone.ui.album
+    package com.fevziomurtekin.deezer_clone.ui.album
 
 import android.content.Intent
 import android.os.Bundle
@@ -43,18 +43,25 @@ class AlbumDetailsFragment: DataBindingFragment() {
         binding.apply {
             lifecycleOwner = this@AlbumDetailsFragment
             adapter = AlbumDetailsAdapter(object : AlbumDetailsAdapter.OnClick {
-                override fun onItemClickListener(v: View, item: AlbumData) {
+                override fun onItemClickListener(v: View, data: Any) {
                     when (v.id) {
                         R.id.ibn_fav -> {
+                            val item = data as AlbumData
                             viewModel.favoritedToTrack(item)
                         }
                         R.id.ibn_share -> {
+                            val item = data as AlbumData
                             (this@AlbumDetailsFragment.requireActivity() as MainActivity).apply {
                                 val sharingIntent = Intent(Intent.ACTION_SEND)
-                                    .putExtra(Intent.EXTRA_SUBJECT,Env.APP_NAME)
-                                    .putExtra(Intent.EXTRA_TEXT,item.link)
-                                startActivity(Intent.createChooser(sharingIntent,"Share via"))
+                                    .putExtra(Intent.EXTRA_SUBJECT, Env.APP_NAME)
+                                    .putExtra(Intent.EXTRA_TEXT, item.link)
+                                startActivity(Intent.createChooser(sharingIntent, "Share via"))
                             }
+                        }
+                        R.id.cardView -> {
+                            val map = data as MutableMap<Int,List<AlbumData>>
+                            ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.albumData.value = map
+                            ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.isGoneMediaPlayer.set(true)
 
                         }
                     }

@@ -67,5 +67,7 @@ object Versions {
     //shimmerlayout
     val shimmer_version = "0.5.0"
 
+    val exoplayer_version = "2.12.0"
+
 
 }

@@ -129,7 +129,7 @@ dependencies{
     /** Shimmer layout */
     implementation(Dependencies.shimmerLib)
 
-    /* android test library  */
+    /** android test library  */
     androidTestImplementation(Dependencies.test_runner)
     androidTestImplementation(Dependencies.espresso)
     testImplementation(Dependencies.testTruth)
@@ -141,4 +141,9 @@ dependencies{
     testImplementation(Dependencies.robolectric)
     testImplementation(Dependencies.mockitoKotlin)
     testImplementation(Dependencies.turbine)
+
+    /** exoplayer */
+    implementation(Dependencies.exoplayer_core_lib)
+    implementation(Dependencies.exoplayer_dash_lib)
+    implementation(Dependencies.exoplayer_ui_lib)
 }

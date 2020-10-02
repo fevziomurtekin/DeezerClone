@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import com.fevziomurtekin.deezer_clone.core.Result
 import com.fevziomurtekin.deezer_clone.core.UIExtensions
+import com.fevziomurtekin.deezer_clone.data.mediaplayer.MediaPlayerState
 import com.fevziomurtekin.deezer_clone.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
@@ -39,6 +41,7 @@ class MainActivity : DataBindingActivity() {
             vm = viewModel
             navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
         }
+
 
         viewModel.fetchGenreList()
         viewModel.genreListLiveData.observe(this, Observer {
@@ -87,5 +90,30 @@ class MainActivity : DataBindingActivity() {
             }
         }
 
+        binding.ibtnPlayPlayer.setOnClickListener {
+            when(viewModel.mediaPlayerState.value) {
+                MediaPlayerState.PLAYING->viewModel.playMusic()
+                MediaPlayerState.PAUSED->viewModel.resume()
+                else->viewModel.stop()
+            }
+        }
+
+        binding.ibtnTrackForward.setOnClickListener {
+            viewModel.forwardTrack()
+        }
+
+        binding.ibtnTrackPrevious.setOnClickListener {
+            viewModel.previouslyTrack()
+        }
+
+    }
+
+    override fun onBackPressed() {
+        if(viewModel.isGoneMediaPlayer.get()){
+            viewModel.isGoneMediaPlayer.set(false)
+        }
+        else{
+            super.onBackPressed()
+        }
     }
 }

@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/snap/android-studio-canary/11/android-studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/share/baseline_share_24.xml" />
+                                      <entry key="url" value="jar:file:/snap/android-studio-canary/11/android-studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/pause_circle_filled/baseline_pause_circle_filled_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +33,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_share" />
+                            <entry key="outputName" value="ic_pause" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/app/src/main/res/drawable/logo.svg" />
                           </map>
                         </option>

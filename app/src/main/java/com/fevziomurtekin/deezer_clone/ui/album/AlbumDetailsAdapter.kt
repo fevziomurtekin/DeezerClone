@@ -21,7 +21,7 @@ import timber.log.Timber
 class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetailsViewHolder>() {
 
     interface OnClick{
-        fun onItemClickListener(v:View,item:AlbumData)
+        fun onItemClickListener(v:View,item:Any)
     }
 
     private val items: MutableList<AlbumData> = mutableListOf()
@@ -32,6 +32,11 @@ class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetai
             .inflate<ItemAlbumBinding>(inflater, R.layout.item_album, parent, false)
 
         return AlbumDetailsViewHolder(binding).apply {
+            binding.root.cardView.setOnClickListener {
+                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
+                val map = mutableMapOf(position to items)
+                listener.onItemClickListener(it,map)
+            }
             binding.root.ibn_fav.setOnClickListener {
                 val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
                 val item = items[position!!]

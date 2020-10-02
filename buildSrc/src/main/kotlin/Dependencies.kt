@@ -85,4 +85,9 @@ object Dependencies {
     /* Shimmer Layout */
     val shimmerLib          = "com.facebook.shimmer:shimmer:${Versions.shimmer_version}"
 
+    /* Exo Player */
+    val exoplayer_core_lib  = "com.google.android.exoplayer:exoplayer-core:${Versions.exoplayer_version}"
+    val exoplayer_dash_lib  = "com.google.android.exoplayer:exoplayer-dash:${Versions.exoplayer_version}"
+    val exoplayer_ui_lib    = "com.google.android.exoplayer:exoplayer-ui:${Versions.exoplayer_version}"
+
 }

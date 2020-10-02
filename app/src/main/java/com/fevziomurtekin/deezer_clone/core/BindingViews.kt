@@ -1,16 +1,20 @@
 package com.fevziomurtekin.deezer_clone.core
 
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.view.isGone
 import androidx.databinding.BindingAdapter
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import coil.load
 import coil.size.Scale
 import coil.transform.BlurTransformation
 import com.fevziomurtekin.deezer_clone.R
 import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.artistdetails.ArtistDetailResponse
+import com.fevziomurtekin.deezer_clone.data.mediaplayer.MediaPlayerState
 import timber.log.Timber
 
 /**
@@ -94,3 +98,23 @@ fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<List<AlbumData>>){
         }
     }
 }
+
+@BindingAdapter("isGoneMediaPlayer")
+fun bindingIsGoneMediaPlayer(view: View,observerIsGone:ObservableBoolean){
+    Timber.d("isGoneMediaPlayer : ${observerIsGone.get()}")
+    view.isGone = when(view.id){
+        R.id.cl_media_player-> !observerIsGone.get()
+        else-> observerIsGone.get()
+    }
+}
+
+@BindingAdapter("iconPlayPause")
+fun iconPlayPause(view: ImageButton, state:MutableLiveData<MediaPlayerState>){
+    view.setImageResource(
+        when(state.value){
+            MediaPlayerState.PLAYING->R.drawable.ic_pause
+            else->R.drawable.ic_play
+        }
+    )
+}
+
