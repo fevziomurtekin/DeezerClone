@@ -8,7 +8,6 @@
 <p align="center">  
  Deezer Clone application, Dagger Hilt, Coroutines, Flow, Jetpack (Room, ViewModel,Navigation LiveData) based on MVVM architecture. Also fetching data from the network and integrating local data in the database via repository pattern.
 </p>
-</br>
 
 <p align="center">
 <img src="/art/banner.png"/>
@@ -55,7 +54,7 @@ Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.de
 
 ## Roadmap
 - [ ] Media player will be created using Exoplayer.
-- [ ] Favorites page will be created.
+- [x] Favorites page will be created.
 - [ ] User signin will be created.
 
 ## License

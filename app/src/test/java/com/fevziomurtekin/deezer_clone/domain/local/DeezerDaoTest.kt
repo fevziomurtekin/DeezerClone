@@ -9,6 +9,7 @@ import org.hamcrest.core.Is.`is`
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mock
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
@@ -52,7 +53,19 @@ class DeezerDaoTest:LocalDatabase(){
         assertThat(loadFromDB[0].toString(),`is`(mockSearchData.toString()))
     }
 
+    @Test
+    fun insertAndLoadFavorites() = runBlocking {
+        val mockFavorite = MockUtil.album
+        deezerDao.insertTrack(mockFavorite)
 
+        val mockFavorites = listOf(mockFavorite)
+
+        val loadFromDB = deezerDao.getFavorites()
+        assertThat(loadFromDB.toString(),`is`(mockFavorites.toString()))
+
+        assertThat(loadFromDB[0].toString(),`is`(mockFavorite.toString()))
+
+    }
 
 
 }

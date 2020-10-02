@@ -244,5 +244,43 @@ class MainRepositoryTest {
         verifyNoMoreInteractions(service)
     }
 
+    @ExperimentalTime
+    @Test
+    fun fetchFavoriteFromDaoTest() = runBlocking{
+        val mockData = listOf(MockUtil.album)
+        whenever(deezerDao.getFavorites()).thenReturn(mockData)
+
+        repository.fetchFavorites().test {
+            val result = expectItem()
+            assertEquals(result,mockData)
+            assertEquals(result[0].title , "Alo")
+            assertEquals(result[0].id , "425605922")
+            assertEquals(result[1].title , "Geceler")
+            assertEquals(result[1].id , "425605932")
+        }
+
+        verify(deezerDao, atLeastOnce()).getFavorites()
+        verifyNoMoreInteractions(deezerDao)
+    }
+
+    @ExperimentalTime
+    @Test
+    fun insertFavoriteTrackFromDaoTest()= runBlocking {
+        val mockData = MockUtil.album
+        whenever(deezerDao.getFavorites()).thenReturn(emptyList())
+
+        repository.insertFavoritesData(mockData)
+        repository.fetchFavorites().test {
+            val result = expectItem()
+            assertEquals(result,mockData)
+            assertEquals(result[0].title , "Alo")
+            assertEquals(result[0].id , "425605922")
+            assertEquals(result[1].title , "Geceler")
+            assertEquals(result[1].id , "425605932")
+        }
+        verify(deezerDao, atLeastOnce()).insertTrack(MockUtil.album)
+    }
+
+
 
 }

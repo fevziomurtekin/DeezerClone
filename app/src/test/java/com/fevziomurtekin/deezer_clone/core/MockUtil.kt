@@ -32,7 +32,7 @@ object MockUtil {
         isrc = "GBDUW0000053",link = "https://www.deezer.com/track/3135553",duration = "320",track_position = 1,
         disk_number = 1,rank = "880801",explicit_lyrics = false,explicit_content_lyrics = 0,explicit_content_cover = 0,
         preview ="https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",md5_image = "2e018122cb56986277102d2041a592c8",
-        artist = Artist("27","Draft Punk","https://api.deezer.com/artist/27/top?limit=50","artist"),
+        //artist = Artist("27","Draft Punk","https://api.deezer.com/artist/27/top?limit=50","artist"),
         type = "track"
     )
 
