@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://github.com/fevziomurtekin/DeezerClone/actions"><img alt="Build Status" src="https://github.com/fevziomurtekin/DeezerClone/workflows/Android%20CI/badge.svg"/></a> 
-  <a href="https://img.shields.io/github/v/release/fevziomurtekin/DeezerClone?style=social"></a> 
+ <a href="https://github.com/fevziomurtekin/DeezerClone/releases/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/fevziomurtekin/DeezerClone?style=plastic"></a>
 
 </p>
 
