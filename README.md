@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
-  <a href="https://github.com/skydoves/deezer_clone/actions"><img alt="Build Status" src="https://github.com/fevziomurtekin/deezer_clone/workflows/Android%20CI/badge.svg"/></a> 
+  <a href="https://github.com/fevziomurtekin/DeezerClone/actions"><img alt="Build Status" src="https://github.com/fevziomurtekin/DeezerClone/workflows/Android%20CI/badge.svg"/></a> 
 </p>
 
 <p align="center">  
@@ -14,7 +14,7 @@
 </p>
 
 ## APK
-Click and go to releases page [Releases](https://github.com/fevziomurtekin/deezer_clone/releases/) to download the latest APK.
+Click and go to releases page [Releases](https://github.com/fevziomurtekin/DeezerClone/releases/) to download the latest APK.
 
 
 
