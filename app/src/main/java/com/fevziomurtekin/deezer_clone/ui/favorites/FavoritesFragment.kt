@@ -32,10 +32,12 @@ class FavoritesFragment:DataBindingFragment() {
             lifecycleOwner = this@FavoritesFragment
             vm = viewModel
             adapter = FavoritesAdapter(object : FavoritesAdapter.OnClick {
-                override fun onItemClickListener(v: View, map: MutableMap<Int, List<AlbumData>>) {
+                override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumData>) {
                     ((this@FavoritesFragment).requireActivity() as MainActivity).viewModel.apply {
-                        albumData.value = map
+                        albumData.value = albumList
+                        positionTrack = trackPos
                         isGoneMediaPlayer.set(true)
+                        playMusic()
                     }
                 }
             })

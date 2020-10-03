@@ -14,7 +14,7 @@ import timber.log.Timber
 class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>() {
 
     interface OnClick{
-        fun onItemClickListener(v: View, item: MutableMap<Int,List<AlbumData>>)
+        fun onItemClickListener(v: View, trackPos:Int, item: List<AlbumData>)
     }
 
     private val items: MutableList<AlbumData> = mutableListOf()
@@ -28,7 +28,7 @@ class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdap
 
             binding.cardView.setOnClickListener {
                 val position = adapterPosition
-                listener.onItemClickListener(it, mutableMapOf(position to items))
+                listener.onItemClickListener(it, position, items)
             }
 
 

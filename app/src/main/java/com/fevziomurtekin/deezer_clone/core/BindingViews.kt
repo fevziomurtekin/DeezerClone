@@ -110,11 +110,20 @@ fun bindingIsGoneMediaPlayer(view: View,observerIsGone:ObservableBoolean){
 
 @BindingAdapter("iconPlayPause")
 fun iconPlayPause(view: ImageButton, state:MutableLiveData<MediaPlayerState>){
-    view.setImageResource(
-        when(state.value){
-            MediaPlayerState.PLAYING->R.drawable.ic_pause
-            else->R.drawable.ic_play
-        }
-    )
+    view.apply {
+        setImageResource(
+            when(state.value){
+                MediaPlayerState.PLAYING->R.drawable.ic_pause
+                else->R.drawable.ic_play
+            }
+        )
+        adjustViewBounds = true
+        refreshDrawableState()
+    }
 }
 
+@BindingAdapter("isGoneVolumeController")
+fun bindingIsGoneVolumeController(view: View,observerIsGone:ObservableBoolean){
+    Timber.d("isGoneMediaPlayer : ${observerIsGone.get()}")
+    view.isGone = !observerIsGone.get()
+}

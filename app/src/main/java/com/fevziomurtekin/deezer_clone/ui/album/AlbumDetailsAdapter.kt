@@ -21,7 +21,7 @@ import timber.log.Timber
 class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetailsViewHolder>() {
 
     interface OnClick{
-        fun onItemClickListener(v:View,item:Any)
+        fun onItemClickListener(v:View, pos:Int, item:Any)
     }
 
     private val items: MutableList<AlbumData> = mutableListOf()
@@ -33,19 +33,18 @@ class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetai
 
         return AlbumDetailsViewHolder(binding).apply {
             binding.root.cardView.setOnClickListener {
-                val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
-                val map = mutableMapOf(position to items)
-                listener.onItemClickListener(it,map)
+                val position = adapterPosition
+                listener.onItemClickListener(it,position,items)
             }
             binding.root.ibn_fav.setOnClickListener {
                 val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
                 val item = items[position!!]
-                listener.onItemClickListener(it,item)
+                listener.onItemClickListener(it,position,item)
                 Toast.makeText(binding.root.context,"Add to Favorites!", Toast.LENGTH_LONG).show()}
             binding.root.ibn_share.setOnClickListener {
                 val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
                 val item = items[position!!]
-                listener.onItemClickListener(it,item)
+                listener.onItemClickListener(it,position,item)
                 Toast.makeText(binding.root.context,"Sharing Tracks... Waiting.", Toast.LENGTH_LONG).show()}
         }
     }

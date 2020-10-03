@@ -1,7 +1,10 @@
 package com.fevziomurtekin.deezer_clone.ui.main
+import android.content.Context
+import android.media.AudioManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
@@ -41,9 +44,8 @@ class MainActivity : DataBindingActivity() {
             vm = viewModel
             navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
         }
-
-
         viewModel.fetchGenreList()
+
         viewModel.genreListLiveData.observe(this, Observer {
             //Timber.d("result:${it}")
             when(it){
@@ -62,14 +64,22 @@ class MainActivity : DataBindingActivity() {
             }
         })
 
+
         /* Navigation destination listener. */
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            /* if mediaplayer or volumeController visible, hidden views.*/
+            if(viewModel.isGoneMediaPlayer.get()){
+                viewModel.hideMediaPlayer()
+            }
+
             var name = getString(R.string.app_name)
             arguments?.let {
                 name = it[Env.BUND_NAME].toString()
             }
 
             Timber.d("name : $name")
+
+
 
             when(destination.id){
                         R.id.genre->{ materialToolbar.title = getString(R.string.app_name) }
@@ -106,11 +116,12 @@ class MainActivity : DataBindingActivity() {
             viewModel.previouslyTrack()
         }
 
+
     }
 
     override fun onBackPressed() {
         if(viewModel.isGoneMediaPlayer.get()){
-            viewModel.isGoneMediaPlayer.set(false)
+            viewModel.hideMediaPlayer()
         }
         else{
             super.onBackPressed()

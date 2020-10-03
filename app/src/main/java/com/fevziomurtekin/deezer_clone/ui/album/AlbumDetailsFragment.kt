@@ -43,7 +43,7 @@ class AlbumDetailsFragment: DataBindingFragment() {
         binding.apply {
             lifecycleOwner = this@AlbumDetailsFragment
             adapter = AlbumDetailsAdapter(object : AlbumDetailsAdapter.OnClick {
-                override fun onItemClickListener(v: View, data: Any) {
+                override fun onItemClickListener(v: View, pos:Int, data: Any) {
                     when (v.id) {
                         R.id.ibn_fav -> {
                             val item = data as AlbumData
@@ -59,10 +59,12 @@ class AlbumDetailsFragment: DataBindingFragment() {
                             }
                         }
                         R.id.cardView -> {
-                            val map = data as MutableMap<Int,List<AlbumData>>
+                            val list = data as List<AlbumData>
                             ((this@AlbumDetailsFragment).requireActivity() as MainActivity).viewModel.apply {
-                                albumData.value = map
+                                albumData.value = list
+                                positionTrack = pos
                                 isGoneMediaPlayer.set(true)
+                                playMusic()
                             }
 
                         }

@@ -74,20 +74,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:isGoneMediaPlayer="@{vm.isGoneMediaPlayer}"
                 >
-                <Space
-                    android:id="@+id/space"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintWidth_percent="0.1"
-                    />
 
                 <LinearLayout
                     android:id="@+id/lv_player_icons"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    app:layout_constraintLeft_toRightOf="@+id/space"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintWidth_percent="0.65">
 
                     <ImageButton
@@ -99,7 +93,7 @@
                         android:background="@android:color/black"
                         android:scaleType="center"
                         app:srcCompat="@drawable/ic_previous"
-                        android:padding="10dp"
+                        android:padding="20dp"
                         tools:ignore="ContentDescription" />
 
                     <ImageButton
@@ -120,25 +114,13 @@
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_next"
                         android:tint="@color/colorWhite"
-                        android:padding="10dp"
+                        android:padding="20dp"
                         android:background="@android:color/black"
                         android:scaleType="center"
                         tools:ignore="ContentDescription" />
 
                 </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/ibtn_volume_up"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:tint="@color/colorWhite"
-                    android:background="@android:color/black"
-                    app:layout_constraintLeft_toRightOf="@id/lv_player_icons"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:scaleType="center"
-                    android:padding="10dp"
-                    app:srcCompat="@drawable/ic_volume_up"
-                    tools:ignore="ContentDescription" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

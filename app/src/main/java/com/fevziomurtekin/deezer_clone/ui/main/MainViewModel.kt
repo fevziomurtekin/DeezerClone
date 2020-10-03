@@ -1,7 +1,9 @@
 package com.fevziomurtekin.deezer_clone.ui.main
 
 import android.app.Application
-import android.net.Uri
+import android.content.Context
+import android.media.AudioManager
+import android.widget.SeekBar
 import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
@@ -10,13 +12,11 @@ import com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer_clone.data.mediaplayer.MediaPlayerState
 import com.fevziomurtekin.deezer_clone.repository.MainRepository
 import com.google.android.exoplayer2.*
-import com.google.android.exoplayer2.offline.DownloadHelper.createMediaSource
-import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
+import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util.getUserAgent
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -29,18 +29,18 @@ class MainViewModel @ViewModelInject constructor(
     var genreListLiveData: LiveData<Result<Any>> = MutableLiveData()
     var isSplash:MutableLiveData<Boolean> = MutableLiveData()
     var isGoneMediaPlayer :ObservableBoolean = ObservableBoolean(false)
-    var albumData:MutableLiveData<MutableMap<Int,List<AlbumData>>> = MutableLiveData()
+    var albumData:MutableLiveData<List<AlbumData>> = MutableLiveData()
+    var positionTrack = 0
 
-    private val mediaPlayer = ExoPlayerFactory.newSimpleInstance(app.applicationContext)
+    private val mediaPlayer = SimpleExoPlayer.Builder(app.applicationContext).build()
     private val dataSourceFactory = DefaultDataSourceFactory(app.applicationContext, getUserAgent(app.applicationContext,"DeezerClone"))
 
     var mediaPlayerState:MutableLiveData<MediaPlayerState> = MutableLiveData()
 
-
     init {
         Timber.d("init mainViewModel")
         isSplash.value = true
-
+        mediaPlayerState.value = MediaPlayerState.BUFFERING
         mediaPlayer.addListener(object : Player.EventListener {
             override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
                 val state = when {
@@ -56,7 +56,10 @@ class MainViewModel @ViewModelInject constructor(
             override fun onPlayerError(error: ExoPlaybackException) {
                 mediaPlayerState.value = MediaPlayerState.ERROR
             }
+
         })
+
+
     }
 
     fun fetchGenreList(){
@@ -69,13 +72,13 @@ class MainViewModel @ViewModelInject constructor(
 
     fun playMusic(){
         viewModelScope.launch {
-            val trackPos:Int = albumData.value?.keys?.first()!!
-            val data = (albumData.value)?.values?.first()?.get(trackPos)
-            val musicUri = data?.preview
-            val mediaSource =  ProgressiveMediaSource.Factory(dataSourceFactory)
-                .createMediaSource(MediaItem.fromUri(Uri.parse(musicUri)))
+            val musicUri =albumData.value?.get(0)?.preview
+            Timber.d("musicUri : $musicUri")
+            val extractorMediaSource = ExtractorMediaSource.Factory(dataSourceFactory)
+                .setExtractorsFactory(DefaultExtractorsFactory())
+                .createMediaSource(MediaItem.fromUri(musicUri.toString()))
+            mediaPlayer.prepare(extractorMediaSource)
             mediaPlayer.playWhenReady = true
-            mediaPlayer.prepare(mediaSource)
         }
     }
 
@@ -88,19 +91,23 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     fun forwardTrack(){
+        Timber.d("forwardTrack : $positionTrack")
+        if(!albumData.value.isNullOrEmpty() && albumData.value!!.size-1 > positionTrack)
+            ++positionTrack
 
-        albumData.value?.keys?.apply {
-            first().plus(1)
-        }
-
+        Timber.d("forwardTrack : $positionTrack")
         playMusic()
     }
 
     fun previouslyTrack(){
-        albumData.value?.keys?.apply {
-            first().minus(1)
-        }
+        Timber.d("previouslyTrack : $positionTrack")
+        if(positionTrack>0) positionTrack--
+        Timber.d("previouslyTrack : $positionTrack")
         playMusic()
     }
 
+    fun hideMediaPlayer(){
+        isGoneMediaPlayer.set(false)
+        stop()
+    }
 }

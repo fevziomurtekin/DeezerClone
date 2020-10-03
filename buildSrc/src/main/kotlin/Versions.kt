@@ -20,7 +20,7 @@ object Versions {
     // Material & Design & Arcitecture
     const val appcompat_version="1.0.2"
     val constraint_layout_version="1.1.3"
-    val material_version="1.1.0-alpha09"
+    val material_version="1.3.0-alpha03"
     val vector_drawable_version="1.0.1"
     val navigation_version="2.3.0"
     val pagging_version="1.0.0"

@@ -55,9 +55,9 @@ Pokedex is based on MVVM architecture and a repository pattern.
 Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.deezer.com/api/)
 
 ## Roadmap
-- [ ] Media player will be created using Exoplayer.
+- [x] Media player will be created using Exoplayer.
 - [x] Favorites page will be created.
-- [ ] User signin will be created.
+- [ ] Application will be testing and is out new release.
 
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
