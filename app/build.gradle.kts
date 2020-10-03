@@ -131,6 +131,8 @@ dependencies{
 
     /** android test library  */
     androidTestImplementation(Dependencies.test_runner)
+    androidTestImplementation(Dependencies.test_rules)
+    androidTestImplementation(Dependencies.test_core)
     androidTestImplementation(Dependencies.espresso)
     testImplementation(Dependencies.testTruth)
     testImplementation(Dependencies.mockK)

@@ -44,6 +44,8 @@ object Versions {
     val lifecycleVersion = "2.2.0"
 
     //Test
+    val test_core_version = "1.0.0"
+    val test_rule_version = "1.1.0"
     val junit_version = "4.12"
     val mockito_version = "2.2.0"
     val mockK_version = "1.9.3"
