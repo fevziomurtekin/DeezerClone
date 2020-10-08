@@ -59,6 +59,8 @@ Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.de
 - [x] Favorites page will be created.
 - [x] Application will be testing and is out new release.
 - [ ] New features and tests can be added.
+- [ ] In the project, it will turn a single repository into a repository structure. Base repository will created.
+- [ ] UI test will be writed.
 
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
