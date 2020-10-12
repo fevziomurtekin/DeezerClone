@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.hilt:hilt-common:1.0.0-alpha02@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4653c24f9a14f4a4c0ba40a808e22288/jetified-hilt-common-1.0.0-alpha02/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a7fbc9acde3ea0e2af32beafdd8aa067/jetified-hilt-common-1.0.0-alpha02/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a7fbc9acde3ea0e2af32beafdd8aa067/jetified-hilt-common-1.0.0-alpha02/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a7fbc9acde3ea0e2af32beafdd8aa067/jetified-hilt-common-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/c5419f86397f3719da3934ec145b1cb9/jetified-hilt-common-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/2c225f357b066e7b73af087ab423433e/jetified-hilt-common-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/2c225f357b066e7b73af087ab423433e/jetified-hilt-common-1.0.0-alpha02/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/2c225f357b066e7b73af087ab423433e/jetified-hilt-common-1.0.0-alpha02/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.hilt/hilt-common/1.0.0-alpha02/b998e5905c8d25f5e7015a72123cccd9ef678269/hilt-common-1.0.0-alpha02-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.hilt/hilt-common/1.0.0-alpha02/b998e5905c8d25f5e7015a72123cccd9ef678269/hilt-common-1.0.0-alpha02-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

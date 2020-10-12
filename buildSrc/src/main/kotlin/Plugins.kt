@@ -20,7 +20,7 @@ object Plugins{
     val versionName                 = "1.0"
     val buildVersion                = "30.0.1"
     val target                      = compile
-    val testInstrumentationRunner   = "android.support.test.runner.AndroidJUnitRunner"
+    val testInstrumentationRunner   = "com.fevziomurtekin.deezer.AppTestRunner"
     val javaVersion                 = "1.8"
     val main                        = "main"
     val release                     = "release"
@@ -33,5 +33,7 @@ object Plugins{
     val metaLicense                 = "META-INF/LICENSE"
     val metaDependecies             = "META-INF/DEPENDENCIES"
     val metaIndex                   = "META-INF/INDEX.LIST"
+
+    val testOptions                 = "ANDROIDX_TEST_ORCHESTRATOR"
 
 }

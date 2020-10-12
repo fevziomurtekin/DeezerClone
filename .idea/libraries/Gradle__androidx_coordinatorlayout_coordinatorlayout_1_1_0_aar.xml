@@ -1,16 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8189906e16b9e782a1185a53fdd5d5af/coordinatorlayout-1.1.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/f6e151ebde9322dbeee257a4574b94ea/coordinatorlayout-1.1.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8189906e16b9e782a1185a53fdd5d5af/coordinatorlayout-1.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8189906e16b9e782a1185a53fdd5d5af/coordinatorlayout-1.1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8189906e16b9e782a1185a53fdd5d5af/coordinatorlayout-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/f6e151ebde9322dbeee257a4574b94ea/coordinatorlayout-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/f6e151ebde9322dbeee257a4574b94ea/coordinatorlayout-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/f6e151ebde9322dbeee257a4574b94ea/coordinatorlayout-1.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.coordinatorlayout/coordinatorlayout/1.1.0/a15529ac349d76a872ae5ef42b84c320c456cd7f/coordinatorlayout-1.1.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.coordinatorlayout/coordinatorlayout/1.1.0/a15529ac349d76a872ae5ef42b84c320c456cd7f/coordinatorlayout-1.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

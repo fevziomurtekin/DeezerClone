@@ -1,18 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.shimmer:shimmer:0.5.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/503300c4524eea3730178c4db849f84c/jetified-shimmer-0.5.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/60e84ed96785e82c88731c9edbbf4453/jetified-shimmer-0.5.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/503300c4524eea3730178c4db849f84c/jetified-shimmer-0.5.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/503300c4524eea3730178c4db849f84c/jetified-shimmer-0.5.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/503300c4524eea3730178c4db849f84c/jetified-shimmer-0.5.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/60e84ed96785e82c88731c9edbbf4453/jetified-shimmer-0.5.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/60e84ed96785e82c88731c9edbbf4453/jetified-shimmer-0.5.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/60e84ed96785e82c88731c9edbbf4453/jetified-shimmer-0.5.0/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.shimmer/shimmer/0.5.0/8f2cac7f46a15f00f1ee997fe744d0b16677cc30/shimmer-0.5.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/com.facebook.shimmer/shimmer/0.5.0/8f2cac7f46a15f00f1ee997fe744d0b16677cc30/shimmer-0.5.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.shimmer/shimmer/0.5.0/c72bd010f27bca0db2557c0e37c54f35333a4690/shimmer-0.5.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/com.facebook.shimmer/shimmer/0.5.0/c72bd010f27bca0db2557c0e37c54f35333a4690/shimmer-0.5.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

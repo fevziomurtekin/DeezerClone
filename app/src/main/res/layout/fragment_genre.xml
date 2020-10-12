@@ -6,45 +6,47 @@
     <data>
         <variable
             name="adapter"
-            type="com.fevziomurtekin.deezer_clone.ui.genre.GenreAdapter" />
+            type="com.fevziomurtekin.deezer.ui.genre.GenreAdapter" />
         
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.genre.GenreViewModel" />
+            type="com.fevziomurtekin.deezer.ui.genre.GenreViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/cl_genre">
 
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:shimmer_auto_start="true"
-            app:isGoneLayout="@{vm.result}"
-            app:shimmer_highlight_color="@color/colorWhiteCard">
-            <include layout="@layout/shimmer_grid_layout"/>
-        </com.facebook.shimmer.ShimmerFrameLayout>
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:shimmer_auto_start="true"
+                app:isGoneLayout="@{vm.result}"
+                app:shimmer_highlight_color="@color/colorWhiteCard">
+                <include layout="@layout/shimmer_grid_layout"/>
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:fadeScrollbars="false"
-            android:padding="6dp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="vertical"
-            app:isGoneLayout="@{vm.result}"
-            app:adapter="@{adapter}"
-            app:adapterGenreList="@{vm.result}"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:spanCount="2"
-            tools:listitem="@layout/item_genre" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:fadeScrollbars="false"
+                android:padding="6dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"
+                app:isGoneLayout="@{vm.result}"
+                app:adapter="@{adapter}"
+                app:adapterGenreList="@{vm.result}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spanCount="2"
+                tools:listitem="@layout/item_genre" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

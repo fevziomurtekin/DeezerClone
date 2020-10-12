@@ -50,11 +50,13 @@ object Dependencies {
     val hilt_test           = "com.google.dagger:hilt-android-testing:${Versions.hilt_version}"
 
     /* Android Test */
-    val test_core          = "androidx.test:core:${Versions.test_core_version}"
+    val test_orch           = "androidx.test:orchestrator:${Versions.test_rule_version}"
+    val test_core           = "androidx.test:core:${Versions.test_core_version}"
     val test_rules          = "androidx.test:rules:${Versions.test_rule_version}"
     val test_runner         = "androidx.test:runner:${Versions.test_runner_version}"
     val espresso            = "androidx.test.espresso:espresso-core:${Versions.espresso_version}"
     val testTruth           = "androidx.test.ext:truth:${Versions.truth_version}"
+    val testExt             = "androidx.test.ext:junit-ktx:${Versions.test_rule_version}"
     val mockK               = "io.mockk:mockk:${Versions.mockK_version}"
     val coreTesting         = "androidx.arch.core:core-testing:${Versions.core_testing_version}"
     val jUnit               = "junit:junit:${Versions.junit_version}"

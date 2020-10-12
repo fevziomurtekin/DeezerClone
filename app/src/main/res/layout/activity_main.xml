@@ -5,7 +5,7 @@
     <data>
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.main.MainViewModel" />
+            type="com.fevziomurtekin.deezer.ui.main.MainViewModel" />
         <import type="android.view.View"/>
     </data>
 

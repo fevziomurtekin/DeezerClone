@@ -15,5 +15,6 @@
     <string name="searching">Search Keyword</string>
     <string name="recent_search">Recent Search</string>
     <string name="not_found_favorite">You haven\'t added any favorite songs before.</string>
+    <string name="network_error">Please check your network connection.</string>
 
 </resources>

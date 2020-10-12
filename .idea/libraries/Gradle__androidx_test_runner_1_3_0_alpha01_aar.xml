@@ -1,16 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test:runner:1.3.0-alpha01@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4ebe2a73dcb8dc6b5f35613353969e1/runner-1.3.0-alpha01/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1c09effa032b62492cfd3cb7668793f/runner-1.3.0-alpha01/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1c09effa032b62492cfd3cb7668793f/runner-1.3.0-alpha01/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1c09effa032b62492cfd3cb7668793f/runner-1.3.0-alpha01/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/1a931e7914ebf59a1278b6123ad19b92/runner-1.3.0-alpha01/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/b8600333adaf05ef58349eb1e0151898/runner-1.3.0-alpha01/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/b8600333adaf05ef58349eb1e0151898/runner-1.3.0-alpha01/res" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/b8600333adaf05ef58349eb1e0151898/runner-1.3.0-alpha01/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/runner/1.3.0-alpha01/f4763c62f19d8d2a8835d5648144245900a31bc1/runner-1.3.0-alpha01-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.test/runner/1.3.0-alpha01/f4763c62f19d8d2a8835d5648144245900a31bc1/runner-1.3.0-alpha01-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/runner/1.3.0-alpha01/d22fa04e9f75d348d84ff574a0c9e38b6cf0124e/runner-1.3.0-alpha01-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.test/runner/1.3.0-alpha01/d22fa04e9f75d348d84ff574a0c9e38b6cf0124e/runner-1.3.0-alpha01-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -51,7 +51,7 @@ object Versions {
     val mockK_version = "1.9.3"
     val truth_version = "1.3.0-alpha01"
     val core_testing_version = "1.3.0-alpha01"
-    val espresso_version = "3.3.0-alpha01"
+    val espresso_version = "3.1.0"
     val test_runner_version = "1.3.0-alpha01"
     val robolectric_version = "4.4"
     val turbine_version = "0.2.1"

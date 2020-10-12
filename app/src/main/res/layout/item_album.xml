@@ -5,7 +5,7 @@
     <data>
         <variable
             name="album"
-            type="com.fevziomurtekin.deezer_clone.data.albumdetails.AlbumData" />
+            type="com.fevziomurtekin.deezer.data.albumdetails.AlbumData" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

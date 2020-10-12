@@ -6,11 +6,11 @@
 
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.album.AlbumDetailsViewModel" />
+            type="com.fevziomurtekin.deezer.ui.album.AlbumDetailsViewModel" />
 
         <variable
             name="adapter"
-            type="com.fevziomurtekin.deezer_clone.ui.album.AlbumDetailsAdapter" />
+            type="com.fevziomurtekin.deezer.ui.album.AlbumDetailsAdapter" />
 
     </data>
 

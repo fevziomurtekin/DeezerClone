@@ -4,11 +4,11 @@
     <data>
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesViewModel" />
+            type="com.fevziomurtekin.deezer.ui.favorites.FavoritesViewModel" />
 
         <variable
             name="adapter"
-            type="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesAdapter" />
+            type="com.fevziomurtekin.deezer.ui.favorites.FavoritesAdapter" />
 
     </data>
 

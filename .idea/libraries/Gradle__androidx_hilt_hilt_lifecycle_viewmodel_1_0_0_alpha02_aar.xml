@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ae7a3ce6aac2d8655d210cba397594a4/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fa88d0d0470df3e349f8dd710ef8acc5/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fa88d0d0470df3e349f8dd710ef8acc5/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fa88d0d0470df3e349f8dd710ef8acc5/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/1fd3a770fe63393013ca6408144eba4a/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/c9bd94176d254d323f31eec886cc78ce/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/c9bd94176d254d323f31eec886cc78ce/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/c9bd94176d254d323f31eec886cc78ce/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha02/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.hilt/hilt-lifecycle-viewmodel/1.0.0-alpha02/d97cb84b8f4956837798987a55dc303bf6f6bf32/hilt-lifecycle-viewmodel-1.0.0-alpha02-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.hilt/hilt-lifecycle-viewmodel/1.0.0-alpha02/d97cb84b8f4956837798987a55dc303bf6f6bf32/hilt-lifecycle-viewmodel-1.0.0-alpha02-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

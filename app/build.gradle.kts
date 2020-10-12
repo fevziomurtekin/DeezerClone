@@ -21,19 +21,13 @@ android{
         testInstrumentationRunner = Plugins.testInstrumentationRunner
         vectorDrawables.useSupportLibrary = true
     }
-    /* signingConfigs {
-         getByName(Plugins.debug) {
-             storeFile = file(Plugins.file)
-             keyAlias = Plugins.alias
-             keyPassword = Plugins.pass
-             storePassword = Plugins.pass
-         }
-     }*/
     buildTypes {
         getByName(Plugins.debug) {
             signingConfig= signingConfigs.getByName(Plugins.debug)
             isMinifyEnabled = true
             isShrinkResources = false
+            isDebuggable = true
+            isTestCoverageEnabled = true
             proguardFiles(getDefaultProguardFile(Plugins.proguardTxt), Plugins.proguardPro)
         }
     }
@@ -54,9 +48,17 @@ android{
         isAbortOnError = false
     }
     androidExtensions { isExperimental = true }
+
+
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("androidTest").java.srcDirs("src/androidTest/jaa")
     }
+
+    testOptions {
+        execution = Plugins.testOptions
+    }
+
     buildFeatures {
         dataBinding=true
     }
@@ -65,6 +67,7 @@ android{
         javaMaxHeapSize = "4g"
         preDexLibraries = false
     }
+
 
 }
 
@@ -130,17 +133,22 @@ dependencies{
     implementation(Dependencies.shimmerLib)
 
     /** android test library  */
+    androidTestUtil(Dependencies.test_orch)
+    androidTestImplementation(Dependencies.hilt_test)
     androidTestImplementation(Dependencies.test_runner)
     androidTestImplementation(Dependencies.test_rules)
     androidTestImplementation(Dependencies.test_core)
     androidTestImplementation(Dependencies.espresso)
     testImplementation(Dependencies.testTruth)
+    //androidTestImplementation(Dependencies.testTruth)
+    androidTestImplementation(Dependencies.testExt)
     testImplementation(Dependencies.mockK)
     testImplementation(Dependencies.coreTesting)
     testImplementation(Dependencies.jUnit)
     testImplementation(Dependencies.mockServer)
     testImplementation(Dependencies.coroutines_test)
     testImplementation(Dependencies.robolectric)
+    androidTestImplementation(Dependencies.robolectric)
     testImplementation(Dependencies.mockitoKotlin)
     testImplementation(Dependencies.turbine)
 

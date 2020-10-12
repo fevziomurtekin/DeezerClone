@@ -6,21 +6,22 @@
 
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.search.SearchViewModel" />
+            type="com.fevziomurtekin.deezer.ui.search.SearchViewModel" />
 
         <variable
             name="recentAdapter"
-            type="com.fevziomurtekin.deezer_clone.ui.search.RecentSearchAdapter" />
+            type="com.fevziomurtekin.deezer.ui.search.RecentSearchAdapter" />
 
         <variable
             name="searchAdapter"
-            type="com.fevziomurtekin.deezer_clone.ui.search.SearchAlbumAdapter" />
+            type="com.fevziomurtekin.deezer.ui.search.SearchAlbumAdapter" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/cl_search">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/aet_search"

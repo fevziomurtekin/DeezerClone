@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fevziomurtekin.deezer_clone">
+    package="com.fevziomurtekin.deezer">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name="com.fevziomurtekin.deezer_clone.BaseApplication"
+        android:name="com.fevziomurtekin.deezer.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.deezer_clone">
-        <activity android:name="com.fevziomurtekin.deezer_clone.ui.main.MainActivity"
+        <activity android:name="com.fevziomurtekin.deezer.ui.main.MainActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

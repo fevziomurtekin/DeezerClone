@@ -4,7 +4,7 @@
     <data>
         <variable
             name="search"
-            type="com.fevziomurtekin.deezer_clone.data.search.SearchQuery" />
+            type="com.fevziomurtekin.deezer.data.search.SearchQuery" />
     </data>
 
     <TextView

@@ -5,11 +5,11 @@
     <data>
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.artistdetails.related.ArtistRelatedViewModel" />
+            type="com.fevziomurtekin.deezer.ui.artistdetails.related.ArtistRelatedViewModel" />
 
         <variable
             name="adapter"
-            type="com.fevziomurtekin.deezer_clone.ui.artistdetails.related.ArtistRelatedAdapter" />
+            type="com.fevziomurtekin.deezer.ui.artistdetails.related.ArtistRelatedAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

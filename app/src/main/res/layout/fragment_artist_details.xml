@@ -8,10 +8,10 @@
             type="androidx.viewpager.widget.ViewPager" />
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer_clone.ui.artistdetails.detail.ArtistDetailsViewModel" />
+            type="com.fevziomurtekin.deezer.ui.artistdetails.detail.ArtistDetailsViewModel" />
         <variable
             name="vpadapter"
-            type="com.fevziomurtekin.deezer_clone.ui.artistdetails.detail.ADCategories" />
+            type="com.fevziomurtekin.deezer.ui.artistdetails.detail.ADCategories" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

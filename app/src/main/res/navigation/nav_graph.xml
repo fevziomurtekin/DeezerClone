@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/genre"
-        android:name="com.fevziomurtekin.deezer_clone.ui.genre.GenreFragment"
+        android:name="com.fevziomurtekin.deezer.ui.genre.GenreFragment"
         tools:layout="@layout/fragment_genre">
 
         <action
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/genre_list"
-        android:name="com.fevziomurtekin.deezer_clone.ui.artist.ArtistsFragment"
+        android:name="com.fevziomurtekin.deezer.ui.artist.ArtistsFragment"
         tools:layout="@layout/fragment_artists">
 
         <action
@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/search"
-        android:name="com.fevziomurtekin.deezer_clone.ui.search.SearchFragment"
+        android:name="com.fevziomurtekin.deezer.ui.search.SearchFragment"
         tools:layout="@layout/fragment_search">
 
         <action
@@ -90,7 +90,7 @@
 
     <fragment
         android:id="@+id/artist_details"
-        android:name="com.fevziomurtekin.deezer_clone.ui.artistdetails.detail.ArtistDetailsFragment"
+        android:name="com.fevziomurtekin.deezer.ui.artistdetails.detail.ArtistDetailsFragment"
         tools:layout="@layout/fragment_artist_details">
 
         <action
@@ -114,7 +114,7 @@
 
     <fragment
         android:id="@+id/favorites"
-        android:name="com.fevziomurtekin.deezer_clone.ui.favorites.FavoritesFragment"
+        android:name="com.fevziomurtekin.deezer.ui.favorites.FavoritesFragment"
         tools:layout="@layout/fragment_favorites">
 
 
@@ -122,7 +122,7 @@
 
     <fragment
         android:id="@+id/album_details"
-        android:name="com.fevziomurtekin.deezer_clone.ui.album.AlbumDetailsFragment"
+        android:name="com.fevziomurtekin.deezer.ui.album.AlbumDetailsFragment"
         tools:layout="@layout/fragment_album_details">
 
     </fragment>

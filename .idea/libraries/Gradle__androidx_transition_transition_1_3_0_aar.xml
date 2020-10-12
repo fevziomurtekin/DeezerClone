@@ -1,16 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.transition:transition:1.3.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec77551c626bf2de346ea5d0f6028c2a/transition-1.3.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/cdee39649bde0f015c577adb71aed84b/transition-1.3.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec77551c626bf2de346ea5d0f6028c2a/transition-1.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec77551c626bf2de346ea5d0f6028c2a/transition-1.3.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec77551c626bf2de346ea5d0f6028c2a/transition-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/cdee39649bde0f015c577adb71aed84b/transition-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/cdee39649bde0f015c577adb71aed84b/transition-1.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/cdee39649bde0f015c577adb71aed84b/transition-1.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.transition/transition/1.3.0/1ab749fa90feb756d9cd154f76fce1d8e557cae/transition-1.3.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.transition/transition/1.3.0/1ab749fa90feb756d9cd154f76fce1d8e557cae/transition-1.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
