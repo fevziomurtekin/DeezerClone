@@ -47,7 +47,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
   - [Turbine](https://cashapp.github.io/turbine/docs/0.x/turbine/)
 
 ## Architecture
-Pokedex is based on MVVM architecture and a repository pattern.
+DeezerClone is based on MVVM architecture and a repository pattern.
 
 ![architecture](https://raw.githubusercontent.com/fevziomurtekin/hackernewsapp/master/screenshot/mvvm.png)
 
