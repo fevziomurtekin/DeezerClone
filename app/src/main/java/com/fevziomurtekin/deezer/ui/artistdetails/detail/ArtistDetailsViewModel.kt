@@ -3,7 +3,8 @@ package com.fevziomurtekin.deezer.ui.artistdetails.detail
 import android.accounts.NetworkErrorException
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
 import com.fevziomurtekin.deezer.repository.DeezerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +14,7 @@ class ArtistDetailsViewModel @ViewModelInject constructor(
     val mainRepository: DeezerRepository
 ):ViewModel() {
 
-    var result: LiveData<Result<Any>> = MutableLiveData()
+    var result: LiveData<ApiResult<ArtistDetailResponse?>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
 
     init {

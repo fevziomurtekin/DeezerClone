@@ -7,7 +7,7 @@ import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
 import com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedData
 import com.fevziomurtekin.deezer.data.genre.Data
 import com.fevziomurtekin.deezer.data.search.SearchData
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.entities.SearchEntity
 
 object MockUtil {
     val data = Data("0",
@@ -22,7 +22,7 @@ object MockUtil {
 
     val genres = listOf(data)
 
-    val recentData = SearchQuery("1","ezhel",12345.toLong())
+    val recentData = SearchEntity("1","ezhel",12345.toLong())
 
     val searchList = listOf(recentData)
 

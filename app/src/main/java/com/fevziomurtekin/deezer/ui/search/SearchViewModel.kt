@@ -5,10 +5,10 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.repository.DeezerRepository
 import timber.log.Timber
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import kotlinx.coroutines.*
 
 
@@ -17,8 +17,8 @@ class SearchViewModel @ViewModelInject constructor(
 ):ViewModel(){
 
     var queryLiveData:MutableLiveData<String> = MutableLiveData()
-    var result:LiveData<Result<Any>> = MutableLiveData()
-    var recentSearch:LiveData<List<SearchQuery>> = MutableLiveData()
+    var result:LiveData<ApiResult<Any>> = MutableLiveData()
+    var recentSearch:LiveData<ApiResult<List<SearchEntity>>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
     val editorActionListener:TextView.OnEditorActionListener
 

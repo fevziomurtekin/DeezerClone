@@ -5,8 +5,9 @@ import android.app.Application
 import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
+import com.fevziomurtekin.deezer.data.genre.Data
 import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
 import com.fevziomurtekin.deezer.repository.DeezerRepository
 import com.google.android.exoplayer2.*
@@ -24,7 +25,7 @@ class MainViewModel @ViewModelInject constructor(
     private val mainRepository: DeezerRepository
 ): ViewModel(){
 
-    var genreListLiveData: LiveData<Result<Any>> = MutableLiveData()
+    var genreListLiveData: LiveData<ApiResult<List<Data>?>> = MutableLiveData()
     var isSplash:MutableLiveData<Boolean> = MutableLiveData()
     var isGoneMediaPlayer :ObservableBoolean = ObservableBoolean(false)
     var albumData:MutableLiveData<List<AlbumData>> = MutableLiveData()

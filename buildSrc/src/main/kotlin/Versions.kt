@@ -12,8 +12,8 @@ object Versions {
     /** Dependencies **/
     //Retrofit & Okhttp & serialization
     val okhttp3_version="3.12.0"
-    val retrofit2_version="2.5.0"
-    val retrofit2_converter_version="2.4.0"
+    val retrofit2_version="2.9.0"
+    val retrofit2_converter_version="2.9.0"
     val serialization_version = "1.0.0-RC"
     val serialization_converter_version="0.7.0"
 

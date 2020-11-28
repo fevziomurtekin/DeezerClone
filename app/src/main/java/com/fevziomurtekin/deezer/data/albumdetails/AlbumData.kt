@@ -5,18 +5,16 @@ import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
 import java.util.*
 
-@Entity
 @Serializable
-data class AlbumData(
+class AlbumData(
     //val artist: Artist,
     val disk_number: Int,
     var duration: String,
     val explicit_content_cover: Int,
     val explicit_content_lyrics: Int,
     val explicit_lyrics: Boolean,
-    @PrimaryKey
-    var id: String=UUID.randomUUID().toString(),
-    val isrc: String?="",
+    var id: String,
+    val isrc: String="",
     val link: String?="",
     val md5_image: String?="",
     val preview: String?="",

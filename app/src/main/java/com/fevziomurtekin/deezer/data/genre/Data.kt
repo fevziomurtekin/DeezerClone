@@ -4,10 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
 
-@Entity
 @Serializable
 data class Data(
-    @PrimaryKey var id: String,
+    var id: String,
     var name: String?,
     var picture: String?,
     var picture_big: String?,

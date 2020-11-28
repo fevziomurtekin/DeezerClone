@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.databinding.ItemSearchBinding
 import timber.log.Timber
 
@@ -18,7 +18,7 @@ class RecentSearchAdapter(var listener:RecentSearchListener):
         fun recentSearchListener(query: String)
     }
 
-    private val items: MutableList<SearchQuery> = mutableListOf()
+    private val items: MutableList<SearchEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecentSearchViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -35,7 +35,7 @@ class RecentSearchAdapter(var listener:RecentSearchListener):
         }
     }
 
-    fun addRecentSearch(searchList: List<SearchQuery>) {
+    fun addRecentSearch(searchList: List<SearchEntity>) {
         Timber.d("searchList : ${searchList.toString()}")
         val previousSize = items.size
         items.addAll(searchList)

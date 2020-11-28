@@ -7,14 +7,16 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingFragment
+import com.fevziomurtekin.deezer.core.mapper
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentFavoritesBinding
+import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FavoritesFragment:DataBindingFragment() {
+class FavoritesFragment: DataBindingFragment() {
 
     lateinit var binding:FragmentFavoritesBinding
     @VisibleForTesting
@@ -32,9 +34,8 @@ class FavoritesFragment:DataBindingFragment() {
             lifecycleOwner = this@FavoritesFragment
             vm = viewModel
             adapter = FavoritesAdapter(object : FavoritesAdapter.OnClick {
-                override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumData>) {
+                override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumEntity>) {
                     ((this@FavoritesFragment).requireActivity() as MainActivity).viewModel.apply {
-                        albumData.value = albumList
                         positionTrack = trackPos
                         isGoneMediaPlayer.set(true)
                         playMusic()

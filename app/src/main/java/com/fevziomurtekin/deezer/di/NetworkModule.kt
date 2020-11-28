@@ -4,7 +4,6 @@ import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.HttpRequestInterceptor
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -38,7 +37,6 @@ object NetworkModule {
                 isLenient = true
                 ignoreUnknownKeys = true
             }.asConverterFactory(MediaType.get("application/json")))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
 
     @Provides

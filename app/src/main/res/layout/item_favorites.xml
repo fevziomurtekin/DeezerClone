@@ -5,7 +5,7 @@
     <data>
         <variable
             name="favorite"
-            type="com.fevziomurtekin.deezer.data.albumdetails.AlbumData" />
+            type="com.fevziomurtekin.deezer.entities.AlbumEntity" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

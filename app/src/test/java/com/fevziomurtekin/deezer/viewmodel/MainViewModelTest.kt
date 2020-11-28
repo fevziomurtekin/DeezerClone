@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.genre.Data
 import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
@@ -68,15 +68,15 @@ class MainViewModelTest {
         val mockList = MockUtil.genres
         whenever(deezerDao.getGenreList()).thenReturn(mockList)
 
-        val observer : Observer<Result<List<Data>>> = mock()
-        val fetchedData : LiveData<Result<List<Data>>> = mainRepository.fetchGenreList().asLiveData()
+        val observer : Observer<ApiResult<List<Data>>> = mock()
+        val fetchedData : LiveData<ApiResult<List<Data>>> = mainRepository.fetchGenreList().asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchGenreList()
         delay(500L)
 
         verify(deezerDao, atLeastOnce()).getGenreList()
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Succes(mockList))
         fetchedData.removeObserver(observer)
     }
 
