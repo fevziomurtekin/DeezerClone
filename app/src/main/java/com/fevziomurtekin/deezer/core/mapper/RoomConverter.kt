@@ -1,9 +1,11 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.mapper
 
 import androidx.room.TypeConverter
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.entities.AlbumEntity
+import com.fevziomurtekin.deezer.entities.GenreEntity
+import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.*
@@ -14,18 +16,18 @@ object RoomConverter {
 
     @JvmStatic
     @TypeConverter
-    fun fromStringToDataResponse(value:String):Data
-            = Json.decodeFromString<Data>(value)
+    fun fromStringToGenreEntity(value:String):GenreEntity
+            = Json.decodeFromString<GenreEntity>(value)
 
 
     @JvmStatic
     @TypeConverter
-    fun fromStringToSearchQueryResponse(value:String):SearchQuery
-            = Json.decodeFromString<SearchQuery>(value)
+    fun fromStringToSearchEntity(value:String): SearchEntity
+            = Json.decodeFromString<SearchEntity>(value)
 
     @JvmStatic
     @TypeConverter
-    fun fromStringToFavoriteResponse(value:String):AlbumData
+    fun fromStringToAlbumEntity(value:String):AlbumEntity
             = Json.decodeFromString(value)
 
 
@@ -34,17 +36,17 @@ object RoomConverter {
 
     @JvmStatic
     @TypeConverter
-    fun fromDataResponseToString(value:Data):String
+    fun fromGenreEntityToString(value:GenreEntity):String
             = Json.encodeToString(value)
 
     @JvmStatic
     @TypeConverter
-    fun fromSearchQueryResponseToString(value:SearchQuery):String
+    fun fromSearchEntityToString(value: SearchEntity):String
             = Json.encodeToString(value)
 
     @JvmStatic
     @TypeConverter
-    fun fromFavoritesResponseToString(value:AlbumData):String
+    fun fromAlbumEntityToString(value: AlbumEntity):String
             = Json.encodeToString(value)
 
 }

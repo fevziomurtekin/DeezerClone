@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.extensions
 
 import android.app.Activity
 import android.content.Context

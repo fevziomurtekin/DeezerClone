@@ -2,24 +2,19 @@ package com.fevziomurtekin.deezer.data.albumdetails
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.util.*
 
-@Entity
 @Serializable
-data class AlbumData(
+class AlbumData(
     //val artist: Artist,
     val disk_number: Int,
     var duration: String,
     val explicit_content_cover: Int,
     val explicit_content_lyrics: Int,
     val explicit_lyrics: Boolean,
-    @PrimaryKey
-    @SerialName("id")
-    var albumId: String=UUID.randomUUID().toString(),
-    @SerialName("isrc")
-    val albumIsrc: String?="",
+    var id: String,
+    val isrc: String="",
     val link: String?="",
     val md5_image: String?="",
     val preview: String?="",

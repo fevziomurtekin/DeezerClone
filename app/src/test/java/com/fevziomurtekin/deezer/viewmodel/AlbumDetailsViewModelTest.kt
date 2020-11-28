@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
@@ -49,14 +49,14 @@ class AlbumDetailsViewModelTest {
     fun fetchAlbumListTest() = runBlocking {
         val mockList = listOf(MockUtil.album)
 
-        val observer : Observer<Result<List<AlbumData>>> = mock()
-        val fetchedData : LiveData<Result<List<AlbumData>>> = mainRepository.fetchAlbumTracks("302127").asLiveData()
+        val observer : Observer<ApiResult<List<AlbumData>>> = mock()
+        val fetchedData : LiveData<ApiResult<List<AlbumData>>> = mainRepository.fetchAlbumTracks("302127").asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchingAlbumDatas(MockUtil.albumID)
         delay(500L)
 
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Succes(mockList))
         fetchedData.removeObserver(observer)
 
 

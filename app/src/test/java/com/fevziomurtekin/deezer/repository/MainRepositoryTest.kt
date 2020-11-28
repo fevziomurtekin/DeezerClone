@@ -3,7 +3,7 @@ package com.fevziomurtekin.deezer.repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumDetailsResponse
 import com.fevziomurtekin.deezer.data.artist.ArtistData
@@ -64,8 +64,8 @@ class MainRepositoryTest {
         /** add to turbine library.*/
         repository.fetchGenreList().test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(MockUtil.genres))
-            assertEquals((result as Result.Succes<List<Data>>).data[0].name , "All")
+            assertEquals(result, ApiResult.Succes(MockUtil.genres))
+            assertEquals((result as ApiResult.Succes<List<Data>>).data[0].name , "All")
             assertEquals(result.data[0].id , "0")
             assertEquals(result.data[1].name , "Pop")
             assertEquals(result.data[1].id , "132")
@@ -87,8 +87,8 @@ class MainRepositoryTest {
 
         repository.fetchArtistList(MockUtil.genreID).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(listOf(MockUtil.artist)))
-            assertEquals((result as Result.Succes<List<ArtistData>>).data[0].name , "Ezhel")
+            assertEquals(result, ApiResult.Succes(listOf(MockUtil.artist)))
+            assertEquals((result as ApiResult.Succes<List<ArtistData>>).data[0].name , "Ezhel")
             assertEquals(result.data[0].id , "8354140")
             assertEquals(result.data[1].name , "Sagopa Kajmer")
             assertEquals(result.data[1].id , "12934")
@@ -110,8 +110,8 @@ class MainRepositoryTest {
 
         repository.fetchArtistDetails(MockUtil.artistID).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(mockData))
-            assertEquals((result as Result.Succes<ArtistDetailResponse>).data.name , "Ezhel")
+            assertEquals(result, ApiResult.Succes(mockData))
+            assertEquals((result as ApiResult.Succes<ArtistDetailResponse>).data.name , "Ezhel")
             assertEquals(result.data.id , "8354140")
             expectComplete()
         }
@@ -129,8 +129,8 @@ class MainRepositoryTest {
 
         repository.fetchArtistAlbums(MockUtil.artistID).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(listOf(MockUtil.artistAlbum)))
-            assertEquals((result as Result.Succes<List<ArtistAlbumData>>).data[0].title , "Müptezhel")
+            assertEquals(result, ApiResult.Succes(listOf(MockUtil.artistAlbum)))
+            assertEquals((result as ApiResult.Succes<List<ArtistAlbumData>>).data[0].title , "Müptezhel")
             assertEquals(result.data[0].id , "51174732")
             assertEquals(result.data[1].title , "Made In Turkey")
             assertEquals(result.data[1].id , "155597932")
@@ -150,8 +150,8 @@ class MainRepositoryTest {
 
         repository.fetchArtistRelated(MockUtil.artistID).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(listOf(MockUtil.artistRelatedData)))
-            assertEquals((result as Result.Succes<List<ArtistRelatedData>>).data[0].name , "Murda")
+            assertEquals(result, ApiResult.Succes(listOf(MockUtil.artistRelatedData)))
+            assertEquals((result as ApiResult.Succes<List<ArtistRelatedData>>).data[0].name , "Murda")
             assertEquals(result.data[0].id , "389038")
             assertEquals(result.data[1].name , "Reynmen")
             assertEquals(result.data[1].id , "13136341")
@@ -172,8 +172,8 @@ class MainRepositoryTest {
 
         repository.fetchAlbumTracks(MockUtil.albumID).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(listOf(MockUtil.album)))
-            assertEquals((result as Result.Succes<List<AlbumData>>).data[0].title , "Alo")
+            assertEquals(result, ApiResult.Succes(listOf(MockUtil.album)))
+            assertEquals((result as ApiResult.Succes<List<AlbumData>>).data[0].title , "Alo")
             assertEquals(result.data[0].id , "425605922")
             assertEquals(result.data[1].title , "Geceler")
             assertEquals(result.data[1].id , "425605932")
@@ -232,8 +232,8 @@ class MainRepositoryTest {
 
         repository.fetchSearch(MockUtil.query).test {
             val result = expectItem()
-            assertEquals(result, Result.Succes(listOf(MockUtil.searchData)))
-            assertEquals((result as Result.Succes<List<SearchData>>).data[0].title , "İmkansızım")
+            assertEquals(result, ApiResult.Succes(listOf(MockUtil.searchData)))
+            assertEquals((result as ApiResult.Succes<List<SearchData>>).data[0].title , "İmkansızım")
             assertEquals(result.data[0].id , "51434782")
             assertEquals(result.data[0].record_type , "single")
             assertEquals(result.data[0].genre_id , "116")

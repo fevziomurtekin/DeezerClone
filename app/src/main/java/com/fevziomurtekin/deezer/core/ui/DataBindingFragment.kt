@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

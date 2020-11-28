@@ -1,78 +1,81 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.repository
 
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.data.DaoResult
+import com.fevziomurtekin.deezer.data.genre.Data
+import com.fevziomurtekin.deezer.entities.AlbumEntity
+import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.coroutines.flow.Flow
 
-abstract class BaseRepository{
+interface DeezerRepositoryImpl{
 
     /**
      * give to id return fetching genreList list.
      * @return Result.Error or Result.Succes(List<Data>)
      * */
-    abstract suspend fun fetchGenreList(): Flow<Result<List<*>>>
+    suspend fun fetchGenreList(): Flow<ApiResult<*>>
     /**
      * give to id return fetching artist list.
      * @param genreID, String
      * @return Result.Error or Result.Succes(List<ArtistData>)
      * */
-    abstract fun fetchArtistList(genreID:String): Flow<Result<List<*>>>
+    fun fetchArtistList(genreID:String): Flow<ApiResult<*>>
 
     /**
      * give to id return fetching artist details.
      * @param artistID, String
      * @return Result.Error or Result.Succes(List<ArtistData>)
      * */
-    abstract fun fetchArtistDetails(artistID:String):Flow<Result<*>>
+    fun fetchArtistDetails(artistID:String):Flow<ApiResult<*>>
 
     /**
      * give to id return fetching artist albums.
      * @param artistID, artistId
      * @return Result.Error or Result.Succes(List<ArtistAlbumData>)
      * */
-    abstract fun fetchArtistAlbums(artistID:String): Flow<Result<List<*>>>
+    fun fetchArtistAlbums(artistID:String): Flow<ApiResult<List<*>>>
 
     /**
      * give to id return fetching artist related.
      * @param artistID, String
      * @return Result.Error or Result.Succes(List<ArtistRelatedData>)
      * */
-    abstract fun fetchArtistRelated(artistID: String): Flow<Result<List<*>>>
+    fun fetchArtistRelated(artistID: String): Flow<ApiResult<List<*>>>
 
     /**
      * give to id return fetching album tracks.
      * @param albumID, String
      * @return Result.Error or Result.Succes(List<AlbumData>)
      * */
-    abstract fun fetchAlbumTracks(albumID:String): Flow<Result<List<*>>>
+    fun fetchAlbumTracks(albumID:String): Flow<ApiResult<List<*>>>
 
     /**
      * @return List<SearchQuery>?
      * */
-    abstract fun fetchRecentSearch() : Flow<List<*>>
+    fun fetchRecentSearch() : Flow<ApiResult<List<*>>>
 
     /**
      * @param query,
      * insert the query.
      * */
-    abstract suspend fun insertSearch(query: SearchQuery)
+    suspend fun insertSearch(query: SearchEntity): DaoResult
 
     /**
      * @param query, String
      * @return Result.Error or Result.Succes(List<SearchData>)
      * */
-    abstract fun fetchSearch(query:String) : Flow<Result<List<*>>>
+    fun fetchSearch(query:String) : Flow<ApiResult<List<*>>>
 
     /**
      * @param track, AlbumData
      * insert the track on local data.
      * */
-    abstract suspend fun insertFavoritesData(track:AlbumData)
+    suspend fun insertFavoritesData(track:AlbumEntity?): DaoResult
 
     /**
      * @return List<Favorites>?
      * */
-    abstract fun fetchFavorites() : Flow<List<*>>
+    fun fetchFavorites() : Flow<ApiResult<List<*>>>
 
 }
 

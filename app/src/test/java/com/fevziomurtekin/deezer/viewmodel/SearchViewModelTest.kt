@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.search.SearchData
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
@@ -53,8 +53,8 @@ class SearchViewModelTest {
         val mockList = listOf(MockUtil.searchData)
         whenever(deezerDao.getQueryList()).thenReturn(listOf(mockData))
 
-        val observer : Observer<Result<List<SearchData>>> = mock()
-        val fetchedData : LiveData<Result<List<SearchData>>> = mainRepository.fetchSearch(MockUtil.query).asLiveData()
+        val observer : Observer<ApiResult<List<SearchData>>> = mock()
+        val fetchedData : LiveData<ApiResult<List<SearchData>>> = mainRepository.fetchSearch(MockUtil.query).asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchingRecentSearch()
@@ -62,7 +62,7 @@ class SearchViewModelTest {
 
         verify(deezerDao.insertQuery(mockData))
         verify(deezerDao, atLeastOnce()).getGenreList()
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Succes(mockList))
         fetchedData.removeObserver(observer)
 
 

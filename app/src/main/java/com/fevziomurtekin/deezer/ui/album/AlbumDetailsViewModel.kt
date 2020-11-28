@@ -3,7 +3,8 @@ package com.fevziomurtekin.deezer.ui.album
 import android.accounts.NetworkErrorException
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.repository.DeezerRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +15,7 @@ class AlbumDetailsViewModel @ViewModelInject constructor(
     private val mainRepository: DeezerRepository
 ):ViewModel(){
 
-    var result:LiveData<Result<Any>> = MutableLiveData()
+    var result:LiveData<ApiResult<Any>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
 
     init {
@@ -23,7 +24,7 @@ class AlbumDetailsViewModel @ViewModelInject constructor(
 
     fun favoritedToTrack(data:AlbumData) {
         viewModelScope.launch {
-            mainRepository.insertFavoritesData(track = data)
+            mainRepository.insertFavoritesData(track = data.mapper())
         }
     }
 

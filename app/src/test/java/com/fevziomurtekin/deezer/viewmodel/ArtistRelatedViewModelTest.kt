@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedData
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
@@ -48,14 +48,14 @@ class ArtistRelatedViewModelTest {
     fun fetchArtistDetailsTest() = runBlocking {
         val mockList = listOf(MockUtil.artistRelatedData)
 
-        val observer : Observer<Result<List<ArtistRelatedData>>> = mock()
-        val fetchedData : LiveData<Result<List<ArtistRelatedData>>> = mainRepository.fetchArtistRelated(MockUtil.artistID).asLiveData()
+        val observer : Observer<ApiResult<List<ArtistRelatedData>>> = mock()
+        val fetchedData : LiveData<ApiResult<List<ArtistRelatedData>>> = mainRepository.fetchArtistRelated(MockUtil.artistID).asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchArtistRelated(MockUtil.artistID)
         delay(500L)
 
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Succes(mockList))
         fetchedData.removeObserver(observer)
     }
 

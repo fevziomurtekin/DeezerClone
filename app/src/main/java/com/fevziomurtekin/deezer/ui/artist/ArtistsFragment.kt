@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingFragment
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.core.Env
-import com.fevziomurtekin.deezer.core.UIExtensions
+import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.databinding.FragmentArtistsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artists.*
 import timber.log.Timber
-import com.fevziomurtekin.deezer.core.Result
+import com.fevziomurtekin.deezer.core.data.ApiResult
 
 @AndroidEntryPoint
 class ArtistsFragment : DataBindingFragment(){
@@ -50,12 +50,12 @@ class ArtistsFragment : DataBindingFragment(){
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
                 //TODO  progress dialog add.
-                Result.Loading->{ }
-                Result.Error->{
+                ApiResult.Loading->{ }
+                is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistsFragment.lv_main,this@ArtistsFragment.getString(R.string.unexpected_error))
                     Timber.d("result : error isSplash : false")
                 }
-                is Result.Succes->{
+                is ApiResult.Success->{
                     Timber.d("result : succes isSplash : false")
                 }
             }

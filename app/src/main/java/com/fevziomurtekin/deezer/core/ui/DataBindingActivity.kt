@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.ui
 
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity

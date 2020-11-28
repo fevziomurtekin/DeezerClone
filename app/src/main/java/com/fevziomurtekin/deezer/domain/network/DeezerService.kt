@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer.domain.network
 
+import com.fevziomurtekin.deezer.core.data.ApiResponse
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumDetailsResponse
 import com.fevziomurtekin.deezer.data.artist.ArtistsResponse
 import com.fevziomurtekin.deezer.data.artistdetails.ArtistAlbumResponse
@@ -17,29 +18,29 @@ interface DeezerService{
 
     @GET("genre")
     fun fetchGenreList()
-            :Deferred<GenreResponse>
+            :ApiResponse<GenreResponse>
 
     @GET("genre/{genreId}/artists")
     fun fetchArtistList(@Path("genreId") genreId:String)
-            :Deferred<ArtistsResponse>
+            :ApiResponse<ArtistsResponse>
 
     @GET("artist/{artistId}")
     fun fetchArtistDetails(@Path("artistId") artistID:String)
-            :Deferred<ArtistDetailResponse>
+            :ApiResponse<ArtistDetailResponse>
 
     @GET("artist/{artistId}/albums")
     fun fetchArtistAlbums(@Path("artistId") artistID: String)
-            :Deferred<ArtistAlbumResponse>
+            :ApiResponse<ArtistAlbumResponse>
 
     @GET("artist/{artistId}/related")
     fun fetchArtistRelated(@Path("artistId") artistID: String)
-            :Deferred<ArtistRelatedResponse>
+            :ApiResponse<ArtistRelatedResponse>
 
     @GET("album/{albumId}/tracks")
     fun fetchAlbumDetails(@Path("albumId") albumId:String)
-            :Deferred<AlbumDetailsResponse>
+            :ApiResponse<AlbumDetailsResponse>
 
     @GET("search/album")
     fun fetchSearchAlbum(@Query("q") q:String)
-            :Deferred<SearchResponse>
+            :ApiResponse<SearchResponse>
 }

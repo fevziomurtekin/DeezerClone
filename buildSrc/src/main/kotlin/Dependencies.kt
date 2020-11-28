@@ -25,7 +25,7 @@ object Dependencies {
     val okhttp              = "com.squareup.okhttp3:okhttp:${Versions.okhttp3_version}"
     val okhttp_logging      = "com.squareup.okhttp3:logging-interceptor:${Versions.logging_version}"
     val retrofit            = "com.squareup.retrofit2:retrofit:${Versions.retrofit2_version}"
-    val retrofit_convertor  = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_converter_version}"
+    val retrofit_converter  = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_converter_version}"
     val retrofit_adapter    = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit2_version}"
 
     /* kotlin serialization */
@@ -82,7 +82,6 @@ object Dependencies {
     val coroutines_test     = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines_android_version}"
     val coroutines_android  = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android_version}"
     val coroutines_core_lib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_android_version}"
-    val coroutines_adapter  = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutines_adapter_version}"
 
     val multidex_lib        = "com.android.support:multidex:${Versions.multidexVersion}"
 

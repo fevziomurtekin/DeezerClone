@@ -6,13 +6,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingActivity
+import com.fevziomurtekin.deezer.core.ui.DataBindingActivity
 import com.fevziomurtekin.deezer.core.Env
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
-import com.fevziomurtekin.deezer.core.Result
-import com.fevziomurtekin.deezer.core.UIExtensions
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
 import com.fevziomurtekin.deezer.databinding.ActivityMainBinding
 
@@ -36,15 +36,15 @@ class MainActivity : DataBindingActivity() {
         viewModel.genreListLiveData.observe(this, Observer {
             //Timber.d("result:${it}")
             when(it){
-                Result.Loading->{
+                ApiResult.Loading->{
                     viewModel.isSplash.postValue(true)
                 }
-                Result.Error->{
+                is ApiResult.Error->{
                     viewModel.isSplash.postValue(false)
                     UIExtensions.showSnackBar(this@MainActivity.constraint_main,this@MainActivity.getString(R.string.unexpected_error))
                     Timber.d("result : error isSplash : false")
                 }
-                is Result.Succes->{
+                is ApiResult.Success->{
                     viewModel.isSplash.postValue(false)
                     Timber.d("result : succes isSplash : false")
                 }

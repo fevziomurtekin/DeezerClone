@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingFragment
-import com.fevziomurtekin.deezer.core.Result
-import com.fevziomurtekin.deezer.core.UIExtensions
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.databinding.FragmentArtistAlbumsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_albums.*
 import timber.log.Timber
 
 @AndroidEntryPoint
-class ArtistAlbumsFragment(private val artistID:String):DataBindingFragment() {
+class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
 
     @VisibleForTesting val viewModel:ArtistAlbumViewModel by viewModels()
     private lateinit var binding: FragmentArtistAlbumsBinding
@@ -40,12 +40,12 @@ class ArtistAlbumsFragment(private val artistID:String):DataBindingFragment() {
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
                 //TODO  progress dialog add.
-                Result.Loading->{ }
-                Result.Error->{
+                ApiResult.Loading->{ }
+                is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistAlbumsFragment.lv_artist_album,this@ArtistAlbumsFragment.getString(R.string.unexpected_error))
                     Timber.d("result : error isSplash : false")
                 }
-                is Result.Succes->{
+                is ApiResult.Success->{
                     Timber.d("result : succes isSplash : false")
                 }
             }

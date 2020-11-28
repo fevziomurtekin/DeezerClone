@@ -68,7 +68,6 @@ android{
         preDexLibraries = false
     }
 
-
 }
 
 dependencies{
@@ -96,7 +95,7 @@ dependencies{
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging)
     implementation(Dependencies.retrofit)
-    implementation(Dependencies.retrofit_convertor)
+    implementation(Dependencies.retrofit_converter)
     implementation(Dependencies.retrofit_adapter)
     /** room **/
     implementation(Dependencies.room)
@@ -121,7 +120,6 @@ dependencies{
     /** Coroutines **/
     implementation(Dependencies.coroutines_android)
     implementation(Dependencies.coroutines_core_lib)
-    implementation(Dependencies.coroutines_adapter)
     /** MultiDex **/
     implementation(Dependencies.multidex_lib)
     /** kotlin serialization **/

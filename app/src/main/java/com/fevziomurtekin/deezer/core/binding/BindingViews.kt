@@ -12,9 +12,13 @@ import coil.load
 import coil.size.Scale
 import coil.transform.BlurTransformation
 import com.fevziomurtekin.deezer.R
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.extensions.isNotNull
+import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
 import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.entities.AlbumEntity
 import timber.log.Timber
 
 /**
@@ -38,12 +42,11 @@ fun bindLoadImageUrl(view: ImageView, url: String) {
 }
 
 @BindingAdapter("bindImageArtist")
-fun bindLoadImageArtistDetails(view: ImageView, results:LiveData<Result<Any>>) {
+fun bindLoadImageArtistDetails(view: ImageView, results:LiveData<ApiResult<ArtistDetailResponse>>) {
     when (results.value) {
-        Result.Loading, Result.Error -> {/* Nothing */
-        }
-        is Result.Succes -> {
-            val imgUrl = ((results.value as Result.Succes<ArtistDetailResponse>).data.picture_big)
+        ApiResult.Loading, is ApiResult.Error-> {/* Nothing */ }
+        is ApiResult.Success -> {
+            val imgUrl = ((results.value as ApiResult.Success<ArtistDetailResponse>).data.picture_big)
             Timber.d("Binding url : $imgUrl ")
             view.load(imgUrl){
                 crossfade(true)
@@ -61,18 +64,18 @@ fun bindGone(view:View, isGone:Boolean){
 
 /* search layout */
 @BindingAdapter("isGoneLayout")
-fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
+fun<T> bindingIsGoneLayout(view: View,results:LiveData<ApiResult<T>>){
     Timber.d("bindingIsGoneLayout ${view.id == R.id.recyclerView}  result : ${results.value}")
-    if(results.value != null) {
+    if(results.value.isNotNull()) {
         when (results.value) {
-            Result.Loading, Result.Error -> {
+            ApiResult.Loading, is ApiResult.Error -> {
                 when(view.id){
                     R.id.shimmerLayout,
                     R.id.lv_search_album->view.isGone = false
                     else-> view.isGone = true
                 }
             }
-            is Result.Succes -> {
+            is ApiResult.Success -> {
                 when(view.id){
                     R.id.shimmerLayout,
                     R.id.lv_recent_search-> view.isGone = true
@@ -87,14 +90,14 @@ fun bindingIsGoneLayout(view: View,results:LiveData<Result<Any>>){
 }
 
 @BindingAdapter("isGoneFavoriteLayout")
-fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<List<AlbumData>>){
+fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<ApiResult<List<AlbumEntity>>>){
     Timber.d("bindingIsGoneFavoriteLayout : ${results.value}")
     when(view.id){
         R.id.recyclerView->{
-            view.isGone = results.value.isNullOrEmpty()
+            view.isGone = results.value.isSuccessAndNotNull()
         }
         else->{
-            view.isGone = !results.value.isNullOrEmpty()
+            view.isGone = !results.value.isSuccessAndNotNull()
         }
     }
 }
