@@ -2,6 +2,7 @@ package com.fevziomurtekin.deezer.data.albumdetails
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.util.*
 
@@ -15,8 +16,10 @@ data class AlbumData(
     val explicit_content_lyrics: Int,
     val explicit_lyrics: Boolean,
     @PrimaryKey
-    var id: String=UUID.randomUUID().toString(),
-    val isrc: String?="",
+    @SerialName("id")
+    var albumId: String=UUID.randomUUID().toString(),
+    @SerialName("isrc")
+    val albumIsrc: String?="",
     val link: String?="",
     val md5_image: String?="",
     val preview: String?="",

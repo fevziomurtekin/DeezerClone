@@ -29,7 +29,7 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
 
                 it.findNavController().navigate(
                         R.id.action_genre_list,
-                        bundleOf(Env.BUND_ID to items[position].id
+                        bundleOf(Env.BUND_ID to items[position].genreId
                             ,Env.BUND_NAME to items[position].name
                         ))
             }

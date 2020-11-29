@@ -5,10 +5,14 @@
       <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/3d049ecaa0384bf8232d95a64f03d7ca/jetified-junit-ktx-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/3d049ecaa0384bf8232d95a64f03d7ca/jetified-junit-ktx-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/3d049ecaa0384bf8232d95a64f03d7ca/jetified-junit-ktx-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f84382c6e764f1bd46bcc2b10ad63b76/jetified-junit-ktx-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f84382c6e764f1bd46bcc2b10ad63b76/jetified-junit-ktx-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f84382c6e764f1bd46bcc2b10ad63b76/jetified-junit-ktx-1.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.test.ext/junit-ktx/1.1.0/1f11575ec786a05e763f6e29c172d878371f5906/junit-ktx-1.1.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit-ktx/1.1.0/1f11575ec786a05e763f6e29c172d878371f5906/junit-ktx-1.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

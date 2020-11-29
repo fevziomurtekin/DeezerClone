@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data  class SearchQuery (
     @PrimaryKey
-    var id:String= java.util.UUID.randomUUID().toString(),
+    var searchId:String= java.util.UUID.randomUUID().toString(),
     var q:String?="",
     var time:Long=System.currentTimeMillis()
 )
