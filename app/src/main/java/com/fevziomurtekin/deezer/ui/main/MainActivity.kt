@@ -2,7 +2,6 @@ package com.fevziomurtekin.deezer.ui.main
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.fevziomurtekin.deezer.R
@@ -13,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
-import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.databinding.ActivityMainBinding
 
 @AndroidEntryPoint

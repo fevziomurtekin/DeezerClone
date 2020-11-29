@@ -4,6 +4,7 @@ import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.HttpRequestInterceptor
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
+import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -13,7 +14,9 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
+import retrofit2.CallAdapter
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -33,10 +36,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(Env.BASE_URL)
-            .addConverterFactory(Json{
-                isLenient = true
-                ignoreUnknownKeys = true
-            }.asConverterFactory(MediaType.get("application/json")))
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
 
     @Provides

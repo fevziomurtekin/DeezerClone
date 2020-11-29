@@ -1,8 +1,6 @@
 package com.fevziomurtekin.deezer.core.mapper
 
 import androidx.room.TypeConverter
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.genre.Data
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity

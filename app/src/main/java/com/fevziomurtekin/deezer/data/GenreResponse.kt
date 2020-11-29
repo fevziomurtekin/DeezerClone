@@ -1,10 +1,13 @@
-package com.fevziomurtekin.deezer.data.genre
+package com.fevziomurtekin.deezer.data
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+data class GenreResponse(
+    @SerializedName("data")
+    val `data`: List<Data>
+)
+
 data class Data(
     var id: String,
     var name: String?,

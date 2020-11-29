@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
-import com.fevziomurtekin.deezer.data.genre.Data
+import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.databinding.ItemGenreBinding
 import timber.log.Timber
 

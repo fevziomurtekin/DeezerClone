@@ -6,24 +6,24 @@ class DeezerClient @Inject constructor(
         private val deezerService: DeezerService
 ){
 
-    fun fetchGenreList()
+    suspend fun fetchGenreList()
             = deezerService.fetchGenreList()
 
-    fun fetchArtistList(genreId:String)
+    suspend fun fetchArtistList(genreId:String)
             = deezerService.fetchArtistList(genreId)
 
-    fun fetchArtistDetails(artistID: String)
+    suspend fun fetchArtistDetails(artistID: String)
             = deezerService.fetchArtistDetails(artistID)
 
-    fun fetchArtistAlbums(artistID: String)
+    suspend fun fetchArtistAlbums(artistID: String)
             = deezerService.fetchArtistAlbums(artistID)
 
-    fun fetchArtistRelated(artistID: String)
+    suspend fun fetchArtistRelated(artistID: String)
             = deezerService.fetchArtistRelated(artistID)
 
-    fun fetchAlbumDetails(albumID:String)
+    suspend fun fetchAlbumDetails(albumID:String)
             = deezerService.fetchAlbumDetails(albumID)
 
-    fun fetchSearchAlbum(q:String)
+    suspend fun fetchSearchAlbum(q:String)
             = deezerService.fetchSearchAlbum(q)
 }

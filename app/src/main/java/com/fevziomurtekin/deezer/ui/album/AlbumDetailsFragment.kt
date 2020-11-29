@@ -12,7 +12,7 @@ import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
+import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentAlbumDetailsBinding
 import com.fevziomurtekin.deezer.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint

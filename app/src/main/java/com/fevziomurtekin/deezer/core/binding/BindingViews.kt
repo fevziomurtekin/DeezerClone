@@ -15,9 +15,8 @@ import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.isNotNull
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
-import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.data.ArtistDetailResponse
+import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import timber.log.Timber
 

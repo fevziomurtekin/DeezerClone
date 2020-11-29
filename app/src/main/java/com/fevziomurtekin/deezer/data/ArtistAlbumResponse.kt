@@ -1,8 +1,16 @@
-package com.fevziomurtekin.deezer.data.artistdetails
+package com.fevziomurtekin.deezer.data
 
+import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable
+data class ArtistAlbumResponse(
+    @SerializedName("data")
+    val `data`: List<ArtistAlbumData>,
+    val next: String="",
+    val total: Int
+)
+
 data class ArtistAlbumData(
     val cover: String="",
     val cover_big: String="",

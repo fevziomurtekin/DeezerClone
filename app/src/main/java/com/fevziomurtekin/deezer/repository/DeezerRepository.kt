@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.flowOn
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.*
 import com.fevziomurtekin.deezer.core.mapper
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.artist.ArtistData
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedData
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.search.SearchData
+import com.fevziomurtekin.deezer.data.AlbumData
+import com.fevziomurtekin.deezer.data.ArtistData
+import com.fevziomurtekin.deezer.data.ArtistRelatedData
+import com.fevziomurtekin.deezer.data.Data
+import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.AlbumEntity
@@ -27,22 +27,26 @@ class DeezerRepository @Inject constructor(
 ) : ApiCallback(), DeezerRepositoryImpl {
 
     override suspend fun fetchGenreList() = flow {
+        Timber.d("fetchGenreList - repository")
         emit( ApiResult.Loading )
-        localCall {
+        localCallFetch {
             deezerDao.getGenreList()
         }.let { localResult ->
-            localResult.isSucces.letOnTrueOnSuspend {
+            Timber.d("fetchGenreList - localResult : $localResult")
+            localResult.isSucces.letOnFalseOnSuspend {
                 networkCall {
                     deezerClient.fetchGenreList()
                 }.let { apiResult->
+                    Timber.d("fetchGenreList - apiResult : $apiResult")
                     apiResult.isSuccessAndNotNull().letOnTrueOnSuspend {
                         (apiResult.getResult() as? List<Data>)?.let {
-                            localCall { deezerDao.insertGenreList(it.mapper()) }
+                            localCallInsert { deezerDao.insertGenreList(it.mapper()) }
+                            Timber.d("fetchGenreList - emit Succes  : $it")
                             emit(ApiResult.Success(it))
                         }
                     }
                 }
-            }.letOnFalseOnSuspend {
+            }.letOnTrueOnSuspend {
                 val result = (localResult as? List<GenreEntity>)?.mapper()
                 delay(1500)
                 emit(ApiResult.Success(result?.toList()))
@@ -142,7 +146,7 @@ class DeezerRepository @Inject constructor(
 
 
     override fun fetchRecentSearch()= flow {
-        localCall {
+        localCallFetch {
             deezerDao.getQueryList()
         }.let { localResult->
             localResult.isSuccessAndNotNull().letOnTrueOnSuspend {
@@ -154,14 +158,14 @@ class DeezerRepository @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
 
-    override suspend fun insertSearch(query: SearchEntity)= localCall {
+    override suspend fun insertSearch(query: SearchEntity)= localCallInsert {
         deezerDao.insertQuery(query)
     }
 
 
     override fun fetchSearch(query:String) = flow{
         emit(ApiResult.Loading)
-        localCall {
+        localCallInsert {
             insertSearch(SearchEntity(q=query))
         }.data.isNotNull().letOnTrueOnSuspend {
             networkCall {
@@ -183,7 +187,7 @@ class DeezerRepository @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
 
-    override suspend fun insertFavoritesData(track:AlbumEntity?) = localCall {
+    override suspend fun insertFavoritesData(track:AlbumEntity?) = localCallInsert {
         track?.let {
             deezerDao.insertTrack(it)
         }
@@ -192,7 +196,7 @@ class DeezerRepository @Inject constructor(
 
     override fun fetchFavorites()= flow {
         Timber.d(" --------- fetchFavorites ---------")
-        localCall {
+        localCallFetch {
             deezerDao.getFavorites()
         }.let { localResult ->
             localResult.isSuccessAndNotNull().letOnTrueOnSuspend {

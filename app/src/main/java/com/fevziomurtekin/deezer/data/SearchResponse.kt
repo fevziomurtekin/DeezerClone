@@ -1,8 +1,15 @@
-package com.fevziomurtekin.deezer.data.search
+package com.fevziomurtekin.deezer.data
 
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+data class SearchResponse(
+    @SerializedName("data")
+    val `data`: List<SearchData>,
+    val next: String,
+    val total: Int
+)
+
 data class SearchData(
     val artist: Artist,
     val cover: String,
@@ -21,3 +28,5 @@ data class SearchData(
     val tracklist: String,
     val type: String
 )
+
+

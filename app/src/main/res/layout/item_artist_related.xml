@@ -5,7 +5,7 @@
     <data>
         <variable
             name="artist"
-            type="com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedData" />
+            type="com.fevziomurtekin.deezer.data.ArtistRelatedData" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

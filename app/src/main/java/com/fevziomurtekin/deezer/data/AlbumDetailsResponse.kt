@@ -1,11 +1,15 @@
-package com.fevziomurtekin.deezer.data.albumdetails
+package com.fevziomurtekin.deezer.data
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.util.*
 
-@Serializable
+data class AlbumDetailsResponse(
+    @SerializedName("data")
+    val `data`: List<AlbumData>,
+    val total: Int
+)
+
 class AlbumData(
     //val artist: Artist,
     val disk_number: Int,
@@ -35,3 +39,17 @@ class AlbumData(
         duration = "$sMin:$second"
     }
 }
+
+
+data class Artist(
+    val id: String,
+    val link: String,
+    val name: String,
+    val picture: String,
+    val picture_big: String,
+    val picture_medium: String,
+    val picture_small: String,
+    val picture_xl: String,
+    val tracklist: String,
+    val type: String
+)

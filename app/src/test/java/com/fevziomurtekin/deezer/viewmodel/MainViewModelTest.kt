@@ -7,8 +7,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.data.Data
+import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
@@ -89,7 +89,7 @@ class MainViewModelTest {
 
         /* When */
         val actualResult = viewModel.mediaPlayerState.value.let {
-            it?:MediaPlayerState.ERROR
+            it?: MediaPlayerState.ERROR
         }
 
         /* Then */
@@ -105,11 +105,11 @@ class MainViewModelTest {
             a.onBackPressed()
         }
         val actualResult = viewModel.mediaPlayerState.value.let {
-            it?:MediaPlayerState.ERROR
+            it?: MediaPlayerState.ERROR
         }
 
 
-        Assert.assertEquals(actualResult,MediaPlayerState.PAUSED)
+        Assert.assertEquals(actualResult, MediaPlayerState.PAUSED)
     }
 
 }

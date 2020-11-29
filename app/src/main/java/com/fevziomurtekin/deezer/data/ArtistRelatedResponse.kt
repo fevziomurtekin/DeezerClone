@@ -1,8 +1,15 @@
-package com.fevziomurtekin.deezer.data.artistdetails
+package com.fevziomurtekin.deezer.data
 
+import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable
+data class ArtistRelatedResponse(
+    @SerializedName("data")
+    val data: List<ArtistRelatedData>,
+    val total: Int
+)
+
 data class ArtistRelatedData(
     val id: String,
     val link: String,
