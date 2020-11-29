@@ -33,8 +33,7 @@ class MainActivity : DataBindingActivity() {
         }
         viewModel.fetchGenreList()
 
-        viewModel.genreListLiveData.observe(this, Observer {
-            //Timber.d("result:${it}")
+        viewModel.genreListLiveData.observe(this, {
             when(it){
                 ApiResult.Loading->{
                     viewModel.isSplash.postValue(true)
@@ -53,7 +52,7 @@ class MainActivity : DataBindingActivity() {
 
 
         /* Navigation destination listener. */
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+        navController.addOnDestinationChangedListener { _, destination, arguments ->
             /* if mediaplayer or volumeController visible, hidden views.*/
             if(viewModel.isGoneMediaPlayer.get()){
                 viewModel.hideMediaPlayer()
