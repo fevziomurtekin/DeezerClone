@@ -6,9 +6,9 @@ import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.data.AlbumData
+import com.fevziomurtekin.deezer.data.Data
+import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.repository.DeezerRepository
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
@@ -21,7 +21,7 @@ import timber.log.Timber
 
 
 class MainViewModel @ViewModelInject constructor(
-    private val app: Application,
+    app: Application,
     private val mainRepository: DeezerRepository
 ): ViewModel(){
 
@@ -65,6 +65,7 @@ class MainViewModel @ViewModelInject constructor(
     fun fetchGenreList(){
         viewModelScope.launch {
             try {
+                Timber.d("fetchGenreList")
                 genreListLiveData = mainRepository.fetchGenreList()
                     .asLiveData(viewModelScope.coroutineContext+Dispatchers.Default)
             }catch (e:NetworkErrorException){

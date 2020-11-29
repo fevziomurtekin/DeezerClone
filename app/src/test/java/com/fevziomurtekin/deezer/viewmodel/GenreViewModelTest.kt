@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.data.genre.Data
+import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
@@ -49,18 +49,19 @@ class GenreViewModelTest {
 
     @Test
     fun fetchGenreListTest() = runBlocking {
-        val mockList = MockUtil.genres
-        whenever(deezerDao.getGenreList()).thenReturn(mockList)
+        val mockListEntity = MockUtil.genreEntity
+        val mockListData = MockUtil.genres
+        whenever(deezerDao.getGenreList()).thenReturn(mockListEntity)
 
-        val observer : Observer<ApiResult<List<Data>>> = mock()
-        val fetchedData : LiveData<ApiResult<List<Data>>> = mainRepository.fetchGenreList().asLiveData()
+        val observer : Observer<ApiResult<List<Data>?>> = mock()
+        val fetchedData : LiveData<ApiResult<List<Data>?>> = mainRepository.fetchGenreList().asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchResult()
         delay(500L)
 
         verify(deezerDao, atLeastOnce()).getGenreList()
-        verify(observer).onChanged(ApiResult.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Success(mockListData))
         fetchedData.removeObserver(observer)
 
 

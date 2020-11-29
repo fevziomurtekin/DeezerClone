@@ -1,16 +1,28 @@
 package com.fevziomurtekin.deezer.core
 
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.artist.ArtistData
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistAlbumData
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedData
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.search.SearchData
+import com.fevziomurtekin.deezer.data.*
+import com.fevziomurtekin.deezer.data.AlbumData
+import com.fevziomurtekin.deezer.data.ArtistData
+import com.fevziomurtekin.deezer.data.ArtistAlbumData
+import com.fevziomurtekin.deezer.data.ArtistRelatedData
+import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 
 object MockUtil {
-    val data = Data("0",
+    val entity = GenreEntity(
+        0L,
+        "0",
+        "All",
+        "https://api.deezer.com/genre/0/image",
+        "https://cdns-images.dzcdn.net/images/misc//500x500-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//56x56-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
+        "genre"
+    )
+
+    val data = Data(
+        "0",
         "All",
         "https://api.deezer.com/genre/0/image",
         "https://cdns-images.dzcdn.net/images/misc//500x500-000000-80-0-0.jpg",
@@ -22,7 +34,9 @@ object MockUtil {
 
     val genres = listOf(data)
 
-    val recentData = SearchEntity("1","ezhel",12345.toLong())
+    val genreEntity = listOf(entity)
+
+    val recentData = SearchEntity(1L,"ezhel",12345.toLong())
 
     val searchList = listOf(recentData)
 
@@ -82,7 +96,7 @@ object MockUtil {
         cover_big = "https://e-cdns-images.dzcdn.net/images/cover/35d715873d3e8ae76a998f6bf38e1fa8/500x500-000000-80-0-0.jpg",
         cover_xl = "https://e-cdns-images.dzcdn.net/images/cover/35d715873d3e8ae76a998f6bf38e1fa8/1000x1000-000000-80-0-0.jpg",
         md5_image = "35d715873d3e8ae76a998f6bf38e1fa8",genre_id = 116, record_type = "album",nb_tracks = 20,
-        artist = com.fevziomurtekin.deezer.data.search.Artist(
+        artist = Artist(
             id="8354140",name="Ezhel",picture = "https://api.deezer.com/artist/8354140/image",
             picture_small = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/56x56-000000-80-0-0.jpg",
             picture_medium = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/250x250-000000-80-0-0.jpg",

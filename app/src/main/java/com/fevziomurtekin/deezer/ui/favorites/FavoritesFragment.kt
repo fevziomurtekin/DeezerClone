@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
+import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentFavoritesBinding
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.ui.main.MainActivity

@@ -2,7 +2,6 @@ package com.fevziomurtekin.deezer.repository
 
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
-import com.fevziomurtekin.deezer.data.genre.Data
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.coroutines.flow.Flow
