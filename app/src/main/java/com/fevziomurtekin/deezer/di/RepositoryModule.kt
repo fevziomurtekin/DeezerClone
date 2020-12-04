@@ -3,6 +3,7 @@ package com.fevziomurtekin.deezer.di
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.repository.DeezerRepository
+import com.fevziomurtekin.deezer.ui.favorites.FavoritesRepository
 import com.fevziomurtekin.deezer.ui.main.MainRepository
 import dagger.Module
 import dagger.Provides
@@ -19,14 +20,21 @@ object RepositoryModule {
     fun provideDeezerRepository(
         deezerClient: DeezerClient,
         deezerDao: DeezerDao
-    ): DeezerRepository = DeezerRepository(deezerClient,deezerDao)
+    ) = DeezerRepository(deezerClient,deezerDao)
 
     @Provides
     @ActivityRetainedScoped
     fun provideMainRepository(
         deezerClient: DeezerClient,
         deezerDao: DeezerDao
-    ): MainRepository = MainRepository(deezerClient, deezerDao)
+    ) = MainRepository(deezerClient, deezerDao)
+
+    @Provides
+    @ActivityRetainedScoped
+    fun provideFavoriteRepository(
+        deezerClient: DeezerClient,
+        deezerDao: DeezerDao
+    ) = FavoritesRepository(deezerClient, deezerDao)
 
 
 }

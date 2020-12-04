@@ -34,7 +34,8 @@ class FavoritesFragment: DataBindingFragment() {
             vm = viewModel
             adapter = FavoritesAdapter(object : FavoritesAdapter.OnClick {
                 override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumEntity>) {
-                    ((this@FavoritesFragment).requireActivity() as MainActivity).viewModel.apply {
+                    ((this@FavoritesFragment).requireActivity() as MainActivity)
+                        .viewModel.apply {
                         positionTrack = trackPos
                         isGoneMediaPlayer.set(true)
                         playMediaPlayer()

@@ -36,12 +36,13 @@ class GenreFragment : DataBindingFragment() {
             adapter = GenreAdapter()
             vm = viewModel
         }
+        observeLiveData()
+    }
 
+    private fun observeLiveData() {
         viewModel.fetchResult()
         viewModel.result.observe(viewLifecycleOwner,{
-            //Timber.d("result:${it}")
             when(it){
-                //TODO  progress dialog add.
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@GenreFragment.constraint_main,this@GenreFragment.getString(R.string.unexpected_error))
@@ -59,6 +60,5 @@ class GenreFragment : DataBindingFragment() {
                 UIExtensions.showSnackBar(this@GenreFragment.cl_genre,this@GenreFragment.getString(R.string.network_error))
             }
         })
-
     }
 }

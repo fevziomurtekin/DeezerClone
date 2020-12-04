@@ -17,10 +17,6 @@ class GenreViewModel @ViewModelInject constructor(
     var result: LiveData<ApiResult<List<Data>?>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
 
-    init {
-        Timber.d("view model init.")
-    }
-
     fun fetchResult(){
         viewModelScope.launch {
             try {

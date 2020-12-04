@@ -15,6 +15,7 @@ import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
@@ -48,6 +49,14 @@ class MainRepository @Inject constructor(
             }
         }
     }.flowOn(Dispatchers.IO)
+}
 
+
+interface MainRepositoryImpl {
+    /**
+     * give to id return fetching genreList list.
+     * @return Result.Error or Result.Succes(List<Data>)
+     * */
+    suspend fun fetchGenreList(): Flow<ApiResult<*>>
 }
 
