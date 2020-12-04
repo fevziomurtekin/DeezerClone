@@ -1,11 +1,11 @@
 package com.fevziomurtekin.deezer.core.extensions
 
-import com.fevziomurtekin.deezer.core.data.ApiResponse
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
+import retrofit2.Response
 
-fun ApiResponse<*>?.isSuccesAndNotNull():Boolean = this?.let {
-    it.data != null && it.isSucces
+fun Response<*>?.isSuccessAndNotNull():Boolean = this?.let {
+    it.body() != null && it.isSuccessful
 } ?: run {
     false
 }

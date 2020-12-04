@@ -1,8 +1,6 @@
 package com.fevziomurtekin.deezer.data
 
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
 data class ArtistsResponse(
     @SerializedName("data")

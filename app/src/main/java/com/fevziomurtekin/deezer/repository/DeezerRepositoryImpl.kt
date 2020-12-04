@@ -7,12 +7,6 @@ import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.coroutines.flow.Flow
 
 interface DeezerRepositoryImpl{
-
-    /**
-     * give to id return fetching genreList list.
-     * @return Result.Error or Result.Succes(List<Data>)
-     * */
-    suspend fun fetchGenreList(): Flow<ApiResult<*>>
     /**
      * give to id return fetching artist list.
      * @param genreID, String

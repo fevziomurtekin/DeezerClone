@@ -4,6 +4,7 @@ import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
+import timber.log.Timber
 
 
 fun AlbumEntity?.mapper(): AlbumData? = this?.let { e->
@@ -81,6 +82,7 @@ fun Data?.mapper(): GenreEntity = this?.let { d->
 
 @JvmName("genreMapper")
 fun List<GenreEntity?>?.mapper() = this?.let { list ->
+    Timber.d("genreMapper : $list")
     val returnList = mutableListOf<Data>()
     list.forEach {
         it.mapper().let { d->
@@ -89,6 +91,7 @@ fun List<GenreEntity?>?.mapper() = this?.let { list ->
     }
     return returnList
 } ?:run {
+    Timber.d("genreMapper : is null")
     mutableListOf<Data>()
 }
 

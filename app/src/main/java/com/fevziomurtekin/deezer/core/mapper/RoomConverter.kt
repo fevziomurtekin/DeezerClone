@@ -4,9 +4,7 @@ import androidx.room.TypeConverter
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.*
+import com.google.gson.Gson
 
 object RoomConverter {
 
@@ -15,18 +13,18 @@ object RoomConverter {
     @JvmStatic
     @TypeConverter
     fun fromStringToGenreEntity(value:String):GenreEntity
-            = Json.decodeFromString<GenreEntity>(value)
+            = Gson().fromJson(value, GenreEntity::class.java)
 
 
     @JvmStatic
     @TypeConverter
     fun fromStringToSearchEntity(value:String): SearchEntity
-            = Json.decodeFromString<SearchEntity>(value)
+            = Gson().fromJson(value, SearchEntity::class.java)
 
     @JvmStatic
     @TypeConverter
     fun fromStringToAlbumEntity(value:String):AlbumEntity
-            = Json.decodeFromString(value)
+            = Gson().fromJson(value, AlbumEntity::class.java)
 
 
 
@@ -35,16 +33,16 @@ object RoomConverter {
     @JvmStatic
     @TypeConverter
     fun fromGenreEntityToString(value:GenreEntity):String
-            = Json.encodeToString(value)
+            = Gson().toJson(value)
 
     @JvmStatic
     @TypeConverter
     fun fromSearchEntityToString(value: SearchEntity):String
-            = Json.encodeToString(value)
+            = Gson().toJson(value)
 
     @JvmStatic
     @TypeConverter
     fun fromAlbumEntityToString(value: AlbumEntity):String
-            = Json.encodeToString(value)
+            = Gson().toJson(value)
 
 }

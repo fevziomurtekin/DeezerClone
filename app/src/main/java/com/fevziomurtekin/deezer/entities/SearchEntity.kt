@@ -2,7 +2,6 @@ package com.fevziomurtekin.deezer.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
 
 @Entity
 class SearchEntity (

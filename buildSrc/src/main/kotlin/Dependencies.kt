@@ -28,10 +28,6 @@ object Dependencies {
     val retrofit_converter  = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_converter_version}"
     val retrofit_adapter    = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit2_version}"
 
-    /* kotlin serialization */
-    val kotlin_serialization            = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.serialization_version}"
-    val kotlin_serialization_converter  = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.serialization_converter_version}"
-
     /* Room */
     val room                = "androidx.room:room-runtime:${Versions.room_version}"
     val room_ktx            = "androidx.room:room-ktx:${Versions.room_version}"

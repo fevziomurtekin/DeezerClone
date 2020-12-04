@@ -5,11 +5,12 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.repository.DeezerRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
-import com.fevziomurtekin.deezer.core.data.ApiResult
-import kotlinx.coroutines.*
 
 
 class SearchViewModel @ViewModelInject constructor(

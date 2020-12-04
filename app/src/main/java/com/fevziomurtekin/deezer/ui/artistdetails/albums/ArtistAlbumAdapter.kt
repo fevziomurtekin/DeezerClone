@@ -10,7 +10,6 @@ import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.ArtistAlbumData
 import com.fevziomurtekin.deezer.databinding.ItemArtistAlbumBinding
-import com.fevziomurtekin.deezer.databinding.ItemArtistRelatedBinding
 import timber.log.Timber
 
 

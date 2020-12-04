@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.Data

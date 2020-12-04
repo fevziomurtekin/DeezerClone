@@ -1,4 +1,4 @@
-<h1 align="center">Deezer Clone</h1>
+    <h1 align="center">Deezer Clone</h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -34,7 +34,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
   - [MVVM Architecture]() (View - DataBinding - ViewModel - Model)
   - Repository pattern
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit)
-- [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization)
+- [Gson](https://github.com/google/gson)
 - [Timber](https://github.com/JakeWharton/timber)
 - [Material-Components](https://github.com/material-components/material-components-android)
 - [Coil](https://github.com/coil-kt/coil)
