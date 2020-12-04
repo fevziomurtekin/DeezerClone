@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.ItemAlbumBinding
-import com.fevziomurtekin.deezer.databinding.ItemArtistAlbumBinding
 import kotlinx.android.synthetic.main.item_album.view.*
 import timber.log.Timber
 

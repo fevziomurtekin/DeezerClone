@@ -1,7 +1,7 @@
 package com.fevziomurtekin.deezer.domain.network
 
-object DeezerEndpoints {
-    const val GENRE = "genre"
+object Endpoints {
+    const val GENRE = "/genre"
     const val ARTISTS = "genre/{genreId}/artists"
     const val ARTIST = "artist/{artistId}"
     const val ALBUMS = "artist/{artistId}/albums"

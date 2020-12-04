@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
-import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentFavoritesBinding
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.ui.main.MainActivity
+import com.fevziomurtekin.deezer.ui.main.playMediaPlayer
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,7 +37,7 @@ class FavoritesFragment: DataBindingFragment() {
                     ((this@FavoritesFragment).requireActivity() as MainActivity).viewModel.apply {
                         positionTrack = trackPos
                         isGoneMediaPlayer.set(true)
-                        playMusic()
+                        playMediaPlayer()
                     }
                 }
             })

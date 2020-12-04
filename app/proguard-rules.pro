@@ -22,11 +22,3 @@
 #-keepnames class androidx.navigation.fragment.NavHostFragment
 -keepnames class androidx.navigation.fragment.NavHostFragment
 -keepattributes *Annotation*, InnerClasses
--dontnote kotlinx.serialization.SerializationKt
--keep,includedescriptorclasses class com.yourcompany.yourpackage.**$$serializer { *; } # <-- change package name to your app's
--keepclassmembers class com.fevziomurtekin.deezer.** {
-    *** Companion;
-}
--keepclasseswithmembers class com.fevziomurtekin.deezer.** {
-    kotlinx.serialization.KSerializer serializer(...);
-}

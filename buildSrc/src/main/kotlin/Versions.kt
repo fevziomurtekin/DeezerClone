@@ -14,8 +14,6 @@ object Versions {
     val okhttp3_version="3.12.0"
     val retrofit2_version="2.9.0"
     val retrofit2_converter_version="2.9.0"
-    val serialization_version = "1.0.0-RC"
-    val serialization_converter_version="0.7.0"
 
     // Material & Design & Arcitecture
     const val appcompat_version="1.0.2"

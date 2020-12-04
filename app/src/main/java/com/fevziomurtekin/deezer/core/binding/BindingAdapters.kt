@@ -9,12 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
-import com.fevziomurtekin.deezer.data.AlbumData
-import com.fevziomurtekin.deezer.data.ArtistData
-import com.fevziomurtekin.deezer.data.ArtistAlbumData
-import com.fevziomurtekin.deezer.data.ArtistRelatedData
-import com.fevziomurtekin.deezer.data.Data
-import com.fevziomurtekin.deezer.data.SearchData
+import com.fevziomurtekin.deezer.data.*
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.ui.album.AlbumDetailsAdapter

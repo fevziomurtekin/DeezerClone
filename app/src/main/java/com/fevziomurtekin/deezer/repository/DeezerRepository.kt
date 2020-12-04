@@ -1,23 +1,20 @@
 package com.fevziomurtekin.deezer.repository
 
 import com.fevziomurtekin.deezer.core.data.ApiCallback
-import com.fevziomurtekin.deezer.domain.local.DeezerDao
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.*
-import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.data.ArtistData
 import com.fevziomurtekin.deezer.data.ArtistRelatedData
-import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.SearchData
-import com.fevziomurtekin.deezer.entities.SearchEntity
+import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.AlbumEntity
-import com.fevziomurtekin.deezer.entities.GenreEntity
+import com.fevziomurtekin.deezer.entities.SearchEntity
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -25,35 +22,6 @@ class DeezerRepository @Inject constructor(
     private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao
 ) : ApiCallback(), DeezerRepositoryImpl {
-
-    override suspend fun fetchGenreList() = flow {
-        Timber.d("fetchGenreList - repository")
-        emit( ApiResult.Loading )
-        localCallFetch {
-            deezerDao.getGenreList()
-        }.let { localResult ->
-            Timber.d("fetchGenreList - localResult : $localResult")
-            localResult.isSucces.letOnFalseOnSuspend {
-                networkCall {
-                    deezerClient.fetchGenreList()
-                }.let { apiResult->
-                    Timber.d("fetchGenreList - apiResult : $apiResult")
-                    apiResult.isSuccessAndNotNull().letOnTrueOnSuspend {
-                        (apiResult.getResult() as? List<Data>)?.let {
-                            localCallInsert { deezerDao.insertGenreList(it.mapper()) }
-                            Timber.d("fetchGenreList - emit Succes  : $it")
-                            emit(ApiResult.Success(it))
-                        }
-                    }
-                }
-            }.letOnTrueOnSuspend {
-                val result = (localResult as? List<GenreEntity>)?.mapper()
-                delay(1500)
-                emit(ApiResult.Success(result?.toList()))
-            }
-        }
-    }.flowOn(Dispatchers.IO)
-
 
     override fun fetchArtistList(genreID:String)
     = flow {

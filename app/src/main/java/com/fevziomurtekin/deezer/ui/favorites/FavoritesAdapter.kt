@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.ItemFavoritesBinding
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import timber.log.Timber

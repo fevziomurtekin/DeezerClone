@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentGenreBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*

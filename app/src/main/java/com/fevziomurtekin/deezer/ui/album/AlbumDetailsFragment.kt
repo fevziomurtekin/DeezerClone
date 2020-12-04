@@ -8,18 +8,19 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentAlbumDetailsBinding
 import com.fevziomurtekin.deezer.ui.main.MainActivity
+import com.fevziomurtekin.deezer.ui.main.playMediaPlayer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_album_details.*
 import timber.log.Timber
 
-@AndroidEntryPoint
+    @AndroidEntryPoint
 class AlbumDetailsFragment: DataBindingFragment() {
 
     lateinit var binding: FragmentAlbumDetailsBinding
@@ -60,7 +61,7 @@ class AlbumDetailsFragment: DataBindingFragment() {
                                 albumData.value = list
                                 positionTrack = pos
                                 isGoneMediaPlayer.set(true)
-                                playMusic()
+                                playMediaPlayer()
                             }
 
                         }

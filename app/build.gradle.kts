@@ -122,9 +122,6 @@ dependencies{
     implementation(Dependencies.coroutines_core_lib)
     /** MultiDex **/
     implementation(Dependencies.multidex_lib)
-    /** kotlin serialization **/
-    implementation(Dependencies.kotlin_serialization_converter)
-    implementation(Dependencies.kotlin_serialization)
     /** coil **/
     implementation(Dependencies.coilLib)
     /** Shimmer layout */

@@ -10,10 +10,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentArtistDetailsBinding
 import com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumsFragment
 import com.fevziomurtekin.deezer.ui.artistdetails.related.ArtistRelatedFragment

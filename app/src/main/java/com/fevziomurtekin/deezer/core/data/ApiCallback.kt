@@ -1,37 +1,29 @@
 package com.fevziomurtekin.deezer.core.data
 
-import com.fevziomurtekin.deezer.core.extensions.isNotNull
-import com.fevziomurtekin.deezer.core.extensions.isSuccesAndNotNull
+import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalse
 import com.fevziomurtekin.deezer.core.extensions.letOnTrue
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
+import com.google.gson.Gson
+import retrofit2.Response
 import timber.log.Timber
 import java.io.IOException
 
 open class ApiCallback {
 
     suspend fun <T :Any> networkCall(
-        call: suspend () -> ApiResponse<T>
+        call: suspend () -> Response<T>
     ) : ApiResult<T?> {
-        Timber.d("networkCall : init")
         var networkReturn:ApiResult<T?> = ApiResult.Loading
         try {
             val response = call.invoke()
-            Timber.d("networkCall : $response")
-            response.isSuccesAndNotNull().letOnTrue{
-                networkReturn = ApiResult.Success(response.data)
+            response.isSuccessAndNotNull().letOnTrue{
+                networkReturn = ApiResult.Success(response.body())
             }.letOnFalse{
-                networkReturn = ApiResult.Error(IOException(response.errorMessage))
+                networkReturn = ApiResult.Error(IOException(response.errorBody()?.string().orEmpty()))
             }
         } catch (e: Exception) {
-            Timber.d("networkCall - error : ${e.message}")
             networkReturn = ApiResult.Error(e)
         }
-        Timber.d("networkCall : ${Json.encodeToString(networkReturn)}}")
         return networkReturn
     }
 
@@ -42,7 +34,6 @@ open class ApiCallback {
         var localReturn = DaoResult(isSucces = true,null)
         try {
             val response = call.invoke()
-            Timber.d("localCallFetch : $response")
              response.isNullOrEmpty().letOnFalse {
                localReturn = DaoResult(true, response)
             }.letOnTrue {
