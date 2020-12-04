@@ -162,19 +162,6 @@ class DeezerRepository @Inject constructor(
     }
 
 
-    override fun fetchFavorites()= flow {
-        Timber.d(" --------- fetchFavorites ---------")
-        localCallFetch {
-            deezerDao.getFavorites()
-        }.let { localResult ->
-            localResult.isSuccessAndNotNull().letOnTrueOnSuspend {
-                emit(ApiResult.Success(localResult.data as List<AlbumEntity>))
-            }.letOnFalseOnSuspend {
-                /* fake call */
-                delay(1500)
-                emit(ApiResult.Error(Exception("Unexpected error.")))
-            }
-        }
-    }.flowOn(Dispatchers.IO)
+
 
 }

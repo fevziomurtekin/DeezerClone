@@ -65,11 +65,6 @@ interface DeezerRepositoryImpl{
      * */
     suspend fun insertFavoritesData(track:AlbumEntity?): DaoResult
 
-    /**
-     * @return List<Favorites>?
-     * */
-    fun fetchFavorites() : Flow<ApiResult<List<*>>>
-
 }
 
 

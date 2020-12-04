@@ -11,21 +11,16 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class FavoritesViewModel @ViewModelInject constructor(
-        private val mainRepository: DeezerRepository
+        private val favoritesRepository: FavoritesRepository
 ):ViewModel() {
 
     var favorites:LiveData<ApiResult<List<AlbumEntity>>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
 
-    init {
-        Timber.d("init viewmodel...")
-    }
-
     fun fetchFavorites(){
-        Timber.d("fetchFavorites")
         viewModelScope.launch {
             try {
-                favorites = mainRepository.fetchFavorites()
+                favorites = favoritesRepository.fetchFavorites()
                     .asLiveData(viewModelScope.coroutineContext+ Dispatchers.Default)
             }catch (e:NetworkErrorException){
                 isNetworkError.value = true
