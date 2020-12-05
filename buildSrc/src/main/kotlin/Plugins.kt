@@ -12,6 +12,8 @@ object Plugins{
     val kotlinSerialization         = "plugin.serialization"
     val hiltExtensions              = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
     val hiltPlugin                  = "dagger.hilt.android.plugin"
+    /* Detekt */
+    val detekt                      = "io.gitlab.arturbosch.detekt"
 
     val applicationId               = "com.fevziomurtekin.deezer"
     val min                         = 19

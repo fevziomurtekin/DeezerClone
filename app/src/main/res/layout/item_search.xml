@@ -10,12 +10,12 @@
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="@dimen/item_search_height"
         android:text="@{search.q}"
         android:textColor="@color/colorWhite"
         tools:text="selam"
-        android:textSize="14sp"
-        android:padding="10dp"
+        android:textSize="@dimen/item_search_size"
+        android:padding="@dimen/item_search_padding"
         android:gravity="center_vertical"
         android:drawableRight="@android:drawable/ic_menu_revert"
         />

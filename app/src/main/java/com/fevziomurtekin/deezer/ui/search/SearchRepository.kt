@@ -4,7 +4,6 @@ import com.fevziomurtekin.deezer.core.data.ApiCallback
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
 import com.fevziomurtekin.deezer.core.extensions.*
-import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.data.SearchResponse
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient

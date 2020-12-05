@@ -3,7 +3,6 @@ package com.fevziomurtekin.deezer.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule

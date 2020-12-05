@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.asLiveData
+import androidx.test.core.app.ActivityScenario.launch
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.Data
@@ -28,7 +28,6 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import androidx.test.core.app.ActivityScenario.launch
 
 
 /**

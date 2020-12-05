@@ -10,7 +10,6 @@ import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.databinding.ItemAlbumBinding
 import kotlinx.android.synthetic.main.item_album.view.*
-import timber.log.Timber
 
 
 class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetailsAdapter.AlbumDetailsViewHolder>() {

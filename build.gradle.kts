@@ -19,8 +19,6 @@ buildscript {
     }
 }
 
-
-
 allprojects{
     repositories{
         google()
@@ -32,3 +30,4 @@ allprojects{
 task("clean"){
     delete(rootProject.buildDir)
 }
+
