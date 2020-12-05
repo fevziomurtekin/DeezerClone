@@ -7,11 +7,11 @@
 
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumViewModel" />
+            type="com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumViewModel" />
 
         <variable
             name="adapter"
-            type="com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumAdapter" />
+            type="com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumAdapter" />
 
     </data>
 

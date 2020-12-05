@@ -12,7 +12,7 @@ import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
 import com.fevziomurtekin.deezer.repository.DeezerRepository
-import com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumViewModel
+import com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumViewModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import io.mockk.mockk

@@ -34,7 +34,6 @@ fun AlbumData?.mapper(): AlbumEntity? = this?.let { d->
         title = d.title,
         type = d.type,
         fav_time = d.fav_time,
-        def_img = d.def_img
     )
 }
 

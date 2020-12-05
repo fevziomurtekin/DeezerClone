@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/genre_list"
-        android:name="com.fevziomurtekin.deezer.ui.artist.ArtistsFragment"
+        android:name="com.fevziomurtekin.deezer.ui.artist.profile.ArtistsFragment"
         tools:layout="@layout/fragment_artists">
 
         <action
@@ -90,7 +90,7 @@
 
     <fragment
         android:id="@+id/artist_details"
-        android:name="com.fevziomurtekin.deezer.ui.artistdetails.detail.ArtistDetailsFragment"
+        android:name="com.fevziomurtekin.deezer.ui.artist.details.info.ArtistDetailsFragment"
         tools:layout="@layout/fragment_artist_details">
 
         <action

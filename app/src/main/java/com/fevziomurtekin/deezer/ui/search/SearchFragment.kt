@@ -26,9 +26,9 @@ class SearchFragment: DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() {  }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@SearchFragment
             recentAdapter = RecentSearchAdapter(object : RecentSearchAdapter.RecentSearchListener{
@@ -41,6 +41,11 @@ class SearchFragment: DataBindingFragment() {
             vm = viewModel
         }
 
+    }
+
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchingRecentSearch()
         viewModel.fetchSearch()
 

@@ -26,9 +26,9 @@ class FavoritesFragment: DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() { }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@FavoritesFragment
             vm = viewModel
@@ -36,15 +36,18 @@ class FavoritesFragment: DataBindingFragment() {
                 override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumEntity>) {
                     ((this@FavoritesFragment).requireActivity() as MainActivity)
                         .viewModel.apply {
-                        positionTrack = trackPos
-                        isGoneMediaPlayer.set(true)
-                        playMediaPlayer()
-                    }
+                            positionTrack = trackPos
+                            isGoneMediaPlayer.set(true)
+                            playMediaPlayer()
+                        }
                 }
             })
         }
+    }
 
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchFavorites()
-
     }
 }

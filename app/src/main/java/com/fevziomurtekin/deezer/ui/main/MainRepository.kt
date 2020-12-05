@@ -7,18 +7,15 @@ import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
 import com.fevziomurtekin.deezer.core.mapper
-import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.GenreResponse
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.GenreEntity
-import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import timber.log.Timber
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(

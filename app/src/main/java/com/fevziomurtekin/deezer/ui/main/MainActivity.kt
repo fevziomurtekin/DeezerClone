@@ -5,7 +5,6 @@ import androidx.annotation.VisibleForTesting
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingActivity
@@ -13,7 +12,6 @@ import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : DataBindingActivity() {
