@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artistdetails.albums
+package com.fevziomurtekin.deezer.ui.artist.details.albums
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -41,12 +41,10 @@ class ArtistAlbumAdapter: RecyclerView.Adapter<ArtistAlbumAdapter.ArtistAlbumVie
     fun addAlbumList(artistList: List<ArtistAlbumData>) {
         val previousSize = items.size
         items.addAll(artistList)
-        // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }
 
     override fun onBindViewHolder(holder: ArtistAlbumViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
             Timber.d("binding..")
             album = items[position]

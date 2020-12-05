@@ -28,18 +28,19 @@ class GenreFragment : DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() { }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@GenreFragment
             adapter = GenreAdapter()
             vm = viewModel
         }
-        observeLiveData()
     }
 
-    private fun observeLiveData() {
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchResult()
         viewModel.result.observe(viewLifecycleOwner,{
             when(it){

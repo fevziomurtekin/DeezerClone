@@ -18,6 +18,7 @@ import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.data.ArtistDetailResponse
 import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.entities.AlbumEntity
+import com.google.gson.Gson
 import timber.log.Timber
 
 /**
@@ -30,13 +31,14 @@ import timber.log.Timber
 * Recyclerview item. Bluring imageview.
 * */
 @BindingAdapter("bindImageUrl")
-fun bindLoadImageUrl(view: ImageView, url: String) {
-    Timber.d("Binding url : $url ")
-    view.load(url){
-        crossfade(true)
-        scale(Scale.FIT)
-        placeholder(R.color.colorPrimary)
-        transformations(BlurTransformation(view.context,6f,0.3f))
+fun bindLoadImageUrl(view: ImageView, url: String?) {
+    url?.let { safeUrl ->
+        view.load(safeUrl) {
+            crossfade(true)
+            scale(Scale.FIT)
+            placeholder(R.color.colorPrimary)
+            transformations(BlurTransformation(view.context, 6f, 0.3f))
+        }
     }
 }
 
@@ -64,7 +66,7 @@ fun bindGone(view:View, isGone:Boolean){
 /* search layout */
 @BindingAdapter("isGoneLayout")
 fun<T> bindingIsGoneLayout(view: View,results:LiveData<ApiResult<T>>){
-    Timber.d("bindingIsGoneLayout ${view.id == R.id.recyclerView}  result : ${results.value}")
+    Timber.d("bindingIsGoneLayout ${view.id == R.id.recyclerView}   result : ${Gson().toJson(results.value)}")
     if(results.value.isNotNull()) {
         when (results.value) {
             ApiResult.Loading, is ApiResult.Error -> {
@@ -90,13 +92,13 @@ fun<T> bindingIsGoneLayout(view: View,results:LiveData<ApiResult<T>>){
 
 @BindingAdapter("isGoneFavoriteLayout")
 fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<ApiResult<List<AlbumEntity>>>){
-    Timber.d("bindingIsGoneFavoriteLayout : ${results.value}")
+    Timber.d("bindingIsGoneFavoriteLayout : ${results.value} isGone : ${results.value.isSuccessAndNotNull()}")
     when(view.id){
         R.id.recyclerView->{
-            view.isGone = results.value.isSuccessAndNotNull()
+            view.isGone = !results.value.isSuccessAndNotNull()
         }
         else->{
-            view.isGone = !results.value.isSuccessAndNotNull()
+            view.isGone = results.value.isSuccessAndNotNull()
         }
     }
 }

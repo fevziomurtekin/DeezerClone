@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artistdetails.albums
+package com.fevziomurtekin.deezer.ui.artist.details.albums
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,7 +18,7 @@ import timber.log.Timber
 @AndroidEntryPoint
 class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
 
-    @VisibleForTesting val viewModel:ArtistAlbumViewModel by viewModels()
+    @VisibleForTesting val viewModel: ArtistAlbumViewModel by viewModels()
     private lateinit var binding: FragmentArtistAlbumsBinding
 
 
@@ -27,19 +27,24 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() { }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistAlbumsFragment
             adapter = ArtistAlbumAdapter()
             vm = viewModel
         }
+    }
 
+    override fun setListeners() {
+
+    }
+
+    override fun observeLiveData() {
         viewModel.fetchArtistAlbum(artistID)
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
-                //TODO  progress dialog add.
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistAlbumsFragment.lv_artist_album,this@ArtistAlbumsFragment.getString(R.string.unexpected_error))

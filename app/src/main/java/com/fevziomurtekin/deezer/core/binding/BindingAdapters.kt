@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.binding
 
 import android.widget.EditText
 import android.widget.TextView
@@ -13,9 +13,9 @@ import com.fevziomurtekin.deezer.data.*
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.ui.album.AlbumDetailsAdapter
-import com.fevziomurtekin.deezer.ui.artist.ArtistAdapter
-import com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumAdapter
-import com.fevziomurtekin.deezer.ui.artistdetails.related.ArtistRelatedAdapter
+import com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumAdapter
+import com.fevziomurtekin.deezer.ui.artist.details.related.ArtistRelatedAdapter
+import com.fevziomurtekin.deezer.ui.artist.profile.ArtistAdapter
 import com.fevziomurtekin.deezer.ui.favorites.FavoritesAdapter
 import com.fevziomurtekin.deezer.ui.genre.GenreAdapter
 import com.fevziomurtekin.deezer.ui.search.RecentSearchAdapter
@@ -50,9 +50,10 @@ fun bindingArtistList(view:RecyclerView, results:LiveData<ApiResult<List<ArtistD
     when (results.value) {
         ApiResult.Loading, is ApiResult.Error -> {/* Nothing */ }
         is ApiResult.Success -> {
-            Timber.d("result : succes isSplash : false")
-            (view.adapter as ArtistAdapter).addArtistList((((results.value as ApiResult.Success<List<ArtistData>>).data)
-                    as ApiResult.Success<List<ArtistData>>).data)
+            (view.adapter as ArtistAdapter)
+                .addArtistList(
+                    (results.value as ApiResult.Success<List<ArtistData>>)
+                        .data)
         }
     }
 }
@@ -69,37 +70,42 @@ fun bindingViewPagerAdapter(view:ViewPager,adapter:FragmentPagerAdapter){
 
 
 @BindingAdapter("adapterAAlbumsList")
-fun bindingAAlbumsList(view:RecyclerView, results:LiveData<ApiResult<Any>>) {
+fun bindingAAlbumsList(view:RecyclerView, results:LiveData<ApiResult<List<ArtistAlbumData>>>) {
     when (results.value) {
         ApiResult.Loading, is ApiResult.Error -> {/* Nothing */ }
         is ApiResult.Success -> {
-            Timber.d("result : succes isSplash : false")
-            (view.adapter as ArtistAlbumAdapter).addAlbumList((((results.value as ApiResult.Success<Any>).data) as ApiResult.Success<List<ArtistAlbumData>>).data)
+            (view.adapter as ArtistAlbumAdapter)
+                .addAlbumList(
+                    (results.value as ApiResult.Success<List<ArtistAlbumData>>).data
+                )
         }
     }
 }
 
 @BindingAdapter("adapterARelatedList")
-fun bindingARelatedList(view:RecyclerView, results:LiveData<ApiResult<Any>>) {
+fun bindingARelatedList(view:RecyclerView, results:LiveData<ApiResult<List<ArtistRelatedData>>>) {
     when (results.value) {
         ApiResult.Loading, is ApiResult.Error -> {/* Nothing */ }
         is ApiResult.Success -> {
             Timber.d("result : succes isSplash : false")
-            (view.adapter as ArtistRelatedAdapter).addRelatedList((((results.value as ApiResult.Success<Any>)
-                .data) as ApiResult.Success<List<ArtistRelatedData>>).data)
+            (view.adapter as ArtistRelatedAdapter)
+                .addRelatedList(
+                    (results.value as ApiResult.Success<List<ArtistRelatedData>>).data
+                )
         }
     }
 }
 
 @BindingAdapter("adapterAlbumTracksList")
-fun bindingAlbumTracksList(view:RecyclerView, results:LiveData<ApiResult<Any>>) {
+fun bindingAlbumTracksList(view:RecyclerView, results:LiveData<ApiResult<List<AlbumData>>>) {
     when (results.value) {
         ApiResult.Loading, is ApiResult.Error -> {/* Nothing */ }
         is ApiResult.Success -> {
             Timber.d("result : succes isSplash : false")
             (view.adapter as AlbumDetailsAdapter)
-                .addAlbumTracks((((results.value as ApiResult.Success<Any>).data)
-                        as ApiResult.Success<List<AlbumData>>).data)
+                .addAlbumTracks(
+                    (results.value as ApiResult.Success<List<AlbumData>>).data
+                )
         }
     }
 }

@@ -47,14 +47,11 @@ class AlbumDetailsAdapter(val listener:OnClick): RecyclerView.Adapter<AlbumDetai
     fun addAlbumTracks(albums: List<AlbumData>) {
         val previousSize = items.size
         items.addAll(albums)
-        // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }
 
     override fun onBindViewHolder(holder: AlbumDetailsViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
-            Timber.d("binding..")
             album = items[position]
             executePendingBindings()
         }

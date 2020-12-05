@@ -8,7 +8,6 @@ import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.ui.main.MainRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class GenreViewModel @ViewModelInject constructor(
     private val mainRepository: MainRepository

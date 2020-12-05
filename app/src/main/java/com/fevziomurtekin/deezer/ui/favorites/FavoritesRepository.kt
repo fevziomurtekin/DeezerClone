@@ -8,11 +8,13 @@ import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.AlbumEntity
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 
 class FavoritesRepository(
     val deezerClient: DeezerClient,
@@ -24,6 +26,7 @@ class FavoritesRepository(
             deezerDao.getFavorites()
         }.let { localResult ->
             localResult.isSuccessAndNotNull().letOnTrueOnSuspend {
+                Timber.d("getResult : ${Gson().toJson(localResult.data)}")
                 emit(ApiResult.Success(localResult.data as List<AlbumEntity>))
             }.letOnFalseOnSuspend {
                 /* fake call */

@@ -12,7 +12,6 @@ import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 internal fun MainActivity.navControllerListener() {
     navController.addOnDestinationChangedListener { _, destination, arguments ->

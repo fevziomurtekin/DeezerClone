@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artistdetails.related
+package com.fevziomurtekin.deezer.ui.artist.details.related
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,6 @@ import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentArtistRelatedBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_related.*
-import timber.log.Timber
 
 @AndroidEntryPoint
 class ArtistRelatedFragment(private val artistID:String)
@@ -28,27 +27,27 @@ class ArtistRelatedFragment(private val artistID:String)
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() { }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistRelatedFragment
             adapter = ArtistRelatedAdapter()
             vm = viewModel
         }
+    }
 
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchArtistRelated(artistID)
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
-                //TODO  progress dialog add.
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistRelatedFragment.lv_artist_related,this@ArtistRelatedFragment.getString(R.string.unexpected_error))
-                    Timber.d("result : error isSplash : false")
                 }
-                is ApiResult.Success->{
-                    Timber.d("result : succes isSplash : false")
-                }
+                is ApiResult.Success->{ }
             }
         })
     }

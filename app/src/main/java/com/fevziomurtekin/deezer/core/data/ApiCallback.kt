@@ -3,9 +3,7 @@ package com.fevziomurtekin.deezer.core.data
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalse
 import com.fevziomurtekin.deezer.core.extensions.letOnTrue
-import com.google.gson.Gson
 import retrofit2.Response
-import timber.log.Timber
 import java.io.IOException
 
 open class ApiCallback {

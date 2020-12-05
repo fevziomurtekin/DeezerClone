@@ -28,7 +28,6 @@ class RecentSearchAdapter(var listener:RecentSearchListener):
         return RecentSearchViewHolder(binding).apply {
             binding.root.setOnClickListener {
                 val position = adapterPosition
-                Timber.d("position : $position")
                 listener.recentSearchListener(items[position].q.toString())
                 Toast.makeText(binding.root.context,"Searching ${items[position].q}", Toast.LENGTH_LONG).show()
             }
@@ -36,15 +35,12 @@ class RecentSearchAdapter(var listener:RecentSearchListener):
     }
 
     fun addRecentSearch(searchList: List<SearchEntity>) {
-        Timber.d("searchList : ${searchList.toString()}")
         val previousSize = items.size
         items.addAll(searchList)
-        // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }
 
     override fun onBindViewHolder(holder: RecentSearchViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
             Timber.d("binding..")
             search = items[position]

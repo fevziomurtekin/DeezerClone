@@ -2,9 +2,11 @@ package com.fevziomurtekin.deezer.di
 
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
-import com.fevziomurtekin.deezer.repository.DeezerRepository
+import com.fevziomurtekin.deezer.ui.album.AlbumRepository
+import com.fevziomurtekin.deezer.ui.artist.ArtistRepository
 import com.fevziomurtekin.deezer.ui.favorites.FavoritesRepository
 import com.fevziomurtekin.deezer.ui.main.MainRepository
+import com.fevziomurtekin.deezer.ui.search.SearchRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,13 +16,6 @@ import dagger.hilt.android.scopes.ActivityRetainedScoped
 @Module
 @InstallIn(ActivityRetainedComponent::class)
 object RepositoryModule {
-
-    @Provides
-    @ActivityRetainedScoped
-    fun provideDeezerRepository(
-        deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = DeezerRepository(deezerClient,deezerDao)
 
     @Provides
     @ActivityRetainedScoped
@@ -36,5 +31,26 @@ object RepositoryModule {
         deezerDao: DeezerDao
     ) = FavoritesRepository(deezerClient, deezerDao)
 
+    @Provides
+    @ActivityRetainedScoped
+    fun providesSearchRepository(
+        deezerClient: DeezerClient,
+        deezerDao: DeezerDao
+    ) = SearchRepository(deezerClient, deezerDao)
+
+    @Provides
+    @ActivityRetainedScoped
+    fun providesArtistRepository(
+        deezerClient: DeezerClient,
+        deezerDao: DeezerDao
+    ) = ArtistRepository(deezerClient,deezerDao)
+
+
+    @Provides
+    @ActivityRetainedScoped
+    fun providesAlbumRepository(
+        deezerClient: DeezerClient,
+        deezerDao: DeezerDao
+    ) = AlbumRepository(deezerClient,deezerDao)
 
 }

@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artistdetails.related
+package com.fevziomurtekin.deezer.ui.artist.details.related
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

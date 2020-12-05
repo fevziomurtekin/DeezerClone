@@ -10,7 +10,6 @@ import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.databinding.ItemSearchAlbumBinding
-import timber.log.Timber
 
 
 class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumViewHolder>() {
@@ -40,14 +39,11 @@ class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumVie
     fun addAlbumSearch(searchList: List<SearchData>) {
         val previousSize = items.size
         items.addAll(searchList)
-        // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }
 
     override fun onBindViewHolder(holder: SearchAlbumViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
-            Timber.d("binding..")
             search = items[position]
             executePendingBindings()
         }

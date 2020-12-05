@@ -8,14 +8,14 @@ data class ArtistsResponse(
 )
 
 data class ArtistData(
-    val id: String,
-    val name: String,
-    val picture: String,
-    val picture_big: String,
-    val picture_medium: String,
-    val picture_small: String,
-    val picture_xl: String,
-    val radio: Boolean,
-    val tracklist: String,
-    val type: String
+    @SerializedName("id") val id: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("picture") val picture: String,
+    @SerializedName("picture_big") val picture_big: String,
+    @SerializedName("picture_medium") val picture_medium: String,
+    @SerializedName("picture_small") val picture_small: String,
+    @SerializedName("picture_xl") val picture_xl: String,
+    @SerializedName("radio") val radio: Boolean,
+    @SerializedName("tracklist") val tracklist: String,
+    @SerializedName("type") val type: String
 )

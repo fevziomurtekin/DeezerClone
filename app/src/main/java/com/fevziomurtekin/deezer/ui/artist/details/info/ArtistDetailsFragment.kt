@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artistdetails.detail
+package com.fevziomurtekin.deezer.ui.artist.details.info
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,8 +15,8 @@ import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentArtistDetailsBinding
-import com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumsFragment
-import com.fevziomurtekin.deezer.ui.artistdetails.related.ArtistRelatedFragment
+import com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumsFragment
+import com.fevziomurtekin.deezer.ui.artist.details.related.ArtistRelatedFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_details.*
 import timber.log.Timber
@@ -28,7 +28,7 @@ class ArtistDetailsFragment : DataBindingFragment() {
     @VisibleForTesting
     val viewModel: ArtistDetailsViewModel by viewModels()
     var id:String = "0" //default value.
-    val tabList:MutableList<String> = mutableListOf("albums", "related details")
+    private val tabList:MutableList<String> = mutableListOf("albums", "related details")
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,27 +36,30 @@ class ArtistDetailsFragment : DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        arguments?.let {
-            id = it.getString(Env.BUND_ID).let { s->
-                if(s.isNullOrEmpty()) "0" else s
-            }
-        }
 
-        Timber.d("artist list - artistdetails : $id")
-
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistDetailsFragment
             vpadapter = ADCategories(activity?.supportFragmentManager!!,tabList,id)
             vp = viewPager
             vm = viewModel
         }
+    }
 
+    override fun getSafeArgs(){
+        arguments?.let {
+            id = it.getString(Env.BUND_ID).let { s->
+                if(s.isNullOrEmpty()) "0" else s
+            }
+        }
+    }
+
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchArtistDetails(id)
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
-                //TODO  progress dialog add.
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistDetailsFragment.cl_artist_details,this@ArtistDetailsFragment.getString(R.string.unexpected_error))
@@ -73,7 +76,6 @@ class ArtistDetailsFragment : DataBindingFragment() {
                 UIExtensions.showSnackBar(this@ArtistDetailsFragment.cl_artist_details,this@ArtistDetailsFragment.getString(R.string.network_error))
             }
         })
-
     }
 }
 

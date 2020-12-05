@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.ui.artist
+package com.fevziomurtekin.deezer.ui.artist.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +22,7 @@ class ArtistsFragment : DataBindingFragment(){
     private lateinit var binding:FragmentArtistsBinding
     @VisibleForTesting
     val viewModel: ArtistViewModel by viewModels()
-    var id:String = "0" //default value.
+    private var id:String = "0" //default value.
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -30,26 +30,28 @@ class ArtistsFragment : DataBindingFragment(){
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() {
         arguments?.let {
             id = it.getString(Env.BUND_ID).let {s->
                 if(s.isNullOrEmpty()) "0" else s
             }
         }
+    }
 
-        Timber.d("artist list - genreId : $id")
-
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistsFragment
             adapter = ArtistAdapter()
             vm = viewModel
         }
+    }
 
+    override fun setListeners() {}
+
+    override fun observeLiveData() {
         viewModel.fetchResult(id)
         viewModel.result.observe(viewLifecycleOwner, {
             when(it){
-                //TODO  progress dialog add.
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
                     UIExtensions.showSnackBar(this@ArtistsFragment.lv_main,this@ArtistsFragment.getString(R.string.unexpected_error))
@@ -60,6 +62,5 @@ class ArtistsFragment : DataBindingFragment(){
                 }
             }
         })
-
     }
 }
