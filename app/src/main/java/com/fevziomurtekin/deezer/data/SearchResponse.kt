@@ -4,16 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 
 data class SearchResponse(
-    @SerializedName("data")
-    val `data`: List<SearchData>,
-    @SerializedName("next")
-    val next: String,
-    @SerializedName("total")
-    val total: Int
+    @SerializedName("data") val `data`: List<SearchData>,
+    @SerializedName("next") val next: String,
+    @SerializedName("total") val total: Int
 )
 
 data class SearchData(
-    @SerializedName("artist") val artist: SearchArtist,
+    @SerializedName("artist") var artist: Artist,
     @SerializedName("cover") val cover: String,
     @SerializedName("cover_big") val cover_big: String,
     @SerializedName("cover_medium") val cover_medium: String,
@@ -32,12 +29,3 @@ data class SearchData(
 )
 
 
-data class SearchArtist(
-    @SerializedName("id") val artist: Long,
-    @SerializedName("name") val name: String,
-    @SerializedName("link") val link: String,
-    @SerializedName("picture_medium") val picture_medium: String,
-    @SerializedName("tracklist") val tracklist: String,
-    @SerializedName("cover_xl") val cover_xl: String,
-    @SerializedName("type") val type: String,
-)
