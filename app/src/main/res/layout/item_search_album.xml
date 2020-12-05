@@ -12,14 +12,14 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginLeft="7.5dp"
-        android:layout_marginRight="7.5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/item_search_margin_card"
+        android:layout_marginRight="@dimen/item_search_margin_card"
+        android:layout_marginTop="@dimen/item_search_margin__top_card"
         android:background="@color/colorWhiteCard"
         android:foreground="?attr/selectableItemBackground"
         app:cardBackgroundColor="@color/colorWhiteCard"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="@dimen/item_corner_radius"
+        app:cardElevation="@dimen/item_card_elavation"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,42 +29,34 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_artist_name"
+                style="@style/deezer_normal_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="4dp"
+                android:elevation="@dimen/item_card_elavation"
                 android:gravity="left"
-                android:maxLines="1"
-                android:padding="12dp"
+                android:padding="@dimen/item_search_artist_padding"
                 android:text='@{search.title}'
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
-                android:fontFamily="sans-serif-medium"
-                android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Bulbasaur" />
+                />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_album_date"
+                style="@style/deezer_thin_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="4dp"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:gravity="left"
                 android:maxLines="1"
-                android:padding="12dp"
+                android:padding="@dimen/item_search_artist_padding"
                 android:text="@{search.title}"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                android:fontFamily="sans-serif-thin"
-                android:textStyle="normal"
                 android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Bulbasaur" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </LinearLayout>

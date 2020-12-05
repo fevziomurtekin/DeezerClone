@@ -7,11 +7,11 @@ import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import java.io.IOException
-import org.hamcrest.MatcherAssert.assertThat
 
 
 @ExperimentalCoroutinesApi

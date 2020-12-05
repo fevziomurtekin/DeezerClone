@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             app:shimmer_auto_start="true"
             app:isGoneLayout="@{vm.result}"
-            android:padding="6dp"
+            android:padding="@dimen/shimmer_layout_padding"
             app:shimmer_highlight_color="@color/colorWhiteCard"
            >
             <include layout="@layout/shimmer_linear_layout"/>
@@ -38,7 +38,7 @@
             android:id="@+id/recyclerView"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
-            android:padding="6dp"
+            android:padding="@dimen/recyclerview_padding"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
             app:isGoneLayout="@{vm.result}"

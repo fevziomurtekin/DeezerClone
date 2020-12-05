@@ -6,11 +6,12 @@
     android:background="@color/colorWhiteCard"
     android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/colorWhiteCard"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="4dp"
+    app:cardCornerRadius="@dimen/item_corner_radius"
+    app:cardElevation="@dimen/cardview_default_elevation"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,20 +30,13 @@
             android:id="@+id/tv_genre_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
+            android:elevation="@dimen/cardview_default_elevation"
             android:gravity="center"
-            android:maxLines="1"
-            android:padding="12dp"
-            android:textColor="@color/colorWhiteCard"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold"
-            android:textAllCaps="true"
+            android:padding="@dimen/item_artist_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Bulbasaur" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
