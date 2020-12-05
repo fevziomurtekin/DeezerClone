@@ -4,11 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.*
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumDetailsResponse
-import com.fevziomurtekin.deezer.data.artist.ArtistData
-import com.fevziomurtekin.deezer.data.artist.ArtistsResponse
-import com.fevziomurtekin.deezer.data.artistdetails.*
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient

@@ -23,11 +23,11 @@ class DeezerDaoTest:LocalDatabase(){
 
     @Test
     fun insertAndLoadGenreList() = runBlocking {
-        val mockDataList  = MockUtil.genres
+        val mockDataList  = MockUtil.genreEntityList
         deezerDao.insertGenreList(mockDataList)
 
         // checking insert procces
-        val loadFromDB = deezerDao.getGenreList()
+        val loadFromDB = deezerDao.getGenreList() ?: emptyList()
         assertThat(loadFromDB.toString(),`is`(mockDataList.toString()))
 
         // checking first data.
@@ -52,12 +52,12 @@ class DeezerDaoTest:LocalDatabase(){
 
     @Test
     fun insertAndLoadFavorites() = runBlocking {
-        val mockFavorite = MockUtil.album
+        val mockFavorite = MockUtil.albumEntity
         deezerDao.insertTrack(mockFavorite)
 
         val mockFavorites = listOf(mockFavorite)
 
-        val loadFromDB = deezerDao.getFavorites()
+        val loadFromDB = deezerDao.getFavorites() ?: emptyList()
         assertThat(loadFromDB.toString(),`is`(mockFavorites.toString()))
 
         assertThat(loadFromDB[0].toString(),`is`(mockFavorite.toString()))
