@@ -1,6 +1,6 @@
 package com.fevziomurtekin.deezer.ui.album
 
-import com.fevziomurtekin.deezer.core.data.ApiCallback
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
 import com.fevziomurtekin.deezer.core.extensions.getResult
@@ -22,7 +22,7 @@ import timber.log.Timber
 class AlbumRepository(
     val deezerClient: DeezerClient,
     val deezerDao: DeezerDao
-): ApiCallback(), AlbumRepositoryImpl {
+): DataSource(), AlbumRepositoryImpl {
 
     override fun fetchAlbumTracks(albumID:String
     ) = flow {

@@ -1,6 +1,6 @@
 package com.fevziomurtekin.deezer.ui.artist
 
-import com.fevziomurtekin.deezer.core.data.ApiCallback
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.getResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
@@ -22,7 +22,7 @@ import timber.log.Timber
 class ArtistRepository(
     private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao
-): ApiCallback(), ArtistRepositoryImpl {
+): DataSource(), ArtistRepositoryImpl {
 
     override fun fetchArtistList(genreID:String)
             = flow {
