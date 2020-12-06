@@ -17,10 +17,7 @@ package com.fevziomurtekin.deezer.core
  */
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType
+import com.google.gson.GsonBuilder
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
@@ -31,6 +28,7 @@ import org.junit.Rule
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.nio.charset.StandardCharsets
 
@@ -76,11 +74,7 @@ abstract class ApiAbstract<T> {
     fun createService(clazz: Class<T>): T {
         return Retrofit.Builder()
             .baseUrl(mockWebServer.url("/"))
-            .addConverterFactory(Json{
-                isLenient = true
-                ignoreUnknownKeys = true
-            }.asConverterFactory(MediaType.get("application/json")))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
             .create(clazz)
     }

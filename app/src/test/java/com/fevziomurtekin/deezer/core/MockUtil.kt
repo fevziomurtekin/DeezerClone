@@ -1,12 +1,20 @@
 package com.fevziomurtekin.deezer.core
 
-import com.fevziomurtekin.deezer.data.*
+import com.fevziomurtekin.deezer.data.AlbumData
+import com.fevziomurtekin.deezer.data.Artist
+import com.fevziomurtekin.deezer.data.ArtistAlbumData
+import com.fevziomurtekin.deezer.data.ArtistData
+import com.fevziomurtekin.deezer.data.ArtistDetailResponse
+import com.fevziomurtekin.deezer.data.ArtistRelatedData
+import com.fevziomurtekin.deezer.data.Data
+import com.fevziomurtekin.deezer.data.SearchData
+import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 
 object MockUtil {
     val entity = GenreEntity(
-        0L,
+        1L,
         "0",
         "All",
         "https://api.deezer.com/genre/0/image",
@@ -30,7 +38,7 @@ object MockUtil {
 
     val genres = listOf(data)
 
-    val genreEntity = listOf(entity)
+    val genreEntityList = listOf(entity)
 
     val recentData = SearchEntity(1L,"ezhel",12345.toLong())
 
@@ -41,6 +49,14 @@ object MockUtil {
         isrc = "GBDUW0000053",link = "https://www.deezer.com/track/3135553",duration = "320",track_position = 1,
         disk_number = 1,rank = "880801",explicit_lyrics = false,explicit_content_lyrics = 0,explicit_content_cover = 0,
         preview ="https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",md5_image = "2e018122cb56986277102d2041a592c8",
+        //artist = Artist("27","Draft Punk","https://api.deezer.com/artist/27/top?limit=50","artist"),
+        type = "track"
+    )
+
+    val albumEntity = AlbumEntity(
+        albumId= "3135553",title = "One More Time",
+        albumIsrc = "GBDUW0000053",link = "https://www.deezer.com/track/3135553",duration = "320",
+        disk_number = 1,explicit_lyrics = false,md5_image = "2e018122cb56986277102d2041a592c8",
         //artist = Artist("27","Draft Punk","https://api.deezer.com/artist/27/top?limit=50","artist"),
         type = "track"
     )
