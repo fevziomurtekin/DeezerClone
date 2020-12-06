@@ -2,12 +2,17 @@ package com.fevziomurtekin.deezer.domain.network
 
 import com.fevziomurtekin.deezer.core.ApiAbstract
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.data.*
+import com.fevziomurtekin.deezer.data.AlbumDetailsResponse
+import com.fevziomurtekin.deezer.data.ArtistAlbumResponse
+import com.fevziomurtekin.deezer.data.ArtistDetailResponse
+import com.fevziomurtekin.deezer.data.ArtistRelatedResponse
+import com.fevziomurtekin.deezer.data.ArtistsResponse
+import com.fevziomurtekin.deezer.data.GenreResponse
+import com.fevziomurtekin.deezer.data.SearchResponse
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import net.bytebuddy.implementation.bytecode.Throw
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
@@ -34,45 +39,41 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @Throws(IOException::class)
     @Test
-    fun fetchGenreListTest() = runBlocking {
+    fun fetchGenreListTest(): Unit = runBlocking {
         enqueueResponse("/genreResponse.json")
-        val responseBody = service.fetchGenreList().body() as? GenreResponse
+        val response = service.fetchGenreList()
         mockWebServer.takeRequest()
 
         client.fetchGenreList()
-        responseBody?.data?.let { safeList->
+
+        response.body()?.data?.let { safeList->
             assertThat(safeList.size,`is`(23))
             assertThat(safeList[0].name, `is`("All"))
             assertThat(safeList[0].type, `is`("genre"))
-        } ?: run{
-            IOException("unexpected")
         }
-
     }
 
     @Throws(IOException::class)
     @Test
-    fun fetchArtistList() = runBlocking {
+    fun fetchArtistList(): Unit = runBlocking {
         enqueueResponse("/artistsResponse.json")
         // give to default genreID
-        val responseBody = service.fetchArtistList(MockUtil.genreID) as? ArtistsResponse
+        val response = service.fetchArtistList(MockUtil.genreID)
         mockWebServer.takeRequest()
 
         client.fetchArtistList(MockUtil.genreID)
 
-        responseBody?.artistData?.let { safeList ->
+        response?.body()?.artistData?.let { safeList ->
             assertThat(safeList[0].id, `is`("8354140"))
             assertThat(safeList[0].type, `is`("artist"))
             assertThat(safeList[0].name, `is`("ezhel"))
-        } ?: run {
-            IOException("unexpected")
         }
 
     }
 
     @Throws(IOException::class)
     @Test
-    fun fetchArtistDetails() = runBlocking {
+    fun fetchArtistDetails(): Unit = runBlocking {
         enqueueResponse("/artistDetailsResponse.json")
         // give to default genreID
         val responseBody = service.fetchArtistDetails(MockUtil.artistID) as? ArtistDetailResponse
@@ -94,7 +95,7 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @Throws(IOException::class)
     @Test
-    fun fetchArtistAlbums() = runBlocking {
+    fun fetchArtistAlbums(): Unit = runBlocking {
         enqueueResponse("/artistAlbumsResponse.json")
         // give to default genreID
         val responseBody = service.fetchArtistAlbums(MockUtil.artistID) as? ArtistAlbumResponse
@@ -114,7 +115,7 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @Throws(IOException::class)
     @Test
-    fun fetchArtistRelated() = runBlocking {
+    fun fetchArtistRelated(): Unit = runBlocking {
         enqueueResponse("/artistRelatedResponse.json")
         // give to default genreID
         val responseBody = service.fetchArtistRelated(MockUtil.artistID) as? ArtistRelatedResponse
@@ -132,7 +133,7 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @Throws(IOException::class)
     @Test
-    fun fetchAlbumDetails() = runBlocking {
+    fun fetchAlbumDetails(): Unit = runBlocking {
         enqueueResponse("/albumDetailsResponse.json")
         // give to default genreID
         val responseBody = service.fetchAlbumDetails(MockUtil.albumID) as? AlbumDetailsResponse
@@ -151,7 +152,7 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @Throws(IOException::class)
     @Test
-    fun fetchSearchAlbum() = runBlocking {
+    fun fetchSearchAlbum(): Unit = runBlocking {
         enqueueResponse("/searchAlbumResponse.json")
         // give to default genreID
         val responseBody = service.fetchSearchAlbum(MockUtil.query) as? SearchResponse

@@ -46,7 +46,7 @@ fun GenreEntity?.mapper(): Data = this?.let { e->
         picture_medium= e.picture_medium,
         picture_small= e.picture_small,
         picture_xl= e.picture_xl,
-        type= e.picture_xl
+        type= "genre"
     )
 } ?: run {
     Data(

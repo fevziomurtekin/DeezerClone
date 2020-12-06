@@ -18,7 +18,6 @@ package com.fevziomurtekin.deezer.core
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.GsonBuilder
-import okhttp3.MediaType
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
