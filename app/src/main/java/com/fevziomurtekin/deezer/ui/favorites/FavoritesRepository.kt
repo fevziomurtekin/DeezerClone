@@ -1,6 +1,6 @@
 package com.fevziomurtekin.deezer.ui.favorites
 
-import com.fevziomurtekin.deezer.core.data.ApiCallback
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
@@ -19,7 +19,7 @@ import timber.log.Timber
 class FavoritesRepository(
     val deezerClient: DeezerClient,
     val deezerDao: DeezerDao
-): ApiCallback(), FavoritesRepositoryImpl {
+): DataSource(), FavoritesRepositoryImpl {
 
     override fun fetchFavorites()= flow {
         localCallFetch {

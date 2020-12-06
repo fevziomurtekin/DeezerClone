@@ -1,6 +1,6 @@
 package com.fevziomurtekin.deezer.ui.main
 
-import com.fevziomurtekin.deezer.core.data.ApiCallback
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.getResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
@@ -21,7 +21,7 @@ import javax.inject.Inject
 class MainRepository @Inject constructor(
     private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao
-): ApiCallback(), MainRepositoryImpl {
+): DataSource(), MainRepositoryImpl {
 
     override suspend fun fetchGenreList() = flow {
         emit(ApiResult.Loading)

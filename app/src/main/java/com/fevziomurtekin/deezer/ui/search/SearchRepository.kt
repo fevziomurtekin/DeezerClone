@@ -1,6 +1,6 @@
 package com.fevziomurtekin.deezer.ui.search
 
-import com.fevziomurtekin.deezer.core.data.ApiCallback
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
 import com.fevziomurtekin.deezer.core.extensions.*
@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.flowOn
 class SearchRepository(
     private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao
-): ApiCallback(), SearchRepositoryImpl {
+): DataSource(), SearchRepositoryImpl {
 
 
     override fun fetchSearch(query:String) = flow{
