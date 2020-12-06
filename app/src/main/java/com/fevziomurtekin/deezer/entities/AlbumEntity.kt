@@ -9,7 +9,7 @@ class AlbumEntity(
     var duration: String,
     val explicit_lyrics: Boolean,
     @PrimaryKey(autoGenerate = true)
-    var pId: Long = 0,
+    var pId: Long = 1,
     var albumId: String,
     val albumIsrc: String="",
     val link: String?="",
