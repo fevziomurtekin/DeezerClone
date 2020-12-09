@@ -2,6 +2,7 @@ package com.fevziomurtekin.deezer.ui.main
 
 import android.accounts.NetworkErrorException
 import android.app.Application
+import androidx.annotation.VisibleForTesting
 import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
@@ -21,7 +22,7 @@ class MainViewModel @ViewModelInject constructor(
     private val mainRepository: MainRepository
 ): ViewModel(){
 
-    var genreListLiveData: LiveData<ApiResult<List<Data>?>> = MutableLiveData()
+    @VisibleForTesting var genreListLiveData: LiveData<ApiResult<List<Data>?>> = MutableLiveData()
     var isSplash:MutableLiveData<Boolean> = MutableLiveData()
     var isGoneMediaPlayer :ObservableBoolean = ObservableBoolean(false)
     var albumData:MutableLiveData<List<AlbumData>> = MutableLiveData()

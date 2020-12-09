@@ -4,7 +4,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 
 internal fun SearchViewModel.initSearchActionListener() {
-    editorActionListener = TextView.OnEditorActionListener { v, actionId, event ->
+    editorActionListener = TextView.OnEditorActionListener { v, actionId, _ ->
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             queryLiveData.value = v.text.toString()
             true

@@ -22,7 +22,7 @@ object Plugins{
     val versionName                 = "1.0"
     val buildVersion                = "30.0.1"
     val target                      = compile
-    val testInstrumentationRunner   = "com.fevziomurtekin.deezer.AppTestRunner"
+    val testInstrumentationRunner   = "com.fevziomurtekin.deezer.CustomTestRunner"
     val javaVersion                 = "1.8"
     val main                        = "main"
     val release                     = "release"

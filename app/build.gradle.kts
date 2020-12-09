@@ -5,7 +5,6 @@ plugins{
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKaptExtensions)
     kotlin(Plugins.kotlinSerialization).version("1.4.10")
-
 }
 
 android{
@@ -20,25 +19,22 @@ android{
         multiDexEnabled = true
         testInstrumentationRunner = Plugins.testInstrumentationRunner
         vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunnerArguments(mutableMapOf("clearPackageData" to "true"))
+
     }
     buildTypes {
-        getByName(Plugins.debug) {
-            signingConfig= signingConfigs.getByName(Plugins.debug)
-            isMinifyEnabled = true
-            isShrinkResources = false
-            isDebuggable = true
-            isTestCoverageEnabled = true
-            proguardFiles(getDefaultProguardFile(Plugins.proguardTxt), Plugins.proguardPro)
+        getByName(Plugins.release) {
+           isMinifyEnabled = false
+           isShrinkResources = false
+           isDebuggable = true
+           isTestCoverageEnabled = true
+           proguardFiles(getDefaultProguardFile(Plugins.proguardTxt), Plugins.proguardPro)
         }
     }
-    packagingOptions{
-        exclude(Plugins.metaDependecies)
-        exclude(Plugins.metaLicense)
-        exclude(Plugins.metaIndex)
-    }
     compileOptions{
-        setSourceCompatibility(Plugins.javaVersion)
-        setTargetCompatibility(Plugins.javaVersion)
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = Plugins.javaVersion
@@ -48,26 +44,28 @@ android{
         isAbortOnError = false
     }
     androidExtensions { isExperimental = true }
-
-
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
         getByName("androidTest").java.srcDirs("src/androidTest/jaa")
     }
-
-    testOptions {
-        execution = Plugins.testOptions
-    }
-
     buildFeatures {
         dataBinding=true
     }
-
     dexOptions{
         javaMaxHeapSize = "4g"
         preDexLibraries = false
     }
-
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/LICENSE")
+        exclude("META-INF/LICENSE.txt")
+        exclude("META-INF/license.txt")
+        exclude("META-INF/NOTICE")
+        exclude("META-INF/NOTICE.txt")
+        exclude("META-INF/notice.txt")
+        exclude("META-INF/ASL2.0")
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies{
@@ -134,16 +132,17 @@ dependencies{
     androidTestImplementation(Dependencies.test_rules)
     androidTestImplementation(Dependencies.test_core)
     androidTestImplementation(Dependencies.espresso)
+    kaptAndroidTest(Dependencies.hilt_compiler)
     testImplementation(Dependencies.testTruth)
-    //androidTestImplementation(Dependencies.testTruth)
+    androidTestImplementation(Dependencies.testTruth)
     androidTestImplementation(Dependencies.testExt)
+    androidTestImplementation(Dependencies.fragment_test)
     testImplementation(Dependencies.mockK)
     testImplementation(Dependencies.coreTesting)
     testImplementation(Dependencies.jUnit)
     testImplementation(Dependencies.mockServer)
     testImplementation(Dependencies.coroutines_test)
     testImplementation(Dependencies.robolectric)
-    androidTestImplementation(Dependencies.robolectric)
     testImplementation(Dependencies.mockitoKotlin)
     testImplementation(Dependencies.turbine)
 

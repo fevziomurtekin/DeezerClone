@@ -1,0 +1,14 @@
+Index: buildSrc/.gradle/buildOutputCleanup/cache.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Thu Sep 24 14:49:48 TRT 2020\ngradle.version=6.6-rc-6\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- buildSrc/.gradle/buildOutputCleanup/cache.properties	(revision 29af77c4ac6530a8fd0cd361042baed95eaaaa23)
++++ buildSrc/.gradle/buildOutputCleanup/cache.properties	(date 1607246985000)
+@@ -1,2 +1,2 @@
+-#Thu Sep 24 14:49:48 TRT 2020
+-gradle.version=6.6-rc-6
++#Sun Dec 06 12:29:45 EET 2020
++gradle.version=6.1.1
