@@ -14,6 +14,7 @@ object Plugins{
     val hiltPlugin                  = "dagger.hilt.android.plugin"
     /* Detekt */
     val detekt                      = "io.gitlab.arturbosch.detekt"
+    val detektPlugins               = "io.gitlab.arturbosch.detekt:detekt-formatting:${Versions.detekt_version}"
 
     val applicationId               = "com.fevziomurtekin.deezer"
     val min                         = 19

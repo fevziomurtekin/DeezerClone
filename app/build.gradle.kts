@@ -5,7 +5,6 @@ plugins{
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKaptExtensions)
     kotlin(Plugins.kotlinSerialization).version("1.4.10")
-
 }
 
 android{
