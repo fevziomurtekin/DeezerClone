@@ -6,18 +6,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
 import com.fevziomurtekin.deezer.databinding.ItemFavoritesBinding
+import com.fevziomurtekin.deezer.entities.AlbumEntity
 import timber.log.Timber
 
 
 class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>() {
 
     interface OnClick{
-        fun onItemClickListener(v: View, trackPos:Int, item: List<AlbumData>)
+        fun onItemClickListener(v: View, trackPos:Int, item: List<AlbumEntity>)
     }
 
-    private val items: MutableList<AlbumData> = mutableListOf()
+    private val items: MutableList<AlbumEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -35,7 +35,7 @@ class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdap
         }
     }
 
-    fun addFavoritesList(favorites: List<AlbumData>) {
+    fun addFavoritesList(favorites: List<AlbumEntity>) {
         Timber.d("Favorites addFavorites $favorites")
         val previousSize = items.size
         items.addAll(favorites)

@@ -5,13 +5,12 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
-import com.fevziomurtekin.deezer.data.genre.Data
+import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.databinding.ItemGenreBinding
-import timber.log.Timber
 
 class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
 
@@ -29,7 +28,7 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
 
                 it.findNavController().navigate(
                         R.id.action_genre_list,
-                        bundleOf(Env.BUND_ID to items[position].genreId
+                        bundleOf(Env.BUND_ID to items[position].id
                             ,Env.BUND_NAME to items[position].name
                         ))
             }
@@ -39,14 +38,11 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
     fun addGenreList(genreList:List<Data>){
         val previousSize = items.size
         items.addAll(genreList)
-       // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize,items.size)
     }
 
     override fun onBindViewHolder(holder: GenreViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
-            Timber.d("binding..")
             genre = items[position]
             executePendingBindings()
         }

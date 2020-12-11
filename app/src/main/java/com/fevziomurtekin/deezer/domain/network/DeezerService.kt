@@ -1,13 +1,7 @@
 package com.fevziomurtekin.deezer.domain.network
 
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumDetailsResponse
-import com.fevziomurtekin.deezer.data.artist.ArtistsResponse
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistAlbumResponse
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistDetailResponse
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistRelatedResponse
-import com.fevziomurtekin.deezer.data.genre.GenreResponse
-import com.fevziomurtekin.deezer.data.search.SearchResponse
-import kotlinx.coroutines.Deferred
+import com.fevziomurtekin.deezer.data.*
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,31 +9,31 @@ import retrofit2.http.Query
 
 interface DeezerService{
 
-    @GET("genre")
-    fun fetchGenreList()
-            :Deferred<GenreResponse>
+    @GET(Endpoints.GENRE)
+    suspend fun fetchGenreList()
+            : Response<GenreResponse>
 
-    @GET("genre/{genreId}/artists")
-    fun fetchArtistList(@Path("genreId") genreId:String)
-            :Deferred<ArtistsResponse>
+    @GET(Endpoints.ARTISTS)
+    suspend fun fetchArtistList(@Path("genreId") genreId:String)
+            : Response<ArtistsResponse>
 
-    @GET("artist/{artistId}")
-    fun fetchArtistDetails(@Path("artistId") artistID:String)
-            :Deferred<ArtistDetailResponse>
+    @GET(Endpoints.ARTIST)
+    suspend fun fetchArtistDetails(@Path("artistId") artistID:String)
+            : Response<ArtistDetailResponse>
 
-    @GET("artist/{artistId}/albums")
-    fun fetchArtistAlbums(@Path("artistId") artistID: String)
-            :Deferred<ArtistAlbumResponse>
+    @GET(Endpoints.ALBUMS)
+    suspend fun fetchArtistAlbums(@Path("artistId") artistID: String)
+            : Response<ArtistAlbumResponse>
 
-    @GET("artist/{artistId}/related")
-    fun fetchArtistRelated(@Path("artistId") artistID: String)
-            :Deferred<ArtistRelatedResponse>
+    @GET(Endpoints.RELATED)
+    suspend fun fetchArtistRelated(@Path("artistId") artistID: String)
+            : Response<ArtistRelatedResponse>
 
-    @GET("album/{albumId}/tracks")
-    fun fetchAlbumDetails(@Path("albumId") albumId:String)
-            :Deferred<AlbumDetailsResponse>
+    @GET(Endpoints.ALBUM)
+    suspend fun fetchAlbumDetails(@Path("albumId") albumId:String)
+            : Response<AlbumDetailsResponse>
 
-    @GET("search/album")
-    fun fetchSearchAlbum(@Query("q") q:String)
-            :Deferred<SearchResponse>
+    @GET(Endpoints.SEARCH)
+    suspend fun fetchSearchAlbum(@Query("q") q:String)
+            : Response<SearchResponse>
 }

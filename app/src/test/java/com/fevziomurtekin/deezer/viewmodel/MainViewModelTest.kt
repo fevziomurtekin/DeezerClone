@@ -5,17 +5,20 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
+import androidx.test.core.app.ActivityScenario.launch
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.mediaplayer.MediaPlayerState
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.mapper
+import com.fevziomurtekin.deezer.data.Data
+import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
-import com.fevziomurtekin.deezer.repository.DeezerRepository
 import com.fevziomurtekin.deezer.ui.main.MainActivity
+import com.fevziomurtekin.deezer.ui.main.MainRepository
 import com.fevziomurtekin.deezer.ui.main.MainViewModel
+import com.fevziomurtekin.deezer.ui.main.playMediaPlayer
 import com.nhaarman.mockitokotlin2.atLeastOnce
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -28,7 +31,6 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import androidx.test.core.app.ActivityScenario.launch
 
 
 /**
@@ -41,7 +43,7 @@ import androidx.test.core.app.ActivityScenario.launch
 class MainViewModelTest {
     private val application:Application = mock()
     private lateinit var viewModel:MainViewModel
-    private lateinit var mainRepository: DeezerRepository
+    private lateinit var mainRepository: MainRepository
     private val deezerService: DeezerService = mockk()
     private val deezerClient = DeezerClient(deezerService)
     private val deezerDao: DeezerDao = mockk()
@@ -59,24 +61,24 @@ class MainViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        mainRepository = DeezerRepository(deezerClient, deezerDao)
+        mainRepository = MainRepository(deezerClient, deezerDao)
         viewModel = MainViewModel(application, mainRepository)
     }
 
     @Test
     fun fetchGenreListTest() = runBlocking {
-        val mockList = MockUtil.genres
+        val mockList = MockUtil.genreEntityList
         whenever(deezerDao.getGenreList()).thenReturn(mockList)
 
-        val observer : Observer<Result<List<Data>>> = mock()
-        val fetchedData : LiveData<Result<List<Data>>> = mainRepository.fetchGenreList().asLiveData()
+        val observer : Observer<ApiResult<List<Data>?>> = mock()
+        val fetchedData : LiveData<ApiResult<List<Data>?>> = mainRepository.fetchGenreList().asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchGenreList()
         delay(500L)
 
         verify(deezerDao, atLeastOnce()).getGenreList()
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Success(mockList.mapper()))
         fetchedData.removeObserver(observer)
     }
 
@@ -85,11 +87,11 @@ class MainViewModelTest {
 
         /*  Given */
         val playerState = MediaPlayerState.PLAYING
-        viewModel.playMusic()
+        viewModel.playMediaPlayer()
 
         /* When */
         val actualResult = viewModel.mediaPlayerState.value.let {
-            it?:MediaPlayerState.ERROR
+            it?: MediaPlayerState.ERROR
         }
 
         /* Then */
@@ -105,11 +107,11 @@ class MainViewModelTest {
             a.onBackPressed()
         }
         val actualResult = viewModel.mediaPlayerState.value.let {
-            it?:MediaPlayerState.ERROR
+            it?: MediaPlayerState.ERROR
         }
 
 
-        Assert.assertEquals(actualResult,MediaPlayerState.PAUSED)
+        Assert.assertEquals(actualResult, MediaPlayerState.PAUSED)
     }
 
 }

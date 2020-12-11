@@ -25,12 +25,8 @@ object Dependencies {
     val okhttp              = "com.squareup.okhttp3:okhttp:${Versions.okhttp3_version}"
     val okhttp_logging      = "com.squareup.okhttp3:logging-interceptor:${Versions.logging_version}"
     val retrofit            = "com.squareup.retrofit2:retrofit:${Versions.retrofit2_version}"
-    val retrofit_convertor  = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_converter_version}"
+    val retrofit_converter  = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_converter_version}"
     val retrofit_adapter    = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit2_version}"
-
-    /* kotlin serialization */
-    val kotlin_serialization            = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.serialization_version}"
-    val kotlin_serialization_converter  = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.serialization_converter_version}"
 
     /* Room */
     val room                = "androidx.room:room-runtime:${Versions.room_version}"
@@ -48,15 +44,17 @@ object Dependencies {
     val hilt_androidx_kapt  = "androidx.hilt:hilt-compiler:${Versions.a_hilt_version}"
     val hilt_common         = "androidx.hilt:hilt-common:${Versions.hilt_version}"
     val hilt_test           = "com.google.dagger:hilt-android-testing:${Versions.hilt_version}"
+    val hilt_compiler       = "com.google.dagger:hilt-android-compiler:${Versions.hilt_test_version}"
 
     /* Android Test */
     val test_orch           = "androidx.test:orchestrator:${Versions.test_rule_version}"
     val test_core           = "androidx.test:core:${Versions.test_core_version}"
     val test_rules          = "androidx.test:rules:${Versions.test_rule_version}"
-    val test_runner         = "androidx.test:runner:${Versions.test_runner_version}"
+    val test_runner         = "androidx.test:runner:${Versions.test_rule_version}"
     val espresso            = "androidx.test.espresso:espresso-core:${Versions.espresso_version}"
     val testTruth           = "androidx.test.ext:truth:${Versions.truth_version}"
-    val testExt             = "androidx.test.ext:junit-ktx:${Versions.test_rule_version}"
+    val testExt             = "androidx.test.ext:junit:${Versions.test_ktx_version}"
+    val fragment_test       = "androidx.fragment:fragment-testing:${Versions.fragment_test_version}"
     val mockK               = "io.mockk:mockk:${Versions.mockK_version}"
     val coreTesting         = "androidx.arch.core:core-testing:${Versions.core_testing_version}"
     val jUnit               = "junit:junit:${Versions.junit_version}"
@@ -82,7 +80,6 @@ object Dependencies {
     val coroutines_test     = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines_android_version}"
     val coroutines_android  = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android_version}"
     val coroutines_core_lib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_android_version}"
-    val coroutines_adapter  = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutines_adapter_version}"
 
     val multidex_lib        = "com.android.support:multidex:${Versions.multidexVersion}"
 
@@ -93,5 +90,7 @@ object Dependencies {
     val exoplayer_core_lib  = "com.google.android.exoplayer:exoplayer-core:${Versions.exoplayer_version}"
     val exoplayer_dash_lib  = "com.google.android.exoplayer:exoplayer-dash:${Versions.exoplayer_version}"
     val exoplayer_ui_lib    = "com.google.android.exoplayer:exoplayer-ui:${Versions.exoplayer_version}"
+
+
 
 }

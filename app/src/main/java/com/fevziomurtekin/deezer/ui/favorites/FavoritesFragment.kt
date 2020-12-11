@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingFragment
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentFavoritesBinding
+import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.ui.main.MainActivity
+import com.fevziomurtekin.deezer.ui.main.playMediaPlayer
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FavoritesFragment:DataBindingFragment() {
+class FavoritesFragment: DataBindingFragment() {
 
     lateinit var binding:FragmentFavoritesBinding
     @VisibleForTesting
@@ -25,25 +26,28 @@ class FavoritesFragment:DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() { }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@FavoritesFragment
             vm = viewModel
             adapter = FavoritesAdapter(object : FavoritesAdapter.OnClick {
-                override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumData>) {
-                    ((this@FavoritesFragment).requireActivity() as MainActivity).viewModel.apply {
-                        albumData.value = albumList
-                        positionTrack = trackPos
-                        isGoneMediaPlayer.set(true)
-                        playMusic()
-                    }
+                override fun onItemClickListener(v: View,trackPos:Int, albumList:List<AlbumEntity>) {
+                    ((this@FavoritesFragment).requireActivity() as MainActivity)
+                        .viewModel.apply {
+                            positionTrack = trackPos
+                            isGoneMediaPlayer.set(true)
+                            playMediaPlayer()
+                        }
                 }
             })
         }
+    }
 
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchFavorites()
-
     }
 }

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.DataBindingFragment
-import com.fevziomurtekin.deezer.core.UIExtensions
+import com.fevziomurtekin.deezer.core.extensions.UIExtensions
+import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
 import com.fevziomurtekin.deezer.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -26,9 +26,9 @@ class SearchFragment: DataBindingFragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun getSafeArgs() {  }
 
+    override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@SearchFragment
             recentAdapter = RecentSearchAdapter(object : RecentSearchAdapter.RecentSearchListener{
@@ -41,6 +41,11 @@ class SearchFragment: DataBindingFragment() {
             vm = viewModel
         }
 
+    }
+
+    override fun setListeners() { }
+
+    override fun observeLiveData() {
         viewModel.fetchingRecentSearch()
         viewModel.fetchSearch()
 

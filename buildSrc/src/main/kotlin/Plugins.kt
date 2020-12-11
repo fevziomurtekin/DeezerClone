@@ -12,6 +12,8 @@ object Plugins{
     val kotlinSerialization         = "plugin.serialization"
     val hiltExtensions              = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
     val hiltPlugin                  = "dagger.hilt.android.plugin"
+    /* Detekt */
+    val detekt                      = "io.gitlab.arturbosch.detekt"
 
     val applicationId               = "com.fevziomurtekin.deezer"
     val min                         = 19
@@ -20,7 +22,7 @@ object Plugins{
     val versionName                 = "1.0"
     val buildVersion                = "30.0.1"
     val target                      = compile
-    val testInstrumentationRunner   = "com.fevziomurtekin.deezer.AppTestRunner"
+    val testInstrumentationRunner   = "com.fevziomurtekin.deezer.CustomTestRunner"
     val javaVersion                 = "1.8"
     val main                        = "main"
     val release                     = "release"

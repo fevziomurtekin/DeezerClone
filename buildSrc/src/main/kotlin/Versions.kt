@@ -4,7 +4,7 @@ object Versions {
     val fragmentVersion = "1.2.5"
 
     /** Build Plugins **/
-    val buildToolVersion = "4.0.1"
+    val buildToolVersion = "4.1.1"
     val googleServiceVersion = "4.2.0"
     val mavenGradleVersion = "1.4.1"
     val multidexVersion = "2.0.1"
@@ -12,10 +12,8 @@ object Versions {
     /** Dependencies **/
     //Retrofit & Okhttp & serialization
     val okhttp3_version="3.12.0"
-    val retrofit2_version="2.5.0"
-    val retrofit2_converter_version="2.4.0"
-    val serialization_version = "1.0.0-RC"
-    val serialization_converter_version="0.7.0"
+    val retrofit2_version="2.9.0"
+    val retrofit2_converter_version="2.9.0"
 
     // Material & Design & Arcitecture
     const val appcompat_version="1.0.2"
@@ -33,7 +31,8 @@ object Versions {
 
     //Hilt
     val hilt_version  = "2.28.3-alpha"
-    val a_hilt_version    = "1.0.0-alpha02"
+    val hilt_test_version  = "2.28-alpha"
+    val a_hilt_version = "1.0.0-alpha02"
 
     //Room
     val room_version = "2.2.5"
@@ -46,6 +45,7 @@ object Versions {
     //Test
     val test_core_version = "1.0.0"
     val test_rule_version = "1.1.0"
+    val test_ktx_version = "1.1.0"
     val junit_version = "4.12"
     val mockito_version = "2.2.0"
     val mockK_version = "1.9.3"
@@ -55,6 +55,7 @@ object Versions {
     val test_runner_version = "1.3.0-alpha01"
     val robolectric_version = "4.4"
     val turbine_version = "0.2.1"
+    val fragment_test_version = "1.2.5"
 
     //other lib
     val circular_imageview_version = "3.0.0"
@@ -70,6 +71,8 @@ object Versions {
     val shimmer_version = "0.5.0"
 
     val exoplayer_version = "2.12.0"
+
+    val detekt_version = "1.15.0-RC1"
 
 
 }

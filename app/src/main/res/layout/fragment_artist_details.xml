@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -8,10 +7,10 @@
             type="androidx.viewpager.widget.ViewPager" />
         <variable
             name="vm"
-            type="com.fevziomurtekin.deezer.ui.artistdetails.detail.ArtistDetailsViewModel" />
+            type="com.fevziomurtekin.deezer.ui.artist.details.info.ArtistDetailsViewModel" />
         <variable
             name="vpadapter"
-            type="com.fevziomurtekin.deezer.ui.artistdetails.detail.ADCategories" />
+            type="com.fevziomurtekin.deezer.ui.artist.details.info.ADCategories" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

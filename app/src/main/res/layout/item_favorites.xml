@@ -5,21 +5,21 @@
     <data>
         <variable
             name="favorite"
-            type="com.fevziomurtekin.deezer.data.albumdetails.AlbumData" />
+            type="com.fevziomurtekin.deezer.entities.AlbumEntity" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="6dp"
+        android:layout_height="@dimen/item_favorites_height"
+        android:layout_marginLeft="@dimen/item_favorites_margin"
+        android:layout_marginRight="@dimen/item_favorites_margin"
+        android:layout_marginTop="@dimen/item_favorites_margin"
         android:background="@color/colorWhiteCard"
         android:foreground="?attr/selectableItemBackground"
         app:cardBackgroundColor="@color/colorWhiteCard"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="@dimen/item_corner_radius"
+        app:cardElevation="@dimen/cardview_default_elevation"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:scaleType="centerInside"
-                android:padding="5dp"
+                android:padding="@dimen/item_favorites_image_padding"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -52,40 +52,30 @@
                     android:id="@+id/tv_album_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="4dp"
+                    style="@style/deezer_normal_text"
                     android:gravity="left"
-                    android:maxLines="1"
-                    android:padding="12dp"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    android:padding="@dimen/item_favorites_padding"
                     android:text="@{favorite.title}"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"
-                    android:fontFamily="sans-serif-medium"
-                    android:textStyle="normal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Bulbasaur" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_album_date"
+                    style="@style/deezer_thin_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="4dp"
+                    android:elevation="@dimen/cardview_default_elevation"
                     android:gravity="left"
-                    android:maxLines="1"
-                    android:padding="12dp"
+                    android:padding="@dimen/item_favorites_padding"
                     android:text="@{favorite.duration}"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="12sp"
-                    android:fontFamily="sans-serif-thin"
-                    android:textStyle="normal"
                     android:textAllCaps="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Bulbasaur" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </LinearLayout>
 

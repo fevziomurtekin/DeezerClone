@@ -4,34 +4,34 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.fevziomurtekin.deezer.data.albumdetails.AlbumData
-import com.fevziomurtekin.deezer.data.genre.Data
-import com.fevziomurtekin.deezer.data.search.SearchQuery
+import com.fevziomurtekin.deezer.entities.AlbumEntity
+import com.fevziomurtekin.deezer.entities.GenreEntity
+import com.fevziomurtekin.deezer.entities.SearchEntity
 
 @Dao
 interface DeezerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertGenreList(genreList:List<Data>)
+    suspend fun insertGenreList(genreList:List<GenreEntity>)
 
-    @Query("SELECT * FROM Data")
-    suspend fun getGenreList():List<Data>
+    @Query("SELECT * FROM GenreEntity")
+    suspend fun getGenreList():List<GenreEntity>?
 
     /* insert to query */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertQuery(q:SearchQuery)
+    suspend fun insertQuery(q: SearchEntity)
 
     /* recent search */
-    @Query("SELECT * FROM SearchQuery ORDER BY time")
-    suspend fun getQueryList():List<SearchQuery>
+    @Query("SELECT * FROM SearchEntity")
+    suspend fun getQueryList():List<SearchEntity>
 
     /* insert to track */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTrack(albumData: AlbumData)
+    suspend fun insertTrack(albumData: AlbumEntity)
 
     /* recent favorites */
-    @Query("SELECT * FROM AlbumData ORDER BY fav_time")
-    suspend fun getFavorites():List<AlbumData>
+    @Query("SELECT * FROM AlbumEntity")
+    suspend fun getFavorites():List<AlbumEntity>?
 
 
 }

@@ -5,14 +5,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.Result
-import com.fevziomurtekin.deezer.data.artistdetails.ArtistAlbumData
+import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.data.ArtistAlbumData
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
-import com.fevziomurtekin.deezer.repository.DeezerRepository
-import com.fevziomurtekin.deezer.ui.artistdetails.albums.ArtistAlbumViewModel
+import com.fevziomurtekin.deezer.ui.artist.ArtistRepository
+import com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumViewModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import io.mockk.mockk
@@ -26,7 +26,7 @@ import org.junit.Test
 @ExperimentalCoroutinesApi
 class ArtistAlbumViewModelTest {
     private lateinit var viewModel: ArtistAlbumViewModel
-    private lateinit var mainRepository: DeezerRepository
+    private lateinit var repository: ArtistRepository
     private val deezerService: DeezerService = mockk()
     private val deezerClient = DeezerClient(deezerService)
     private val deezerDao: DeezerDao = mockk()
@@ -41,27 +41,22 @@ class ArtistAlbumViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        mainRepository = DeezerRepository(deezerClient,deezerDao)
-        viewModel = ArtistAlbumViewModel(mainRepository)
+        repository = ArtistRepository(deezerClient,deezerDao)
+        viewModel = ArtistAlbumViewModel(repository)
     }
 
     @Test
     fun fetchArtistAlbumTest() = runBlocking {
         val mockList = listOf(MockUtil.artistAlbum)
 
-        val observer : Observer<Result<List<ArtistAlbumData>>> = mock()
-        val fetchedData : LiveData<Result<List<ArtistAlbumData>>> = mainRepository.fetchArtistAlbums(MockUtil.artistID).asLiveData()
+        val observer : Observer<ApiResult<List<ArtistAlbumData>>> = mock()
+        val fetchedData : LiveData<ApiResult<List<ArtistAlbumData>>> = repository.fetchArtistAlbums(MockUtil.artistID).asLiveData()
         fetchedData.observeForever(observer)
 
         viewModel.fetchArtistAlbum(MockUtil.artistID)
         delay(500L)
 
-        verify(observer).onChanged(Result.Succes(mockList))
+        verify(observer).onChanged(ApiResult.Success(mockList))
         fetchedData.removeObserver(observer)
-
-
     }
-
-
-
 }

@@ -34,7 +34,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
   - [MVVM Architecture]() (View - DataBinding - ViewModel - Model)
   - Repository pattern
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit)
-- [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization)
+- [Gson](https://github.com/google/gson)
 - [Timber](https://github.com/JakeWharton/timber)
 - [Material-Components](https://github.com/material-components/material-components-android)
 - [Coil](https://github.com/coil-kt/coil)
