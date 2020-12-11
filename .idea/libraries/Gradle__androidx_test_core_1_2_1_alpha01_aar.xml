@@ -1,20 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test:core:1.2.1-alpha01@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/77c7a2e8ceba210a48d16ca9c4983d9b/jetified-core-1.2.1-alpha01/res" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/0b647aecbb19aed505f322e06ab96acc/jetified-core-1.2.1-alpha01/res" />
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/0b647aecbb19aed505f322e06ab96acc/jetified-core-1.2.1-alpha01/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/0b647aecbb19aed505f322e06ab96acc/jetified-core-1.2.1-alpha01/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a502d7a820ed9b0ddba5c0c4ab25573d/jetified-core-1.2.1-alpha01/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a502d7a820ed9b0ddba5c0c4ab25573d/jetified-core-1.2.1-alpha01/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a502d7a820ed9b0ddba5c0c4ab25573d/jetified-core-1.2.1-alpha01/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a502d7a820ed9b0ddba5c0c4ab25573d/jetified-core-1.2.1-alpha01/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.test/core/1.2.1-alpha01/5fcd6fc46d6fccac10de36ecc20170855c6caf98/core-1.2.1-alpha01-javadoc.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/core/1.2.1-alpha01/5fcd6fc46d6fccac10de36ecc20170855c6caf98/core-1.2.1-alpha01-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.test/core/1.2.1-alpha01/8c27526b4ca881b47597f3d5a2031f61fc1b1f37/core-1.2.1-alpha01-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/core/1.2.1-alpha01/8c27526b4ca881b47597f3d5a2031f61fc1b1f37/core-1.2.1-alpha01-sources.jar!/" />
     </SOURCES>
   </library>

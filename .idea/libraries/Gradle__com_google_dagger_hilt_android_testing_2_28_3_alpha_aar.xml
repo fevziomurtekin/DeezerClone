@@ -1,20 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.dagger:hilt-android-testing:2.28.3-alpha@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/5ff151236c9c6cc782f05920a765f49d/jetified-hilt-android-testing-2.28.3-alpha/res" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/7a78ce2e823767c84fcd7e053b4dafca/jetified-hilt-android-testing-2.28.3-alpha/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/7a78ce2e823767c84fcd7e053b4dafca/jetified-hilt-android-testing-2.28.3-alpha/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/7a78ce2e823767c84fcd7e053b4dafca/jetified-hilt-android-testing-2.28.3-alpha/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3aa554483a99df8901329abb75dbbe16/jetified-hilt-android-testing-2.28.3-alpha/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3aa554483a99df8901329abb75dbbe16/jetified-hilt-android-testing-2.28.3-alpha/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3aa554483a99df8901329abb75dbbe16/jetified-hilt-android-testing-2.28.3-alpha/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3aa554483a99df8901329abb75dbbe16/jetified-hilt-android-testing-2.28.3-alpha/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.28.3-alpha/5a3a69c69e31accf9b2b661dcac0dd26ed3d4752/hilt-android-testing-2.28.3-alpha-javadoc.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.28.3-alpha/5a3a69c69e31accf9b2b661dcac0dd26ed3d4752/hilt-android-testing-2.28.3-alpha-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.28.3-alpha/bbe7214df996469d641ab8aaf7a72ad4f410dbe3/hilt-android-testing-2.28.3-alpha-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.28.3-alpha/bbe7214df996469d641ab8aaf7a72ad4f410dbe3/hilt-android-testing-2.28.3-alpha-sources.jar!/" />
     </SOURCES>
   </library>

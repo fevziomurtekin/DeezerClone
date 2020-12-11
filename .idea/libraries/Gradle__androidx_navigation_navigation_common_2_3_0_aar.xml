@@ -1,16 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.navigation:navigation-common:2.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/700d684b320badf668b5329b63ac2663/navigation-common-2.3.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/700d684b320badf668b5329b63ac2663/navigation-common-2.3.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/transforms-2/files-2.1/700d684b320badf668b5329b63ac2663/navigation-common-2.3.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1ee002cc04060f14648b49a9ab9b163/navigation-common-2.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1ee002cc04060f14648b49a9ab9b163/navigation-common-2.3.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1ee002cc04060f14648b49a9ab9b163/navigation-common-2.3.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.6-rc-6-bin/caches/modules-2/files-2.1/androidx.navigation/navigation-common/2.3.0/beb9fbe0140b8f849e75de79dec967712251984/navigation-common-2.3.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.navigation/navigation-common/2.3.0/beb9fbe0140b8f849e75de79dec967712251984/navigation-common-2.3.0-sources.jar!/" />
     </SOURCES>
   </library>
