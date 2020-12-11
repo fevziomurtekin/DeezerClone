@@ -1,6 +1,5 @@
 package com.fevziomurtekin.deezer.screen
 
-import androidx.fragment.app.testing.launchFragment
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
@@ -13,7 +12,6 @@ import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.ui.genre.GenreFragment
 import com.fevziomurtekin.deezer.ui.main.MainActivity
 import com.fevziomurtekin.deezer.utilies.isGone
-import com.fevziomurtekin.deezer.utilies.isVisible
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule

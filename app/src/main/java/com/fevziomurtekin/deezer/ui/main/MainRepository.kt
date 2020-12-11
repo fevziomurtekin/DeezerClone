@@ -1,7 +1,7 @@
 package com.fevziomurtekin.deezer.ui.main
 
-import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.extensions.getResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend

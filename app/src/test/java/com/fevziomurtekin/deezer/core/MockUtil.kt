@@ -1,13 +1,6 @@
 package com.fevziomurtekin.deezer.core
 
-import com.fevziomurtekin.deezer.data.AlbumData
-import com.fevziomurtekin.deezer.data.Artist
-import com.fevziomurtekin.deezer.data.ArtistAlbumData
-import com.fevziomurtekin.deezer.data.ArtistData
-import com.fevziomurtekin.deezer.data.ArtistDetailResponse
-import com.fevziomurtekin.deezer.data.ArtistRelatedData
-import com.fevziomurtekin.deezer.data.Data
-import com.fevziomurtekin.deezer.data.SearchData
+import com.fevziomurtekin.deezer.data.*
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity

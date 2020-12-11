@@ -1,8 +1,8 @@
 package com.fevziomurtekin.deezer.ui.album
 
-import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.extensions.getResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend

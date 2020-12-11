@@ -2,19 +2,8 @@ package com.fevziomurtekin.deezer
 
 import com.fevziomurtekin.deezer.domain.local.DeezerDaoTest
 import com.fevziomurtekin.deezer.domain.network.DeezerServiceTest
-import com.fevziomurtekin.deezer.repository.AlbumRepositoryTest
-import com.fevziomurtekin.deezer.repository.ArtistRepositoryTest
-import com.fevziomurtekin.deezer.repository.FavoritesRepositoryTest
-import com.fevziomurtekin.deezer.repository.MainRepositoryTest
-import com.fevziomurtekin.deezer.repository.SearchRepositoryTest
-import com.fevziomurtekin.deezer.viewmodel.AlbumDetailsViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.ArtistAlbumViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.ArtistDetailsViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.ArtistViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.FavoritesViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.GenreViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.MainViewModelTest
-import com.fevziomurtekin.deezer.viewmodel.SearchViewModelTest
+import com.fevziomurtekin.deezer.repository.*
+import com.fevziomurtekin.deezer.viewmodel.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.runner.RunWith
 import org.junit.runners.Suite

@@ -4,17 +4,17 @@ import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.fevziomurtekin.deezer.ui.main.MainActivity
-import org.junit.Test
-import org.junit.runner.RunWith
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.ui.main.MainActivity
 import com.fevziomurtekin.deezer.utilies.isVisible
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
 
 @HiltAndroidTest
 @RunWith(AndroidJUnit4::class)

@@ -11,11 +11,7 @@ import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
 import com.fevziomurtekin.deezer.ui.album.AlbumRepository
 import com.fevziomurtekin.deezer.ui.favorites.FavoritesRepository
-import com.nhaarman.mockitokotlin2.atLeastOnce
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
-import com.nhaarman.mockitokotlin2.whenever
+import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert

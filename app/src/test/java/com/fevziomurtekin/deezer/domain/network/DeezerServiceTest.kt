@@ -2,13 +2,7 @@ package com.fevziomurtekin.deezer.domain.network
 
 import com.fevziomurtekin.deezer.core.ApiAbstract
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.data.AlbumDetailsResponse
-import com.fevziomurtekin.deezer.data.ArtistAlbumResponse
-import com.fevziomurtekin.deezer.data.ArtistDetailResponse
-import com.fevziomurtekin.deezer.data.ArtistRelatedResponse
-import com.fevziomurtekin.deezer.data.ArtistsResponse
-import com.fevziomurtekin.deezer.data.GenreResponse
-import com.fevziomurtekin.deezer.data.SearchResponse
+import com.fevziomurtekin.deezer.data.*
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi

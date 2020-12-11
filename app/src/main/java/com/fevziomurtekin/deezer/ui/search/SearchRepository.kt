@@ -1,8 +1,8 @@
 package com.fevziomurtekin.deezer.ui.search
 
-import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
+import com.fevziomurtekin.deezer.core.data.DataSource
 import com.fevziomurtekin.deezer.core.extensions.*
 import com.fevziomurtekin.deezer.data.SearchResponse
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
