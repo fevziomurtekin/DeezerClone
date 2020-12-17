@@ -45,6 +45,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
   - [Robolectric](http://robolectric.org/)
   - [Mockito Kotlin](https://github.com/nhaarman/mockito-kotlin)
   - [Turbine](https://cashapp.github.io/turbine/docs/0.x/turbine/)
+  - [Junit](https://junit.org/junit5/)
 
 ## Architecture
 DeezerClone is based on MVVM architecture and a repository pattern.
