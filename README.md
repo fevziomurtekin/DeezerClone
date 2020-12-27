@@ -19,7 +19,6 @@
 Click and go to releases page [Releases](https://github.com/fevziomurtekin/DeezerClone/releases/) to download the latest APK.
 
 
-
 ## Tech stack - Library
 - [Kotlin](https://kotlinlang.org/) , [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) , [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/)
 - [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
@@ -54,6 +53,10 @@ DeezerClone is based on MVVM architecture and a repository pattern.
 
 ## API
 Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.deezer.com/api/)
+
+## MAD Scorecard
+
+<a href="https://madscorecard.withgoogle.com/scorecard/share/3185391510/#summary"> <b> Click </b> </a> to view DeezerClone's MAD scorecard.
 
 ## Roadmap
 - [x] Media player will be created using Exoplayer.
