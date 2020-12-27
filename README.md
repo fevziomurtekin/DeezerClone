@@ -56,7 +56,7 @@ Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.de
 
 ## MAD Scorecard
 
-<a href="https://madscorecard.withgoogle.com/scorecard/share/3185391510/#summary"> <b> Click </b> </a> to view DeezerClone's MAD scorecard.
+<a href="https://madscorecard.withgoogle.com/scorecard/share/3185391510/#summary"> <b> DeezerClone's MAD scorecard. </b> </a>
 
 ## Roadmap
 - [x] Media player will be created using Exoplayer.
