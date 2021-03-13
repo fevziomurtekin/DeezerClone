@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer.domain.local
 
+import android.os.Build
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.mapper
 import com.google.gson.Gson
@@ -13,8 +14,8 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [21])
-class DeezerDaoTest:LocalDatabase(){
+@Config(sdk = [Build.VERSION_CODES.O_MR1], manifest = Config.NONE)
+class DeezerDaoTest: LocalDatabase(){
 
     private lateinit var deezerDao: DeezerDao
 
@@ -28,7 +29,7 @@ class DeezerDaoTest:LocalDatabase(){
         val mockDataList  = MockUtil.genreEntityList
         deezerDao.insertGenreList(mockDataList)
 
-        // checking insert procces
+        // checking insert process
         val loadFromDB = deezerDao.getGenreList() ?: emptyList()
         assertThat(loadFromDB.toString(),`is`(mockDataList.toString()))
 
@@ -44,7 +45,7 @@ class DeezerDaoTest:LocalDatabase(){
 
         val mockSearchList = MockUtil.searchList
 
-        // checking insert procces
+        // checking insert process
         val loadFromDB = deezerDao.getQueryList()
         assertThat(Gson().toJson(loadFromDB),`is`(Gson().toJson(mockSearchList)))
 

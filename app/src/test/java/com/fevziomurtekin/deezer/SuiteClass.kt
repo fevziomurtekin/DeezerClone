@@ -18,7 +18,6 @@ import org.junit.runners.Suite
     ArtistRepositoryTest::class,
     FavoritesRepositoryTest::class,
     SearchRepositoryTest::class,
-    DeezerDaoTest::class,
     AlbumDetailsViewModelTest::class,
     ArtistAlbumViewModelTest::class,
     ArtistDetailsViewModelTest::class,
