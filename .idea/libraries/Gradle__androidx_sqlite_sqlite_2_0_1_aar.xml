@@ -3,8 +3,9 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/059b2ba533ae0ee2c3ada6d23655d100/sqlite-2.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/738961bd8e9da054c5cc70d72413896b/sqlite-2.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/738961bd8e9da054c5cc70d72413896b/sqlite-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/738961bd8e9da054c5cc70d72413896b/sqlite-2.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f19eb68e0e15d1eea11d9a74c78e3b5b/sqlite-2.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f19eb68e0e15d1eea11d9a74c78e3b5b/sqlite-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f19eb68e0e15d1eea11d9a74c78e3b5b/sqlite-2.0.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
