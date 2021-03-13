@@ -15,6 +15,7 @@ object Plugins{
 
     /* Detekt */
     val detekt                      = "io.gitlab.arturbosch.detekt"
+    val detektPlugin                = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${Versions.detekt_version}"
 
     val applicationId               = "com.fevziomurtekin.deezer"
     val min                         = 19

@@ -33,5 +33,4 @@ interface DeezerDao {
     @Query("SELECT * FROM AlbumEntity")
     suspend fun getFavorites():List<AlbumEntity>?
 
-
 }

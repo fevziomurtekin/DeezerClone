@@ -9,31 +9,31 @@ import timber.log.Timber
 
 fun AlbumEntity?.mapper(): AlbumData? = this?.let { e->
     AlbumData(
-        disk_number= e.disk_number,
+        diskNumber= e.diskNumber,
         duration= e.duration,
-        explicit_content_cover = 0,
-        explicit_lyrics = e.explicit_lyrics,
+        explicitContentCover = 0,
+        explicitLyrics = e.explicitLyrics,
         id = e.albumId,
         isrc = e.albumIsrc,
-        explicit_content_lyrics = 0,
+        explicitContentLyrics = 0,
         readable = true,
-        track_position = 0,
+        trackPosition = 0,
         type = e.type,
     )
 }
 
 fun AlbumData?.mapper(): AlbumEntity? = this?.let { d->
     AlbumEntity(
-        disk_number= d.disk_number,
+        diskNumber= d.diskNumber,
         duration= d.duration,
-        explicit_lyrics = d.explicit_lyrics,
+        explicitLyrics = d.explicitLyrics,
         albumId = d.id,
         albumIsrc= d.isrc,
         link = d.link,
-        md5_image = d.md5_image,
+        md5Image = d.md5Image,
         title = d.title,
         type = d.type,
-        fav_time = d.fav_time,
+        favTime = d.favTime,
     )
 }
 
@@ -42,10 +42,10 @@ fun GenreEntity?.mapper(): Data = this?.let { e->
         id = e.genreId,
         name= e.name,
         picture= e.picture,
-        picture_big= e.picture_big,
-        picture_medium= e.picture_medium,
-        picture_small= e.picture_small,
-        picture_xl= e.picture_xl,
+        pictureBig= e.pictureBig,
+        pictureMedium= e.pictureMedium,
+        pictureSmall= e.pictureSmall,
+        pictureXl= e.pictureXl,
         type= "genre"
     )
 } ?: run {
@@ -59,21 +59,21 @@ fun Data?.mapper(): GenreEntity = this?.let { d->
         genreId = d.id,
         name= d.name,
         picture= d.picture,
-        picture_big= d.picture_big,
-        picture_medium= d.picture_medium,
-        picture_small= d.picture_small,
-        picture_xl= d.picture_xl,
-        type= d.picture_xl
+        pictureBig= d.pictureBig,
+        pictureMedium= d.pictureMedium,
+        pictureSmall= d.pictureSmall,
+        pictureXl= d.pictureXl,
+        type= d.pictureXl
     )
 } ?: run {
     GenreEntity(
         genreId = "",
         name= "",
         picture= "",
-        picture_big= "",
-        picture_medium= "",
-        picture_small= "",
-        picture_xl= "",
+        pictureBig= "",
+        pictureMedium= "",
+        pictureSmall= "",
+        pictureXl= "",
         type= ""
     )
 }

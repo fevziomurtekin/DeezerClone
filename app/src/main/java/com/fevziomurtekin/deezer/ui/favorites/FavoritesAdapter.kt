@@ -39,12 +39,10 @@ class FavoritesAdapter(val listener:OnClick): RecyclerView.Adapter<FavoritesAdap
         Timber.d("Favorites addFavorites $favorites")
         val previousSize = items.size
         items.addAll(favorites)
-        // Timber.d("GenreAdapter  size : $previousSize  \t genreList size : ${genreList.size} item size : ${items.size} ")
         notifyItemRangeChanged(previousSize, items.size)
     }
 
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
-        //Timber.d("Items$position ${items[position].toString()}")
         holder.binding.apply {
             Timber.d("binding..")
             favorite = items[position]

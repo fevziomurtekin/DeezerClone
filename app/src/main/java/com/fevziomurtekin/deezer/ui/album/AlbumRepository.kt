@@ -19,6 +19,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
 
+private const val FAKE_DELAY_TIME = 1500L
+
 class AlbumRepository(
     val deezerClient: DeezerClient,
     val deezerDao: DeezerDao
@@ -38,7 +40,7 @@ class AlbumRepository(
                 emit(ApiResult.Success(response))
             }.letOnFalseOnSuspend {
                 /* fake call */
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
@@ -67,6 +69,5 @@ interface AlbumRepositoryImpl {
      * insert the track on local data.
      * */
     suspend fun insertFavoritesData(track:AlbumEntity?): DaoResult
-
 
 }

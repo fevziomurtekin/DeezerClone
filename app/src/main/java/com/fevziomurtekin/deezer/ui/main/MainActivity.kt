@@ -25,7 +25,8 @@ class MainActivity : DataBindingActivity() {
         binding.apply {
             lifecycleOwner = this@MainActivity
             vm = viewModel
-            navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
+            navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
+                    as NavHostFragment).navController
         }
         observeLiveData()
         bottomNavigationListener()
@@ -43,7 +44,10 @@ class MainActivity : DataBindingActivity() {
                 }
                 is ApiResult.Error->{
                     viewModel.isSplash.postValue(false)
-                    UIExtensions.showSnackBar(this@MainActivity.constraint_main,this@MainActivity.getString(R.string.unexpected_error))
+                    UIExtensions.showSnackBar(
+                        this@MainActivity.constraint_main,
+                        this@MainActivity.getString(R.string.unexpected_error)
+                    )
                 }
                 is ApiResult.Success->{
                     viewModel.isSplash.postValue(false)

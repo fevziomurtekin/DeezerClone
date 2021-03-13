@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="center"
-                app:bindImageUrl="@{genre.picture_medium}"
+                app:bindImageUrl="@{genre.pictureMedium}"
                 />
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -24,7 +24,6 @@ class MainActivityTest {
     @get:Rule
     var hiltRule = HiltAndroidRule(this)
 
-
     /**
      * When application firstly run, isShow splash screen
      * */
@@ -58,7 +57,5 @@ class MainActivityTest {
 
             }
         }
-
     }
-
 }

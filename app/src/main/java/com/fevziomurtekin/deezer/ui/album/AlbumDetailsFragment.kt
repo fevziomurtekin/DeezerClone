@@ -1,4 +1,4 @@
-    package com.fevziomurtekin.deezer.ui.album
+package com.fevziomurtekin.deezer.ui.album
 
 import android.content.Intent
 import android.os.Bundle
@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_album_details.*
 import timber.log.Timber
 
-    @AndroidEntryPoint
+@AndroidEntryPoint
 class AlbumDetailsFragment: DataBindingFragment() {
 
     lateinit var binding: FragmentAlbumDetailsBinding
@@ -71,7 +71,7 @@ class AlbumDetailsFragment: DataBindingFragment() {
             }
         }
 
-        override fun setListeners() {}
+        override fun setListeners() = Unit
 
         override fun observeLiveData() {
             viewModel.fetchingAlbumDatas(id)
@@ -80,7 +80,10 @@ class AlbumDetailsFragment: DataBindingFragment() {
                     //TODO  progress dialog add.
                     ApiResult.Loading->{ }
                     is ApiResult.Error->{
-                        UIExtensions.showSnackBar(this@AlbumDetailsFragment.lv_album_details,this@AlbumDetailsFragment.getString(R.string.unexpected_error))
+                        UIExtensions.showSnackBar(
+                            this@AlbumDetailsFragment.lv_album_details,
+                            this@AlbumDetailsFragment.getString(R.string.unexpected_error
+                            ))
                         Timber.d("result : error isSplash : false")
                     }
                     is ApiResult.Success->{
@@ -88,10 +91,11 @@ class AlbumDetailsFragment: DataBindingFragment() {
                     }
                 }
             })
-
             viewModel.isNetworkError.observe(viewLifecycleOwner,{
                 if(it){
-                    UIExtensions.showSnackBar(this@AlbumDetailsFragment.lv_album_details,this@AlbumDetailsFragment.getString(R.string.network_error))
+                    UIExtensions.showSnackBar(
+                        this@AlbumDetailsFragment.lv_album_details,
+                        this@AlbumDetailsFragment.getString(R.string.network_error))
                 }
             })
         }

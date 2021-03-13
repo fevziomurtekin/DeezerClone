@@ -26,7 +26,7 @@ class SearchFragment: DataBindingFragment() {
         return binding.root
     }
 
-    override fun getSafeArgs() {  }
+    override fun getSafeArgs() = Unit
 
     override fun initBinding() {
         binding.apply {
@@ -43,7 +43,7 @@ class SearchFragment: DataBindingFragment() {
 
     }
 
-    override fun setListeners() { }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchingRecentSearch()
@@ -51,9 +51,11 @@ class SearchFragment: DataBindingFragment() {
 
         viewModel.isNetworkError.observe(viewLifecycleOwner,{
             if(it){
-                UIExtensions.showSnackBar(this@SearchFragment.cl_search,this@SearchFragment.getString(R.string.network_error))
+                UIExtensions
+                    .showSnackBar(
+                        this@SearchFragment.cl_search,
+                        this@SearchFragment.getString(R.string.network_error))
             }
         })
     }
-
 }

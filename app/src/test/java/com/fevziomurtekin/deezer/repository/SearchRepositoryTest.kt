@@ -95,8 +95,8 @@ class SearchRepositoryTest {
       assertEquals(result, ApiResult.Success(listOf(MockUtil.searchData)))
       Assert.assertEquals((result as ApiResult.Success<List<SearchData>>).data[0].title , "İmkansızım")
       Assert.assertEquals(result.data[0].id , "51434782")
-      Assert.assertEquals(result.data[0].record_type , "single")
-      Assert.assertEquals(result.data[0].genre_id , "116")
+      Assert.assertEquals(result.data[0].recordType , "single")
+      Assert.assertEquals(result.data[0].genreId , "116")
       expectComplete()
     }
 

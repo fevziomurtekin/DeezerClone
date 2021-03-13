@@ -26,7 +26,7 @@ class FavoritesFragment: DataBindingFragment() {
         return binding.root
     }
 
-    override fun getSafeArgs() { }
+    override fun getSafeArgs() = Unit
 
     override fun initBinding() {
         binding.apply {
@@ -45,7 +45,7 @@ class FavoritesFragment: DataBindingFragment() {
         }
     }
 
-    override fun setListeners() { }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchFavorites()

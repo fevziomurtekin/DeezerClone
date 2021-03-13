@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class SearchResponse(
-    @SerializedName("data") val `data`: List<SearchData>,
+    @SerializedName("data") val data: List<SearchData>,
     @SerializedName("next") val next: String,
     @SerializedName("total") val total: Int
 )
@@ -12,17 +12,17 @@ data class SearchResponse(
 data class SearchData(
     @SerializedName("artist") var artist: Artist,
     @SerializedName("cover") val cover: String,
-    @SerializedName("cover_big") val cover_big: String,
-    @SerializedName("cover_medium") val cover_medium: String,
-    @SerializedName("cover_small") val cover_small: String,
-    @SerializedName("cover_xl") val cover_xl: String,
-    @SerializedName("explicit_lyrics") val explicit_lyrics: Boolean,
-    @SerializedName("genre_id") val genre_id: Int,
+    @SerializedName("cover_big") val coverBig: String,
+    @SerializedName("cover_medium") val coverMedium: String,
+    @SerializedName("cover_small") val coverSmall: String,
+    @SerializedName("cover_xl") val coverXl: String,
+    @SerializedName("explicit_lyrics") val explicitLyrics: Boolean,
+    @SerializedName("genre_id") val genreId: Int,
     @SerializedName("id") val id: String,
     @SerializedName("link") val link: String,
-    @SerializedName("md5_image") val md5_image: String,
-    @SerializedName("nb_tracks") val nb_tracks: Int,
-    @SerializedName("record_type") val record_type: String,
+    @SerializedName("md5_image") val md5Image: String,
+    @SerializedName("nb_tracks") val nbTracks: Int,
+    @SerializedName("record_type") val recordType: String,
     @SerializedName("title") val title: String,
     @SerializedName("tracklist") val tracklist: String,
     @SerializedName("type") val type: String

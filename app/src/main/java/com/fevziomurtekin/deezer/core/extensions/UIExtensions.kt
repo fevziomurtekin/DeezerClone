@@ -29,12 +29,8 @@ object UIExtensions {
      * hiding keyboard.
      * */
     fun hideKeyboard(view:View,activity: Activity) {
-        try {
-            view.clearFocus()
-            val im = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            im.hideSoftInputFromWindow(view.windowToken,0)
-        } catch (e: Exception) {
-            Timber.d("hideKeyboard : ${e.message}")
-        }
+        view.clearFocus()
+        val im = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        im.hideSoftInputFromWindow(view.windowToken,0)
     }
 }

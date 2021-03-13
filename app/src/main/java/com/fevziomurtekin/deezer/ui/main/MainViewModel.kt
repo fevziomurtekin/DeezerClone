@@ -5,7 +5,11 @@ import android.app.Application
 import androidx.annotation.VisibleForTesting
 import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.data.Data
@@ -15,7 +19,9 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util.getUserAgent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
+private const val APPLICATION_NAME = "DeezerClone"
 
 class MainViewModel @ViewModelInject constructor(
     app: Application,
@@ -23,14 +29,17 @@ class MainViewModel @ViewModelInject constructor(
 ): ViewModel(){
 
     @VisibleForTesting var genreListLiveData: LiveData<ApiResult<List<Data>?>> = MutableLiveData()
-    var isSplash:MutableLiveData<Boolean> = MutableLiveData()
+    var isSplash: MutableLiveData<Boolean> = MutableLiveData()
     var isGoneMediaPlayer :ObservableBoolean = ObservableBoolean(false)
     var albumData:MutableLiveData<List<AlbumData>> = MutableLiveData()
     var positionTrack = 0
     val isNetworkError = MutableLiveData(false)
 
     val mediaPlayer = SimpleExoPlayer.Builder(app.applicationContext).build()
-    internal val dataSourceFactory = DefaultDataSourceFactory(app.applicationContext, getUserAgent(app.applicationContext,"DeezerClone"))
+    internal val dataSourceFactory =
+        DefaultDataSourceFactory(
+            app.applicationContext,
+            getUserAgent(app.applicationContext, APPLICATION_NAME))
 
     var mediaPlayerState:MutableLiveData<MediaPlayerState> = MutableLiveData()
 
@@ -46,9 +55,9 @@ class MainViewModel @ViewModelInject constructor(
                     .asLiveData(viewModelScope.coroutineContext+Dispatchers.Default)
             }catch (e:NetworkErrorException){
                 isNetworkError.value = true
+                Timber.e(e)
             }
 
         }
     }
-
 }

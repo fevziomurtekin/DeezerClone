@@ -28,7 +28,7 @@ class GenreFragment : DataBindingFragment() {
         return binding.root
     }
 
-    override fun getSafeArgs() { }
+    override fun getSafeArgs() = Unit
 
     override fun initBinding() {
         binding.apply {
@@ -38,7 +38,7 @@ class GenreFragment : DataBindingFragment() {
         }
     }
 
-    override fun setListeners() { }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchResult()
@@ -46,7 +46,11 @@ class GenreFragment : DataBindingFragment() {
             when(it){
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
-                    UIExtensions.showSnackBar(this@GenreFragment.constraint_main,this@GenreFragment.getString(R.string.unexpected_error))
+                    UIExtensions
+                        .showSnackBar(
+                            this@GenreFragment.constraint_main,
+                            this@GenreFragment.getString(R.string.unexpected_error
+                            ))
                     Timber.d("result : error isSplash : false")
                 }
                 is ApiResult.Success->{
@@ -58,8 +62,12 @@ class GenreFragment : DataBindingFragment() {
 
         viewModel.isNetworkError.observe(viewLifecycleOwner,{
             if(it){
-                UIExtensions.showSnackBar(this@GenreFragment.cl_genre,this@GenreFragment.getString(R.string.network_error))
+                UIExtensions.showSnackBar(
+                    this@GenreFragment.cl_genre,
+                    this@GenreFragment.getString(R.string.network_error
+                    ))
             }
         })
     }
 }
+

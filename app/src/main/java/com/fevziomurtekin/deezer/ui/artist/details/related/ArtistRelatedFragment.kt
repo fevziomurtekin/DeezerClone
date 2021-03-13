@@ -27,7 +27,7 @@ class ArtistRelatedFragment(private val artistID:String)
         return binding.root
     }
 
-    override fun getSafeArgs() { }
+    override fun getSafeArgs() = Unit
 
     override fun initBinding() {
         binding.apply {
@@ -37,7 +37,7 @@ class ArtistRelatedFragment(private val artistID:String)
         }
     }
 
-    override fun setListeners() { }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchArtistRelated(artistID)
@@ -45,7 +45,9 @@ class ArtistRelatedFragment(private val artistID:String)
             when(it){
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
-                    UIExtensions.showSnackBar(this@ArtistRelatedFragment.lv_artist_related,this@ArtistRelatedFragment.getString(R.string.unexpected_error))
+                    UIExtensions.showSnackBar(
+                        this@ArtistRelatedFragment.lv_artist_related,
+                        this@ArtistRelatedFragment.getString(R.string.unexpected_error))
                 }
                 is ApiResult.Success->{ }
             }

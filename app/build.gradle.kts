@@ -71,83 +71,88 @@ android{
 dependencies{
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(kotlin("stdlib-jdk7", Versions.kotlinVersion))
-    implementation(Dependencies.ktxLib)
+
     /** androidx & material design **/
-    implementation(Dependencies.appcompat)
-    implementation(Dependencies.constraint_layout)
-    implementation(Dependencies.vector_drawable)
-    implementation(Dependencies.material_design)
+    implementation(Libs.AndroidX.ktxLib)
+    implementation(Libs.AndroidX.appcompat)
+    implementation(Libs.AndroidX.constraint_layout)
+    implementation(Libs.AndroidX.vector_drawable)
+    implementation(Libs.AndroidX.material_design)
+    implementation(Libs.AndroidX.recyclerview)
+
     /** viewmodel & livedata **/
-    implementation(Dependencies.lifecycle)
-    kapt(Dependencies.lifecycle_compiler)
-    implementation(Dependencies.lifecycle_test)
-    implementation(Dependencies.viewmodel)
-    implementation(Dependencies.lifecycle_livedata)
-    implementation(Dependencies.viewmodel_savedState)
-    implementation(Dependencies.lifecycle_runtime)
-    implementation(Dependencies.lifecycle_fragment)
-    kapt(Dependencies.lifecycle_kapt)
-    /** recyclerview **/
-    implementation(Dependencies.recyclerview)
-    /** retrofit **/
-    implementation(Dependencies.okhttp)
-    implementation(Dependencies.okhttp_logging)
-    implementation(Dependencies.retrofit)
-    implementation(Dependencies.retrofit_converter)
-    implementation(Dependencies.retrofit_adapter)
-    /** room **/
-    implementation(Dependencies.room)
-    implementation(Dependencies.room_ktx)
-    kapt(Dependencies.room_compiler)
-    testImplementation(Dependencies.room_testing)
-    /** timber **/
-    implementation(Dependencies.timber)
-    /** hilt **/
-    implementation(Dependencies.hilt)
-    implementation(Dependencies.hilt_androidx)
-    kapt(Dependencies.hilt_kapt)
-    kapt(Dependencies.hilt_androidx_kapt)
-    //kaptAndroidTest(Dependencies.hilt_androidx_kapt)
+    implementation(Libs.Jetpack.lifecycle)
+    kapt(Libs.Jetpack.lifecycle_compiler)
+    implementation(Libs.Jetpack.lifecycle_test)
+    implementation(Libs.Jetpack.viewmodel)
+    implementation(Libs.Jetpack.lifecycle_livedata)
+    implementation(Libs.Jetpack.viewmodel_savedState)
+    implementation(Libs.Jetpack.lifecycle_runtime)
+    implementation(Libs.Jetpack.lifecycle_fragment)
+    kapt(Libs.Jetpack.lifecycle_kapt)
     /** navigation **/
-    implementation(Dependencies.navigation_fragment)
-    implementation(Dependencies.navigation_ui)
-    /** pagging **/
-    implementation(Dependencies.pagging)
-    /** Other libs **/
-    implementation(Dependencies.circularImageLib)
+    implementation(Libs.Jetpack.navigation_fragment)
+    implementation(Libs.Jetpack.navigation_ui)
+
+    /** network **/
+    implementation(Libs.Network.okhttp)
+    implementation(Libs.Network.okhttp_logging)
+    implementation(Libs.Network.retrofit)
+    implementation(Libs.Network.retrofit_converter)
+    implementation(Libs.Network.retrofit_adapter)
+    /** room **/
+    implementation(Libs.Local.room)
+    implementation(Libs.Local.room_ktx)
+    kapt(Libs.Local.room_compiler)
+    testImplementation(Libs.Local.room_testing)
+
+    /** hilt **/
+    implementation(Libs.DI.hilt)
+    implementation(Libs.DI.hilt_androidx)
+    kapt(Libs.DI.hilt_kapt)
+    kapt(Libs.DI.hilt_androidx_kapt)
+    //kaptAndroidTest(Dependencies.hilt_androidx_kapt)
+
     /** Coroutines **/
-    implementation(Dependencies.coroutines_android)
-    implementation(Dependencies.coroutines_core_lib)
+    implementation(Libs.Coroutines.android)
+    implementation(Libs.Coroutines.core)
+
+    /** pagging **/
+    implementation(Libs.Others.pagging)
+    /** Other libs **/
+    implementation(Libs.Others.circularImageLib)
     /** MultiDex **/
-    implementation(Dependencies.multidex_lib)
+    implementation(Libs.Others.multidex_lib)
     /** coil **/
-    implementation(Dependencies.coilLib)
+    implementation(Libs.Others.coilLib)
     /** Shimmer layout */
-    implementation(Dependencies.shimmerLib)
+    implementation(Libs.Others.shimmerLib)
+    /** timber **/
+    implementation(Libs.Others.timber)
 
     /** android test library  */
-    androidTestUtil(Dependencies.test_orch)
-    androidTestImplementation(Dependencies.hilt_test)
-    androidTestImplementation(Dependencies.test_runner)
-    androidTestImplementation(Dependencies.test_rules)
-    androidTestImplementation(Dependencies.test_core)
-    androidTestImplementation(Dependencies.espresso)
-    kaptAndroidTest(Dependencies.hilt_compiler)
-    testImplementation(Dependencies.testTruth)
-    androidTestImplementation(Dependencies.testTruth)
-    androidTestImplementation(Dependencies.testExt)
-    androidTestImplementation(Dependencies.fragment_test)
-    testImplementation(Dependencies.mockK)
-    testImplementation(Dependencies.coreTesting)
-    testImplementation(Dependencies.jUnit)
-    testImplementation(Dependencies.mockServer)
-    testImplementation(Dependencies.coroutines_test)
-    testImplementation(Dependencies.robolectric)
-    testImplementation(Dependencies.mockitoKotlin)
-    testImplementation(Dependencies.turbine)
+    androidTestUtil(Libs.Test.test_orch)
+    androidTestImplementation(Libs.DI.hilt_test)
+    androidTestImplementation(Libs.Test.test_runner)
+    androidTestImplementation(Libs.Test.test_rules)
+    androidTestImplementation(Libs.Test.test_core)
+    androidTestImplementation(Libs.Test.espresso)
+    kaptAndroidTest(Libs.DI.hilt_compiler)
+    testImplementation(Libs.Test.testTruth)
+    androidTestImplementation(Libs.Test.testTruth)
+    androidTestImplementation(Libs.Test.testExt)
+    androidTestImplementation(Libs.Test.fragment_test)
+    testImplementation(Libs.Test.mockK)
+    testImplementation(Libs.Test.coreTesting)
+    testImplementation(Libs.Test.jUnit)
+    testImplementation(Libs.Test.mockServer)
+    testImplementation(Libs.Coroutines.test)
+    testImplementation(Libs.Test.robolectric)
+    testImplementation(Libs.Test.mockitoKotlin)
+    testImplementation(Libs.Test.turbine)
 
     /** exoplayer */
-    implementation(Dependencies.exoplayer_core_lib)
-    implementation(Dependencies.exoplayer_dash_lib)
-    implementation(Dependencies.exoplayer_ui_lib)
+    implementation(Libs.ExoPlayer.core)
+    implementation(Libs.ExoPlayer.dash)
+    implementation(Libs.ExoPlayer.ui)
 }

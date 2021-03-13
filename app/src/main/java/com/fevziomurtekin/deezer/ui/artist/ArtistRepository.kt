@@ -19,9 +19,10 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
 
+private const val FAKE_DELAY_TIME = 1500L
+
 class ArtistRepository(
-    private val deezerClient: DeezerClient,
-    private val deezerDao: DeezerDao
+    private val deezerClient: DeezerClient
 ): DataSource(), ArtistRepositoryImpl {
 
     override fun fetchArtistList(genreID:String)
@@ -38,7 +39,7 @@ class ArtistRepository(
                     )
                 )
             }.letOnFalseOnSuspend {
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
@@ -56,7 +57,7 @@ class ArtistRepository(
                 emit(ApiResult.Success(apiResult.getResult() as ArtistDetailResponse))
             }.letOnTrueOnSuspend {
                 /* fake call */
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
@@ -74,7 +75,7 @@ class ArtistRepository(
                 emit(ApiResult.Success((apiResult.getResult() as ArtistAlbumResponse).data))
             }.letOnFalseOnSuspend {
                 /* fake call */
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
@@ -97,7 +98,7 @@ class ArtistRepository(
                 )
             }.letOnFalseOnSuspend {
                 /* fake call */
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
@@ -134,7 +135,5 @@ interface ArtistRepositoryImpl {
      * @return Result.Error or Result.Succes(List<ArtistRelatedData>)
      * */
     fun fetchArtistRelated(artistID: String): Flow<ApiResult<List<*>>>
-
-
 
 }

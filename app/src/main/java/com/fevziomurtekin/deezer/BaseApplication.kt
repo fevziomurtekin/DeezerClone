@@ -11,3 +11,4 @@ class BaseApplication : Application(){
         TimberFactory.setupOnDebug()
     }
 }
+

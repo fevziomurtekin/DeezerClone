@@ -18,6 +18,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
+private const val FAKE_DELAY_TIME = 1500L
+
 class MainRepository @Inject constructor(
     private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao
@@ -41,7 +43,7 @@ class MainRepository @Inject constructor(
                 }
             }.letOnTrueOnSuspend {
                 val result = (localResult.data as? List<GenreEntity>)?.mapper()
-                delay(1500)
+                delay(FAKE_DELAY_TIME)
                 emit(ApiResult.Success(result?.toList()))
             }
         }

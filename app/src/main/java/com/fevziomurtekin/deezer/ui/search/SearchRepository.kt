@@ -3,7 +3,11 @@ package com.fevziomurtekin.deezer.ui.search
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.data.DaoResult
 import com.fevziomurtekin.deezer.core.data.DataSource
-import com.fevziomurtekin.deezer.core.extensions.*
+import com.fevziomurtekin.deezer.core.extensions.getResult
+import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
+import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
+import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
+import com.fevziomurtekin.deezer.core.extensions.isNotNull
 import com.fevziomurtekin.deezer.data.SearchResponse
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
@@ -13,6 +17,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+
+private const val FAKE_DELAY_TIME = 1500L
 
 class SearchRepository(
     private val deezerClient: DeezerClient,
@@ -32,13 +38,13 @@ class SearchRepository(
                     emit(ApiResult.Success((apiResult.getResult() as SearchResponse).data))
                 }.letOnFalseOnSuspend {
                     /* fake call */
-                    delay(1500)
+                    delay(FAKE_DELAY_TIME)
                     emit(ApiResult.Error(Exception("Unexpected error.")))
                 }
             }
         }.letOnFalseOnSuspend {
             /* fake call */
-            delay(1500)
+            delay(FAKE_DELAY_TIME)
             emit(ApiResult.Error(Exception("Unexpected error.")))
         }
     }.flowOn(Dispatchers.IO)

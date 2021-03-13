@@ -10,7 +10,6 @@ import com.fevziomurtekin.deezer.databinding.ItemSearchBinding
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import timber.log.Timber
 
-
 class RecentSearchAdapter(var listener:RecentSearchListener):
     RecyclerView.Adapter<RecentSearchAdapter.RecentSearchViewHolder>(){
 

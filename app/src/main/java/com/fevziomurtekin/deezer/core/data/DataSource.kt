@@ -19,7 +19,7 @@ open class DataSource {
             }.letOnFalse{
                 networkReturn = ApiResult.Error(IOException(response.errorBody()?.string().orEmpty()))
             }
-        } catch (e: Exception) {
+        } catch (e: IllegalArgumentException) {
             networkReturn = ApiResult.Error(e)
         }
         return networkReturn
@@ -37,7 +37,7 @@ open class DataSource {
             }.letOnTrue {
                 localReturn = DaoResult(false, Exception("Unexpected error in Dao"))
             }
-        }catch (e:Exception){
+        }catch (e:IllegalArgumentException){
             DaoResult(false,e)
         }
         return localReturn
@@ -54,10 +54,9 @@ open class DataSource {
         localReturn = try {
             call.invoke()
             DaoResult(true, "Data addition has been done succesfully...")
-        }catch (e:Exception){
+        }catch (e:IllegalArgumentException){
             DaoResult(false,e)
         }
         return localReturn
     }
-
 }

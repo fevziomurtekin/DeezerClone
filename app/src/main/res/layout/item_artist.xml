@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="center"
-                app:bindImageUrl="@{artist.picture_medium}"
+                app:bindImageUrl="@{artist.pictureMedium}"
                 />
             <!--            app:paletteCard="@{cardView}"
             app:paletteImage="@{genre.picture_big}"-->
