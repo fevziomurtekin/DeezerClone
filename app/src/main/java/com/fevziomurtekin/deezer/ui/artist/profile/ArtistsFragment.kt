@@ -46,7 +46,7 @@ class ArtistsFragment : DataBindingFragment(){
         }
     }
 
-    override fun setListeners() {}
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchResult(id)
@@ -54,7 +54,9 @@ class ArtistsFragment : DataBindingFragment(){
             when(it){
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
-                    UIExtensions.showSnackBar(this@ArtistsFragment.lv_main,this@ArtistsFragment.getString(R.string.unexpected_error))
+                    UIExtensions.showSnackBar(
+                        this@ArtistsFragment.lv_main,
+                        this@ArtistsFragment.getString(R.string.unexpected_error))
                     Timber.d("result : error isSplash : false")
                 }
                 is ApiResult.Success->{

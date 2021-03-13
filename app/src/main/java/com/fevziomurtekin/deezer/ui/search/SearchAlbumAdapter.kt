@@ -11,7 +11,6 @@ import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.databinding.ItemSearchAlbumBinding
 
-
 class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumViewHolder>() {
 
     private val items: MutableList<SearchData> = mutableListOf()

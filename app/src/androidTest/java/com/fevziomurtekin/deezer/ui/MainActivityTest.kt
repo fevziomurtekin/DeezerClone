@@ -30,13 +30,11 @@ class MainActivityTest {
             it.moveToState(Lifecycle.State.CREATED)
             it.onActivity { activity->
                 activity.viewModel.genreListLiveData.observe(activity){r->
-                   if(r is ApiResult.Succes){
+                   if(r is ApiResult.Success){
                        onView(withId(R.id.cl_splash)).check(matches(not(isDisplayed())))
                    }
                 }
             }
         }
     }
-
-
 }

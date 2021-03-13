@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.binding
 
 import android.view.View
 import android.widget.ImageButton
@@ -26,6 +26,10 @@ import timber.log.Timber
  * https://github.com/skydoves/Pokedex/blob/master/app/src/main/java/com/skydoves/pokedex/binding/ViewBinding.kt
  * */
 
+private const val DEFAULT_RADIUS_VALUE = 6F
+private const val DEFAULT_SAMPLING_VALUE = 0.3F
+private const val DEFAULT_ARTIST_RADIUS_VALUE = 1F
+private const val DEFAULT_ARTIST_SAMPLING_VALUE = 0.9F
 
 /* Load to Image with url inside to layout files
 * Recyclerview item. Bluring imageview.
@@ -37,7 +41,11 @@ fun bindLoadImageUrl(view: ImageView, url: String?) {
             crossfade(true)
             scale(Scale.FIT)
             placeholder(R.color.colorPrimary)
-            transformations(BlurTransformation(view.context, 6f, 0.3f))
+            transformations(BlurTransformation(
+                view.context,
+                DEFAULT_RADIUS_VALUE,
+                DEFAULT_SAMPLING_VALUE
+            ))
         }
     }
 }
@@ -47,12 +55,16 @@ fun bindLoadImageArtistDetails(view: ImageView, results:LiveData<ApiResult<Artis
     when (results.value) {
         ApiResult.Loading, is ApiResult.Error-> {/* Nothing */ }
         is ApiResult.Success -> {
-            val imgUrl = ((results.value as ApiResult.Success<ArtistDetailResponse>).data.picture_big)
+            val imgUrl = ((results.value as ApiResult.Success<ArtistDetailResponse>).data.pictureBig)
             Timber.d("Binding url : $imgUrl ")
             view.load(imgUrl){
                 crossfade(true)
                 placeholder(R.color.colorPrimary)
-                transformations(BlurTransformation(view.context,1f,0.9f))
+                transformations(BlurTransformation(
+                    view.context,
+                    DEFAULT_ARTIST_RADIUS_VALUE,
+                    DEFAULT_ARTIST_SAMPLING_VALUE
+                ))
             }
         }
     }

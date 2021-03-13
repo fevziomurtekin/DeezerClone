@@ -16,6 +16,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
 
+private const val DELAY_TIME = 1500L
+
 class FavoritesRepository(
     val deezerClient: DeezerClient,
     val deezerDao: DeezerDao
@@ -30,7 +32,7 @@ class FavoritesRepository(
                 emit(ApiResult.Success(localResult.data as List<AlbumEntity>))
             }.letOnFalseOnSuspend {
                 /* fake call */
-                delay(1500)
+                delay(DELAY_TIME)
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }

@@ -72,7 +72,7 @@ object Versions {
 
     val exoplayer_version = "2.12.0"
 
-    val detekt_version = "1.15.0-RC1"
+    val detekt_version = "1.16.0"
 
 
 }

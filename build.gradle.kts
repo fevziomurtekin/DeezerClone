@@ -2,6 +2,7 @@ buildscript {
     repositories{
         google()
         jcenter()
+        gradlePluginPortal()
         maven {
             url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
         }
@@ -17,6 +18,10 @@ buildscript {
     }
 }
 
+plugins{
+    id(Plugins.detekt).version("1.16.0")
+}
+
 allprojects{
     repositories{
         google()
@@ -28,4 +33,24 @@ allprojects{
 task("clean"){
     delete(rootProject.buildDir)
 }
+
+val detektDeezer by tasks.registering(io.gitlab.arturbosch.detekt.Detekt::class) {
+    description = "Runs over whole code base without the starting overhead for each module."
+    buildUponDefaultConfig = true
+    autoCorrect = true
+    parallel = true
+    setSource(files(projectDir))
+    config.setFrom(files("$rootDir/detekt/config.yml"))
+    include("**/*.kt")
+    include("**/*.kts")
+    exclude("**/build/**")
+    exclude("**/buildSrc/**")
+    exclude("**/test/**/*.kt")
+    reports {
+        xml.enabled = false
+        html.enabled = false
+        txt.enabled = false
+    }
+}
+
 

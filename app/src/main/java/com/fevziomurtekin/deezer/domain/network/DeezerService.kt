@@ -1,6 +1,12 @@
 package com.fevziomurtekin.deezer.domain.network
 
-import com.fevziomurtekin.deezer.data.*
+import com.fevziomurtekin.deezer.data.ArtistAlbumResponse
+import com.fevziomurtekin.deezer.data.ArtistDetailResponse
+import com.fevziomurtekin.deezer.data.ArtistsResponse
+import com.fevziomurtekin.deezer.data.GenreResponse
+import com.fevziomurtekin.deezer.data.AlbumDetailsResponse
+import com.fevziomurtekin.deezer.data.ArtistRelatedResponse
+import com.fevziomurtekin.deezer.data.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -36,4 +42,5 @@ interface DeezerService{
     @GET(Endpoints.SEARCH)
     suspend fun fetchSearchAlbum(@Query("q") q:String)
             : Response<SearchResponse>
+
 }

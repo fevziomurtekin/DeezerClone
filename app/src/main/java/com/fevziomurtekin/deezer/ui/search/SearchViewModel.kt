@@ -3,19 +3,25 @@ package com.fevziomurtekin.deezer.ui.search
 import android.accounts.NetworkErrorException
 import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.switchMap
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 class SearchViewModel @ViewModelInject constructor(
     private val repository: SearchRepository
-):ViewModel(){
+): ViewModel(){
 
-    var queryLiveData:MutableLiveData<String> = MutableLiveData()
-    var result:LiveData<ApiResult<Any>> = MutableLiveData()
+    var queryLiveData: MutableLiveData<String> = MutableLiveData()
+    var result: LiveData<ApiResult<Any>> = MutableLiveData()
     var recentSearch:LiveData<ApiResult<List<SearchEntity>>> = MutableLiveData()
     var isNetworkError = MutableLiveData(false)
     lateinit var editorActionListener:TextView.OnEditorActionListener
@@ -39,13 +45,14 @@ class SearchViewModel @ViewModelInject constructor(
         viewModelScope.launch {
                 try{
                     result = queryLiveData.switchMap { q ->
-                        repository.fetchSearch(q)
+                        val asLiveData: LiveData<ApiResult<Any>> = repository.fetchSearch(q)
                             .asLiveData(viewModelScope.coroutineContext + Dispatchers.Main)
+                        asLiveData
                     }
                 }catch (e:NetworkErrorException){
                     isNetworkError.value = true
+                    Timber.e(e)
                 }
         }
     }
-
 }

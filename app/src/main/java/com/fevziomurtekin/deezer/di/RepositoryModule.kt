@@ -41,9 +41,8 @@ object RepositoryModule {
     @Provides
     @ActivityRetainedScoped
     fun providesArtistRepository(
-        deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = ArtistRepository(deezerClient,deezerDao)
+        deezerClient: DeezerClient
+    ) = ArtistRepository(deezerClient)
 
 
     @Provides

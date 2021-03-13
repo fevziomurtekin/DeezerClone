@@ -54,7 +54,7 @@ class ArtistDetailsFragment : DataBindingFragment() {
         }
     }
 
-    override fun setListeners() { }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchArtistDetails(id)
@@ -62,18 +62,19 @@ class ArtistDetailsFragment : DataBindingFragment() {
             when(it){
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
-                    UIExtensions.showSnackBar(this@ArtistDetailsFragment.cl_artist_details,this@ArtistDetailsFragment.getString(R.string.unexpected_error))
-                    Timber.d("result : error isSplash : false")
+                    UIExtensions.showSnackBar(
+                        this@ArtistDetailsFragment.cl_artist_details,
+                        this@ArtistDetailsFragment.getString(R.string.unexpected_error))
                 }
-                is ApiResult.Success->{
-                    Timber.d("result : succes isSplash : false")
-                }
+                is ApiResult.Success-> Unit
             }
         })
 
         viewModel.isNetworkError.observe(viewLifecycleOwner,{
             if(it){
-                UIExtensions.showSnackBar(this@ArtistDetailsFragment.cl_artist_details,this@ArtistDetailsFragment.getString(R.string.network_error))
+                UIExtensions.showSnackBar(
+                    this@ArtistDetailsFragment.cl_artist_details,
+                    this@ArtistDetailsFragment.getString(R.string.network_error))
             }
         })
     }
@@ -93,6 +94,5 @@ class ADCategories(fragmentManager: FragmentManager,
     override fun getPageTitle(position: Int): CharSequence? = items[position]
 
     override fun getItemId(position: Int): Long =  View.generateViewId().toLong()
-
 
 }

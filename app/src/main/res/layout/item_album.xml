@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent="0.3"
-                app:bindImageUrl="@{album.def_img}"
+                app:bindImageUrl="@{album.defImg}"
                 />
 
             <LinearLayout

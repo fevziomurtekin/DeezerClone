@@ -41,3 +41,4 @@ object NetworkModule {
     @Singleton
     fun provideDeezerClient(deezerService: DeezerService) = DeezerClient(deezerService)
 }
+

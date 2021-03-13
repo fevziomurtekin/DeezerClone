@@ -4,3 +4,4 @@ data class DaoResult(
     val isSucces: Boolean,
     val data: Any?
 )
+

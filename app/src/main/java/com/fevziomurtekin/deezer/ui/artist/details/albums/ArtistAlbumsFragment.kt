@@ -27,7 +27,7 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
         return binding.root
     }
 
-    override fun getSafeArgs() { }
+    override fun getSafeArgs() = Unit
 
     override fun initBinding() {
         binding.apply {
@@ -37,9 +37,7 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
         }
     }
 
-    override fun setListeners() {
-
-    }
+    override fun setListeners() = Unit
 
     override fun observeLiveData() {
         viewModel.fetchArtistAlbum(artistID)
@@ -47,7 +45,9 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
             when(it){
                 ApiResult.Loading->{ }
                 is ApiResult.Error->{
-                    UIExtensions.showSnackBar(this@ArtistAlbumsFragment.lv_artist_album,this@ArtistAlbumsFragment.getString(R.string.unexpected_error))
+                    UIExtensions.showSnackBar(
+                        this@ArtistAlbumsFragment.lv_artist_album,
+                        this@ArtistAlbumsFragment.getString(R.string.unexpected_error))
                     Timber.d("result : error isSplash : false")
                 }
                 is ApiResult.Success->{
@@ -58,7 +58,9 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
 
         viewModel.isNetworkError.observe(viewLifecycleOwner,{
             if(it){
-                UIExtensions.showSnackBar(this@ArtistAlbumsFragment.lv_artist_album,this@ArtistAlbumsFragment.getString(R.string.network_error))
+                UIExtensions.showSnackBar(
+                    this@ArtistAlbumsFragment.lv_artist_album,
+                    this@ArtistAlbumsFragment.getString(R.string.network_error))
             }
         })
     }
