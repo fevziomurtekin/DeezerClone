@@ -50,7 +50,7 @@ open class DataSource {
     suspend fun localCallInsert(
         call: suspend () -> Unit
     ) : DaoResult {
-        var localReturn = DaoResult(true,null)
+        val localReturn: DaoResult
         localReturn = try {
             call.invoke()
             DaoResult(true, "Data addition has been done succesfully...")

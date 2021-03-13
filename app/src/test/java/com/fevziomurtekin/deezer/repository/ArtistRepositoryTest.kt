@@ -39,7 +39,7 @@ class ArtistRepositoryTest {
   @Before
   fun setup() {
     client = DeezerClient(service)
-    repository = ArtistRepository(client, deezerDao)
+    repository = ArtistRepository(client)
   }
 
 
