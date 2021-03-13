@@ -12,6 +12,7 @@ object Plugins{
     val kotlinSerialization         = "plugin.serialization"
     val hiltExtensions              = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
     val hiltPlugin                  = "dagger.hilt.android.plugin"
+
     /* Detekt */
     val detekt                      = "io.gitlab.arturbosch.detekt"
 
@@ -26,16 +27,8 @@ object Plugins{
     val javaVersion                 = "1.8"
     val main                        = "main"
     val release                     = "release"
-    val debug                       = "debug"
     val proguardTxt                 = "proguard-android.txt"
     val proguardPro                 = "proguard-rules.pro"
-    val androidlibrary              = "com.android.library"
-    val navSafePlugins              = "androidx.navigation.safeargs.kotlin"
-    /** PACKAGING OPTIONS */
-    val metaLicense                 = "META-INF/LICENSE"
-    val metaDependecies             = "META-INF/DEPENDENCIES"
-    val metaIndex                   = "META-INF/INDEX.LIST"
 
-    val testOptions                 = "ANDROIDX_TEST_ORCHESTRATOR"
 
 }

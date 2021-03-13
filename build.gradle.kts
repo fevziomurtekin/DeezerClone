@@ -1,5 +1,4 @@
 buildscript {
-    val kotlin_version by extra("1.4.0")
     repositories{
         google()
         jcenter()
@@ -15,7 +14,6 @@ buildscript {
         classpath(Plugins.kotlinGradlePlugin)
         classpath(Plugins.mavenGradlePlugin)
         classpath(Plugins.hiltExtensions)
-        "classpath"("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
