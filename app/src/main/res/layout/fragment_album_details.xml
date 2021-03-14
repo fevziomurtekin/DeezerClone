@@ -28,7 +28,7 @@
             android:id="@+id/shimmerLayout"
             app:shimmer_highlight_color="@color/colorWhiteCard"
             app:isGoneLayout="@{vm.result}"
-            android:padding="6dp">
+            android:padding="@dimen/album_details_shimmer_padding">
             <include layout="@layout/shimmer_linear_layout"/>
 
         </com.facebook.shimmer.ShimmerFrameLayout>
@@ -39,7 +39,7 @@
             android:id="@+id/recyclerView"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
-            android:padding="6dp"
+            android:padding="@dimen/album_details_recycler_padding"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
             app:isGoneLayout="@{vm.result}"
