@@ -52,8 +52,8 @@
             app:tabGravity="center"
             app:tabMode="auto"
             app:adapterTablayout="@{vp}"
-            app:tabPaddingEnd="3.5dp"
-            app:tabPaddingStart="3.5dp"
+            app:tabPaddingEnd="@dimen/artist_details_tab_padding"
+            app:tabPaddingStart="@dimen/artist_details_tab_padding"
             app:tabIndicatorColor="@color/colorRed"
             />
 

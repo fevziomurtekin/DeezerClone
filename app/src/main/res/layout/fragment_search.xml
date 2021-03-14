@@ -39,7 +39,7 @@
             android:hint="@string/searching"
             android:background="@drawable/edt_bg"
             android:elevation="5dp"
-            android:padding="15dp"
+            android:padding="@dimen/search_edittext_padding"
             app:onEditorActionListener="@{vm.editorActionListener}"
             android:layout_marginTop="10dp"
             />
@@ -52,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@id/aet_search"
             app:isGoneLayout="@{vm.result}"
             android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="@dimen/search_recent_margin_top">
 
             <TextView
                 android:id="@+id/tv_recent_search"
@@ -62,7 +62,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/colorWhite"
                 android:text="@string/recent_search"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/search_recent_title_margin"
                 />
 
             <View
@@ -75,7 +75,7 @@
                 android:id="@+id/rv_recent_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="@dimen/search_recent_recycler_margin_top"
                 android:orientation="vertical"
                 tools:listitem="@layout/item_search"
                 app:adapter="@{recentAdapter}"
@@ -97,7 +97,7 @@
                 android:id="@+id/rv_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="6dp"
+                android:padding="@dimen/search_album_padding"
                 android:orientation="vertical"
                 tools:listitem="@layout/item_album"
                 app:adapter="@{searchAdapter}"
