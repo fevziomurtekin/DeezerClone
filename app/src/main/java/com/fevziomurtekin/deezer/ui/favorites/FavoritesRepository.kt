@@ -22,7 +22,6 @@ import javax.inject.Inject
 private const val DELAY_TIME = 1500L
 
 class FavoritesRepository @Inject constructor(
-    private val deezerClient: DeezerClient,
     private val deezerDao: DeezerDao,
     @IODispatcher private val ioDispatcher: CoroutineDispatcher
 ): DataSource(), FavoritesRepositoryImpl {

@@ -35,7 +35,7 @@ task("clean"){
 }
 
 val detektDeezer by tasks.registering(io.gitlab.arturbosch.detekt.Detekt::class) {
-    description = "Runs over whole code base without the starting overhead for each module."
+    description = "Run all deezer modules"
     buildUponDefaultConfig = true
     autoCorrect = true
     parallel = true
