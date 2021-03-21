@@ -32,7 +32,7 @@
             android:id="@+id/recyclerView"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
-            android:padding="6dp"
+            android:padding="@dimen/favorites_recycler_padding"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
             app:isGoneFavoriteLayout="@{vm.favorites}"

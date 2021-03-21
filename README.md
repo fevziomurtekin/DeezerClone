@@ -38,6 +38,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
 - [Material-Components](https://github.com/material-components/material-components-android)
 - [Coil](https://github.com/coil-kt/coil)
 - [ShimmerLayout](http://facebook.github.io/shimmer-android/)
+- [Detekt](https://detekt.github.io/detekt/)
 - Test
   - [mockK](https://mockk.io/)
   - [Mock Server](https://www.mock-server.com/)
@@ -50,6 +51,14 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
 DeezerClone is based on MVVM architecture and a repository pattern.
 
 ![architecture](https://raw.githubusercontent.com/fevziomurtekin/hackernewsapp/master/screenshot/mvvm.png)
+
+## Detekt
+A static code analysis tool for the Kotlin programming language. It operates on the abstract syntax tree provided by the Kotlin compiler.
+You can check the code by running the this command.
+
+```properties
+  ./gradlew detektDeezer
+``` 
 
 ## API
 Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.deezer.com/api/)

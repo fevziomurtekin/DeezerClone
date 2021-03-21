@@ -12,44 +12,52 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityRetainedComponent::class)
+@InstallIn(SingletonComponent::class)
 object RepositoryModule {
 
     @Provides
-    @ActivityRetainedScoped
+    @Singleton
     fun provideMainRepository(
         deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = MainRepository(deezerClient, deezerDao)
+        deezerDao: DeezerDao,
+        @IODispatcher dispatcher: CoroutineDispatcher
+    ) = MainRepository(deezerClient, deezerDao, dispatcher)
 
     @Provides
-    @ActivityRetainedScoped
+    @Singleton
     fun provideFavoriteRepository(
         deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = FavoritesRepository(deezerClient, deezerDao)
+        deezerDao: DeezerDao,
+        @IODispatcher dispatcher: CoroutineDispatcher
+    ) = FavoritesRepository(deezerClient, deezerDao, dispatcher)
 
     @Provides
-    @ActivityRetainedScoped
+    @Singleton
     fun providesSearchRepository(
         deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = SearchRepository(deezerClient, deezerDao)
+        deezerDao: DeezerDao,
+        @IODispatcher dispatcher: CoroutineDispatcher
+    ) = SearchRepository(deezerClient, deezerDao, dispatcher)
 
     @Provides
-    @ActivityRetainedScoped
+    @Singleton
     fun providesArtistRepository(
-        deezerClient: DeezerClient
-    ) = ArtistRepository(deezerClient)
+        deezerClient: DeezerClient,
+        @IODispatcher dispatcher: CoroutineDispatcher
+    ) = ArtistRepository(deezerClient, dispatcher)
 
 
     @Provides
-    @ActivityRetainedScoped
+    @Singleton
     fun providesAlbumRepository(
         deezerClient: DeezerClient,
-        deezerDao: DeezerDao
-    ) = AlbumRepository(deezerClient,deezerDao)
+        deezerDao: DeezerDao,
+        @IODispatcher dispatcher: CoroutineDispatcher
+    ) = AlbumRepository(deezerClient,deezerDao, dispatcher)
 
 }

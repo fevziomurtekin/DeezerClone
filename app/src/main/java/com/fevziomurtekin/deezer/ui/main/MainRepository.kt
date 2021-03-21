@@ -8,9 +8,11 @@ import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
 import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.data.GenreResponse
+import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.GenreEntity
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -22,7 +24,8 @@ private const val FAKE_DELAY_TIME = 1500L
 
 class MainRepository @Inject constructor(
     private val deezerClient: DeezerClient,
-    private val deezerDao: DeezerDao
+    private val deezerDao: DeezerDao,
+    @IODispatcher private val ioDispatcher: CoroutineDispatcher
 ): DataSource(), MainRepositoryImpl {
 
     override suspend fun fetchGenreList() = flow {
@@ -47,7 +50,7 @@ class MainRepository @Inject constructor(
                 emit(ApiResult.Success(result?.toList()))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 }
 
 

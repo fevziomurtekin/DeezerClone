@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
-            android:padding="6dp"
+            android:padding="@dimen/artists_recycler_padding"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
             app:isGoneLayout="@{vm.result}"

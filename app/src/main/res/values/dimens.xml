@@ -10,8 +10,34 @@
     <dimen name="shimmer_grid_margin">6dp</dimen>
     <dimen name="shimmer_grid_height">150dp</dimen>
 
+    <!-- Shimmer linear layout -->
+    <dimen name="shimmer_linear_height">120dp</dimen>
+    <dimen name="shimmer_linear_margin">6dp</dimen>
+
     <!-- recyclerview -->
     <dimen name="recyclerview_padding">6dp</dimen>
+
+    <!-- Genre -->
+    <dimen name="genre_recycler_padding">6dp</dimen>
+
+    <!-- Artist -->
+    <dimen name="artist_related_recycler_padding">6dp</dimen>
+    <dimen name="artists_recycler_padding">6dp</dimen>
+    <dimen name="artist_details_tab_padding">3.5dp</dimen>
+
+    <!-- Album Details -->
+    <dimen name="album_details_shimmer_padding">6dp</dimen>
+    <dimen name="album_details_recycler_padding">6dp</dimen>
+
+    <!-- Search -->
+    <dimen name="search_edittext_padding">15dp</dimen>
+    <dimen name="search_recent_margin_top">10dp</dimen>
+    <dimen name="search_recent_title_margin">10dp</dimen>
+    <dimen name="search_recent_recycler_margin_top">6dp</dimen>
+    <dimen name="search_album_padding">6dp</dimen>
+
+    <!-- Favorites -->
+    <dimen name="favorites_recycler_padding">6dp</dimen>
 
     <!-- item search -->
     <dimen name="item_search_artist_padding">12dp</dimen>
@@ -21,10 +47,6 @@
     <!-- item card -->
     <dimen name="item_corner_radius">14dp</dimen>
     <dimen name="item_card_elavation">4dp</dimen>
-
-    <!-- Shimmer linear layout -->
-    <dimen name="shimmer_linear_height">120dp</dimen>
-    <dimen name="shimmer_linear_margin">6dp</dimen>
 
     <!-- item artist -->
     <dimen name="item_artist_padding">12dp</dimen>
