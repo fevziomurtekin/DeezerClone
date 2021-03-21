@@ -9,20 +9,24 @@ import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.isNotNull
 import com.fevziomurtekin.deezer.data.SearchResponse
+import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.SearchEntity
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
 private const val FAKE_DELAY_TIME = 1500L
 
-class SearchRepository(
+class SearchRepository @Inject constructor(
     private val deezerClient: DeezerClient,
-    private val deezerDao: DeezerDao
+    private val deezerDao: DeezerDao,
+    @IODispatcher private val ioDispatcher: CoroutineDispatcher
 ): DataSource(), SearchRepositoryImpl {
 
 
@@ -47,7 +51,7 @@ class SearchRepository(
             delay(FAKE_DELAY_TIME)
             emit(ApiResult.Error(Exception("Unexpected error.")))
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
     override fun fetchRecentSearch()= flow {
         localCallFetch {
@@ -59,7 +63,7 @@ class SearchRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
     override suspend fun insertSearch(query: SearchEntity)= localCallInsert {
         deezerDao.insertQuery(query)

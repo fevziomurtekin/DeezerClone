@@ -35,15 +35,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce437ab8-1233-4a0a-b12c-814c7548547a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/CoroutineDispatcherModule.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_related.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_related.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artists.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artists.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_genre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_genre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/RepositoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/RepositoryModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/album/AlbumRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/album/AlbumRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/artist/ArtistRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/artist/ArtistRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/favorites/FavoritesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/favorites/FavoritesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/main/MainRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/main/MainRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/search/SearchRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/search/SearchRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/ArtistRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/ArtistRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistAlbumViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistAlbumViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistDetailsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistDetailsViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistRelatedViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistRelatedViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +55,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_4_API_22]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5_API_29]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -89,6 +93,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-21T17:46:42.941Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="add_unversioned_files" value="true" />
@@ -248,6 +254,8 @@
       <list>
         <item itemvalue="Android JUnit.DeezerDaoTest.insertAndLoadGenreList" />
         <item itemvalue="Android JUnit.DeezerDaoTest" />
+        <item itemvalue="Android JUnit.DeezerDaoTest.insertAndLoadGenreList" />
+        <item itemvalue="Android JUnit.DeezerDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -313,19 +321,23 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="349" y="215" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607697461958" />
-    <state x="1850" y="141" key="RollbackChangesDialog" timestamp="1615724895499">
+    <state x="1850" y="141" key="RollbackChangesDialog" timestamp="1616346201532">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1850" y="141" key="RollbackChangesDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615724895499" />
+    <state x="1850" y="141" key="RollbackChangesDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1616346201532" />
     <state x="1831" y="208" width="668" height="522" key="find.popup" timestamp="1615676200643">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1831" y="208" width="668" height="522" key="find.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615676200643" />
     <state x="412" y="205" width="615" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1607697962857" />
-    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup" timestamp="1615725288315">
-      <screen x="1440" y="33" width="1366" height="768" />
+    <state x="560" y="252" key="refactoring.ChangeSignatureDialog" timestamp="1616348450858">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="560" y="252" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1616348450858" />
+    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1616348217540">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615725288315" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1607697911952" />
+    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1616348217540" />
   </component>
 </project>

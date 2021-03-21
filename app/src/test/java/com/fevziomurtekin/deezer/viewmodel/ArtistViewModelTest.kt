@@ -41,7 +41,7 @@ class ArtistViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        repository = ArtistRepository(deezerClient)
+        repository = ArtistRepository(deezerClient, dispatcher)
         viewModel = ArtistViewModel(repository)
     }
 

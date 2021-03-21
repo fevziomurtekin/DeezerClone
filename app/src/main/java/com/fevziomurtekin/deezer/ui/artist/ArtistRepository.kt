@@ -10,19 +10,22 @@ import com.fevziomurtekin.deezer.data.ArtistAlbumResponse
 import com.fevziomurtekin.deezer.data.ArtistDetailResponse
 import com.fevziomurtekin.deezer.data.ArtistRelatedResponse
 import com.fevziomurtekin.deezer.data.ArtistsResponse
-import com.fevziomurtekin.deezer.domain.local.DeezerDao
+import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
+import javax.inject.Inject
 
 private const val FAKE_DELAY_TIME = 1500L
 
-class ArtistRepository(
-    private val deezerClient: DeezerClient
+class ArtistRepository @Inject constructor(
+    private val deezerClient: DeezerClient,
+    @IODispatcher private val ioDispatcher: CoroutineDispatcher
 ): DataSource(), ArtistRepositoryImpl {
 
     override fun fetchArtistList(genreID:String)
@@ -43,7 +46,7 @@ class ArtistRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
 
     override fun fetchArtistDetails(artistID:String
@@ -61,7 +64,7 @@ class ArtistRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
 
     override fun fetchArtistAlbums(artistID:String
@@ -79,7 +82,7 @@ class ArtistRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
 
 
@@ -102,7 +105,7 @@ class ArtistRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
 }
 
