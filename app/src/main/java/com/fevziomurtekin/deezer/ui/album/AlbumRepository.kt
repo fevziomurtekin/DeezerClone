@@ -9,21 +9,25 @@ import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.data.AlbumDetailsResponse
+import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.entities.AlbumEntity
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
+import javax.inject.Inject
 
 private const val FAKE_DELAY_TIME = 1500L
 
-class AlbumRepository(
-    val deezerClient: DeezerClient,
-    val deezerDao: DeezerDao
+class AlbumRepository @Inject constructor(
+    private val deezerClient: DeezerClient,
+    private val deezerDao: DeezerDao,
+    @IODispatcher private val ioDispatcher: CoroutineDispatcher
 ): DataSource(), AlbumRepositoryImpl {
 
     override fun fetchAlbumTracks(albumID:String
@@ -44,7 +48,7 @@ class AlbumRepository(
                 emit(ApiResult.Error(Exception("Unexpected error.")))
             }
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(ioDispatcher)
 
     override suspend fun insertFavoritesData(track: AlbumEntity?) = localCallInsert {
         track?.let {
