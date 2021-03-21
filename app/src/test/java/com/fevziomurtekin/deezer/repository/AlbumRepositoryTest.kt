@@ -13,6 +13,7 @@ import com.fevziomurtekin.deezer.domain.network.DeezerService
 import com.fevziomurtekin.deezer.ui.album.AlbumRepository
 import com.nhaarman.mockitokotlin2.*
 import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -40,7 +41,7 @@ class AlbumRepositoryTest {
   @Before
   fun setup() {
     client = DeezerClient(service)
-    repository = AlbumRepository(client, deezerDao)
+    repository = AlbumRepository(client, deezerDao, Dispatchers.IO)
   }
 
 

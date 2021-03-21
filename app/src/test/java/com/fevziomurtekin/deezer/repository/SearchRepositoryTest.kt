@@ -14,6 +14,7 @@ import com.fevziomurtekin.deezer.entities.SearchEntity
 import com.fevziomurtekin.deezer.ui.search.SearchRepository
 import com.nhaarman.mockitokotlin2.*
 import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -41,7 +42,7 @@ class SearchRepositoryTest {
   @Before
   fun setup() {
     client = DeezerClient(service)
-    repository = SearchRepository(client, deezerDao)
+    repository = SearchRepository(client, deezerDao, Dispatchers.IO)
   }
 
 

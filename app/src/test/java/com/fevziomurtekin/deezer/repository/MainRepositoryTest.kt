@@ -16,6 +16,7 @@ import com.nhaarman.mockitokotlin2.atLeastOnce
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -44,7 +45,7 @@ class MainRepositoryTest {
     @Before
     fun setup() {
         client = DeezerClient(service)
-        repository = MainRepository(client, deezerDao)
+        repository = MainRepository(client, deezerDao, Dispatchers.IO)
     }
 
     @ExperimentalTime

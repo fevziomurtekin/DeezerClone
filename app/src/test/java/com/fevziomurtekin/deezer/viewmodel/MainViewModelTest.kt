@@ -24,6 +24,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -61,7 +62,7 @@ class MainViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        mainRepository = MainRepository(deezerClient, deezerDao)
+        mainRepository = MainRepository(deezerClient, deezerDao,Dispatchers.IO)
         viewModel = MainViewModel(application, mainRepository)
     }
 

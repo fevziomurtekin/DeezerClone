@@ -12,6 +12,7 @@ import com.fevziomurtekin.deezer.domain.network.DeezerService
 import com.fevziomurtekin.deezer.ui.album.AlbumRepository
 import com.fevziomurtekin.deezer.ui.favorites.FavoritesRepository
 import com.nhaarman.mockitokotlin2.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -39,8 +40,8 @@ class FavoritesRepositoryTest {
   @Before
   fun setup() {
     client = DeezerClient(service)
-    repository = FavoritesRepository(client, deezerDao)
-    albumRepository = AlbumRepository(client, deezerDao)
+    repository = FavoritesRepository(deezerDao, Dispatchers.IO)
+    albumRepository = AlbumRepository(client, deezerDao, Dispatchers.IO)
   }
 
   @ExperimentalTime

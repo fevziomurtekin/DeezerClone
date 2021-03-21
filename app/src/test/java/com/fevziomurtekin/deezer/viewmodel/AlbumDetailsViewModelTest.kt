@@ -16,6 +16,7 @@ import com.fevziomurtekin.deezer.ui.album.AlbumRepository
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -41,7 +42,7 @@ class AlbumDetailsViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        repository = AlbumRepository(deezerClient,deezerDao)
+        repository = AlbumRepository(deezerClient,deezerDao, Dispatchers.IO)
         viewModel = AlbumDetailsViewModel(repository)
     }
 

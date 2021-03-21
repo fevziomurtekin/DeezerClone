@@ -18,6 +18,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -43,7 +44,7 @@ class SearchViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        searchRepository = SearchRepository(deezerClient,deezerDao)
+        searchRepository = SearchRepository(deezerClient,deezerDao,Dispatchers.IO)
         viewModel = SearchViewModel(searchRepository)
     }
 

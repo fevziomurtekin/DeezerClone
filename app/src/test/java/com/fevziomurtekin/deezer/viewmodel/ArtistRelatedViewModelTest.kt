@@ -16,6 +16,7 @@ import com.fevziomurtekin.deezer.ui.artist.details.related.ArtistRelatedViewMode
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -40,7 +41,7 @@ class ArtistRelatedViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        repository = ArtistRepository(deezerClient, dispatcher)
+        repository = ArtistRepository(deezerClient, Dispatchers.IO)
         viewModel = ArtistRelatedViewModel(repository)
     }
 

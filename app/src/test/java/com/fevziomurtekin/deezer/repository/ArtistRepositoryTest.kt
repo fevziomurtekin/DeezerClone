@@ -12,6 +12,7 @@ import com.fevziomurtekin.deezer.domain.network.DeezerService
 import com.fevziomurtekin.deezer.ui.artist.ArtistRepository
 import com.nhaarman.mockitokotlin2.*
 import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -39,7 +40,7 @@ class ArtistRepositoryTest {
   @Before
   fun setup() {
     client = DeezerClient(service)
-    repository = ArtistRepository(client, dispatcher)
+    repository = ArtistRepository(client, Dispatchers.IO)
   }
 
 

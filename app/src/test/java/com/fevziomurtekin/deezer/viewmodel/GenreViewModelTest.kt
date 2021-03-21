@@ -18,6 +18,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -43,7 +44,7 @@ class GenreViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
-        repository = MainRepository(deezerClient,deezerDao)
+        repository = MainRepository(deezerClient,deezerDao, Dispatchers.IO)
         viewModel = GenreViewModel(repository)
     }
 
