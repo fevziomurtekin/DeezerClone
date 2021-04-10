@@ -5,15 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.fevziomurtekin.deezer.R
+import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
+import com.fevziomurtekin.deezer.data.ArtistAlbumData
 import com.fevziomurtekin.deezer.databinding.FragmentArtistAlbumsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_albums.*
-import timber.log.Timber
 
 @AndroidEntryPoint
 class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
@@ -32,7 +36,7 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
     override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistAlbumsFragment
-            adapter = ArtistAlbumAdapter()
+            adapter = ArtistAlbumAdapter(::onClickAlbumItem)
             vm = viewModel
         }
     }
@@ -48,11 +52,8 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
                     UIExtensions.showSnackBar(
                         this@ArtistAlbumsFragment.lv_artist_album,
                         this@ArtistAlbumsFragment.getString(R.string.unexpected_error))
-                    Timber.d("result : error isSplash : false")
                 }
-                is ApiResult.Success->{
-                    Timber.d("result : succes isSplash : false")
-                }
+                is ApiResult.Success-> Unit
             }
         })
 
@@ -64,4 +65,15 @@ class ArtistAlbumsFragment(private val artistID:String): DataBindingFragment() {
             }
         })
     }
+
+    private fun onClickAlbumItem(data: ArtistAlbumData) {
+        findNavController().navigate(
+            R.id.action_album_details,
+            bundleOf(
+                Env.BUND_ID to data.id,
+                Env.BUND_NAME to data.title
+            )
+        )
+    }
+
 }

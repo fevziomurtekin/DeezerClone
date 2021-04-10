@@ -5,11 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import com.fevziomurtekin.deezer.R
+import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
+import com.fevziomurtekin.deezer.data.ArtistRelatedData
 import com.fevziomurtekin.deezer.databinding.FragmentArtistRelatedBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_related.*
@@ -32,7 +38,7 @@ class ArtistRelatedFragment(private val artistID:String)
     override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistRelatedFragment
-            adapter = ArtistRelatedAdapter()
+            adapter = ArtistRelatedAdapter(::onClickArtistItem)
             vm = viewModel
         }
     }
@@ -49,8 +55,18 @@ class ArtistRelatedFragment(private val artistID:String)
                         this@ArtistRelatedFragment.lv_artist_related,
                         this@ArtistRelatedFragment.getString(R.string.unexpected_error))
                 }
-                is ApiResult.Success->{ }
+                is ApiResult.Success-> Unit
             }
         })
+    }
+
+    private fun onClickArtistItem(data: ArtistRelatedData) {
+        findNavController().navigate(
+            R.id.action_artist_details,
+            bundleOf(
+                Env.BUND_ID to data.id,
+                Env.BUND_NAME to data.name
+            )
+        )
     }
 }

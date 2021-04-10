@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
+import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.databinding.FragmentGenreBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,7 +36,7 @@ class GenreFragment : DataBindingFragment() {
     override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@GenreFragment
-            adapter = GenreAdapter()
+            adapter = GenreAdapter(::onGenreItemClick)
             vm = viewModel
         }
     }
@@ -68,6 +71,15 @@ class GenreFragment : DataBindingFragment() {
                     ))
             }
         })
+    }
+
+    private fun onGenreItemClick(genreData: Data) {
+     GenreFragmentDirections.actionGenreList(
+         genreData.id,
+         genreData.name.orEmpty()
+     ).let { actionGenreList ->
+         findNavController().navigate(actionGenreList)
+     }
     }
 }
 

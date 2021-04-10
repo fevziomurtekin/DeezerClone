@@ -11,7 +11,9 @@ import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.databinding.ItemSearchAlbumBinding
 
-class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumViewHolder>() {
+class SearchAlbumAdapter(
+    val onClickItem: (SearchData) -> Unit
+) : RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumViewHolder>() {
 
     private val items: MutableList<SearchData> = mutableListOf()
 
@@ -24,13 +26,7 @@ class SearchAlbumAdapter: RecyclerView.Adapter<SearchAlbumAdapter.SearchAlbumVie
 
             binding.root.setOnClickListener {it->
                 val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION } ?: 0
-
-                it.findNavController().navigate(
-                        R.id.action_album_details,
-                        bundleOf(
-                                Env.BUND_ID to items[position].id,
-                                Env.BUND_NAME to items[position].title
-                        ))
+                onClickItem.invoke(items[position])
             }
         }
     }
