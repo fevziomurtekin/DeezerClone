@@ -15,6 +15,7 @@ buildscript {
         classpath(Plugins.kotlinGradlePlugin)
         classpath(Plugins.mavenGradlePlugin)
         classpath(Plugins.hiltExtensions)
+        classpath(Plugins.safeArgsPlugin)
     }
 }
 

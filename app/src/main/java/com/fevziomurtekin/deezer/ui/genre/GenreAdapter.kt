@@ -12,7 +12,9 @@ import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.databinding.ItemGenreBinding
 
-class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
+class GenreAdapter(
+    val onGenreItemClick: (Data) -> Unit)
+    : RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
 
     private val items:MutableList<Data> = mutableListOf()
 
@@ -26,11 +28,7 @@ class GenreAdapter:RecyclerView.Adapter<GenreAdapter.GenreViewHolder>(){
                 val position = adapterPosition.takeIf { p-> p != NO_POSITION }
                     ?: return@setOnClickListener
 
-                it.findNavController().navigate(
-                        R.id.action_genre_list,
-                        bundleOf(Env.BUND_ID to items[position].id
-                            ,Env.BUND_NAME to items[position].name
-                        ))
+                onGenreItemClick.invoke(items[position])
             }
         }
     }
