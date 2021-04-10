@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
@@ -21,19 +22,19 @@ import kotlinx.android.synthetic.main.fragment_album_details.*
 import timber.log.Timber
 
 @AndroidEntryPoint
-class AlbumDetailsFragment: DataBindingFragment() {
+class
+AlbumDetailsFragment: DataBindingFragment() {
 
     lateinit var binding: FragmentAlbumDetailsBinding
     @VisibleForTesting val viewModel: AlbumDetailsViewModel by viewModels()
     private var id = "0" // default value.
+    private val args: AlbumDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = binding(inflater,R.layout.fragment_album_details,container)
         return binding.root
     }
-        override fun getSafeArgs() {
-            id = arguments?.getString(Env.BUND_ID) ?: "0"
-        }
+        override fun getSafeArgs() { id = args.id }
 
         override fun initBinding() {
             binding.apply {

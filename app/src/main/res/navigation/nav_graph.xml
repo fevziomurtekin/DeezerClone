@@ -45,7 +45,7 @@
 
     </fragment>
 
-
+    <!--Genre List-->
     <fragment
         android:id="@+id/genre_list"
         android:name="com.fevziomurtekin.deezer.ui.artist.profile.ArtistsFragment"
@@ -59,9 +59,20 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <deepLink
+          android:id="@+id/deepLink"
+          app:uri="www.example.com/genre/{id}/{name}"
+          android:autoVerify="true"/>
+
+        <argument
+          android:name="id"
+          app:argType="string"/>
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
 
     </fragment>
-
 
     <fragment
         android:id="@+id/search"
@@ -110,6 +121,19 @@
             app:popExitAnim="@anim/slide_out_right"
              />
 
+        <deepLink
+          android:id="@+id/deepLink"
+          app:uri="www.example.com/artist/{id}/{name}"
+          android:autoVerify="true"/>
+
+        <argument
+          android:name="id"
+          app:argType="string"/>
+
+        <argument
+          android:name="name"
+          app:argType="string"/>
+
     </fragment>
 
     <fragment
@@ -124,6 +148,19 @@
         android:id="@+id/album_details"
         android:name="com.fevziomurtekin.deezer.ui.album.AlbumDetailsFragment"
         tools:layout="@layout/fragment_album_details">
+
+        <deepLink
+          android:id="@+id/deepLink"
+          app:uri="www.example.com/album/{id}/{name}"
+          android:autoVerify="true"/>
+
+        <argument
+          android:name="id"
+          app:argType="string"/>
+
+        <argument
+          android:name="name"
+          app:argType="string"/>
 
     </fragment>
 

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
@@ -27,6 +28,7 @@ class ArtistDetailsFragment : DataBindingFragment() {
     private lateinit var binding: FragmentArtistDetailsBinding
     @VisibleForTesting
     val viewModel: ArtistDetailsViewModel by viewModels()
+    private val args: ArtistDetailsFragmentArgs by navArgs()
     var id:String = "0" //default value.
     private val tabList:MutableList<String> = mutableListOf("albums", "related details")
 
@@ -46,13 +48,7 @@ class ArtistDetailsFragment : DataBindingFragment() {
         }
     }
 
-    override fun getSafeArgs(){
-        arguments?.let {
-            id = it.getString(Env.BUND_ID).let { s->
-                if(s.isNullOrEmpty()) "0" else s
-            }
-        }
-    }
+    override fun getSafeArgs(){ id = args.id }
 
     override fun setListeners() = Unit
 

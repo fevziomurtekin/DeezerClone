@@ -13,7 +13,9 @@ import com.fevziomurtekin.deezer.databinding.ItemArtistAlbumBinding
 import timber.log.Timber
 
 
-class ArtistAlbumAdapter: RecyclerView.Adapter<ArtistAlbumAdapter.ArtistAlbumViewHolder>() {
+class ArtistAlbumAdapter(
+    val onClickItem: (ArtistAlbumData) -> Unit
+) : RecyclerView.Adapter<ArtistAlbumAdapter.ArtistAlbumViewHolder>() {
 
     private val items: MutableList<ArtistAlbumData> = mutableListOf()
 
@@ -26,14 +28,7 @@ class ArtistAlbumAdapter: RecyclerView.Adapter<ArtistAlbumAdapter.ArtistAlbumVie
             binding.root.setOnClickListener {
                 val position = adapterPosition.takeIf { p -> p != RecyclerView.NO_POSITION }
                     ?: return@setOnClickListener
-
-                it.findNavController().navigate(
-                    R.id.action_album_details,
-                    bundleOf(
-                        Env.BUND_ID to items[position].id,
-                        Env.BUND_NAME to items[position].title
-                    )
-                )
+                onClickItem.invoke(items[position])
             }
         }
     }

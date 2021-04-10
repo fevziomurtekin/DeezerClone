@@ -12,6 +12,8 @@ object Plugins{
     val kotlinSerialization         = "plugin.serialization"
     val hiltExtensions              = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
     val hiltPlugin                  = "dagger.hilt.android.plugin"
+    val safeArgsPlugin              = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_version}"
+    val safeArgsApply               = "androidx.navigation.safeargs"
 
     /* Detekt */
     val detekt                      = "io.gitlab.arturbosch.detekt"

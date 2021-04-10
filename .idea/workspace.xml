@@ -35,19 +35,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce437ab8-1233-4a0a-b12c-814c7548547a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/AlbumRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/AlbumRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/MainViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/MainViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/libs/buildSrc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/libs/buildSrc.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5_API_29]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -75,7 +77,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="development" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,7 +99,7 @@
       <recent name="$PROJECT_DIR$/gradle/wrapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Android JUnit.MainViewModelTest">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="DeezerDaoTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="DeezerClone.app" />
       <extension name="coverage">
@@ -126,22 +128,6 @@
       <option name="MAIN_CLASS_NAME" value="com.fevziomurtekin.deezer.domain.local.DeezerDaoTest" />
       <option name="METHOD_NAME" value="insertAndLoadGenreList" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainViewModelTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DeezerClone.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fevziomurtekin.deezer.viewmodel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fevziomurtekin.deezer.viewmodel" />
-      <option name="MAIN_CLASS_NAME" value="com.fevziomurtekin.deezer.viewmodel.MainViewModelTest" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -260,7 +246,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.MainViewModelTest" />
         <item itemvalue="Android JUnit.DeezerDaoTest.insertAndLoadGenreList" />
         <item itemvalue="Android JUnit.DeezerDaoTest" />
         <item itemvalue="Android JUnit.DeezerDaoTest.insertAndLoadGenreList" />
@@ -294,10 +279,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1440" y="33" width="638" height="768" key="#app" timestamp="1615662918084">
+    <state x="1440" y="33" width="638" height="768" key="#app" timestamp="1618087514830">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1440" y="33" width="638" height="768" key="#app/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615662918084" />
+    <state x="1440" y="33" width="638" height="768" key="#app/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618087514830" />
     <state x="1540" y="133" width="1166" height="568" key="AVDManager" timestamp="1615676230787">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
@@ -326,19 +311,18 @@
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1850" y="141" key="RollbackChangesDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1616346201532" />
-    <state x="412" y="205" width="705" height="612" key="find.popup" timestamp="1616350471627">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1831" y="208" width="668" height="522" key="find.popup" timestamp="1615676200643">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1831" y="208" width="668" height="522" key="find.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615676200643" />
-    <state x="412" y="205" width="705" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1616350471626" />
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog" timestamp="1616348450858">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1616348450858" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1616351754917">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup" timestamp="1618087553722">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615725288315" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1616351754917" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618087553722" />
+    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1616348217540" />
   </component>
 </project>

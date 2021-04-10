@@ -5,16 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
+import com.fevziomurtekin.deezer.data.ArtistData
 import com.fevziomurtekin.deezer.databinding.FragmentArtistsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artists.*
-import timber.log.Timber
 
 @AndroidEntryPoint
 class ArtistsFragment : DataBindingFragment(){
@@ -22,6 +26,7 @@ class ArtistsFragment : DataBindingFragment(){
     private lateinit var binding:FragmentArtistsBinding
     @VisibleForTesting
     val viewModel: ArtistViewModel by viewModels()
+    private val args: ArtistsFragmentArgs by navArgs()
     private var id:String = "0" //default value.
 
 
@@ -30,18 +35,12 @@ class ArtistsFragment : DataBindingFragment(){
         return binding.root
     }
 
-    override fun getSafeArgs() {
-        arguments?.let {
-            id = it.getString(Env.BUND_ID).let {s->
-                if(s.isNullOrEmpty()) "0" else s
-            }
-        }
-    }
+    override fun getSafeArgs() { id = args.id }
 
     override fun initBinding() {
         binding.apply {
             lifecycleOwner = this@ArtistsFragment
-            adapter = ArtistAdapter()
+            adapter = ArtistAdapter(::onClickArtistItem)
             vm = viewModel
         }
     }
@@ -57,12 +56,17 @@ class ArtistsFragment : DataBindingFragment(){
                     UIExtensions.showSnackBar(
                         this@ArtistsFragment.lv_main,
                         this@ArtistsFragment.getString(R.string.unexpected_error))
-                    Timber.d("result : error isSplash : false")
                 }
-                is ApiResult.Success->{
-                    Timber.d("result : succes isSplash : false")
-                }
+                is ApiResult.Success-> Unit
             }
         })
+    }
+
+    private fun onClickArtistItem(data: ArtistData) {
+        ArtistsFragmentDirections.actionArtistDetails(
+            data.id, data.name
+        ).let { actionArtistDetails ->
+            findNavController().navigate(actionArtistDetails)
+        }
     }
 }
