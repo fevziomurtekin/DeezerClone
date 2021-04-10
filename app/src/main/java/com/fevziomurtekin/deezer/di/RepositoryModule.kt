@@ -31,10 +31,9 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideFavoriteRepository(
-        deezerClient: DeezerClient,
         deezerDao: DeezerDao,
         @IODispatcher dispatcher: CoroutineDispatcher
-    ) = FavoritesRepository(deezerClient, deezerDao, dispatcher)
+    ) = FavoritesRepository(deezerDao, dispatcher)
 
     @Provides
     @Singleton

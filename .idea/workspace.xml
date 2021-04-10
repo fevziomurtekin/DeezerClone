@@ -35,20 +35,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce437ab8-1233-4a0a-b12c-814c7548547a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/CoroutineDispatcherModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/RepositoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/di/RepositoryModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/album/AlbumRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/album/AlbumRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/artist/ArtistRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/artist/ArtistRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/favorites/FavoritesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/favorites/FavoritesRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/main/MainRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/main/MainRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/search/SearchRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/search/SearchRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/ArtistRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/repository/ArtistRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistAlbumViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistAlbumViewModelTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistDetailsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistDetailsViewModelTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistRelatedViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistRelatedViewModelTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fevziomurtekin/deezer/viewmodel/ArtistViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,10 +276,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1440" y="33" width="638" height="768" key="#app" timestamp="1615662918084">
+    <state x="1440" y="33" width="638" height="768" key="#app" timestamp="1618087514830">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1440" y="33" width="638" height="768" key="#app/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615662918084" />
+    <state x="1440" y="33" width="638" height="768" key="#app/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618087514830" />
     <state x="1540" y="133" width="1166" height="568" key="AVDManager" timestamp="1615676230787">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
@@ -313,14 +304,6 @@
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state width="1322" height="194" key="GridCell.Tab.0.right/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615725548222" />
-    <state x="144" y="76" key="MergeDialog" timestamp="1607697338934">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="144" y="76" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607697338934" />
-    <state x="349" y="215" key="MultipleFileMergeDialog" timestamp="1607697461958">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="349" y="215" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607697461958" />
     <state x="1850" y="141" key="RollbackChangesDialog" timestamp="1616346201532">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
@@ -329,15 +312,14 @@
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1831" y="208" width="668" height="522" key="find.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615676200643" />
-    <state x="412" y="205" width="615" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1607697962857" />
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog" timestamp="1616348450858">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1616348450858" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1616348217540">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup" timestamp="1618087553722">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615725288315" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618087553722" />
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1616348217540" />
   </component>
 </project>
