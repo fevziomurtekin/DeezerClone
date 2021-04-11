@@ -59,18 +59,20 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
-        <deepLink
-          android:id="@+id/deepLink"
-          app:uri="www.example.com/genre/{id}/{name}"
-          android:autoVerify="true"/>
-
         <argument
           android:name="id"
           app:argType="string"/>
 
         <argument
-            android:name="name"
-            app:argType="string"/>
+          android:name="name"
+          app:argType="string"/>
+
+        <deepLink
+          android:id="@+id/deepLink"
+          app:uri="www.deezerclone.com/genre/{id}/{name}"
+          android:autoVerify="true"/>
+
+
 
     </fragment>
 
@@ -123,7 +125,7 @@
 
         <deepLink
           android:id="@+id/deepLink"
-          app:uri="www.example.com/artist/{id}/{name}"
+          app:uri="www.deezerclone.com/artist/{id}/{name}"
           android:autoVerify="true"/>
 
         <argument
@@ -151,7 +153,7 @@
 
         <deepLink
           android:id="@+id/deepLink"
-          app:uri="www.example.com/album/{id}/{name}"
+          app:uri="www.deezerclone.com/album/{id}/{name}"
           android:autoVerify="true"/>
 
         <argument
