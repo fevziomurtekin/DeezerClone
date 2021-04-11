@@ -7,6 +7,8 @@ import androidx.navigation.fragment.NavHostFragment
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
+import com.fevziomurtekin.deezer.core.extensions.isNotNull
+import com.fevziomurtekin.deezer.core.extensions.letOnTrue
 import com.fevziomurtekin.deezer.core.ui.DataBindingActivity
 import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.databinding.ActivityMainBinding
@@ -32,7 +34,6 @@ class MainActivity : DataBindingActivity() {
         bottomNavigationListener()
         navControllerListener()
         setListeners()
-
     }
 
     private fun observeLiveData() {
@@ -72,6 +73,10 @@ class MainActivity : DataBindingActivity() {
         binding.ibtnTrackPrevious.setOnClickListener {
             viewModel.previouslyTrack()
         }
+    }
+
+    private fun handleDeepLink() {
+        navController.handleDeepLink(intent)
     }
 
     override fun onBackPressed() {
