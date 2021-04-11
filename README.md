@@ -46,6 +46,7 @@ Click and go to releases page [Releases](https://github.com/fevziomurtekin/Deeze
   - [Mockito Kotlin](https://github.com/nhaarman/mockito-kotlin)
   - [Turbine](https://cashapp.github.io/turbine/docs/0.x/turbine/)
   - [Junit](https://junit.org/junit5/)
+  - [Navigation/Deeplink Test](https://github.com/android/architecture-components-samples/tree/main/NavigationAdvancedSample)
 
 ## Architecture
 DeezerClone is based on MVVM architecture and a repository pattern.
