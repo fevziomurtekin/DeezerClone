@@ -42,11 +42,11 @@ class DeeplinkTest {
 
 
     @Test
-    fun bottomNavView_DeepLink_HandlesIntent_BackGoesToList() {
+    fun openApp_DeepLink_HandlesIntent_BackGoesHomeScreen() {
         //www.example.com/genre/{id}/{name}
 
         //given
-        val genreName = "Rap/Hip Hop"
+        val defaultTitle = "Deezer Clone"
         val name = "Ezhel"
         val id = "8354140"
         val url = "https://www.deezerclone.com/genre/${id}/${name}"
@@ -59,6 +59,12 @@ class DeeplinkTest {
         Assert.assertEquals(
             activityRule.activity?.materialToolbar?.title,
             name
+        )
+
+        Espresso.pressBack()
+        Assert.assertEquals(
+            activityRule.activity?.materialToolbar?.title,
+            defaultTitle
         )
     }
 
