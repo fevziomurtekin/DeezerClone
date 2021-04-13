@@ -78,7 +78,7 @@ fun bindGone(view:View, isGone:Boolean){
 /* search layout */
 @BindingAdapter("isGoneLayout")
 fun<T> bindingIsGoneLayout(view: View,results:LiveData<ApiResult<T>>){
-    Timber.d("bindingIsGoneLayout ${view.id == R.id.recyclerView}   result : ${Gson().toJson(results.value)}")
+    Timber.d("bindingIsGoneLayout ${view.id == R.id.recycler_genre}   result : ${Gson().toJson(results.value)}")
     if(results.value.isNotNull()) {
         when (results.value) {
             ApiResult.Loading, is ApiResult.Error -> {
@@ -106,7 +106,7 @@ fun<T> bindingIsGoneLayout(view: View,results:LiveData<ApiResult<T>>){
 fun bindingIsGoneFavoriteLayout(view: View,results:LiveData<ApiResult<List<AlbumEntity>>>){
     Timber.d("bindingIsGoneFavoriteLayout : ${results.value} isGone : ${results.value.isSuccessAndNotNull()}")
     when(view.id){
-        R.id.recyclerView->{
+        R.id.recycler_genre->{
             view.isGone = !results.value.isSuccessAndNotNull()
         }
         else->{
