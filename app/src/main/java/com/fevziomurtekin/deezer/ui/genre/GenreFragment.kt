@@ -22,7 +22,7 @@ import timber.log.Timber
 @AndroidEntryPoint
 class GenreFragment : DataBindingFragment() {
 
-    private lateinit var  binding:FragmentGenreBinding
+    lateinit var  binding:FragmentGenreBinding
     @VisibleForTesting
     val viewModel : GenreViewModel by viewModels()
 

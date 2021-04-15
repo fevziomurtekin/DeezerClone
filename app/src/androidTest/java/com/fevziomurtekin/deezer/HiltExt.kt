@@ -25,7 +25,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.testing.FragmentScenario.EmptyFragmentActivity
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
-import com.fevziomurtekin.deezer.ui.main.MainActivity
 
 /**
  * launchFragmentInContainer from the androidx.fragment:fragment-testing library
@@ -44,11 +43,11 @@ inline fun <reified T : Fragment> launchFragmentInHiltContainer(
     val startActivityIntent = Intent.makeMainActivity(
         ComponentName(
             ApplicationProvider.getApplicationContext(),
-            MainActivity::class.java
+            HiltTestActivity::class.java
         )
     ).putExtra(EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY, themeResId)
 
-    ActivityScenario.launch<MainActivity>(startActivityIntent).onActivity { activity ->
+    ActivityScenario.launch<HiltTestActivity>(startActivityIntent).onActivity { activity ->
         val fragment: Fragment = activity.supportFragmentManager.fragmentFactory.instantiate(
             Preconditions.checkNotNull(T::class.java.classLoader),
             T::class.java.name

@@ -34,17 +34,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce437ab8-1233-4a0a-b12c-814c7548547a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/HiltExt.kt" afterDir="false" />
+    <list default="true" id="4db42dc7-f051-495d-857a-051b69a2f047" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/debug/java/com/fevziomurtekin/deezer/HiltTestActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/DeezerClone.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/DeezerClone.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/core/binding/BindingViews.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/core/binding/BindingViews.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_album_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_albums.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_artist_albums.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_genre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_genre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/HiltExt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/HiltExt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/screen/GenreFragmentTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/screen/MainActivityTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/MainActivityTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/MainActivityTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/genre/GenreFragmentTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/genre/GenreFragmentTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/genre/GenreFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/genre/GenreFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
@@ -53,14 +54,13 @@
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/build/libs/buildSrc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build/libs/buildSrc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/kotlin/Libs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/Libs.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Galaxy_Nexus_API_29]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_6_API_28]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -84,6 +84,7 @@
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,11 +101,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DEBUGGABLE_DEVICE" value="Nexus_5_API_29 [emulator-5554]" />
+    <property name="DEBUGGABLE_DEVICE" value="emulator-5554" />
     <property name="DEBUGGABLE_PROCESS" value="com.fevziomurtekin.deezer" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-11T11:05:26.537Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6_API_28" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-15T18:10:25.254Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -113,7 +114,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/genre" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/debug/java/com/fevziomurtekin/deezer" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -193,57 +194,6 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainActivityTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="DeezerClone.app" />
-      <option name="TESTING_TYPE" value="2" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="com.fevziomurtekin.deezer.ui.MainActivityTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -452,6 +402,57 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="when_loading_data_...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="DeezerClone.app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="when_loading_data_isGone_shimmer_layout" />
+      <option name="CLASS_NAME" value="com.fevziomurtekin.deezer.ui.genre.GenreFragmentTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="DeezerClone.app" />
       <option name="VM_PARAMETERS" />
@@ -502,10 +503,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Android Instrumented Tests.launchGenreFragmen...()" />
+        <item itemvalue="Android Instrumented Tests.when_loading_data_...()" />
         <item itemvalue="Android Instrumented Tests.openApp_withArtist...()" />
         <item itemvalue="Android Instrumented Tests.openApp_DeepLink_H...()" />
         <item itemvalue="Android Instrumented Tests.bottomNavView_Deep...() (1)" />
-        <item itemvalue="Android Instrumented Tests.MainActivityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -514,7 +515,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce437ab8-1233-4a0a-b12c-814c7548547a" name="Default Changelist" comment="" />
+      <changelist id="4db42dc7-f051-495d-857a-051b69a2f047" name="Default Changelist" comment="" />
       <created>1607626493528</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -539,6 +540,10 @@
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1440" y="33" width="638" height="768" key="#app/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618087514830" />
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618510686100">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1618510686100" />
     <state x="1873" y="226" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1618130151474">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
@@ -547,41 +552,46 @@
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1540" y="133" width="1166" height="568" key="AVDManager/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615676230787" />
+    <state x="308" y="209" key="AndroidCreateResourceFileDialog" timestamp="1618510527765">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="308" y="209" key="AndroidCreateResourceFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1618510527765" />
     <state x="1945" y="198" key="AndroidCreateXmlResourceDialog" timestamp="1615725465823">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1945" y="198" key="AndroidCreateXmlResourceDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1615725465823" />
-    <state x="1866" y="181" key="AndroidProcessChooserDialog" timestamp="1618151130136">
+    <state x="1866" y="181" key="AndroidProcessChooserDialog" timestamp="1618515240997">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1866" y="181" key="AndroidProcessChooserDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151130136" />
-    <state width="482" height="466" key="DebuggerActiveHint" timestamp="1618151236115">
-      <screen x="1440" y="33" width="1366" height="768" />
+    <state x="1866" y="181" key="AndroidProcessChooserDialog/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618515240997" />
+    <state width="509" height="547" key="DebuggerActiveHint" timestamp="1618511565792">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="482" height="466" key="DebuggerActiveHint/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151236115" />
-    <state width="1396" height="227" key="GridCell.Tab.0.bottom" timestamp="1618341474302">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="509" height="547" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1618511565792" />
+    <state width="1322" height="236" key="GridCell.Tab.0.bottom" timestamp="1618517056254">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151599842" />
-    <state width="1396" height="227" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618341474302" />
+    <state width="1322" height="236" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618517056254" />
+    <state width="1396" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618511680397" />
     <state width="1322" height="184" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618139538934" />
-    <state width="1396" height="227" key="GridCell.Tab.0.center" timestamp="1618341474301">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1322" height="236" key="GridCell.Tab.0.center" timestamp="1618517056250">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.center/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151599838" />
-    <state width="1396" height="227" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1618341474301" />
+    <state width="1322" height="236" key="GridCell.Tab.0.center/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618517056250" />
+    <state width="1396" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1618511680396" />
     <state width="1322" height="184" key="GridCell.Tab.0.center/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618139538933" />
-    <state width="1396" height="227" key="GridCell.Tab.0.left" timestamp="1618341474300">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1322" height="236" key="GridCell.Tab.0.left" timestamp="1618517056248">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.left/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151599837" />
-    <state width="1396" height="227" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1618341474300" />
+    <state width="1322" height="236" key="GridCell.Tab.0.left/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618517056248" />
+    <state width="1396" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1618511680394" />
     <state width="1322" height="184" key="GridCell.Tab.0.left/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618139538932" />
-    <state width="1396" height="227" key="GridCell.Tab.0.right" timestamp="1618341474301">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1322" height="236" key="GridCell.Tab.0.right" timestamp="1618517056253">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.right/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151599839" />
-    <state width="1396" height="227" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1618341474301" />
+    <state width="1322" height="236" key="GridCell.Tab.0.right/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618517056253" />
+    <state width="1396" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1618511680396" />
     <state width="1322" height="184" key="GridCell.Tab.0.right/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618139538934" />
     <state x="1850" y="141" key="RollbackChangesDialog" timestamp="1616346201532">
       <screen x="1440" y="33" width="1366" height="768" />
@@ -591,24 +601,28 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="100" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1618338151718" />
+    <state x="500" y="232" key="chooseDestDirectoryDialog" timestamp="1618510663112">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="500" y="232" key="chooseDestDirectoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1618510663112" />
     <state x="1680" y="171" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1618138816583">
       <screen x="1440" y="33" width="1366" height="768" />
     </state>
     <state x="1680" y="171" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618138816583" />
-    <state x="412" y="205" width="802" height="612" key="find.popup" timestamp="1618340707014">
+    <state x="412" y="205" width="802" height="612" key="find.popup" timestamp="1618511936829">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="1831" y="208" width="760" height="522" key="find.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618133672547" />
-    <state x="412" y="205" width="802" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1618340707014" />
+    <state x="412" y="205" width="802" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1618511936829" />
     <state x="1831" y="208" width="668" height="522" key="find.popup/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618088440051" />
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog" timestamp="1616348450858">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="560" y="252" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1616348450858" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1618341071380">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup" timestamp="1618515143419">
+      <screen x="1440" y="33" width="1366" height="768" />
     </state>
-    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618151595900" />
+    <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.0.1440.900/1440.33.1366.768@1440.33.1366.768" timestamp="1618515143419" />
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1618341071380" />
     <state x="1805" y="129" width="670" height="577" key="search.everywhere.popup/0.25.1440.875/1440.33.1366.768@1440.33.1366.768" timestamp="1618088233354" />
   </component>
@@ -635,6 +649,11 @@
           <line>30</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/com/fevziomurtekin/deezer/ui/genre/GenreFragmentTest.kt</url>
+          <line>83</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/fevziomurtekin/deezer/ui/artist/details/info/ArtistDetailsFragment.kt</url>
           <line>50</line>
@@ -644,6 +663,10 @@
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="launchGenreFragmen...()">
+        <watch expression="R.id.recycler_genre" language="kotlin" />
+        <watch expression="fragment?.binding.recyclerGenre.id" language="kotlin" />
+      </configuration>
       <configuration name="bottomNavView_Deep...() (1)">
         <watch expression="mPattern.matcher(deepLink.toString()).matches()" language="JAVA" />
       </configuration>
