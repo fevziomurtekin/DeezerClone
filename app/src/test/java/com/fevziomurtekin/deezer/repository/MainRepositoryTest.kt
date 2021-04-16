@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.GenreResponse
 import com.fevziomurtekin.deezer.di.MainCoroutinesRule

@@ -18,6 +18,18 @@ object MockUtil {
         "genre"
     )
 
+    val rockEntity = GenreEntity(
+        1L,
+        "0",
+        "Rock",
+        "https://api.deezer.com/genre/0/image",
+        "https://cdns-images.dzcdn.net/images/misc//500x500-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//56x56-000000-80-0-0.jpg",
+        "https://cdns-images.dzcdn.net/images/misc//250x250-000000-80-0-0.jpg",
+        "genre"
+    )
+
     val data = Data(
         "0",
         "All",
@@ -31,7 +43,7 @@ object MockUtil {
 
     val genres = listOf(data)
 
-    val genreEntityList = listOf(entity)
+    val genreEntityList = listOf(entity, entity, rockEntity, entity)
 
     val recentData = SearchEntity(1L,"ezhel",12345.toLong())
 
