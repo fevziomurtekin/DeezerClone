@@ -1,11 +1,11 @@
 package com.fevziomurtekin.deezer.repository
 
+import MainCoroutineRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.AlbumData
-import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
@@ -31,7 +31,7 @@ class FavoritesRepositoryTest {
 
   @ExperimentalCoroutinesApi
   @get:Rule
-  var coroutinesRule = MainCoroutinesRule()
+  var coroutinesRule = MainCoroutineRule()
 
   @get:Rule
   var instantExecutorRule = InstantTaskExecutorRule()

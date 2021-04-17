@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment
@@ -20,7 +19,6 @@ import com.fevziomurtekin.deezer.ui.artist.details.albums.ArtistAlbumsFragment
 import com.fevziomurtekin.deezer.ui.artist.details.related.ArtistRelatedFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_artist_details.*
-import timber.log.Timber
 
 @AndroidEntryPoint
 class ArtistDetailsFragment : DataBindingFragment() {

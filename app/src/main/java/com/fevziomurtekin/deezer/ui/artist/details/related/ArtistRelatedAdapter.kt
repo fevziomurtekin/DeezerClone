@@ -2,12 +2,9 @@ package com.fevziomurtekin.deezer.ui.artist.details.related
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.data.ArtistRelatedData
 import com.fevziomurtekin.deezer.databinding.ItemArtistRelatedBinding
 import timber.log.Timber

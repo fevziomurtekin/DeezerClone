@@ -5,7 +5,6 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.google.android.material.snackbar.Snackbar
-import timber.log.Timber
 
 
 /** Show dialogs & snackbar & Toast  **/

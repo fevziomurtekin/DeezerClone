@@ -5,6 +5,7 @@ import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
 import com.fevziomurtekin.deezer.entities.SearchEntity
 
+@Suppress("MaxLineLength")
 object MockUtil {
     val entity = GenreEntity(
         1L,
@@ -53,7 +54,8 @@ object MockUtil {
         id="3135553",readable = true,title = "One More Time",titleShort = "One More Time",titleVersion = "",
         isrc = "GBDUW0000053",link = "https://www.deezer.com/track/3135553",duration = "320",trackPosition = 1,
         diskNumber = 1,rank = "880801",explicitLyrics = false,explicitContentLyrics = 0,explicitContentCover = 0,
-        preview ="https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",md5Image = "2e018122cb56986277102d2041a592c8",
+        preview ="https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",
+        md5Image = "2e018122cb56986277102d2041a592c8",
         //artist = Artist("27","Draft Punk","https://api.deezer.com/artist/27/top?limit=50","artist"),
         type = "track"
     )
@@ -67,7 +69,9 @@ object MockUtil {
     )
 
     val artist = ArtistData(
-        id="8354140",name="Ezhel",picture = "https://api.deezer.com/artist/8354140/image",
+        id="8354140",
+        name="Ezhel",
+        picture = "https://api.deezer.com/artist/8354140/image",
         pictureSmall = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/56x56-000000-80-0-0.jpg",
         pictureMedium = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/250x250-000000-80-0-0.jpg",
         pictureBig = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/500x500-000000-80-0-0.jpg",
@@ -119,12 +123,16 @@ object MockUtil {
             pictureMedium = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/250x250-000000-80-0-0.jpg",
             pictureBig = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/500x500-000000-80-0-0.jpg",
             pictureXl = "https://e-cdns-images.dzcdn.net/images/artist/07b69699f7402e13504714ec6dedd99f/1000x1000-000000-80-0-0.jpg",
-            tracklist = "https://api.deezer.com/artist/8354140/top?limit=50",type = "artist",link ="https://www.deezer.com/artist/8354140",
-        ), tracklist = "https://api.deezer.com/album/51174732/tracks", explicitLyrics = true, type = "album"
+            tracklist = "https://api.deezer.com/artist/8354140/top?limit=50",
+            type = "artist",
+            link ="https://www.deezer.com/artist/8354140",
+        ), tracklist = "https://api.deezer.com/album/51174732/tracks",
+        explicitLyrics = true,
+        type = "album"
     )
 
-    val genreID = "116"
-    val artistID = "8354140"
-    val albumID = "51174732"
-    val query = "Ezhel"
+    const val genreID = "116"
+    const val artistID = "8354140"
+    const val albumID = "51174732"
+    const val query = "Ezhel"
 }

@@ -8,7 +8,6 @@ import androidx.navigation.Navigation
 import androidx.navigation.testing.TestNavHostController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
@@ -27,7 +26,6 @@ import com.fevziomurtekin.deezer.launchFragmentInHiltContainer
 import com.fevziomurtekin.deezer.ui.main.MainRepository
 import com.fevziomurtekin.deezer.utilies.MainCoroutinesRule
 import com.fevziomurtekin.deezer.utilies.isGone
-import com.google.common.truth.Truth
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.MockKAnnotations
@@ -35,13 +33,10 @@ import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.lang.Exception
 
 
 /**
@@ -94,12 +89,11 @@ class GenreFragmentTest {
   }
 
   @Test
-  fun `when_loading_data_isGone_shimmer_layout`() {
+  fun when_loading_data_isGone_shimmer_layout() {
     fragment?.let { safeFragment ->
 
       //given
       val mockListEntity = MockUtil.genreEntityList
-      val mockListData = MockUtil.genres
 
       coEvery { deezerDao.getGenreList() } returns mockListEntity
 
@@ -109,7 +103,7 @@ class GenreFragmentTest {
             repository.fetchGenreList().asLiveData()
         fetchedData.observeForever(observer)
 
-        safeFragment.viewModel.fetchResult()
+        viewModel.fetchResult()
       }
       onView(withId(R.id.shimmerLayout)).isGone()
     }
@@ -120,7 +114,6 @@ class GenreFragmentTest {
 
       //given
       val mockListEntity = MockUtil.genreEntityList
-      val mockListData = MockUtil.genres
 
       coEvery { deezerDao.getGenreList() } returns mockListEntity
 
