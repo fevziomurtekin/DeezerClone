@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.Env

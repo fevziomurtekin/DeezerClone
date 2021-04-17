@@ -50,6 +50,9 @@ android{
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
         getByName("androidTest").java.srcDirs("src/androidTest/jaa")
+        getByName("test").java.srcDirs("src/sharedTest")
+        getByName("androidTest").java.srcDirs("src/sharedTest")
+
     }
     buildFeatures {
         dataBinding=true
@@ -68,6 +71,9 @@ android{
         exclude("META-INF/notice.txt")
         exclude("META-INF/ASL2.0")
         exclude("META-INF/*.kotlin_module")
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+
     }
 }
 
@@ -140,11 +146,15 @@ dependencies{
     androidTestImplementation(Libs.Test.test_rules)
     androidTestImplementation(Libs.Test.test_core)
     androidTestImplementation(Libs.Test.espresso)
+    androidTestImplementation(Libs.Coroutines.test)
+    androidTestImplementation(Libs.Test.espresso_contrib)
+    androidTestImplementation(Libs.Jetpack.navigation_testing)
+    androidTestImplementation(Libs.Test.mockK)
     kaptAndroidTest(Libs.DI.hilt_compiler)
     testImplementation(Libs.Test.testTruth)
     androidTestImplementation(Libs.Test.testTruth)
     androidTestImplementation(Libs.Test.testExt)
-    androidTestImplementation(Libs.Test.fragment_test)
+    debugImplementation(Libs.Test.fragment_test)
     testImplementation(Libs.Test.mockK)
     testImplementation(Libs.Test.coreTesting)
     testImplementation(Libs.Test.jUnit)

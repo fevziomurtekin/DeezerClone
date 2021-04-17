@@ -3,12 +3,7 @@ package com.fevziomurtekin.deezer.ui.search
 import android.accounts.NetworkErrorException
 import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.switchMap
+import androidx.lifecycle.*
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.entities.SearchEntity
 import kotlinx.coroutines.Dispatchers

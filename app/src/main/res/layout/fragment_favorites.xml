@@ -29,7 +29,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recyclerView"
+            android:id="@+id/recycler_favorites"
             android:clipToPadding="false"
             android:fadeScrollbars="false"
             android:padding="@dimen/favorites_recycler_padding"

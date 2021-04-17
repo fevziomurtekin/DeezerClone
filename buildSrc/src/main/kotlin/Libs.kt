@@ -31,6 +31,7 @@ object Libs {
         /* Navigation */
         val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
         val navigation_ui       = "androidx.navigation:navigation-ui-ktx:${Versions.navigation_version}"
+        val navigation_testing = "androidx.navigation:navigation-testing:${Versions.navigation_version}"
 
     }
 
@@ -71,6 +72,7 @@ object Libs {
         val test_rules = "androidx.test:rules:${Versions.test_rule_version}"
         val test_runner = "androidx.test:runner:${Versions.test_rule_version}"
         val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso_version}"
+        val espresso_contrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso_version}"
         val testTruth = "androidx.test.ext:truth:${Versions.truth_version}"
         val testExt = "androidx.test.ext:junit:${Versions.test_ktx_version}"
         val fragment_test = "androidx.fragment:fragment-testing:${Versions.fragment_test_version}"

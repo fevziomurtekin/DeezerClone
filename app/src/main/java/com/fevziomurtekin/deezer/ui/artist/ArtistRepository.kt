@@ -13,7 +13,6 @@ import com.fevziomurtekin.deezer.data.ArtistsResponse
 import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

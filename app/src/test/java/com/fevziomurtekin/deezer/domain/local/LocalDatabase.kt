@@ -6,7 +6,6 @@ import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import org.junit.After
 import org.junit.Before
 import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 

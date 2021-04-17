@@ -1,12 +1,12 @@
 package com.fevziomurtekin.deezer.viewmodel
 
+import MainCoroutineRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
@@ -37,7 +37,7 @@ class FavoritesViewModelTest {
 
     @ExperimentalCoroutinesApi
     @get:Rule
-    var coroutineRule = MainCoroutinesRule()
+    var coroutineRule = MainCoroutineRule()
 
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()

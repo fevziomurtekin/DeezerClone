@@ -1,5 +1,3 @@
-package com.fevziomurtekin.deezer.di
-
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -11,7 +9,7 @@ import org.junit.runner.Description
 import org.junit.runners.model.Statement
 
 @ExperimentalCoroutinesApi
-class MainCoroutinesRule : TestRule, TestCoroutineScope by TestCoroutineScope() {
+class MainCoroutineRule : TestRule, TestCoroutineScope by TestCoroutineScope() {
 
   private val testCoroutinesDispatcher = TestCoroutineDispatcher()
 

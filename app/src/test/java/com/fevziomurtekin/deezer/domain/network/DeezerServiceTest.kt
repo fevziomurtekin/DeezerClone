@@ -1,9 +1,9 @@
 package com.fevziomurtekin.deezer.domain.network
 
+import MainCoroutineRule
 import com.fevziomurtekin.deezer.core.ApiAbstract
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.data.*
-import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
@@ -23,7 +23,7 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     @ExperimentalCoroutinesApi
     @get:Rule
-    var coroutineRule = MainCoroutinesRule()
+    var coroutineRule = MainCoroutineRule()
 
     // firstly created to service. Then we'll write to test function for each of api call .
     @Before

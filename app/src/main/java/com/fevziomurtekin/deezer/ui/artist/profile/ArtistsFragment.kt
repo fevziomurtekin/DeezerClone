@@ -5,13 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.Env
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.core.extensions.UIExtensions
 import com.fevziomurtekin.deezer.core.ui.DataBindingFragment

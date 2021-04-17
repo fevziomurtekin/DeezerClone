@@ -1,5 +1,6 @@
 package com.fevziomurtekin.deezer.viewmodel
 
+import MainCoroutineRule
 import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
@@ -8,10 +9,8 @@ import androidx.lifecycle.asLiveData
 import androidx.test.core.app.ActivityScenario.launch
 import com.fevziomurtekin.deezer.core.MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.core.mapper
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.MediaPlayerState
-import com.fevziomurtekin.deezer.di.MainCoroutinesRule
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
 import com.fevziomurtekin.deezer.domain.network.DeezerService
@@ -52,7 +51,7 @@ class MainViewModelTest {
 
     @ExperimentalCoroutinesApi
     @get:Rule
-    var coroutineRule = MainCoroutinesRule()
+    var coroutineRule = MainCoroutineRule()
 
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()

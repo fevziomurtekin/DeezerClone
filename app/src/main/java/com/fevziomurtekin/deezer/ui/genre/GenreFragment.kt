@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.fevziomurtekin.deezer.R
 import com.fevziomurtekin.deezer.core.data.ApiResult
@@ -22,7 +21,7 @@ import timber.log.Timber
 @AndroidEntryPoint
 class GenreFragment : DataBindingFragment() {
 
-    private lateinit var  binding:FragmentGenreBinding
+    lateinit var  binding:FragmentGenreBinding
     @VisibleForTesting
     val viewModel : GenreViewModel by viewModels()
 
