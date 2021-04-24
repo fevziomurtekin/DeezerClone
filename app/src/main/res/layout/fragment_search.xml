@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="vm"
+            type="com.fevziomurtekin.deezer.ui.search.SearchViewModel" />
+
+        <variable
+            name="recentAdapter"
+            type="com.fevziomurtekin.deezer.ui.search.RecentSearchAdapter" />
+
+        <variable
+            name="searchAdapter"
+            type="com.fevziomurtekin.deezer.ui.search.SearchAlbumAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_search">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/aet_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintWidth_percent="0.9"
+            android:lines="1"
+            android:hint="@string/searching"
+            android:background="@drawable/edt_bg"
+            android:elevation="5dp"
+            android:padding="@dimen/search_edittext_padding"
+            app:onEditorActionListener="@{vm.editorActionListener}"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/lv_recent_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/aet_search"
+            app:isGoneLayout="@{vm.result}"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/search_recent_margin_top">
+
+            <TextView
+                android:id="@+id/tv_recent_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/colorWhite"
+                android:text="@string/recent_search"
+                android:layout_margin="@dimen/search_recent_title_margin"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/colorPrimary"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recent_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/search_recent_recycler_margin_top"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_search"
+                app:adapter="@{recentAdapter}"
+                app:adapterRecentSearch="@{vm.recentSearch}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv_search_album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/aet_search"
+            app:isGoneLayout="@{vm.result}"
+            android:orientation="vertical"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/search_album_padding"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_album"
+                app:adapter="@{searchAdapter}"
+                app:adapterSearchAlbum="@{vm.result}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

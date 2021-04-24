@@ -4,7 +4,7 @@ import android.accounts.NetworkErrorException
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.fevziomurtekin.deezer.core.data.ApiResult
-import com.fevziomurtekin.deezer.core.mapper
+import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.fevziomurtekin.deezer.data.AlbumData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -6,7 +6,7 @@ import com.fevziomurtekin.deezer.core.extensions.getResult
 import com.fevziomurtekin.deezer.core.extensions.isSuccessAndNotNull
 import com.fevziomurtekin.deezer.core.extensions.letOnFalseOnSuspend
 import com.fevziomurtekin.deezer.core.extensions.letOnTrueOnSuspend
-import com.fevziomurtekin.deezer.core.mapper
+import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.fevziomurtekin.deezer.data.GenreResponse
 import com.fevziomurtekin.deezer.di.IODispatcher
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
