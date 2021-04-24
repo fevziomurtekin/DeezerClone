@@ -2,7 +2,7 @@ package com.fevziomurtekin.deezer.domain.local
 
 import android.os.Build
 import com.fevziomurtekin.deezer.core.MockUtil
-import com.fevziomurtekin.deezer.core.mapper
+import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.MatcherAssert.assertThat

@@ -1,4 +1,4 @@
-package com.fevziomurtekin.deezer.core
+package com.fevziomurtekin.deezer.core.mapper
 
 import com.fevziomurtekin.deezer.data.AlbumData
 import com.fevziomurtekin.deezer.data.Data
@@ -7,7 +7,31 @@ import com.fevziomurtekin.deezer.entities.GenreEntity
 import timber.log.Timber
 
 
-fun AlbumEntity?.mapper(): AlbumData? = this?.let { e->
+private val EMPTY_ALBUM_DATA: AlbumData = AlbumData(
+    0,"",0,0,false,"","","","","","",false,"","","",
+    0,"",0L,""
+)
+
+private val EMPTY_ALBUM_ENTITY: AlbumEntity = AlbumEntity(
+    0,"",false,1L,"","","","","","",1L,""
+)
+
+private val EMPTY_GENRE_DATA: Data = Data(
+    "", "", "", "", "", "", "", ""
+)
+
+private val EMPTY_GENRE_ENTITY = GenreEntity(
+    genreId = "",
+    name= "",
+    picture= "",
+    pictureBig= "",
+    pictureMedium= "",
+    pictureSmall= "",
+    pictureXl= "",
+    type= ""
+)
+
+fun AlbumEntity?.mapper(): AlbumData = this?.let { e->
     AlbumData(
         diskNumber= e.diskNumber,
         duration= e.duration,
@@ -20,9 +44,9 @@ fun AlbumEntity?.mapper(): AlbumData? = this?.let { e->
         trackPosition = 0,
         type = e.type,
     )
-}
+} ?: EMPTY_ALBUM_DATA
 
-fun AlbumData?.mapper(): AlbumEntity? = this?.let { d->
+fun AlbumData?.mapper(): AlbumEntity = this?.let { d->
     AlbumEntity(
         diskNumber= d.diskNumber,
         duration= d.duration,
@@ -35,7 +59,7 @@ fun AlbumData?.mapper(): AlbumEntity? = this?.let { d->
         type = d.type,
         favTime = d.favTime,
     )
-}
+} ?: EMPTY_ALBUM_ENTITY
 
 fun GenreEntity?.mapper(): Data = this?.let { e->
     Data(
@@ -48,11 +72,7 @@ fun GenreEntity?.mapper(): Data = this?.let { e->
         pictureXl= e.pictureXl,
         type= "genre"
     )
-} ?: run {
-    Data(
-        "", "", "", "", "", "", "", ""
-    )
-}
+} ?: EMPTY_GENRE_DATA
 
 fun Data?.mapper(): GenreEntity = this?.let { d->
     GenreEntity(
@@ -65,56 +85,21 @@ fun Data?.mapper(): GenreEntity = this?.let { d->
         pictureXl= d.pictureXl,
         type= d.pictureXl
     )
-} ?: run {
-    GenreEntity(
-        genreId = "",
-        name= "",
-        picture= "",
-        pictureBig= "",
-        pictureMedium= "",
-        pictureSmall= "",
-        pictureXl= "",
-        type= ""
-    )
-}
+} ?: EMPTY_GENRE_ENTITY
 
 
 @JvmName("genreMapper")
-fun List<GenreEntity?>?.mapper() = this?.let { list ->
-    Timber.d("genreMapper : $list")
-    val returnList = mutableListOf<Data>()
-    list.forEach {
-        it.mapper().let { d->
-            returnList.add(d)
-        }
-    }
-    return returnList
-} ?:run {
-    Timber.d("genreMapper : is null")
-    mutableListOf<Data>()
-}
+fun List<GenreEntity?>?.mapper(): List<Data> = this?.let { list ->
+    list.map { it.mapper() }
+} ?: emptyList()
 
 @JvmName("dataMapper")
-fun List<Data>?.mapper() = this?.let { list ->
-    val returnList = mutableListOf<GenreEntity>()
-    list.forEach {
-        it.mapper().let { e->
-            returnList.add(e)
-        }
-    }
-    return returnList
-} ?: run {
-    mutableListOf<GenreEntity>()
-}
+fun List<Data>?.mapper(): List<GenreEntity> = this?.let { list ->
+    list.map { it.mapper() }
+} ?: emptyList()
 
 @JvmName("albumEntityToAlbumData")
 fun List<AlbumEntity>.mapper(): List<AlbumData> {
-    val returnList = mutableListOf<AlbumData>()
-    this.forEach {
-        it.mapper()?.let { a->
-            returnList.add(a)
-        }
-    }
-    return returnList
+    return this.map { it.mapper()  }
 }
 
