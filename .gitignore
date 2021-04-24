@@ -17,4 +17,3 @@ local.properties
 /buildSrc/build
 /app/.idea
 /app/build
-/app/src/main/java/com/fevziomurtekin/deezer/core/Env.kt
