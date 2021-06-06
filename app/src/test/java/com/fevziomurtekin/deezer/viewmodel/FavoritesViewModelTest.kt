@@ -5,7 +5,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
 import com.fevziomurtekin.deezer.domain.network.DeezerClient
@@ -17,6 +17,8 @@ import com.nhaarman.mockitokotlin2.atLeastOnce
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import io.mockk.MockKAnnotations
+import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -31,9 +33,13 @@ import org.junit.Test
 class FavoritesViewModelTest {
     private lateinit var viewModel: FavoritesViewModel
     private lateinit var repository: FavoritesRepository
-    private val deezerService: DeezerService = mockk()
-    private val deezerClient = DeezerClient(deezerService)
-    private val deezerDao: DeezerDao = mockk()
+
+    @MockK
+    private lateinit var deezerService: DeezerService
+    @MockK
+    private lateinit var deezerDao: DeezerDao
+
+    private lateinit var deezerClient: DeezerClient
 
     @ExperimentalCoroutinesApi
     @get:Rule
@@ -45,6 +51,8 @@ class FavoritesViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
+        MockKAnnotations.init(this, relaxed = true)
+        deezerClient = DeezerClient(deezerService)
         repository = FavoritesRepository(deezerDao, Dispatchers.IO)
         viewModel = FavoritesViewModel(repository)
     }

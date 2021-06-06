@@ -1,5 +1,3 @@
-package com.fevziomurtekin.deezer.core
-
 import com.fevziomurtekin.deezer.data.*
 import com.fevziomurtekin.deezer.entities.AlbumEntity
 import com.fevziomurtekin.deezer.entities.GenreEntity
@@ -42,13 +40,13 @@ object MockUtil {
         "genre"
     )
 
-    val genres = listOf(data)
+    val genres: List<Data> = listOf(data)
 
-    val genreEntityList = listOf(entity, entity, rockEntity, entity)
+    val genreEntityList: List<GenreEntity> = listOf(entity, entity, rockEntity, entity)
 
     val recentData = SearchEntity(1L,"ezhel",12345.toLong())
 
-    val searchList = listOf(recentData)
+    val searchList: List<SearchEntity> = listOf(recentData)
 
     val album = AlbumData(
         id="3135553",readable = true,title = "One More Time",titleShort = "One More Time",titleVersion = "",

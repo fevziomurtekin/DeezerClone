@@ -16,7 +16,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
 import com.fevziomurtekin.deezer.R
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
