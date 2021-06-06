@@ -7,8 +7,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.test.core.app.ActivityScenario.launch
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.MediaPlayerState
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
@@ -22,6 +23,8 @@ import com.nhaarman.mockitokotlin2.atLeastOnce
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import io.mockk.MockKAnnotations
+import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -44,10 +47,14 @@ class MainViewModelTest {
     private val application:Application = mock()
     private lateinit var viewModel:MainViewModel
     private lateinit var mainRepository: MainRepository
-    private val deezerService: DeezerService = mockk()
-    private val deezerClient = DeezerClient(deezerService)
-    private val deezerDao: DeezerDao = mockk()
 
+    @MockK
+    private lateinit var deezerService: DeezerService
+
+    @MockK
+    private lateinit var deezerDao: DeezerDao
+
+    private lateinit var deezerClient: DeezerClient
 
     @ExperimentalCoroutinesApi
     @get:Rule
@@ -61,6 +68,8 @@ class MainViewModelTest {
     @ExperimentalCoroutinesApi
     @Before
     fun setup(){
+        MockKAnnotations.init(this, relaxed = true)
+        deezerClient = DeezerClient(deezerService)
         mainRepository = MainRepository(deezerClient, deezerDao,Dispatchers.IO)
         viewModel = MainViewModel(application, mainRepository)
     }

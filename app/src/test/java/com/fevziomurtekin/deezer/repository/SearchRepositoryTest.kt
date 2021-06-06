@@ -3,7 +3,7 @@ package com.fevziomurtekin.deezer.repository
 import MainCoroutineRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
 import com.fevziomurtekin.deezer.data.SearchData
 import com.fevziomurtekin.deezer.data.SearchResponse

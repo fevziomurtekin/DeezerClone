@@ -1,7 +1,7 @@
 package com.fevziomurtekin.deezer.domain.local
 
 import android.os.Build
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
@@ -31,11 +31,11 @@ class DeezerDaoTest: LocalDatabase(){
 
         // checking insert process
         val loadFromDB = deezerDao.getGenreList() ?: emptyList()
-        assertThat(loadFromDB.toString(),`is`(mockDataList.toString()))
 
         // checking first data.
         val mockData = MockUtil.data
-        assertThat(loadFromDB[0].mapper().toString(),`is`(mockData.toString()))
+        val firstData = loadFromDB.mapper()[0]
+        assertThat(firstData.toString(),`is`(mockData.toString()))
     }
 
     @Test

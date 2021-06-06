@@ -3,8 +3,9 @@ package com.fevziomurtekin.deezer.repository
 import MainCoroutineRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.core.data.ApiResult
+import com.fevziomurtekin.deezer.core.mapper.mapper
 import com.fevziomurtekin.deezer.data.Data
 import com.fevziomurtekin.deezer.data.GenreResponse
 import com.fevziomurtekin.deezer.domain.local.DeezerDao
@@ -54,10 +55,6 @@ class MainRepositoryTest {
         val returnData = Response.success(mockData)
         whenever(deezerDao.getGenreList()).thenReturn(emptyList())
         whenever(service.fetchGenreList()).thenReturn(returnData)
-
-        /** core testing */
-       /* val result = repository.fetchGenreList().asLiveData().value
-        Assert.assertEquals(result, Result.Success(MockUtil.genres))*/
 
         /** add to turbine library.*/
         repository.fetchGenreList().test {

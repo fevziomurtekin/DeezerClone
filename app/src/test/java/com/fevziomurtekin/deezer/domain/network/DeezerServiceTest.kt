@@ -2,8 +2,10 @@ package com.fevziomurtekin.deezer.domain.network
 
 import MainCoroutineRule
 import com.fevziomurtekin.deezer.core.ApiAbstract
-import com.fevziomurtekin.deezer.core.MockUtil
+import MockUtil
 import com.fevziomurtekin.deezer.data.*
+import io.mockk.MockKAnnotations
+import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
@@ -19,7 +21,9 @@ import java.io.IOException
 class DeezerServiceTest : ApiAbstract<DeezerService>() {
 
     private lateinit var service: DeezerService
-    private val client: DeezerClient = mockk()
+
+    @MockK
+    private lateinit var client: DeezerClient
 
     @ExperimentalCoroutinesApi
     @get:Rule
@@ -28,8 +32,11 @@ class DeezerServiceTest : ApiAbstract<DeezerService>() {
     // firstly created to service. Then we'll write to test function for each of api call .
     @Before
     fun initService(){
+        MockKAnnotations.init(this, relaxed = true)
         service = createService(DeezerService::class.java)
+        client = DeezerClient(service)
     }
+
 
     @Throws(IOException::class)
     @Test
