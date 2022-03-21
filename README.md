@@ -72,9 +72,10 @@ Used Deezer API. Deezer API provides a RESTful API. [Link](https://developers.de
 - [x] Media player will be created using Exoplayer.
 - [x] Favorites page will be created.
 - [x] Application will be testing and is out new release.
-- [ ] New features and tests can be added.
 - [x] Base repository will created.
 - [x] UI test will be writed.
+- [ ] Will be migrate to MVVM to MVI
+- [ ] Will be migrate to Jetpack Compose
 
 ## License
 The Apache License 2.0 - see [`LICENSE`](LICENSE) for more details
