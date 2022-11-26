@@ -35,7 +35,7 @@ object Versions {
     val a_hilt_version = "1.0.0-alpha02"
 
     //Room
-    val room_version = "2.2.5"
+    val room_version = "2.4.0-alpha03"
     val logging_version= "3.9.1"
 
     //Android Arcitecture && Viewmodel
