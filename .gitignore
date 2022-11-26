@@ -1,19 +1,60 @@
+# Generic files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Built application files
+*.apk
+*.ap_
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Files for the Dalvik VM
+*.dex
+
+# Files for the idea
+.idea/
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+build/
+build-cache/
+
+# Local configuration file (sdk path, etc)
 local.properties
-/buildSrc/.gradle
-/buildSrc/build
-/app/.idea
-/app/build
+
+/app/src/debug/assets/*.properties
+/app/src/release/assets/*.properties
+
+reports/
+.idea/checkstyle-idea.xml
+.idea/compiler.xml
+.idea/copyright/
+.idea/encodings.xml
+.idea/findbugs-idea.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+.idea/modules.xml
+.idea/qaplug_profiles.xml
+.idea/runConfigurations.xml
+/api
+/newtranslationsscript
+/.idea/runConfigurations/
+.idea/runConfigurations/QA1___FOODORA.xml
+.idea/runConfigurations/QA2___FOODORA.xml
+.idea/runConfigurations/QA3___FOODORA.xml
+.idea/runConfigurations/QA4___FOODORA.xml
+.idea/runConfigurations/Run_Crowd_Test_App___FOODORA.xml
+.idea/runConfigurations/Upload_Crowd_Test_App_To_Hockey___FOODORA.xml
+.idea/codeStyles
+.idea/caches/build_file_checksums.ser
+.idea/assetWizardSettings.xml
+
